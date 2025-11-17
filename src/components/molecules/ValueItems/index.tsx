@@ -1,6 +1,6 @@
-import SectionTitle from '../../molecules/SectionTitle';
-import PromiseCard from '../../molecules/PromiseCard';
-import type { ValueIconVariant } from '../../molecules/ValueIcon';
+import SectionTitle from '../SectionTitle';
+import PromiseCard from '../PromiseCard';
+import type { ValueIconVariant } from '../ValueIcon';
 import * as S from './style';
 
 export type ValueItem = {
@@ -10,7 +10,7 @@ export type ValueItem = {
   iconType?: ValueIconVariant;
 };
 
-type ValueItemsSectionProps = {
+type ValueItemsProps = {
   eyebrow: string;
   title: string;
   description?: string;
@@ -20,7 +20,7 @@ type ValueItemsSectionProps = {
   richTitle?: React.ReactNode;
 };
 
-const ValueItemsSection = ({
+const ValueItems = ({
   eyebrow,
   title,
   richTitle,
@@ -28,7 +28,7 @@ const ValueItemsSection = ({
   items,
   variant = 'positive',
   titleColor,
-}: ValueItemsSectionProps) => (
+}: ValueItemsProps) => (
   <>
     <SectionTitle
       eyebrow={eyebrow}
@@ -46,6 +46,5 @@ const ValueItemsSection = ({
   </>
 );
 
-export default ValueItemsSection;
-
+export default ValueItems;
 

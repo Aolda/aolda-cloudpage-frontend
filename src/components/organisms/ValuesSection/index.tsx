@@ -1,4 +1,4 @@
-import ValueItemsSection from '../ValueItemsSection';
+import ValueItems from '../../molecules/ValueItems';
 import * as S from './style';
 
 const inconveniences = [
@@ -15,7 +15,7 @@ const promises = [
 
 const ValuesSection = () => (
   <>
-    <ValueItemsSection
+    <ValueItems
       eyebrow="Values"
       title="자유롭게 꿈을 펼치기 위해 아올다가 없앤 불편함 3가지"
       richTitle={
@@ -31,13 +31,13 @@ const ValuesSection = () => (
 
     <S.SectionSpacer />
 
-    <ValueItemsSection
+    <ValueItems
       eyebrow="Commitment"
       title="자유롭게 꿈을 펼치기 위해 함께 만들어가는 약속 3가지"
       richTitle={
         <span style={{ color: '#000' }}>
           자유롭게 꿈을 펼치기 위해 함께 만들어가는{' '}
-          <span style={{ color: '#EF4444' }}>약속 3가지</span>
+          <span style={{ color: 'rgb(219, 51, 51)' }}>약속 3가지</span>
         </span>
       }
       description="아주인 모두가 자유롭게 꿈을 펼칠 수 있도록 아래 3가지를 약속해요"

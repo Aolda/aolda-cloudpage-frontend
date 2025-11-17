@@ -1,15 +1,16 @@
 import ActionButton from '../../molecules/ActionButton';
 import IconButton from '../../molecules/IconButton';
+import SectionTitle from '../../molecules/SectionTitle';
 import * as S from './style';
 
 const MeetSection = () => (
   <S.Section>
     <S.Divider />
-    <S.Title>
-      아올다, 이제 한번
-      <br />
-      만나볼까요?
-    </S.Title>
+    <SectionTitle
+      title="아올다, 이제 한번\n만나볼까요?"
+      align="center"
+      titleColor="rgb(35, 126, 211)"
+    />
 
     <S.Grid>
       <S.Col>

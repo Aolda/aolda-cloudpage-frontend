@@ -15,14 +15,6 @@ export const Divider = styled.span`
   border-radius: 2px;
 `;
 
-export const Title = styled.h2`
-  margin: 0;
-  color:rgb(35, 126, 211);
-  text-align: center;
-  line-height: 1.4;
-  font-size: 2rem;
-`;
-
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2,minmax(0, 1fr));

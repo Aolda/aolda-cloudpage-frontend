@@ -15,23 +15,36 @@ export const Visual = styled.div`
   position: relative;
   overflow: hidden;
   min-height: 240px;
+  
+  > div {
+    border-radius: 10px;
+    height: auto;
+    min-height: 240px;
+    
+    img {
+      height: 76%;
+      border-radius: 10px;
+    }
+    
+    > div {
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 20px 24px;
+      
+      h2 {
+        font-size: 4rem;
+        font-weight: 600;
+        line-height: 1.4;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+      }
+    }
+  }
 `;
 
-export const HeroImage = styled.img`
-  width: 100%;
-  height: 76%;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
-`;
-
-export const OverlayText = styled.div`
-  position: absolute;
-  left: 24px;
-  top: 20px;
-  z-index: 2;
-  color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+export const MenuContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;
 
 
