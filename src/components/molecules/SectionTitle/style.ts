@@ -47,10 +47,6 @@ export const Title = styled.h2<{ $color?: string }>`
   white-space: pre-line;
 `;
 
-export const Highlight = styled.span`
-  color: ${({ theme }) => theme.colors.secondary};
-`;
-
 export const Description = styled.p`
   margin: 0;
   font-size: 1.6rem;

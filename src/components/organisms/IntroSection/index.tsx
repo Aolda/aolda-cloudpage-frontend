@@ -1,17 +1,17 @@
 import * as S from './style';
-import IntroMenu from '../../molecules/IntroMenu';
+import MenuCard from '../../molecules/MenuCard';
 import SectionTitle from '../../molecules/SectionTitle';
 
-const IntroMenuItems = [
+const CardItems = [
   {
     title: '아올다,\n처음이신가요?',
     actionLabel: '사용 설명서 >',
-    href: '#guide',
+    href: '/useinfo',
   },
   {
     title: '저희의 활동을\n모아봤어요!',
     actionLabel: '테크 블로그 >',
-    href: '#archive',
+    href: '/blog',
   },
 ];
 
@@ -19,7 +19,7 @@ const IntroSection = () => (
   <S.Section>
     <S.Visual>
       <SectionTitle
-        richTitle={
+        title={
           <>
             아주인의 꿈을 펼칠
             <br />
@@ -31,15 +31,15 @@ const IntroSection = () => (
       />
     </S.Visual>
     <S.MenuContainer>
-      {IntroMenuItems.map((item, index) => (
-        <IntroMenu
+      {CardItems.map((item, index) => (
+        <MenuCard
           key={index}
           title={item.title}
           actionLabel={item.actionLabel}
           href={item.href}
         />
       ))}
-    </S.MenuContainer>
+    </S.MenuContainer> 
   </S.Section>
 );
 

@@ -1,6 +1,31 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
+// BrandLogo 스타일
+export const BrandLink = styled.a`
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+`;
+
+export const BrandImg = styled.img`
+  width: 120px;
+  height: 50px;
+  display: block;
+`;
+
+// PartnerLogo 스타일
+export const PartnerCard = styled.div`
   padding: 1.8rem;
   border-radius: 1.6rem;
   border: 1px solid ${({ theme }) => theme.colors.border};
@@ -13,13 +38,13 @@ export const Card = styled.div`
   box-shadow: ${({ theme }) => theme.shadows.soft};
 `;
 
-export const Logo = styled.img`
+export const PartnerLogo = styled.img`
   width: 64px;
   height: 64px;
   object-fit: contain;
 `;
 
-export const Initial = styled.span`
+export const PartnerInitial = styled.span`
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -32,16 +57,10 @@ export const Initial = styled.span`
   font-weight: 700;
 `;
 
-export const Name = styled.span`
+export const PartnerName = styled.span`
   font-size: 1.4rem;
   color: ${({ theme }) => theme.colors.text};
   font-weight: 600;
   text-align: center;
 `;
-
-
-
-
-
-
 

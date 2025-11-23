@@ -1,18 +1,21 @@
 import styled, { css } from 'styled-components';
 
-export const Card = styled.div<{ $variant: 'positive' | 'alert' }>`
+type CardTone = 'blue' | 'red';
+
+export const ImageCard = styled.div<{ $tone: CardTone }>`
   padding: 2.4rem;
   border-radius: 2rem;
   border: 1px solid ${({ theme }) => theme.colors.border};
   background: ${({ theme }) => theme.colors.surface};
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem;
   min-height: 200px;
   box-shadow: ${({ theme }) => theme.shadows.soft};
+  overflow: hidden;
 
-  ${({ $variant, theme }) =>
-    $variant === 'positive'
+  ${({ $tone, theme }) =>
+    $tone === 'blue'
       ? css`
           border-color: rgba(14, 99, 255, 0.2);
           background: ${theme.colors.surfaceAlt};
@@ -23,21 +26,24 @@ export const Card = styled.div<{ $variant: 'positive' | 'alert' }>`
         `}
 `;
 
-export const Icon = styled.span`
-  font-size: 2.4rem;
+export const Image = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  max-height: 200px;
 `;
 
-export const Title = styled.h3`
+export const ImageTitle = styled.h3`
   margin: 0;
   font-size: 1.8rem;
   color: ${({ theme }) => theme.colors.text};
 `;
 
-export const Description = styled.p`
+export const ImageDescription = styled.p`
   margin: 0;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.colors.textMuted};
   line-height: 1.5;
 `;
-
 

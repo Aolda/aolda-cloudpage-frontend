@@ -1,5 +1,5 @@
 import SectionTitle from '../../molecules/SectionTitle';
-import PartnerLogo from '../../molecules/PartnerLogo';
+import Logo from '../../molecules/Logo';
 import * as S from './style';
 
 const partners = ['AHP','APIA','ARISE','AMMS','AMDB'];
@@ -7,8 +7,7 @@ const partners = ['AHP','APIA','ARISE','AMMS','AMDB'];
 const PartnersSection = () => (
   <>
     <SectionTitle
-      eyebrow="Partners"
-      richTitle={
+      title={
         <span style={{ color: '#000' }}>
           이미 <span style={{ color: 'rgb(61, 144, 212)' }}>많은 곳에서 사용</span>되고 있는
           {'\n'}아올다 클라우드
@@ -18,7 +17,7 @@ const PartnersSection = () => (
     />
     <S.Grid>
       {partners.map((p) => (
-        <PartnerLogo key={p} name={p} />
+        <Logo key={p} name={p} />
       ))}
     </S.Grid>
   </>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
+export const StatCard = styled.div`
   padding: 2.4rem;
   display: flex;
   flex-direction: column;
@@ -9,25 +9,14 @@ export const Card = styled.div`
   align-items: center;
 `;
 
-export const Value = styled.span`
+export const StatValue = styled.span`
   font-size: 2.8rem;
   font-weight: 700;
-  color:rgb(61, 144, 212);
+  color: rgb(61, 144, 212);
 `;
 
-export const Label = styled.span`
+export const StatLabel = styled.span`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.text};
 `;
-
-export const Caption = styled.span`
-  font-size: 1.3rem;
-  color: ${({ theme }) => theme.colors.textMuted};
-`;
-
-
-
-
-
-
 

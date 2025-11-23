@@ -1,26 +1,21 @@
-import BrandLogo from '../../molecules/BrandLogo';
-import IconButton from '../../molecules/IconButton';
+import Logo from '../../molecules/Logo';
+import Button from '../../molecules/Button';
+import Navigation from '../../molecules/Navigation';
 import * as S from './style';
 
 const Header = () => {
   const items = [
-    { label: '소학회 소개', targetId: 'about' },
-    { label: '서비스 소개', targetId: 'service' },
-    { label: '사용안내', targetId: 'guide' },
-    { label: '공지사항', targetId: 'notice' },
+    { label: '소학회 소개', href: '/about' },
+    { label: '서비스 소개', href: '/service' },
+    { label: '사용안내', href: '/guide' },
+    { label: '공지사항', href: '/notice' },
   ];
 
   return (
     <S.HeaderBar>
-      <BrandLogo />
-        <S.Nav>
-          {items.map((i) => (
-            <S.NavButton key={i.targetId}>
-              {i.label}
-            </S.NavButton>
-          ))}
-        </S.Nav>
-        <IconButton label="콘솔로 이동" href="https://console.aoldacloud.com/" size="lg" withArrow />
+      <Logo src="/Logo.svg" alt="Aolda" href="/" />
+      <Navigation items={items} />
+      <Button label="콘솔로 이동" href="https://console.aoldacloud.com/" size="lg" />
     </S.HeaderBar>
   );
 };

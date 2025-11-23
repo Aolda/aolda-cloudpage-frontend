@@ -1,3 +1,4 @@
+import Logo from '../../molecules/Logo';
 import * as S from './style';
 
 const Footer = () => (
@@ -5,7 +6,7 @@ const Footer = () => (
     <S.FooterInner>
       <S.FooterLeft>
         <S.FooterBrand>
-          <img src="/Logo_white.svg" alt="" aria-hidden />
+          <Logo src="/Logo_white.svg" alt="" href="/" />
         </S.FooterBrand>
         <span style={{ color: 'rgba(255,255,255,0.7)' }}>교내 클라우드 인프라 개발/운영 소학회</span>
       </S.FooterLeft>

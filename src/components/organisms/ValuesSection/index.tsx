@@ -16,9 +16,7 @@ const promises = [
 const ValuesSection = () => (
   <>
     <ValueItems
-      eyebrow="Values"
-      title="자유롭게 꿈을 펼치기 위해 아올다가 없앤 불편함 3가지"
-      richTitle={
+      title={
         <span style={{ color: '#000' }}>
           자유롭게 꿈을 펼치기 위해 아올다가 없앤{' '}
           <span style={{ color: 'rgb(61, 144, 212)' }}>불편함 3가지</span>
@@ -26,15 +24,12 @@ const ValuesSection = () => (
       }
       description="아주인 모두가 자유롭게 꿈을 펼칠 수 있도록 아래 3가지를 없앴어요"
       items={inconveniences}
-      variant="positive"
     />
 
     <S.SectionSpacer />
 
     <ValueItems
-      eyebrow="Commitment"
-      title="자유롭게 꿈을 펼치기 위해 함께 만들어가는 약속 3가지"
-      richTitle={
+      title={
         <span style={{ color: '#000' }}>
           자유롭게 꿈을 펼치기 위해 함께 만들어가는{' '}
           <span style={{ color: 'rgb(219, 51, 51)' }}>약속 3가지</span>
@@ -42,7 +37,6 @@ const ValuesSection = () => (
       }
       description="아주인 모두가 자유롭게 꿈을 펼칠 수 있도록 아래 3가지를 약속해요"
       items={promises}
-      variant="alert"
     />
   </>
 );
