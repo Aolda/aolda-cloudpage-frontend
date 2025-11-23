@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderBar = styled.header`
   position: sticky;
   top: 0;
   z-index: 10;
-  background: ${({ theme }) => theme.colors.background};
+  background: white;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   display: flex;
   align-items: center;
@@ -32,5 +32,3 @@ export const NavButton = styled.button`
   opacity: 0.9;
   cursor: pointer;
 `;
-
-
