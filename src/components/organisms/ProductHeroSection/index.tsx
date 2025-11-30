@@ -42,4 +42,3 @@ const ProductHeroSection = ({ title, description }: ProductHeroSectionProps) => 
 };
 
 export default ProductHeroSection;
-

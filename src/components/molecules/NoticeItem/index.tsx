@@ -31,7 +31,7 @@ export interface NoticeItemProps {
  *   category="문의요청"
  *   title="문의요청과 관련된 공지사항 타이틀이에요"
  *   date="2001.01.28"
- *   href="/notice/1"
+ *   href="/notice/24"
  * />
  * 
  * @returns {JSX.Element} 공지사항 아이템 요소

@@ -5,6 +5,8 @@ import { theme } from './styles/theme';
 import IntroductionPage from './pages/Introduction';
 import ProductPage from './pages/Product';
 import NoticePage from './pages/Notice';
+import NoticeDetailPage from './pages/NoticeDetail';
+import FAQPage from './pages/FAQ';
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
           <Route path="/" element={<IntroductionPage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/notice" element={<NoticePage />} />
+          <Route path="/notice/:id" element={<NoticeDetailPage />} />
+          <Route path="/FAQ" element={<FAQPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

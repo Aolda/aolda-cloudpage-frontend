@@ -19,7 +19,7 @@ export interface CategoryFilterProps {
 /**
  * 카테고리 필터 컴포넌트
  * 
- * 체크박스 형태의 카테고리 필터입니다.
+ * 체크박스를 사용하여 여러 카테고리를 선택할 수 있는 필터입니다.
  * 
  * @param {CategoryFilterProps} props - 카테고리 필터 props
  * @param {CategoryItem[]} props.categories - 카테고리 목록
@@ -43,7 +43,7 @@ const CategoryFilter = ({
   selectedCategories = [],
   onChange,
 }: CategoryFilterProps) => {
-  const handleToggle = (categoryId: string) => {
+  const handleCategoryToggle = (categoryId: string) => {
     if (!onChange) return;
 
     const isSelected = selectedCategories.includes(categoryId);
@@ -55,24 +55,25 @@ const CategoryFilter = ({
   };
 
   return (
-    <S.CategoryList>
+    <S.FilterContainer>
       {categories.map((category) => {
-        const isChecked = selectedCategories.includes(category.id);
+        const isSelected = selectedCategories.includes(category.id);
         return (
-          <S.CategoryItem key={category.id}>
-            <S.Checkbox
-              type="checkbox"
-              id={category.id}
-              checked={isChecked}
-              onChange={() => handleToggle(category.id)}
-            />
-            <S.Label htmlFor={category.id}>{category.label}</S.Label>
-          </S.CategoryItem>
+          <S.FilterOption key={category.id}>
+            <S.CheckboxLabel>
+              <S.CheckboxInput
+                type="checkbox"
+                checked={isSelected}
+                onChange={() => handleCategoryToggle(category.id)}
+              />
+              <S.Checkmark $checked={isSelected} />
+              {category.label}
+            </S.CheckboxLabel>
+          </S.FilterOption>
         );
       })}
-    </S.CategoryList>
+    </S.FilterContainer>
   );
 };
 
 export default CategoryFilter;
-
