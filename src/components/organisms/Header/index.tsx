@@ -5,10 +5,9 @@ import * as S from './style';
 
 const Header = () => {
   const items = [
-    { label: '소학회 소개', href: '/about' },
-    { label: '서비스 소개', href: '/service' },
-    { label: '사용안내', href: '/guide' },
+    { label: '제품 소개', href: '/product' },
     { label: '공지사항', href: '/notice' },
+    { label: 'FAQ', href: '/FAQ' },
   ];
 
   return (

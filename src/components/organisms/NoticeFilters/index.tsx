@@ -1,0 +1,62 @@
+import FilterTag from '../../molecules/FilterTag';
+import * as S from './style';
+
+export interface FilterOption {
+  /** 필터 ID */
+  id: string;
+  /** 필터 라벨 */
+  label: string;
+}
+
+export interface NoticeFiltersProps {
+  /** 필터 옵션 목록 */
+  filters: FilterOption[];
+  /** 선택된 필터 ID */
+  selectedFilter?: string;
+  /** 필터 선택 변경 핸들러 */
+  onFilterChange?: (filterId: string) => void;
+}
+
+/**
+ * 공지사항 필터 컴포넌트
+ * 
+ * 공지사항을 카테고리별로 필터링할 수 있는 태그 목록입니다.
+ * 
+ * @param {NoticeFiltersProps} props - 필터 props
+ * @param {FilterOption[]} props.filters - 필터 옵션 목록
+ * @param {string} [props.selectedFilter] - 선택된 필터 ID
+ * @param {Function} [props.onFilterChange] - 필터 선택 변경 핸들러
+ * 
+ * @example
+ * <NoticeFilters
+ *   filters={[
+ *     { id: 'all', label: '전체' },
+ *     { id: 'prohibition', label: '금지' },
+ *   ]}
+ *   selectedFilter="all"
+ *   onFilterChange={(id) => console.log(id)}
+ * />
+ * 
+ * @returns {JSX.Element} 필터 요소
+ */
+const NoticeFilters = ({
+  filters,
+  selectedFilter,
+  onFilterChange,
+}: NoticeFiltersProps) => {
+  return (
+    <S.FilterContainer>
+      {filters.map((filter) => (
+        <FilterTag
+          key={filter.id}
+          label={filter.label}
+          isActive={selectedFilter === filter.id}
+          onClick={() => onFilterChange?.(filter.id)}
+        />
+      ))}
+    </S.FilterContainer>
+  );
+};
+
+export default NoticeFilters;
+
