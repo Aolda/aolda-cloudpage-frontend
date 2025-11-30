@@ -1,4 +1,3 @@
-import Card from '../Card';
 import * as S from './style';
 
 export interface ServiceCardProps {
@@ -62,15 +61,13 @@ const ServiceCard = ({
 
   if (href) {
     return (
-      <Card>
-        <S.ServiceLink href={href}>
-          {content}
-        </S.ServiceLink>
-      </Card>
+      <S.ServiceLink href={href}>
+        {content}
+      </S.ServiceLink>
     );
   }
 
-  return <Card>{content}</Card>;
+  return <S.ServiceCardWrapper>{content}</S.ServiceCardWrapper>;
 };
 
 export default ServiceCard;

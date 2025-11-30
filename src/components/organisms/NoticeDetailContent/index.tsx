@@ -1,5 +1,5 @@
 import Button from '../../molecules/Button';
-import NoticeNavigation from '../../molecules/NoticeNavigation';
+import InPageNavigation from '../../molecules/InPageNavigation';
 import * as S from './style';
 
 export interface NoticeDetailData {
@@ -109,7 +109,7 @@ const NoticeDetailContent = ({
       </S.Content>
 
       <S.Footer>
-        <NoticeNavigation
+        <InPageNavigation
           prevTitle={data.prevTitle}
           prevHref={data.prevHref}
           nextTitle={data.nextTitle}

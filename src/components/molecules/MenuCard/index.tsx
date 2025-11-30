@@ -1,4 +1,3 @@
-import Card from '../Card';
 import * as S from './style';
 
 export interface MenuCardProps {
@@ -31,21 +30,19 @@ export interface MenuCardProps {
  */
 const MenuCard = ({ title, href, actionLabel }: MenuCardProps) => {
   return (
-    <Card>
-      <S.MenuCard>
-        <S.MenuTitle>
-          {title.split('\n').map((line, index, array) => (
-            <span key={index}>
-              {line}
-              {index < array.length - 1 && <br />}
-            </span>
-          ))}
-        </S.MenuTitle>
-        <S.MenuLink href={href}>
-          {actionLabel}
-        </S.MenuLink>
-      </S.MenuCard>
-    </Card>
+    <S.MenuCard>
+      <S.MenuTitle>
+        {title.split('\n').map((line, index, array) => (
+          <span key={index}>
+            {line}
+            {index < array.length - 1 && <br />}
+          </span>
+        ))}
+      </S.MenuTitle>
+      <S.MenuLink href={href}>
+        {actionLabel}
+      </S.MenuLink>
+    </S.MenuCard>
   );
 };
 

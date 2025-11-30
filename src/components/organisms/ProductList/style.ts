@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ProductListContainer = styled.div`
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;

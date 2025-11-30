@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-export const FilterContainer = styled.div`
+// Checkbox 모드 스타일
+export const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 `;
 
-export const FilterOption = styled.div`
+export const CheckboxOption = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -51,3 +52,33 @@ export const Checkmark = styled.span<{ $checked: boolean }>`
     transform: rotate(45deg);
   }
 `;
+
+// Tag 모드 스타일
+export const TagContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+`;
+
+export const TagButton = styled.button<{ $isActive: boolean }>`
+  padding: 0.6rem 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border: 1px solid ${({ theme, $isActive }) => ($isActive ? theme.colors.primary : theme.colors.border)};
+  border-radius: 20px;
+  background: ${({ theme, $isActive }) => ($isActive ? theme.colors.primary : theme.colors.surface)};
+  color: ${({ theme, $isActive }) => ($isActive ? '#ffffff' : theme.colors.text)};
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme, $isActive }) => ($isActive ? theme.colors.primary : theme.colors.surfaceAlt)};
+  }
+
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 2px;
+  }
+`;
+

@@ -1,6 +1,6 @@
 import * as S from './style';
 
-export interface SearchBarProps {
+export interface SearchProps {
   /** 검색어 placeholder */
   placeholder?: string;
   /** 검색어 값 */
@@ -12,32 +12,32 @@ export interface SearchBarProps {
 }
 
 /**
- * 검색바 컴포넌트
+ * 검색 컴포넌트
  * 
  * 제품/서비스를 검색할 수 있는 입력 필드입니다.
  * 
- * @param {SearchBarProps} props - 검색바 props
+ * @param {SearchProps} props - 검색 props
  * @param {string} [props.placeholder] - 검색어 placeholder
  * @param {string} [props.value] - 검색어 값
  * @param {Function} [props.onChange] - 검색어 변경 핸들러
  * @param {Function} [props.onSearch] - 검색 실행 핸들러
  * 
  * @example
- * <SearchBar
+ * <Search
  *   placeholder="계열/서비스를 검색해 보세요"
  *   value={searchTerm}
  *   onChange={setSearchTerm}
  *   onSearch={handleSearch}
  * />
  * 
- * @returns {JSX.Element} 검색바 요소
+ * @returns {JSX.Element} 검색 요소
  */
-const SearchBar = ({
+const Search = ({
   placeholder = '검색어를 입력하세요',
   value = '',
   onChange,
   onSearch,
-}: SearchBarProps) => {
+}: SearchProps) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSearch?.(value);
@@ -70,5 +70,5 @@ const SearchBar = ({
   );
 };
 
-export default SearchBar;
+export default Search;
 

@@ -1,6 +1,6 @@
 import Logo from '../../molecules/Logo';
 import Button from '../../molecules/Button';
-import Navigation from '../../molecules/Navigation';
+import MainMenu from '../../molecules/MainMenu';
 import * as S from './style';
 
 const Header = () => {
@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <S.HeaderBar>
       <Logo src="/Logo.svg" alt="Aolda" href="/" />
-      <Navigation items={items} />
+      <MainMenu items={items} />
       <Button label="콘솔로 이동" href="https://console.aoldacloud.com/" size="lg" />
     </S.HeaderBar>
   );

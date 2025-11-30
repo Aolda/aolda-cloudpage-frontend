@@ -23,21 +23,12 @@ export const HeroContent = styled.div`
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 `;
 
 export const BreadcrumbWrapper = styled.div`
-  grid-column: 1 / -1;
-  margin-bottom: 1rem;
-
   /* Breadcrumb 텍스트를 흰색으로 */
   a, span {
     color: rgba(255, 255, 255, 0.9) !important;
@@ -54,25 +45,5 @@ export const Title = styled.h1`
 
 export const SearchWrapper = styled.div`
   max-width: 600px;
-  margin-top: 2rem;
-`;
-
-export const Illustration = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 100%;
-  min-height: 300px;
-  padding: 2rem;
-`;
-
-export const FAQText = styled.div`
-  font-size: 12rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.15);
-  letter-spacing: -0.02em;
-  line-height: 1;
-  user-select: none;
 `;
 

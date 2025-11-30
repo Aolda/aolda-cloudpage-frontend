@@ -10,6 +10,8 @@ export const HeaderBar = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1.2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 export const Right = styled.div`

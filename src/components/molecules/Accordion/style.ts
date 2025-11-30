@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FAQItem = styled.div`
+export const Accordion = styled.div`
   background: ${({ theme }) => theme.colors.surface};
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.colors.border};
@@ -13,7 +13,7 @@ export const FAQItem = styled.div`
   }
 `;
 
-export const QuestionButton = styled.button`
+export const TitleButton = styled.button`
   width: 100%;
   display: flex;
   align-items: center;
@@ -35,14 +35,14 @@ export const QuestionButton = styled.button`
   }
 `;
 
-export const QuestionContent = styled.div`
+export const TitleContent = styled.div`
   display: flex;
   align-items: center;
   gap: 1.6rem;
   flex: 1;
 `;
 
-export const QuestionIcon = styled.div`
+export const TitleIcon = styled.div`
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -53,13 +53,13 @@ export const QuestionIcon = styled.div`
   flex-shrink: 0;
 `;
 
-export const QuestionLetter = styled.span`
+export const TitleLetter = styled.span`
   font-size: 1.8rem;
   font-weight: 700;
   color: #ffffff;
 `;
 
-export const QuestionText = styled.span`
+export const TitleText = styled.span`
   font-size: 1.6rem;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.text};
@@ -74,12 +74,12 @@ export const ChevronIcon = styled.svg<{ $expanded: boolean }>`
   flex-shrink: 0;
 `;
 
-export const Answer = styled.div`
+export const Content = styled.div`
   padding: 0 2rem 2rem 2rem;
   padding-left: calc(2rem + 4rem + 1.6rem); /* padding + icon width + gap */
 `;
 
-export const AnswerText = styled.div`
+export const ContentText = styled.div`
   font-size: 1.5rem;
   line-height: 1.8;
   color: ${({ theme }) => theme.colors.text};
@@ -100,4 +100,3 @@ export const AnswerText = styled.div`
     margin: 0.5rem 0;
   }
 `;
-

@@ -1,4 +1,4 @@
-import SearchBar from '../../molecules/SearchBar';
+import Search from '../../molecules/Search';
 import ServiceCard, { type ServiceCardProps } from '../../molecules/ServiceCard';
 import * as S from './style';
 
@@ -50,7 +50,7 @@ const ProductList = ({
   return (
     <S.ProductListContainer>
       <S.SearchSection>
-        <SearchBar
+        <Search
           placeholder="계열/서비스를 검색해 보세요"
           value={searchTerm}
           onChange={onSearchChange}

@@ -4,7 +4,7 @@ import Header from '../../components/organisms/Header';
 import Footer from '../../components/organisms/Footer';
 import FAQHeroSection from '../../components/organisms/FAQHeroSection';
 import FAQList from '../../components/organisms/FAQList';
-import type { FAQItemProps } from '../../components/molecules/FAQItem';
+import type { AccordionProps } from '../../components/molecules/Accordion';
 import * as S from './style';
 
 const PageWrapper = styled.div`
@@ -29,10 +29,10 @@ const MainContent = styled.main`
 const ITEMS_PER_PAGE = 10;
 
 // 예시 FAQ 데이터
-const exampleFAQs: FAQItemProps[] = [
+const exampleFAQs: AccordionProps[] = [
   {
-    question: 'FAQ Question',
-    answer: `
+    title: 'FAQ Question',
+    content: `
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -41,80 +41,84 @@ const exampleFAQs: FAQItemProps[] = [
     defaultExpanded: true,
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
   {
-    question: 'FAQ Question',
-    answer: 'This is another FAQ answer.',
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
+  },
+  {
+    title: 'FAQ Question',
+    content: 'This is another FAQ answer.',
   },
 ];
 
@@ -150,8 +154,8 @@ const FAQPage = () => {
       const searchLower = searchTerm.toLowerCase();
       filtered = filtered.filter(
         (faq) =>
-          faq.question.toLowerCase().includes(searchLower) ||
-          faq.answer.toLowerCase().includes(searchLower)
+          faq.title.toLowerCase().includes(searchLower) ||
+          faq.content.toLowerCase().includes(searchLower)
       );
     }
 

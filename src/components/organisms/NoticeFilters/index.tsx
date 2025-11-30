@@ -1,16 +1,9 @@
-import FilterTag from '../../molecules/FilterTag';
+import Filter, { type FilterItem } from '../../molecules/Filter';
 import * as S from './style';
-
-export interface FilterOption {
-  /** 필터 ID */
-  id: string;
-  /** 필터 라벨 */
-  label: string;
-}
 
 export interface NoticeFiltersProps {
   /** 필터 옵션 목록 */
-  filters: FilterOption[];
+  filters: FilterItem[];
   /** 선택된 필터 ID */
   selectedFilter?: string;
   /** 필터 선택 변경 핸들러 */
@@ -46,14 +39,12 @@ const NoticeFilters = ({
 }: NoticeFiltersProps) => {
   return (
     <S.FilterContainer>
-      {filters.map((filter) => (
-        <FilterTag
-          key={filter.id}
-          label={filter.label}
-          isActive={selectedFilter === filter.id}
-          onClick={() => onFilterChange?.(filter.id)}
-        />
-      ))}
+      <Filter
+        mode="tag"
+        items={filters}
+        selectedIds={selectedFilter}
+        onChange={(id) => onFilterChange?.(typeof id === 'string' ? id : '')}
+      />
     </S.FilterContainer>
   );
 };

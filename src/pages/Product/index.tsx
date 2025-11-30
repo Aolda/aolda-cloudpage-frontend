@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Header from '../../components/organisms/Header';
 import Footer from '../../components/organisms/Footer';
 import ProductHeroSection from '../../components/organisms/ProductHeroSection';
-import ProductSidebar from '../../components/organisms/ProductSidebar';
+import SideNavigation from '../../components/organisms/SideNavigation';
 import ProductList from '../../components/organisms/ProductList';
 import type { ServiceCardProps } from '../../components/molecules/ServiceCard';
 import * as S from './style';
@@ -15,10 +15,12 @@ const PageWrapper = styled.div`
 `;
 
 const Page = styled.div`
+  width: 100%;
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 2rem;
   flex: 1;
+  box-sizing: border-box;
 `;
 
 const MainContent = styled.main`
@@ -100,7 +102,7 @@ const ProductPage = () => {
             description="아울다에서 제품은 기획서에 따라 진행된 각 프로젝트의 최종 성과물을 의미합니다. 이는 사용자에게 제공되는 외부 서비스뿐 아니라, 클라우드 환경 내에서 사용되는 모든 서비스 단위를 포괄합니다."
           />
           <S.ContentSection>
-            <ProductSidebar
+            <SideNavigation
               categories={categories}
               selectedCategories={selectedCategories}
               onCategoryChange={setSelectedCategories}

@@ -1,43 +1,44 @@
 import * as S from './style';
 
-export interface NoticeNavigationProps {
-  /** 이전글 제목 */
+export interface InPageNavigationProps {
+  /** 이전 항목 제목 */
   prevTitle?: string;
-  /** 이전글 링크 */
+  /** 이전 항목 링크 */
   prevHref?: string;
-  /** 다음글 제목 */
+  /** 다음 항목 제목 */
   nextTitle?: string;
-  /** 다음글 링크 */
+  /** 다음 항목 링크 */
   nextHref?: string;
 }
 
 /**
- * 공지사항 네비게이션 컴포넌트
+ * 콘텐츠 내 탐색 컴포넌트
  * 
- * 이전글/다음글 네비게이션을 제공합니다.
+ * 사용자가 본문의 구조를 훑어보고 원하는 콘텐츠로 빠르게 이동할 수 있도록 하는 탐색 컴포넌트입니다.
+ * 이전/다음 항목으로 이동할 수 있는 네비게이션을 제공합니다.
  * 
- * @param {NoticeNavigationProps} props - 네비게이션 props
- * @param {string} [props.prevTitle] - 이전글 제목
- * @param {string} [props.prevHref] - 이전글 링크
- * @param {string} [props.nextTitle] - 다음글 제목
- * @param {string} [props.nextHref] - 다음글 링크
+ * @param {InPageNavigationProps} props - 콘텐츠 내 탐색 props
+ * @param {string} [props.prevTitle] - 이전 항목 제목
+ * @param {string} [props.prevHref] - 이전 항목 링크
+ * @param {string} [props.nextTitle] - 다음 항목 제목
+ * @param {string} [props.nextHref] - 다음 항목 링크
  * 
  * @example
- * <NoticeNavigation
+ * <InPageNavigation
  *   prevTitle="이전 공지사항 제목"
  *   prevHref="/notice/23"
  *   nextTitle="다음 공지사항 제목"
  *   nextHref="/notice/25"
  * />
  * 
- * @returns {JSX.Element} 네비게이션 요소
+ * @returns {JSX.Element} 콘텐츠 내 탐색 요소
  */
-const NoticeNavigation = ({
+const InPageNavigation = ({
   prevTitle,
   prevHref,
   nextTitle,
   nextHref,
-}: NoticeNavigationProps) => {
+}: InPageNavigationProps) => {
   return (
     <S.NavigationContainer>
       <S.NavItem>
@@ -106,5 +107,5 @@ const NoticeNavigation = ({
   );
 };
 
-export default NoticeNavigation;
+export default InPageNavigation;
 

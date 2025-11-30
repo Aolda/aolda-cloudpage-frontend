@@ -1,5 +1,5 @@
 import Breadcrumb from '../../molecules/Breadcrumb';
-import SearchBar from '../../molecules/SearchBar';
+import Search from '../../molecules/Search';
 import * as S from './style';
 
 export interface FAQHeroSectionProps {
@@ -44,16 +44,13 @@ const FAQHeroSection = ({
         </S.BreadcrumbWrapper>
         <S.Title>아올다 FAQ</S.Title>
         <S.SearchWrapper>
-          <SearchBar
+          <Search
             placeholder="FAQ를 검색해 보세요."
             value={searchTerm}
             onChange={onSearchChange}
             onSearch={onSearch}
           />
         </S.SearchWrapper>
-        <S.Illustration>
-          <S.FAQText>FAQ</S.FAQText>
-        </S.Illustration>
       </S.HeroContent>
     </S.HeroSection>
   );

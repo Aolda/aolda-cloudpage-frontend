@@ -1,13 +1,14 @@
-import FAQItem, { type FAQItemProps } from '../../molecules/FAQItem';
+import Accordion, { type AccordionProps } from '../../molecules/Accordion';
 import FAQCategoryFilter from '../FAQCategoryFilter';
 import Pagination from '../../molecules/Pagination';
+import type { FilterItem } from '../../molecules/Filter';
 import * as S from './style';
 
 export interface FAQListProps {
   /** FAQ 목록 */
-  faqs: FAQItemProps[];
+  faqs: AccordionProps[];
   /** 카테고리 옵션 목록 */
-  categoryOptions: Array<{ id: string; label: string }>;
+  categoryOptions: FilterItem[];
   /** 선택된 카테고리 ID */
   selectedCategory?: string;
   /** 카테고리 선택 변경 핸들러 */
@@ -26,7 +27,7 @@ export interface FAQListProps {
  * FAQ 카테고리 필터, FAQ 목록, 페이지네이션을 포함하는 섹션입니다.
  * 
  * @param {FAQListProps} props - FAQ 목록 props
- * @param {FAQItemProps[]} props.faqs - FAQ 목록
+ * @param {AccordionProps[]} props.faqs - FAQ 목록
  * @param {Array} props.categoryOptions - 카테고리 옵션 목록
  * @param {string} [props.selectedCategory] - 선택된 카테고리 ID
  * @param {Function} [props.onCategoryChange] - 카테고리 선택 변경 핸들러
@@ -37,7 +38,7 @@ export interface FAQListProps {
  * @example
  * <FAQList
  *   faqs={[
- *     { question: 'FAQ Question', answer: 'Answer text' },
+ *     { title: 'FAQ Question', content: 'Answer text' },
  *   ]}
  *   categoryOptions={[
  *     { id: 'all', label: '카테고리' },
@@ -70,10 +71,10 @@ const FAQList = ({
 
       <S.FAQItems>
         {faqs.map((faq, index) => (
-          <FAQItem
+          <Accordion
             key={index}
-            question={faq.question}
-            answer={faq.answer}
+            title={faq.title}
+            content={faq.content}
             defaultExpanded={faq.defaultExpanded}
           />
         ))}

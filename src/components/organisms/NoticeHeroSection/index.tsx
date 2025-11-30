@@ -1,5 +1,5 @@
 import SectionTitle from '../../molecules/SectionTitle';
-import SearchBar from '../../molecules/SearchBar';
+import Search from '../../molecules/Search';
 import * as S from './style';
 
 export interface NoticeHeroSectionProps {
@@ -50,7 +50,7 @@ const NoticeHeroSection = ({
           align="left"
         />
         <S.SearchWrapper>
-          <SearchBar
+          <Search
             placeholder="공지사항을 검색해 보세요"
             value={searchTerm}
             onChange={onSearchChange}

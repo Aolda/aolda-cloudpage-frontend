@@ -23,5 +23,8 @@ export const HeroContent = styled.div`
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 `;
 

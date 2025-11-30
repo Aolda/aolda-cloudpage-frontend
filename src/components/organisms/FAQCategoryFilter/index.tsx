@@ -1,15 +1,9 @@
+import Filter, { type FilterItem } from '../../molecules/Filter';
 import * as S from './style';
-
-export interface CategoryOption {
-  /** 카테고리 ID */
-  id: string;
-  /** 카테고리 라벨 */
-  label: string;
-}
 
 export interface FAQCategoryFilterProps {
   /** 카테고리 옵션 목록 */
-  categories: CategoryOption[];
+  categories: FilterItem[];
   /** 선택된 카테고리 ID */
   selectedCategory?: string;
   /** 카테고리 선택 변경 핸들러 */
@@ -45,16 +39,13 @@ const FAQCategoryFilter = ({
 }: FAQCategoryFilterProps) => {
   return (
     <S.FilterContainer>
-      {categories.map((category) => (
-        <S.CategoryButton
-          key={category.id}
-          $isActive={selectedCategory === category.id}
-          onClick={() => onCategoryChange?.(category.id)}
-        >
-          <S.CategoryIcon>≡</S.CategoryIcon>
-          {category.label}
-        </S.CategoryButton>
-      ))}
+      <Filter
+        mode="tag"
+        items={categories}
+        selectedIds={selectedCategory}
+        onChange={(id) => onCategoryChange?.(typeof id === 'string' ? id : '')}
+        tagPrefix="≡ "
+      />
     </S.FilterContainer>
   );
 };

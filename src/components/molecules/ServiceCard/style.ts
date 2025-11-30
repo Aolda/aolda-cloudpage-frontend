@@ -6,6 +6,10 @@ export const ServiceLink = styled.a`
   color: inherit;
 `;
 
+export const ServiceCardWrapper = styled.div`
+  display: block;
+`;
+
 export const ServiceCard = styled.div`
   background: #ffffff;
   border-radius: 10px;

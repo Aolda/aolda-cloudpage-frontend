@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import Card from '../Card';
 import ValueIcon, { type ValueIconVariant } from '../ValueIcon';
 import * as S from './style';
 
@@ -59,23 +58,21 @@ const ItemCard = ({ title, description, icon }: ItemCardProps) => {
   const tone = typeof icon === 'string' && isValueIconVariant(icon) ? getToneFromIcon(icon) : 'blue';
 
   return (
-    <Card>
-      <S.ItemCard $tone={tone}>
-        {icon && (
-          <S.Icon>
-            {isValueIconVariant(icon) ? (
-              <ValueIcon variant={icon} tone={tone} />
-            ) : isImagePath(icon) ? (
-              <S.IconImage src={icon as string} alt={title} />
-            ) : (
-              icon
-            )}
-          </S.Icon>
-        )}
-        <S.ItemTitle>{title}</S.ItemTitle>
-        <S.ItemDescription>{description}</S.ItemDescription>
-      </S.ItemCard>
-    </Card>
+    <S.ItemCard $tone={tone}>
+      {icon && (
+        <S.Icon>
+          {isValueIconVariant(icon) ? (
+            <ValueIcon variant={icon} tone={tone} />
+          ) : isImagePath(icon) ? (
+            <S.IconImage src={icon as string} alt={title} />
+          ) : (
+            icon
+          )}
+        </S.Icon>
+      )}
+      <S.ItemTitle>{title}</S.ItemTitle>
+      <S.ItemDescription>{description}</S.ItemDescription>
+    </S.ItemCard>
   );
 };
 
