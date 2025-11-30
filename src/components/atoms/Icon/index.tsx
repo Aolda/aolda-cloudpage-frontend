@@ -1,12 +1,15 @@
 type Tone = 'blue' | 'red';
 
-export type ValueIconVariant =
+export type IconVariant =
   | 'free'        // 유료과금 없음
   | 'instances'   // 인스턴스 개수제한 없음
   | 'members'     // 협업계정 제한 없음
   | 'ban'         // 상업적 사용 금지
   | 'account'     // 계정대여 금지
   | 'wrench';     // 인프라 무단조작 금지
+
+// 하위 호환성을 위한 타입 별칭
+export type ValueIconVariant = IconVariant;
 
 const colorMap: Record<Tone, string> = {
   blue: '#3D90D4',
@@ -21,7 +24,21 @@ const strokeProps = (tone: Tone) => ({
   strokeLinejoin: 'round' as const,
 });
 
-const ValueIcon = ({ variant, tone = 'blue' }: { variant: ValueIconVariant; tone?: Tone }) => {
+/**
+ * 아이콘 컴포넌트
+ * 
+ * 다양한 variant를 지원하는 SVG 아이콘입니다.
+ * 
+ * @param {Object} props - 아이콘 props
+ * @param {IconVariant} props.variant - 아이콘 variant
+ * @param {Tone} [props.tone='blue'] - 아이콘 색상 톤
+ * 
+ * @example
+ * <Icon variant="free" tone="blue" />
+ * 
+ * @returns {JSX.Element} 아이콘 요소
+ */
+const Icon = ({ variant, tone = 'blue' }: { variant: IconVariant; tone?: Tone }) => {
   const stroke = strokeProps(tone);
   switch (variant) {
     case 'free':
@@ -87,6 +104,5 @@ const ValueIcon = ({ variant, tone = 'blue' }: { variant: ValueIconVariant; tone
   }
 };
 
-export default ValueIcon;
-
+export default Icon;
 

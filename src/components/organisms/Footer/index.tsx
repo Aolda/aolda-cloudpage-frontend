@@ -1,4 +1,4 @@
-import Logo from '../../molecules/Logo';
+import Logo from '../../atoms/Logo';
 import * as S from './style';
 
 const Footer = () => (

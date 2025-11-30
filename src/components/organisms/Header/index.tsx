@@ -1,5 +1,5 @@
-import Logo from '../../molecules/Logo';
-import Button from '../../molecules/Button';
+import Logo from '../../atoms/Logo';
+import Button from '../../atoms/Button';
 import MainMenu from '../../molecules/MainMenu';
 import * as S from './style';
 

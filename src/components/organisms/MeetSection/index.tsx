@@ -1,4 +1,4 @@
-import Button from '../../molecules/Button';
+import Button from '../../atoms/Button';
 import SectionTitle from '../../molecules/SectionTitle';
 import * as S from './style';
 

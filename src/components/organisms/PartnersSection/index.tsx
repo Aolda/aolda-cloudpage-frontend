@@ -1,5 +1,5 @@
 import SectionTitle from '../../molecules/SectionTitle';
-import Logo from '../../molecules/Logo';
+import Logo from '../../atoms/Logo';
 import * as S from './style';
 
 const partners = ['AHP','APIA','ARISE','AMMS','AMDB'];

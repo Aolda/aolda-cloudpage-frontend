@@ -1,4 +1,4 @@
-import Button from '../../molecules/Button';
+import Button from '../../atoms/Button';
 import InPageNavigation from '../../molecules/InPageNavigation';
 import * as S from './style';
 
