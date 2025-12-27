@@ -20,10 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
 
-  #root {
-    min-height: 100vh;
-  }
-
   img {
     max-width: 100%;
     display: block;

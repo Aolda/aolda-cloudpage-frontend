@@ -1,12 +1,14 @@
+'use client';
+
 import { useState } from 'react';
 import styled from 'styled-components';
-import Header from '../../components/organisms/Header';
-import Footer from '../../components/organisms/Footer';
-import ProductHeroSection from '../../components/organisms/ProductHeroSection';
-import SideNavigation from '../../components/organisms/SideNavigation';
-import ProductList from '../../components/organisms/ProductList';
-import type { ServiceCardProps } from '../../components/molecules/ServiceCard';
-import * as S from './style';
+import Header from '@/components/organisms/Header';
+import Footer from '@/components/organisms/Footer';
+import ProductHeroSection from '@/components/organisms/ProductHeroSection';
+import SideNavigation from '@/components/organisms/SideNavigation';
+import ProductList from '@/components/organisms/ProductList';
+import type { ServiceCardProps } from '@/components/molecules/ServiceCard';
+import * as S from '@/pages/Product/style';
 
 const PageWrapper = styled.div`
   display: flex;
@@ -27,13 +29,7 @@ const MainContent = styled.main`
   flex: 1;
 `;
 
-/**
- * 제품 소개 페이지
- * 
- * 아울다의 제품/서비스를 소개하는 페이지입니다.
- * 카테고리 필터와 검색 기능을 제공하며, 서비스 카드 그리드로 제품을 표시합니다.
- */
-const ProductPage = () => {
+export default function ProductPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
@@ -120,7 +116,5 @@ const ProductPage = () => {
       <Footer />
     </PageWrapper>
   );
-};
-
-export default ProductPage;
+}
 

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as S from './style';
 
 export interface MenuCardProps {
@@ -39,7 +40,7 @@ const MenuCard = ({ title, href, actionLabel }: MenuCardProps) => {
           </span>
         ))}
       </S.MenuTitle>
-      <S.MenuLink href={href}>
+      <S.MenuLink as={Link} href={href}>
         {actionLabel}
       </S.MenuLink>
     </S.MenuCard>

@@ -1,12 +1,14 @@
-import { useParams, useNavigate } from 'react-router-dom';
+'use client';
+
+import { useParams, useRouter } from 'next/navigation';
 import styled from 'styled-components';
-import Header from '../../components/organisms/Header';
-import Footer from '../../components/organisms/Footer';
-import NoticeHeroSection from '../../components/organisms/NoticeHeroSection';
-import NoticeDetailContent from '../../components/organisms/NoticeDetailContent';
-import Breadcrumb from '../../components/molecules/Breadcrumb';
-import type { NoticeDetailData } from '../../components/organisms/NoticeDetailContent';
-import * as S from './style';
+import Header from '@/components/organisms/Header';
+import Footer from '@/components/organisms/Footer';
+import NoticeHeroSection from '@/components/organisms/NoticeHeroSection';
+import NoticeDetailContent from '@/components/organisms/NoticeDetailContent';
+import Breadcrumb from '@/components/molecules/Breadcrumb';
+import type { NoticeDetailData } from '@/components/organisms/NoticeDetailContent';
+import * as S from '@/pages/NoticeDetail/style';
 
 const PageWrapper = styled.div`
   display: flex;
@@ -88,14 +90,10 @@ const exampleNoticeData: Record<string, NoticeDetailData> = {
   },
 };
 
-/**
- * 공지사항 상세 페이지
- * 
- * 공지사항의 상세 내용을 표시하는 페이지입니다.
- */
-const NoticeDetailPage = () => {
-  const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+export default function NoticeDetailPage() {
+  const params = useParams();
+  const router = useRouter();
+  const id = params?.id as string;
 
   // 공지사항 데이터 가져오기
   const noticeData = id ? exampleNoticeData[id] : null;
@@ -119,7 +117,7 @@ const NoticeDetailPage = () => {
   }
 
   const handleListClick = () => {
-    navigate('/notice');
+    router.push('/notice');
   };
 
   return (
@@ -145,7 +143,5 @@ const NoticeDetailPage = () => {
       <Footer />
     </PageWrapper>
   );
-};
-
-export default NoticeDetailPage;
+}
 

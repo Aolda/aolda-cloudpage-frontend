@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as S from './style';
 
 export type ButtonSize = 'md' | 'lg';
@@ -55,11 +56,11 @@ const Button = ({
     </>
   );
 
-  // href가 있으면 링크로 렌더링
+  // href가 있으면 Next.js Link로 렌더링
   if (href) {
     return (
       <S.Button
-        as="a"
+        as={Link}
         href={href}
         $size={size}
         aria-label={label}

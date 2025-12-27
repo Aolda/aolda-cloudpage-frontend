@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as S from './style';
 
 export interface BreadcrumbItem {
@@ -36,7 +37,7 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
       {items.map((item, index) => (
         <S.BreadcrumbItem key={index}>
           {item.href ? (
-            <S.BreadcrumbLink href={item.href}>{item.label}</S.BreadcrumbLink>
+            <S.BreadcrumbLink as={Link} href={item.href}>{item.label}</S.BreadcrumbLink>
           ) : (
             <S.BreadcrumbText>{item.label}</S.BreadcrumbText>
           )}

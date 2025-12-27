@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as S from './style';
 
 export interface InPageNavigationProps {
@@ -43,7 +44,7 @@ const InPageNavigation = ({
     <S.NavigationContainer>
       <S.NavItem>
         {prevTitle && prevHref ? (
-          <S.NavLink href={prevHref}>
+          <S.NavLink as={Link} href={prevHref}>
             <S.ArrowIcon $direction="up" viewBox="0 0 24 24" fill="none">
               <path
                 d="M18 15L12 9L6 15"
@@ -74,7 +75,7 @@ const InPageNavigation = ({
       </S.NavItem>
       <S.NavItem>
         {nextTitle && nextHref ? (
-          <S.NavLink href={nextHref}>
+          <S.NavLink as={Link} href={nextHref}>
             <S.ArrowIcon $direction="down" viewBox="0 0 24 24" fill="none">
               <path
                 d="M6 9L12 15L18 9"

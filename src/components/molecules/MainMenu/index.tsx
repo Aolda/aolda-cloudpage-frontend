@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as S from './style';
 
 /**
@@ -56,21 +57,40 @@ interface MainMenuProps {
  * 
  * @description
  * - #으로 시작하는 href는 /로 시작하는 경로로 변환됩니다 (예: '#about' → '/about')
- * - 라우터는 추후 구현 예정이며, 현재는 기본 링크 동작을 사용합니다.
+ * - 외부 링크는 일반 <a> 태그로, 내부 링크는 Next.js Link로 렌더링됩니다.
  * 
  */
 const MainMenu = ({ items }: MainMenuProps) => {
   return (
     <S.MainMenu>
-      {items.map((item, index) => (
-        <S.MenuItem
-          key={item.href || index}
-          as="a"
-          href={item.href}
-        >
-          {item.label}
-        </S.MenuItem>
-      ))}
+      {items.map((item, index) => {
+        // 외부 링크인지 확인 (http:// 또는 https://로 시작)
+        const isExternal = item.href.startsWith('http://') || item.href.startsWith('https://');
+        
+        if (isExternal) {
+          return (
+            <S.MenuItem
+              key={item.href || index}
+              as="a"
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.label}
+            </S.MenuItem>
+          );
+        }
+        
+        return (
+          <S.MenuItem
+            key={item.href || index}
+            as={Link}
+            href={item.href}
+          >
+            {item.label}
+          </S.MenuItem>
+        );
+      })}
     </S.MainMenu>
   );
 };

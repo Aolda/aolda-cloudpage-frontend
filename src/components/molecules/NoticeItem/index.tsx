@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as S from './style';
 
 export interface NoticeItemProps {
@@ -54,7 +55,7 @@ const NoticeItem = ({
 
   if (href) {
     return (
-      <S.NoticeLink href={href}>
+      <S.NoticeLink as={Link} href={href}>
         {content}
       </S.NoticeLink>
     );

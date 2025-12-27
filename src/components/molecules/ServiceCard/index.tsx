@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as S from './style';
 
 export interface ServiceCardProps {
@@ -61,7 +62,7 @@ const ServiceCard = ({
 
   if (href) {
     return (
-      <S.ServiceLink href={href}>
+      <S.ServiceLink as={Link} href={href}>
         {content}
       </S.ServiceLink>
     );

@@ -1,13 +1,15 @@
-import Header from '../../components/organisms/Header';
-import NumbersSection from '../../components/organisms/NumbersSection';
-import ServiceInfoSection from '../../components/organisms/ServiceInfoSection';
-import PartnersSection from '../../components/organisms/PartnersSection';
-import ValuesSection from '../../components/organisms/ValuesSection';
-import MeetSection from '../../components/organisms/MeetSection';
-import * as S from './style';
-import Footer from '../../components/organisms/Footer';
+'use client';
+
+import Header from '@/components/organisms/Header';
+import NumbersSection from '@/components/organisms/NumbersSection';
+import ServiceInfoSection from '@/components/organisms/ServiceInfoSection';
+import PartnersSection from '@/components/organisms/PartnersSection';
+import ValuesSection from '@/components/organisms/ValuesSection';
+import MeetSection from '@/components/organisms/MeetSection';
+import Footer from '@/components/organisms/Footer';
+import IntroSection from '@/components/organisms/IntroSection';
 import styled from 'styled-components';
-import IntroSection from '../../components/organisms/IntroSection';
+import * as S from '@/pages/Introduction/style';
 
 const Page = styled.div`
   max-width: 1140px;
@@ -15,7 +17,7 @@ const Page = styled.div`
   padding: 0 2rem;
 `;
 
-const IntroductionPage = () => {
+export default function HomePage() {
   const sections = [
     {
       id: 'intro',
@@ -25,7 +27,6 @@ const IntroductionPage = () => {
         </S.Section>
       ),
     },
-
     {
       id: 'numbers',
       content: (
@@ -80,10 +81,8 @@ const IntroductionPage = () => {
           ))}
         </main>
       </Page>
-
       <Footer />
     </>
   );
-};
+}
 
-export default IntroductionPage;

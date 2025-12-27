@@ -1,11 +1,13 @@
+'use client';
+
 import { useState, useMemo } from 'react';
 import styled from 'styled-components';
-import Header from '../../components/organisms/Header';
-import Footer from '../../components/organisms/Footer';
-import NoticeHeroSection from '../../components/organisms/NoticeHeroSection';
-import NoticeList from '../../components/organisms/NoticeList';
-import type { NoticeItemProps } from '../../components/molecules/NoticeItem';
-import * as S from './style';
+import Header from '@/components/organisms/Header';
+import Footer from '@/components/organisms/Footer';
+import NoticeHeroSection from '@/components/organisms/NoticeHeroSection';
+import NoticeList from '@/components/organisms/NoticeList';
+import type { NoticeItemProps } from '@/components/molecules/NoticeItem';
+import * as S from '@/pages/Notice/style';
 
 const PageWrapper = styled.div`
   display: flex;
@@ -56,13 +58,7 @@ const exampleNotices: NoticeItemProps[] = [
   { number: 1, category: '모델', title: '모델과 관련된 공지사항 타이틀이에요', date: '2001.01.05', href: '/notice/1' },
 ];
 
-/**
- * 공지사항 페이지
- * 
- * 아울다의 공지사항을 확인할 수 있는 페이지입니다.
- * 검색, 필터링, 페이지네이션 기능을 제공합니다.
- */
-const NoticePage = () => {
+export default function NoticePage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
@@ -159,7 +155,5 @@ const NoticePage = () => {
       <Footer />
     </PageWrapper>
   );
-};
-
-export default NoticePage;
+}
 

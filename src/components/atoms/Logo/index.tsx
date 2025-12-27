@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as S from './style';
 
 export interface LogoProps {
@@ -76,7 +77,7 @@ const Logo = ({
     };
 
     return (
-      <S.BrandLink href={href} onClick={handleClick} aria-label={ariaLabel}>
+      <S.BrandLink as={Link} href={href} onClick={handleClick} aria-label={ariaLabel}>
         <S.BrandImg src={src} alt={alt} />
       </S.BrandLink>
     );

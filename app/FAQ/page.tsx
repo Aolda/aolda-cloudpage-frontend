@@ -1,11 +1,13 @@
+'use client';
+
 import { useState, useMemo } from 'react';
 import styled from 'styled-components';
-import Header from '../../components/organisms/Header';
-import Footer from '../../components/organisms/Footer';
-import FAQHeroSection from '../../components/organisms/FAQHeroSection';
-import FAQList from '../../components/organisms/FAQList';
-import type { AccordionProps } from '../../components/molecules/Accordion';
-import * as S from './style';
+import Header from '@/components/organisms/Header';
+import Footer from '@/components/organisms/Footer';
+import FAQHeroSection from '@/components/organisms/FAQHeroSection';
+import FAQList from '@/components/organisms/FAQList';
+import type { AccordionProps } from '@/components/molecules/Accordion';
+import * as S from '@/pages/FAQ/style';
 
 const PageWrapper = styled.div`
   display: flex;
@@ -116,19 +118,9 @@ const exampleFAQs: AccordionProps[] = [
     title: 'FAQ Question',
     content: 'This is another FAQ answer.',
   },
-  {
-    title: 'FAQ Question',
-    content: 'This is another FAQ answer.',
-  },
 ];
 
-/**
- * FAQ 페이지
- * 
- * 아울다의 자주 묻는 질문을 확인할 수 있는 페이지입니다.
- * 검색, 카테고리 필터링, 페이지네이션 기능을 제공합니다.
- */
-const FAQPage = () => {
+export default function FAQPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
@@ -210,7 +202,5 @@ const FAQPage = () => {
       <Footer />
     </PageWrapper>
   );
-};
-
-export default FAQPage;
+}
 
