@@ -1,6 +1,6 @@
 import * as S from './style';
 import MenuCard from '../../molecules/MenuCard';
-import SectionTitle from '../../molecules/SectionTitle';
+import ImageCard from '../../molecules/ImageCard';
 
 const CardItems = [
   {
@@ -18,16 +18,11 @@ const CardItems = [
 const IntroSection = () => (
   <S.Section>
     <S.Visual>
-      <SectionTitle
-        title={
-          <>
-            아주인의 꿈을 펼칠
-            <br />
-            파란하늘 속 작은구름
-          </>
-        }
-        backgroundSrc="/day1.png"
-        titleColor="#ffffff"
+      <ImageCard
+        image="/day1.png"
+        alt="아주인의 꿈을 펼칠 파란하늘 속 작은구름"
+        title="아주인의 꿈을 펼칠\n파란하늘 속 작은구름"
+        isBackground={true}
       />
     </S.Visual>
     <S.MenuContainer>

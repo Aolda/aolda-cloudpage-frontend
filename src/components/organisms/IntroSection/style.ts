@@ -5,6 +5,7 @@ export const Section = styled.section`
   grid-template-columns: 1fr 0.45fr;
   gap: 1.6rem;
   padding: 2rem 0 3rem;
+  align-items: stretch;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
@@ -14,29 +15,42 @@ export const Section = styled.section`
 export const Visual = styled.div`
   position: relative;
   overflow: hidden;
-  min-height: 240px;
+  min-height: 100%;
+  display: flex;
   
   > div {
+    position: relative;
     border-radius: 10px;
-    height: auto;
-    min-height: 240px;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
     
     img {
-      height: 76%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       border-radius: 10px;
     }
     
-    > div {
-      justify-content: flex-start;
+    > h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      padding: 24px 28px;
+      margin: 0;
+      display: flex;
       align-items: flex-start;
-      padding: 20px 24px;
-      
-      h2 {
-        font-size: 4rem;
-        font-weight: 600;
-        line-height: 1.4;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-      }
+      justify-content: flex-start;
     }
   }
 `;
