@@ -63,7 +63,7 @@ const PageInfo = styled.div`
   }
 `;
 
-export default function HomePage() {
+export default function MoleculesPage() {
   const [searchValue, setSearchValue] = useState('');
   const [filterSelected, setFilterSelected] = useState<string[]>(['favorites']);
   const [currentPage, setCurrentPage] = useState(1);
@@ -179,17 +179,17 @@ export default function HomePage() {
           <ItemCard
             title="유료과금 없음"
             description="서비스 내 결제가 필요한 부가서비스가 없어요"
-            icon="/intro/intro_inconv1.png"
+            icon="free"
           />
           <ItemCard
-            title="인스턴스 개수제한 없음"
-            description="기본 10개, 추가 인스턴스가 필요한 경우 요청에 따라 원하는 만큼 가용량을 설정해드려요"
-            icon="/intro/intro_inconv2.png"
+            title="인스턴스"
+            description="다양한 인스턴스를 제공합니다"
+            icon="instances"
           />
           <ItemCard
             title="멤버 관리"
             description="팀 멤버를 쉽게 관리할 수 있습니다"
-            icon="/intro/intro_inconv3.png"
+            icon="members"
           />
         </div>
       </ComponentSection>
@@ -395,18 +395,21 @@ export default function HomePage() {
         </PageInfo>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
           <SimilarServiceCard
+            logo="/Logo.svg"
             title="GitHub - openstack/trove"
             description="OpenStack Database As A Service (Trove). Mirror of code maintained at openstack.org."
             href="https://github.com/openstack/trove"
             provider="openstack/trove"
           />
           <SimilarServiceCard
-            title="데이터베이스 관리 시스템 | 관계형 RDS | Amazon Web Services"
+            logo="/Logo.svg"
+            title="데이터베이스 관리 시스템 | Amazon Web Services"
             description="Amazon Relational Database Service(RDS)는 Amazon Aurora, PostgreSQL, SQL Server 및 MySQL 등에서 선택한 관계형 데이터베이스..."
             href="https://aws.amazon.com/ko/rds/"
             provider="Amazon Web Services, Inc."
           />
           <SimilarServiceCard
+            logo="/Logo.svg"
             title="NAVER CLOUD PLATFORM"
             description="cloud computing services for corporations, IaaS, PaaS, SaaS, with global region and security Technology Certification"
             href="https://www.ncloud.com/"
@@ -417,3 +420,4 @@ export default function HomePage() {
     </PageContainer>
   );
 }
+

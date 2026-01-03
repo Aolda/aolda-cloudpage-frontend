@@ -41,6 +41,29 @@ export const Content = styled.div`
   gap: 0.8rem;
 `;
 
+export const AMDBIconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+  position: relative;
+`;
+
+export const DatabaseIcon = styled.svg`
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+`;
+
+export const HeartIcon = styled.svg`
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-left: -0.2rem;
+  position: relative;
+  z-index: 1;
+`;
+
 export const Title = styled.h3`
   font-size: 1.6rem;
   font-weight: 600;

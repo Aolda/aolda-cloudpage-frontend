@@ -33,16 +33,45 @@ export interface ServiceCardProps {
  * 
  * @returns {JSX.Element} 서비스 카드 요소
  */
-const ServiceCard = ({
+const ServiceCard = ({  
   icon,
   title,
   description,
   href,
 }: ServiceCardProps) => {
+  const isAMDB = title.toUpperCase().includes('AMDB');
+  
   const content = (
     <S.ServiceCard>
       {icon && <S.Icon src={icon} alt={title} />}
       <S.Content>
+        {isAMDB && (
+          <S.AMDBIconContainer>
+            <S.DatabaseIcon viewBox="0 0 24 24" fill="none">
+              {/* 원통형 데이터베이스 - 상단 타원 */}
+              <ellipse cx="12" cy="7" rx="5" ry="1.5" stroke="#3D90D4" strokeWidth="2" fill="none" />
+              {/* 원통형 데이터베이스 - 좌측 곡선 */}
+              <path d="M7 7 Q7 12 7 17" stroke="#3D90D4" strokeWidth="2" fill="none" />
+              {/* 원통형 데이터베이스 - 우측 곡선 */}
+              <path d="M17 7 Q17 12 17 17" stroke="#3D90D4" strokeWidth="2" fill="none" />
+              {/* 원통형 데이터베이스 - 하단 타원 */}
+              <ellipse cx="12" cy="17" rx="5" ry="1.5" stroke="#3D90D4" strokeWidth="2" fill="none" />
+              {/* 원통형 데이터베이스 - 중간 라인 */}
+              <line x1="7" y1="12" x2="17" y2="12" stroke="#3D90D4" strokeWidth="2" />
+            </S.DatabaseIcon>
+            <S.HeartIcon viewBox="0 0 24 24" fill="none">
+              {/* 하트 아이콘 */}
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                stroke="#3D90D4"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </S.HeartIcon>
+          </S.AMDBIconContainer>
+        )}
         <S.Title>{title}</S.Title>
         {description && <S.Description>{description}</S.Description>}
       </S.Content>
