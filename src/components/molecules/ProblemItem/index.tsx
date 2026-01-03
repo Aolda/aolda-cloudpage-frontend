@@ -30,11 +30,6 @@ export interface ProblemItemProps {
 const ProblemItem = ({ title, descriptions }: ProblemItemProps) => {
   return (
     <S.ProblemItem>
-      <S.ProblemIcon viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#EF4444" strokeWidth="2" />
-        <path d="M12 8v4" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
-        <path d="M12 16h.01" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
-      </S.ProblemIcon>
       <S.ProblemContent>
         <S.ProblemTitle>{title}</S.ProblemTitle>
         <S.ProblemList>

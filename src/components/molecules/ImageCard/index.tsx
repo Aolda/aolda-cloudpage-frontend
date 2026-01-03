@@ -9,6 +9,8 @@ export interface ImageCardProps {
   title?: string;
   /** 카드 설명 */
   description?: string;
+  /** 기간 정보 */
+  period?: string;
   /** 배경 이미지 모드 (이미지 위에 텍스트 오버레이) */
   isBackground?: boolean;
 }
@@ -23,24 +25,42 @@ export interface ImageCardProps {
  * @param {string} [props.alt] - 이미지 대체 텍스트
  * @param {string} [props.title] - 카드 제목
  * @param {string} [props.description] - 카드 설명
+ * @param {string} [props.period] - 기간 정보
+ * @param {boolean} [props.isBackground] - 배경 이미지 모드
  * 
  * @example
  * <ImageCard
  *   image="/example.jpg"
  *   alt="예시 이미지"
- *   title="이미지 제목"
- *   description="이미지 설명"
+ *   title="아주대학교 총학생회"
+ *   description="총학생회 공식홈페이지 운영"
+ *   period="2024-1 ~ 2025-1"
  * />
  * 
  * @returns {JSX.Element} 이미지 카드 요소
  */
-const ImageCard = ({ image, alt, title, description, isBackground = false }: ImageCardProps) => {
+const ImageCard = ({ image, alt, title, description, period, isBackground = false }: ImageCardProps) => {
+  if (isBackground) {
+    return (
+      <S.ImageCard $tone="blue" $isBackground={isBackground}>
+        <S.Image src={image} alt={alt || title || ''} $isBackground={isBackground} />
+        <S.Overlay $isBackground={isBackground} />
+        {title && <S.ImageTitle $isBackground={isBackground}>{title}</S.ImageTitle>}
+      </S.ImageCard>
+    );
+  }
+
   return (
     <S.ImageCard $tone="blue" $isBackground={isBackground}>
-      <S.Image src={image} alt={alt || title || ''} $isBackground={isBackground} />
-      {isBackground && <S.Overlay $isBackground={isBackground} />}
-      {title && <S.ImageTitle $isBackground={isBackground}>{title}</S.ImageTitle>}
-      {description && !isBackground && <S.ImageDescription>{description}</S.ImageDescription>}
+      <S.ImageContainer>
+        <S.Image src={image} alt={alt || title || ''} $isBackground={isBackground} />
+      </S.ImageContainer>
+      <S.TextContainer>
+        {title && <S.ImageTitle $isBackground={isBackground}>{title}</S.ImageTitle>}
+        {description && <S.ImageDescription>{description}</S.ImageDescription>}
+        <br></br>
+        {period && <S.ImagePeriod>{period}</S.ImagePeriod>}
+      </S.TextContainer>
     </S.ImageCard>
   );
 };

@@ -72,61 +72,23 @@ const SimilarServiceCard = ({
   }, [logo, href]);
 
   const domain = useMemo(() => getDomainFromUrl(href), [href]);
-  
-  // NAVER CLOUD PLATFORM인지 확인
-  const isNaverCloud = useMemo(() => {
-    const domainLower = domain.toLowerCase();
-    return domainLower.includes('ncloud') || 
-           domainLower.includes('navercloud') ||
-           provider?.toLowerCase().includes('naver cloud');
-  }, [domain, provider]);
 
   return (
     <S.ServiceCardLink href={href} target="_blank" rel="noopener noreferrer">
-      <S.ServiceCard $isNaverCloud={isNaverCloud}>
-        <S.HeaderSection $isNaverCloud={isNaverCloud}>
-          {isNaverCloud ? (
-            <>
-              <S.NaverLogoContainer>
-                <S.NaverLogoSquare />
-                <S.NaverLogoCircle />
-              </S.NaverLogoContainer>
-              <S.NaverTitleText>
-                <div>NAVER</div>
-                <div>CLOUD PLATFORM</div>
-              </S.NaverTitleText>
-            </>
-          ) : (
-            logoUrl && (
-              <S.ServiceLogo src={logoUrl} alt={title} onError={(e) => {
-                (e.target as HTMLImageElement).style.display = 'none';
-              }} />
-            )
-          )}
-          <S.MenuIcon viewBox="0 0 24 24" fill="none" $isNaverCloud={isNaverCloud}>
+      <S.ServiceCard>
+        <S.HeaderSection>
+          <S.MenuIcon viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="5" r="1.5" fill="currentColor" />
             <circle cx="12" cy="12" r="1.5" fill="currentColor" />
             <circle cx="12" cy="19" r="1.5" fill="currentColor" />
           </S.MenuIcon>
         </S.HeaderSection>
-        <S.ContentSection $isNaverCloud={isNaverCloud}>
+        <S.ContentSection>
           <S.ServiceTitle>{title}</S.ServiceTitle>
           <S.ServiceDescription>{description}</S.ServiceDescription>
           <S.ProviderSection>
-            {isNaverCloud ? (
-              <>
-                <S.NaverIcon>
-                  <S.NaverIconDash />
-                  <S.NaverIconDash />
-                </S.NaverIcon>
-                <S.ServiceProvider>{provider || 'NAVER CLOUD PLATFORM'}</S.ServiceProvider>
-              </>
-            ) : (
-              <>
-                {logoUrl && <S.SmallLogo src={logoUrl} alt={provider || domain} />}
-                {provider && <S.ServiceProvider>{provider}</S.ServiceProvider>}
-              </>
-            )}
+            {logoUrl && <S.SmallLogo src={logoUrl} alt={provider || domain} />}
+            {provider && <S.ServiceProvider>{provider}</S.ServiceProvider>}
           </S.ProviderSection>
         </S.ContentSection>
       </S.ServiceCard>

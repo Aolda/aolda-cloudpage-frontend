@@ -3,61 +3,45 @@ import styled from 'styled-components';
 export const SearchForm = styled.form`
   display: flex;
   align-items: center;
-  gap: 0.8rem;
   width: 100%;
   max-width: 600px;
 `;
 
+export const SearchContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+`;
+
 export const SearchInput = styled.input`
   flex: 1;
-  padding: 1.2rem 1.6rem;
+  padding: 1.2rem 4.5rem 1.2rem 1.6rem;
   font-size: 1.5rem;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 10px;
-  background: ${({ theme }) => theme.colors.surface};
-  color: ${({ theme }) => theme.colors.text};
-  transition: border-color 0.2s, box-shadow 0.2s;
+  border: 1px solid #B3D9F2;
+  border-bottom: 2px solid #B3D9F2;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1a1a1a;
+  transition: border-color 0.2s;
 
   &:focus {
     outline: none;
-    border-color: ${({ theme }) => theme.colors.primary};
-    box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.accentGlow};
+    border-color: #B3D9F2;
+    border-bottom-color: #3D90D4;
   }
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.textMuted};
-  }
-`;
-
-export const SearchButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4.4rem;
-  height: 4.4rem;
-  border: none;
-  border-radius: 10px;
-  background: ${({ theme }) => theme.colors.primary};
-  color: #ffffff;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.primaryAccent};
-  }
-
-  &:active {
-    transform: translateY(1px);
-  }
-
-  &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.primary};
-    outline-offset: 2px;
+    color: #999999;
   }
 `;
 
 export const SearchIcon = styled.svg`
+  position: absolute;
+  right: 1.6rem;
   width: 2rem;
   height: 2rem;
+  color: #3D90D4;
+  pointer-events: none;
 `;
 

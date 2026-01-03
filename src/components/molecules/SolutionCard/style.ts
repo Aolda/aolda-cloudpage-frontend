@@ -2,39 +2,33 @@ import styled from 'styled-components';
 
 export const SolutionCard = styled.div`
   padding: 2.4rem;
-  border-radius: 1.6rem;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  background: ${({ theme }) => theme.colors.surface};
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  min-height: 180px;
-  box-shadow: ${({ theme }) => theme.shadows.soft};
-  transition: transform 0.2s, box-shadow 0.2s;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.shadows.medium};
-  }
-`;
-
-export const SolutionIcon = styled.svg`
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.8rem;
+  min-height: 150px;
+  width: 344px;
+  height: 129px;
 `;
 
 export const SolutionTitle = styled.h3`
   margin: 0;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.text};
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3D90D4;
+  text-align: center;
 `;
 
 export const SolutionDescription = styled.p`
   margin: 0;
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  font-size: 1.4rem;
+  color: #999999;
   line-height: 1.6;
+  text-align: center;
 `;
 

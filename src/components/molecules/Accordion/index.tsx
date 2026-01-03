@@ -8,6 +8,8 @@ export interface AccordionProps {
   content: string;
   /** 초기 확장 상태 */
   defaultExpanded?: boolean;
+  /** 아이콘 이미지 경로 */
+  icon?: string;
 }
 
 /**
@@ -19,12 +21,14 @@ export interface AccordionProps {
  * @param {string} props.title - 아코디언 제목
  * @param {string} props.content - 아코디언 내용
  * @param {boolean} [props.defaultExpanded] - 초기 확장 상태
+ * @param {string} [props.icon] - 아이콘 이미지 경로
  * 
  * @example
  * <Accordion
  *   title="FAQ Question"
  *   content="This is the answer to the FAQ question."
  *   defaultExpanded={false}
+ *   icon="/FAQ/FAQ_accordion_icon.png"
  * />
  * 
  * @returns {JSX.Element} 아코디언 요소
@@ -33,6 +37,7 @@ const Accordion = ({
   title,
   content,
   defaultExpanded = false,
+  icon,
 }: AccordionProps) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
@@ -45,7 +50,7 @@ const Accordion = ({
       <S.TitleButton onClick={handleToggle} aria-expanded={isExpanded}>
         <S.TitleContent>
           <S.TitleIcon>
-            <S.TitleLetter>Q</S.TitleLetter>
+            <S.IconImage src={icon} alt={title} />
           </S.TitleIcon>
           <S.TitleText>{title}</S.TitleText>
         </S.TitleContent>

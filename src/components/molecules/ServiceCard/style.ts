@@ -20,8 +20,8 @@ export const ServiceCard = styled.div`
   border: 1px solid #e1e6f5;
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
-  min-height: 120px;
-
+  height: 300px;
+  width: 250px;
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

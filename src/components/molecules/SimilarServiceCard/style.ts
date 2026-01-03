@@ -7,10 +7,10 @@ export const ServiceCardLink = styled.a`
   cursor: pointer;
 `;
 
-export const ServiceCard = styled.div<{ $isNaverCloud?: boolean }>`
+export const ServiceCard = styled.div`
   border-radius: 0.8rem;
   overflow: hidden;
-  background: ${({ $isNaverCloud }) => ($isNaverCloud ? 'transparent' : '#1a1a1a')};
+  background: #1a1a1a;
   display: flex;
   flex-direction: column;
   height: 300px;
@@ -23,63 +23,16 @@ export const ServiceCard = styled.div<{ $isNaverCloud?: boolean }>`
   }
 `;
 
-export const HeaderSection = styled.div<{ $isNaverCloud?: boolean }>`
+export const HeaderSection = styled.div`
   padding: 2.4rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: ${({ $isNaverCloud }) => ($isNaverCloud ? 'flex-start' : 'center')};
+  justify-content: center;
   position: relative;
   height: 45%;
   min-height: 120px;
-  gap: ${({ $isNaverCloud }) => ($isNaverCloud ? '1.6rem' : '0')};
-
-  ${({ $isNaverCloud }) =>
-    $isNaverCloud
-      ? css`
-          background: linear-gradient(135deg, #03c75a 0%, #000000 100%);
-          position: relative;
-          overflow: hidden;
-
-          &::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: 
-              radial-gradient(circle at 20% 30%, rgba(3, 199, 90, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-              repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(3, 199, 90, 0.03) 2px,
-                rgba(3, 199, 90, 0.03) 4px
-              ),
-              repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.02) 2px,
-                rgba(255, 255, 255, 0.02) 4px
-              );
-            pointer-events: none;
-          }
-
-          &::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: 
-              radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-              radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-              radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-              radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-            background-size: 100% 100%;
-            pointer-events: none;
-          }
-        `
-      : css`
-          background: #0f0f0f;
-        `}
+  gap: 0;
+  background: #0f0f0f;
 `;
 
 export const ServiceLogo = styled.img`
@@ -125,14 +78,13 @@ export const NaverTitleText = styled.div`
   z-index: 1;
 `;
 
-export const MenuIcon = styled.svg<{ $isNaverCloud?: boolean }>`
+export const MenuIcon = styled.svg`
   position: absolute;
   top: 1.6rem;
   right: 1.6rem;
   width: 20px;
   height: 20px;
-  color: ${({ $isNaverCloud }) =>
-    $isNaverCloud ? 'rgba(255, 255, 255, 0.8)' : 'rgba(255, 255, 255, 0.6)'};
+  color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   transition: color 0.2s;
   z-index: 1;
@@ -142,9 +94,9 @@ export const MenuIcon = styled.svg<{ $isNaverCloud?: boolean }>`
   }
 `;
 
-export const ContentSection = styled.div<{ $isNaverCloud?: boolean }>`
+export const ContentSection = styled.div`
   padding: 2.4rem 2rem;
-  background: ${({ $isNaverCloud }) => ($isNaverCloud ? '#1f1f1f' : '#1a1a1a')};
+  background: #1a1a1a;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;

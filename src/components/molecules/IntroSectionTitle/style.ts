@@ -14,9 +14,9 @@ export const Container = styled.div<{ $align: 'left' | 'center' }>`
 `;
 
 export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
-  width: 40px;
-  height: 2px;
-  background-color: #666;
+  width: 50px;
+  height: 3px;
+  background-color:rgb(118, 120, 122);
   align-self: ${({ $align }) => ($align === 'center' ? 'center' : 'flex-start')};
 `;
 
@@ -52,10 +52,7 @@ export const Title = styled.h2<{ $color?: string }>`
   line-height: 1.2;
   color: ${({ $color }) => $color ?? 'inherit'};
   white-space: pre-line;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
+  display: block;
 `;
 
 export const Description = styled.p`
@@ -64,6 +61,4 @@ export const Description = styled.p`
   color: ${({ theme }) => theme.colors.textMuted};
   max-width: 600px;
 `;
-
-
 
