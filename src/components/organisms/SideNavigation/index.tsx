@@ -39,6 +39,13 @@ const SideNavigation = ({
   selectedCategories = [],
   onCategoryChange,
 }: SideNavigationProps) => {
+  const handleChange = (selectedIds: string | string[]) => {
+    if (onCategoryChange) {
+      const idsArray = Array.isArray(selectedIds) ? selectedIds : [selectedIds];
+      onCategoryChange(idsArray);
+    }
+  };
+
   return (
     <S.Sidebar>
       <S.SidebarTitle>제품 카테고리</S.SidebarTitle>
@@ -46,7 +53,7 @@ const SideNavigation = ({
         mode="checkbox"
         items={categories}
         selectedIds={selectedCategories}
-        onChange={onCategoryChange}
+        onChange={handleChange}
       />
     </S.Sidebar>
   );

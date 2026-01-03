@@ -5,7 +5,7 @@ import type { NoticeDetailData } from '../../components/organisms/NoticeDetailCo
  * API 기본 URL
  * 환경 변수에서 가져오거나 기본값 사용
  */
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000/api';
 
 /**
  * 공지사항 목록 조회 API 응답 타입
