@@ -13,6 +13,13 @@ export const Container = styled.div<{ $align: 'left' | 'center' }>`
     `}
 `;
 
+export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
+  width: 40px;
+  height: 2px;
+  background-color: #666;
+  align-self: ${({ $align }) => ($align === 'center' ? 'center' : 'flex-start')};
+`;
+
 export const ImageContainer = styled.div`
   position: relative;
   border-radius: 1rem;
@@ -45,6 +52,10 @@ export const Title = styled.h2<{ $color?: string }>`
   line-height: 1.2;
   color: ${({ $color }) => $color ?? 'inherit'};
   white-space: pre-line;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 `;
 
 export const Description = styled.p`

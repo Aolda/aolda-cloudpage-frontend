@@ -49,37 +49,37 @@ export default function ProductPage() {
       title: 'AMDB',
       description:
         'AMDB는 10년 이상의 운영 노하우와 서비스를 제공하며, 안정적인 서비스 환경을 구축하고 효율적인 데이터 관리를 지원합니다.',
-      href: '/service/amdb',
+      href: '/product/amdb',
     },
     {
       icon: '/icon.png',
       title: 'AMDB',
       description: '1일 단위',
-      href: '/service/amdb-1d',
+      href: '/product/amdb-1d',
     },
     {
       icon: '/icon.png',
       title: 'AMDB',
       description: '2일 단위',
-      href: '/service/amdb-2d',
+      href: '/product/amdb-2d',
     },
     {
       icon: '/icon.png',
       title: 'AMDB',
       description: '3일 단위',
-      href: '/service/amdb-3d',
+      href: '/product/amdb-3d',
     },
     {
       icon: '/icon.png',
       title: 'AMDB',
       description: '4일 단위',
-      href: '/service/amdb-4d',
+      href: '/product/amdb-4d',
     },
     {
       icon: '/icon.png',
       title: 'AMDB',
       description: '5일 단위',
-      href: '/service/amdb-5d',
+      href: '/product/amdb-5d',
     },
   ];
 

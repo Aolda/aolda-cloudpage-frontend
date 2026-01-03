@@ -41,7 +41,6 @@ const SideNavigation = ({
 }: SideNavigationProps) => {
   const handleChange = (selectedIds: string | string[]) => {
     if (onCategoryChange) {
-      // checkbox 모드에서는 항상 string[]이 전달됨
       const idsArray = Array.isArray(selectedIds) ? selectedIds : [selectedIds];
       onCategoryChange(idsArray);
     }

@@ -9,6 +9,8 @@ export interface ImageCardProps {
   title?: string;
   /** 카드 설명 */
   description?: string;
+  /** 배경 이미지 모드 (이미지 위에 텍스트 오버레이) */
+  isBackground?: boolean;
 }
 
 /**
@@ -32,12 +34,13 @@ export interface ImageCardProps {
  * 
  * @returns {JSX.Element} 이미지 카드 요소
  */
-const ImageCard = ({ image, alt, title, description }: ImageCardProps) => {
+const ImageCard = ({ image, alt, title, description, isBackground = false }: ImageCardProps) => {
   return (
-    <S.ImageCard $tone="blue">
-      <S.Image src={image} alt={alt || title || ''} />
-      {title && <S.ImageTitle>{title}</S.ImageTitle>}
-      {description && <S.ImageDescription>{description}</S.ImageDescription>}
+    <S.ImageCard $tone="blue" $isBackground={isBackground}>
+      <S.Image src={image} alt={alt || title || ''} $isBackground={isBackground} />
+      {isBackground && <S.Overlay $isBackground={isBackground} />}
+      {title && <S.ImageTitle $isBackground={isBackground}>{title}</S.ImageTitle>}
+      {description && !isBackground && <S.ImageDescription>{description}</S.ImageDescription>}
     </S.ImageCard>
   );
 };

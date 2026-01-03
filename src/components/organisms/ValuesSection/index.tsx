@@ -1,4 +1,5 @@
-import ValueItems from '../ValueItems';
+import SectionTitle from '../../molecules/SectionTitle';
+import ItemCard from '../../molecules/ItemCard';
 import * as S from './style';
 
 import type { IconVariant } from '../../atoms/Icon';
@@ -17,29 +18,49 @@ const promises: Array<{ title: string; description: string; iconType: IconVarian
 
 const ValuesSection = () => (
   <>
-    <ValueItems
+    <SectionTitle
       title={
-        <span style={{ color: '#000' }}>
+        <>
           자유롭게 꿈을 펼치기 위해 아올다가 없앤{' '}
           <span style={{ color: 'rgb(61, 144, 212)' }}>불편함 3가지</span>
-        </span>
+        </>
       }
       description="아주인 모두가 자유롭게 꿈을 펼칠 수 있도록 아래 3가지를 없앴어요"
-      items={inconveniences}
+      align="center"
     />
+    <S.PromiseGrid>
+      {inconveniences.map((item) => (
+        <ItemCard 
+          key={item.title} 
+          icon={item.iconType} 
+          title={item.title} 
+          description={item.description} 
+        />
+      ))}
+    </S.PromiseGrid>
 
     <S.SectionSpacer />
 
-    <ValueItems
+    <SectionTitle
       title={
-        <span style={{ color: '#000' }}>
+        <>
           자유롭게 꿈을 펼치기 위해 함께 만들어가는{' '}
           <span style={{ color: 'rgb(219, 51, 51)' }}>약속 3가지</span>
-        </span>
+        </>
       }
       description="아주인 모두가 자유롭게 꿈을 펼칠 수 있도록 아래 3가지를 약속해요"
-      items={promises}
+      align="center"
     />
+    <S.PromiseGrid>
+      {promises.map((item) => (
+        <ItemCard 
+          key={item.title} 
+          icon={item.iconType} 
+          title={item.title} 
+          description={item.description} 
+        />
+      ))}
+    </S.PromiseGrid>
   </>
 );
 
