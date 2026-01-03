@@ -84,7 +84,7 @@ export default function HomePage() {
       <ComponentSection>
         <ComponentTitle>0. MainMenu</ComponentTitle>
         <PageInfo>
-          <strong>사용 페이지:</strong> Introduction (Header에서 사용)
+          <strong>사용 페이지:</strong> Introduction 
         </PageInfo>
         <MainMenu
           items={[
@@ -101,10 +101,10 @@ export default function HomePage() {
           <strong>사용 페이지:</strong> Introduction, Product
         </PageInfo>
         <HeroBanner
-          backgroundSrc="/day1.png"
+          backgroundSrc="/intro/intro_heroBanner.png"
           title={
             <>
-              아주인의 꿈을 펼칠
+              아주인의 꿈을 펼칠  
               <br />
               파란하늘 속 작은구름
             </>
@@ -216,7 +216,7 @@ export default function HomePage() {
       <ComponentSection>
         <ComponentTitle>5. ImageCard</ComponentTitle>
         <PageInfo>
-          <strong>사용 페이지:</strong> (현재 미사용)
+          <strong>사용 페이지:</strong> Introduction
         </PageInfo>
         <div style={{ display: 'flex', gap: '0', flexWrap: 'wrap' }}>
           <ImageCard
