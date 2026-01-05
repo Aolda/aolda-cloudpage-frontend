@@ -66,7 +66,7 @@ const PageInfo = styled.div`
   }
 `;
 
-export default function HomePage() {
+export default function OrganismsPage() {
   const [searchValue, setSearchValue] = useState('');
   const [filterSelected, setFilterSelected] = useState<string>('all');
   const [categorySelected, setCategorySelected] = useState<string>('all');
@@ -438,11 +438,13 @@ export default function HomePage() {
               title: 'FAQ Question',
               content: '<p>FAQ Question.</p>',
               defaultExpanded: false,
+              icon: '/FAQ/FAQ_accordion_icon.png',
             },
             {
               title: 'FAQ Question',
               content: '<p>FAQ Question.</p>',
               defaultExpanded: true,
+              icon: '/FAQ/FAQ_accordion_icon.png',
             },
           ]}
           categoryOptions={[
