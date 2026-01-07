@@ -20,7 +20,7 @@ import ProblemItem from '@/components/molecules/ProblemItem';
 import SolutionCard from '@/components/molecules/SolutionCard';
 import DeveloperCard from '@/components/molecules/DeveloperCard';
 import SimilarServiceCard from '@/components/molecules/SimilarServiceCard';
-import ImageTitle from '@/components/molecules/ImageTitle';
+import ImageTitle from '@/components/atoms/ImageTitle';
 import HeroBanner from '@/components/molecules/HeroBanner';
 
 const PageContainer = styled.div`
@@ -266,7 +266,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>7. ImageTitle</ComponentTitle>
+        <ComponentTitle>7. ImageTitle(atom으로 전환)</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> Product, ProductDetail
         </PageInfo>
