@@ -2,51 +2,57 @@ import styled, { css } from 'styled-components';
 import type { CardTone } from './index';
 
 export const ItemCard = styled.div<{ $tone: CardTone }>`
-  padding: 2.4rem;
-  border-radius: 2rem;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  background: ${({ theme }) => theme.colors.surface};
+  padding: 2.4rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  width: 220px;
   min-height: 200px;
-  box-shadow: ${({ theme }) => theme.shadows.soft};
-
-  ${({ $tone, theme }) =>
-    $tone === 'blue'
-      ? css`
-          border-color: rgba(14, 99, 255, 0.2);
-          background: ${theme.colors.surfaceAlt};
-        `
-      : css`
-          border-color: rgba(255, 90, 95, 0.3);
-          background: #fff7f6;
-        `}
+  box-shadow: none;
+  position: relative;
+  box-sizing: border-box;
 `;
 
 export const Icon = styled.span`
-  font-size: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1.2rem;
+  width: 100%;
+  height: 140px;
+  flex-shrink: 0;
 `;
 
 export const IconImage = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
+  display: block;
 `;
 
 export const ItemTitle = styled.h3`
-  margin: 0;
+  margin: 0 0 0.6rem 0;
   font-size: 1.8rem;
-  color: ${({ theme }) => theme.colors.text};
+  font-weight: 700;
+  color: #3D90D4;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
 `;
 
 export const ItemDescription = styled.p`
   margin: 0;
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  font-size: 1.1rem;
+  color: #666666;
   line-height: 1.5;
+  letter-spacing: -0.01em;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  width: 100%;
 `;
 

@@ -20,8 +20,8 @@ export const ServiceCard = styled.div`
   border: 1px solid #e1e6f5;
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
-  min-height: 120px;
-
+  height: 300px;
+  width: 250px;
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -39,6 +39,29 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+`;
+
+export const AMDBIconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+  position: relative;
+`;
+
+export const DatabaseIcon = styled.svg`
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+`;
+
+export const HeartIcon = styled.svg`
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-left: -0.2rem;
+  position: relative;
+  z-index: 1;
 `;
 
 export const Title = styled.h3`

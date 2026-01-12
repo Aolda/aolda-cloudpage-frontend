@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { ReactNode } from 'react';
 import * as S from './style';
 
 export interface MenuCardProps {
-  /** 카드 제목 (줄바꿈은 \n으로 표시) */
-  title: string;
+  /** 카드 제목 (줄바꿈은 \n으로 표시 또는 ReactNode) */
+  title: string | ReactNode;
   /** 링크 경로 */
   href: string;
   /** 링크 버튼 텍스트 */
@@ -23,7 +24,7 @@ export interface MenuCardProps {
  * @example
  * <MenuCard
  *   title="아올다,\n처음이신가요?"
- *   actionLabel="사용 설명서 >"
+ *   actionLabel="사용 가이드"
  *   href="/useinfo"
  * />
  * 
@@ -31,21 +32,17 @@ export interface MenuCardProps {
  */
 const MenuCard = ({ title, href, actionLabel }: MenuCardProps) => {
   return (
-    <S.MenuCard>
-      <S.MenuTitle>
-        {title.split('\n').map((line, index, array) => (
-          <span key={index}>
-            {line}
-            {index < array.length - 1 && <br />}
-          </span>
-        ))}
-      </S.MenuTitle>
-      <S.MenuLink as={Link} href={href}>
-        {actionLabel}
-      </S.MenuLink>
-    </S.MenuCard>
+    <S.MenuCardLink as={Link} href={href}>
+      <S.MenuCard>
+        <S.Title>
+          {title}
+        </S.Title>
+        <S.ActionLabel>
+          {actionLabel} <S.ArrowIcon>&gt;</S.ArrowIcon>
+        </S.ActionLabel>
+      </S.MenuCard>
+    </S.MenuCardLink>
   );
 };
 
 export default MenuCard;
-

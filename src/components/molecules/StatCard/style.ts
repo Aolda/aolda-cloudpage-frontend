@@ -7,6 +7,12 @@ export const StatCard = styled.div`
   gap: 0.8rem;
   min-width: 220px;
   align-items: center;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  text-align: center;
+  height: 133px;
+  width: 348px;
 `;
 
 export const StatValue = styled.span`

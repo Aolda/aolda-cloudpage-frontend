@@ -11,16 +11,17 @@ export const PaginationContainer = styled.nav`
 export const PrevButton = styled.button`
   padding: 0.8rem 1.2rem;
   font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.text};
-  background: ${({ theme }) => theme.colors.surface};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 6px;
+  color: #999999;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 
   &:hover:not(:disabled) {
-    background: ${({ theme }) => theme.colors.surfaceAlt};
-    border-color: ${({ theme }) => theme.colors.primary};
+    color: #666666;
   }
 
   &:disabled {
@@ -37,16 +38,17 @@ export const PrevButton = styled.button`
 export const NextButton = styled.button`
   padding: 0.8rem 1.2rem;
   font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.text};
-  background: ${({ theme }) => theme.colors.surface};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 6px;
+  color: #999999;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 
   &:hover:not(:disabled) {
-    background: ${({ theme }) => theme.colors.surfaceAlt};
-    border-color: ${({ theme }) => theme.colors.primary};
+    color: #666666;
   }
 
   &:disabled {
@@ -69,21 +71,29 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
   min-width: 3.6rem;
   height: 3.6rem;
   font-size: 1.4rem;
-  color: ${({ theme, $isActive }) => ($isActive ? '#ffffff' : theme.colors.text)};
-  background: ${({ theme, $isActive }) => ($isActive ? theme.colors.primary : theme.colors.surface)};
-  border: 1px solid ${({ theme, $isActive }) => ($isActive ? theme.colors.primary : theme.colors.border)};
-  border-radius: 6px;
+  color: ${({ $isActive }) => ($isActive ? '#3D90D4' : '#999999')};
+  background: transparent;
+  border: none;
+  border-bottom: ${({ $isActive }) => ($isActive ? '2px solid #3D90D4' : 'none')};
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s, border-bottom 0.2s;
+  padding: 0;
 
   &:hover {
-    background: ${({ theme, $isActive }) => ($isActive ? theme.colors.primaryAccent : theme.colors.surfaceAlt)};
-    border-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ $isActive }) => ($isActive ? '#3D90D4' : '#666666')};
   }
 
   &:focus {
     outline: 2px solid ${({ theme }) => theme.colors.primary};
     outline-offset: 2px;
   }
+`;
+
+export const ChevronLeft = styled.span`
+  color: inherit;
+`;
+
+export const ChevronRight = styled.span`
+  color: inherit;
 `;
 

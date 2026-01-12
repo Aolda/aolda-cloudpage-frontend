@@ -1,37 +1,51 @@
 import styled from 'styled-components';
+import Link from 'next/link';
+
+export const MenuCardLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  display: block;
+`;
 
 export const MenuCard = styled.div`
   background: #ffffff;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 7.5rem;
-  border: 1px solid #e1e6f5;
   justify-content: space-between;
-`;
-
-export const MenuTitle = styled.div`
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #1a1a1a;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-`;
-
-export const MenuLink = styled.a`
-  align-self: flex-end;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  transition: color 0.2s;
-
+  min-height: 150px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  width:384px;
+  height: 216px;
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   }
 `;
 
+export const Title = styled.h2`
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #333333;
+  line-height: 1.3;
+  align-self: flex-start;
+`;
+
+export const ActionLabel = styled.span`
+  font-size: 1.8rem;
+  color: #666666;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+`;
+
+export const ArrowIcon = styled.span`
+  color: #666666;
+  font-size: 1.5rem;
+`;

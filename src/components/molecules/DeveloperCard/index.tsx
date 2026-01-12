@@ -1,55 +1,64 @@
+import Link from 'next/link';
 import * as S from './style';
 
 export interface DeveloperCardProps {
-  /** 개발자 이름 */
+  /** 크루 이름 */
   name: string;
-  /** 개발자 학과/정보 */
-  info: string;
-  /** 개발자 아이콘/이미지 (선택) */
+  /** 학과/전공 */
+  department: string;
+  /** 학번/연도 */
+  year: string;
+  /** 캐릭터 이미지 경로 (선택) */
   icon?: string;
+  /** 링크 경로 (선택) */
+  href?: string;
 }
 
 /**
- * 개발자 카드 컴포넌트
+ * 개발자 카드 컴포넌트 (크루 카드)
  * 
- * 개발진 섹션에서 사용되는 개별 개발자 카드입니다.
+ * 크루 정보를 표시하는 카드 형태의 컴포넌트입니다.
  * 
- * @param {DeveloperCardProps} props - 개발자 카드 props
- * @param {string} props.name - 개발자 이름
- * @param {string} props.info - 개발자 학과/정보
- * @param {string} [props.icon] - 개발자 아이콘/이미지 경로
+ * @param {DeveloperCardProps} props - 카드 props
+ * @param {string} props.name - 크루 이름
+ * @param {string} props.department - 학과/전공
+ * @param {string} props.year - 학번/연도
+ * @param {string} [props.icon] - 캐릭터 이미지 경로
+ * @param {string} [props.href] - 링크 경로
  * 
  * @example
  * <DeveloperCard
- *   name="정우재 크루"
- *   info="소프트웨어 22"
+ *   name="정우재"
+ *   department="소프트웨어"
+ *   year="22"
+ *   icon="/product/product_detail/product_detail_developerCard.png"
+ *   href="/crew/jeongwoojae"
  * />
  * 
  * @returns {JSX.Element} 개발자 카드 요소
  */
-const DeveloperCard = ({ name, info, icon }: DeveloperCardProps) => {
-  return (
+const DeveloperCard = ({ name, department, year, icon, href }: DeveloperCardProps) => {
+  const content = (
     <S.DeveloperCard>
-      <S.DeveloperIcon>
-        {icon ? (
-          <S.DeveloperImage src={icon} alt={name} />
-        ) : (
-          <S.DefaultIcon viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="8" r="4" stroke="#3D90D4" strokeWidth="2" fill="#E3F2FD" />
-            <path
-              d="M4 20c1.5-3 4.5-5 8-5s6.5 2 8 5"
-              stroke="#3D90D4"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </S.DefaultIcon>
-        )}
-      </S.DeveloperIcon>
-      <S.DeveloperName>{name}</S.DeveloperName>
-      <S.DeveloperInfo>{info}</S.DeveloperInfo>
+      <S.CharacterContainer>
+        <S.CharacterImage src={icon} alt={`${name} 크루`} />
+      </S.CharacterContainer>
+      <S.CrewName>
+        {name} <S.CrewNameSuffix>크루</S.CrewNameSuffix>
+      </S.CrewName>
+      <S.CrewInfo>{department} {year}</S.CrewInfo>
     </S.DeveloperCard>
   );
+
+  if (href) {
+    return (
+      <S.DeveloperCardLink as={Link} href={href}>
+        {content}
+      </S.DeveloperCardLink>
+    );
+  }
+
+  return content;
 };
 
 export default DeveloperCard;
-

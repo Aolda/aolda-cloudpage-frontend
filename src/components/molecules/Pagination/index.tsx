@@ -58,7 +58,7 @@ const Pagination = ({
         disabled={currentPage === 1}
         aria-label="이전 페이지"
       >
-        &lt; 이전
+        <S.ChevronLeft>&lt;</S.ChevronLeft> 이전
       </S.PrevButton>
       <S.PageList>
         {pages.map((page) => (
@@ -78,7 +78,7 @@ const Pagination = ({
         disabled={currentPage === totalPages}
         aria-label="다음 페이지"
       >
-        다음 &gt;
+        다음 <S.ChevronRight>&gt;</S.ChevronRight>
       </S.NextButton>
     </S.PaginationContainer>
   );

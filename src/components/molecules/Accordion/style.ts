@@ -1,16 +1,9 @@
 import styled from 'styled-components';
 
 export const Accordion = styled.div`
-  background: ${({ theme }) => theme.colors.surface};
-  border-radius: 10px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  margin-bottom: 1.2rem;
+  background: #ffffff;
+  margin-bottom: 0;
   overflow: hidden;
-  transition: box-shadow 0.2s;
-
-  &:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
 `;
 
 export const TitleButton = styled.button`
@@ -21,12 +14,13 @@ export const TitleButton = styled.button`
   padding: 1.6rem 2rem;
   background: transparent;
   border: none;
+  border-bottom: 1px solid #e0e0e0;
   cursor: pointer;
   text-align: left;
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.surfaceAlt};
+    background-color: #f5f5f5;
   }
 
   &:focus {
@@ -46,22 +40,29 @@ export const TitleIcon = styled.div`
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: ${({ theme }) => theme.colors.primary};
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 `;
 
-export const TitleLetter = styled.span`
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ffffff;
+export const SearchIcon = styled.svg`
+  width: 2rem;
+  height: 2rem;
+  color: #3D90D4;
+`;
+
+export const IconImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 `;
 
 export const TitleText = styled.span`
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 700;
   color: ${({ theme }) => theme.colors.text};
 `;
 
@@ -75,8 +76,10 @@ export const ChevronIcon = styled.svg<{ $expanded: boolean }>`
 `;
 
 export const Content = styled.div`
-  padding: 0 2rem 2rem 2rem;
+  padding: 2rem;
   padding-left: calc(2rem + 4rem + 1.6rem); /* padding + icon width + gap */
+  background: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
 `;
 
 export const ContentText = styled.div`
