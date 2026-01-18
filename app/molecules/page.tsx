@@ -311,9 +311,9 @@ export default function MoleculesPage() {
           <strong>사용 페이지:</strong> Introduction
         </PageInfo>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <StatCard title="누적 사용자" value="30+ 명" />
-          <StatCard title="서비스 수" value="5개" />
-          <StatCard title="만족도" value="98%" />
+          <StatCard title="누적 사용자" value={30} unit="+ 명" />
+          <StatCard title="서비스 수" value={5} unit="개" />
+          <StatCard title="만족도" value={98} unit="%" />
         </div>
       </ComponentSection>
 

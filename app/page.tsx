@@ -207,9 +207,9 @@ export default function HomePage() {
           <strong>사용 페이지:</strong> Introduction
         </PageInfo>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <StatCard title="누적 사용자" value="12,345 명" />
-          <StatCard title="누적 프로젝트 수" value="1,234개" />
-          <StatCard title="누적 블로깅" value="1,234%" />
+          <StatCard title="누적 사용자" value={12345} unit="명" />
+          <StatCard title="누적 프로젝트 수" value={1234} unit="개" />
+          <StatCard title="누적 블로깅" value={1234} unit="%" />
         </div>
       </ComponentSection>
 

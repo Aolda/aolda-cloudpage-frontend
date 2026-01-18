@@ -11,7 +11,7 @@ export const ItemCard = styled.div<{ $tone: CardTone }>`
   align-items: center;
   text-align: center;
   gap: 0;
-  width: 220px;
+  width: 100%;
   min-height: 200px;
   box-shadow: none;
   position: relative;
