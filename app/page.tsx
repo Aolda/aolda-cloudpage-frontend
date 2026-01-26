@@ -4,7 +4,8 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Accordion from '@/components/molecules/Accordion';
 import Breadcrumb from '@/components/molecules/Breadcrumb';
-import Filter from '@/components/molecules/Filter';
+import CheckboxFilter from '@/components/molecules/CheckboxFilter';
+import TagFilter from '@/components/molecules/TagFilter';
 import ImageCard from '@/components/molecules/ImageCard';
 import InPageNavigation from '@/components/molecules/InPageNavigation';
 import ItemCard from '@/components/molecules/ItemCard';
@@ -74,10 +75,11 @@ export default function HomePage() {
     console.log('검색:', value);
   };
 
-  const handleFilterChange = (selectedIds: string | string[]) => {
-    const idsArray = Array.isArray(selectedIds) ? selectedIds : [selectedIds];
-    setFilterSelected(idsArray);
+  const handleCheckboxFilterChange = (selectedIds: string[]) => {
+    setFilterSelected(selectedIds);
   };
+
+  const [tagFilterSelected, setTagFilterSelected] = useState<string>('all');
 
   return (
     <PageContainer>
@@ -383,15 +385,14 @@ export default function HomePage() {
         <PageInfo>
           <strong>사용 페이지:</strong> Product
         </PageInfo>
-        <Filter
-          mode="checkbox"
+        <CheckboxFilter
           items={[
             { id: 'favorites', label: '즐겨찾기' },
             { id: 'server', label: '서버' },
             { id: 'database', label: '데이터베이스' },
           ]}
           selectedIds={filterSelected}
-          onChange={handleFilterChange}
+          onChange={handleCheckboxFilterChange}
         />
       </ComponentSection>
 
@@ -492,16 +493,18 @@ export default function HomePage() {
         <PageInfo>
           <strong>사용 페이지:</strong> Notice
         </PageInfo>
-        <Filter
-          mode="tag"
+        <TagFilter
           items={[
             { id: 'all', label: '전체' },
             { id: 'notice', label: '공지' },
             { id: 'request', label: '문의요청' },
             { id: 'operation', label: '운영' },
           ]}
-          selectedIds="all"
-          onChange={(id) => console.log('선택:', id)}
+          selectedId={tagFilterSelected}
+          onChange={(id) => {
+            setTagFilterSelected(id);
+            console.log('선택:', id);
+          }}
         />
       </ComponentSection>
 

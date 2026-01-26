@@ -32,6 +32,20 @@ export const HeaderSection = styled.div`
   height: 45%;
   min-height: 120px;
   background: #0f0f0f;
+  overflow: hidden;
+`;
+
+export const MainLogo = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3rem;
+  opacity: 1;
+  z-index: 0;
+  /* 필터 제거 - favicon의 원본 색상 유지 */
 `;
 
 export const MenuIcon = styled.svg`
@@ -90,11 +104,15 @@ export const ProviderSection = styled.div`
 `;
 
 export const SmallLogo = styled.img`
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.7;
+  /* 필터 제거 - favicon의 원본 색상 유지 */
+  opacity: 0.9;
+  display: block;
+  flex-shrink: 0;
 `;
 
 export const ServiceProvider = styled.span`
