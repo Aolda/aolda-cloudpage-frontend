@@ -395,18 +395,21 @@ export default function MoleculesPage() {
         </PageInfo>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
           <SimilarServiceCard
+            logo="/Logo.svg"
             title="GitHub - openstack/trove"
             description="OpenStack Database As A Service (Trove). Mirror of code maintained at openstack.org."
             href="https://github.com/openstack/trove"
             provider="openstack/trove"
           />
           <SimilarServiceCard
+            logo="/Logo.svg"
             title="데이터베이스 관리 시스템 | Amazon Web Services"
             description="Amazon Relational Database Service(RDS)는 Amazon Aurora, PostgreSQL, SQL Server 및 MySQL 등에서 선택한 관계형 데이터베이스..."
             href="https://aws.amazon.com/ko/rds/"
             provider="Amazon Web Services, Inc."
           />
           <SimilarServiceCard
+            logo="/Logo.svg"
             title="NAVER CLOUD PLATFORM"
             description="cloud computing services for corporations, IaaS, PaaS, SaaS, with global region and security Technology Certification"
             href="https://www.ncloud.com/"
