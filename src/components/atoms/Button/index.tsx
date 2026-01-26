@@ -2,6 +2,7 @@ import Link from 'next/link';
 import * as S from './style';
 
 export type ButtonSize = 'md' | 'lg';
+export type ButtonVariant = 'primary' | 'secondary';
 
 export interface ButtonProps {
   /** 버튼에 표시될 텍스트 */
@@ -12,6 +13,8 @@ export interface ButtonProps {
   onClick?: () => void;
   /** 버튼 크기 */
   size?: ButtonSize;
+  /** 버튼 스타일 변형 */
+  variant?: ButtonVariant;
   /** 이미지 경로 */
   image?: string;
 }
@@ -47,12 +50,13 @@ const Button = ({
   href,
   onClick,
   size = 'md',
+  variant = 'primary',
   image,
 }: ButtonProps) => {
   const content = (
     <>
-      {image && <S.Image src={image} alt={label} />}
-      <S.Label>{label}</S.Label>
+      {image && <S.Image src={image} alt={label} $variant={variant} />}
+      <S.Label $variant={variant}>{label}</S.Label>
     </>
   );
 
@@ -63,6 +67,7 @@ const Button = ({
         as={Link}
         href={href}
         $size={size}
+        $variant={variant}
         aria-label={label}
       >
         {content}
@@ -76,6 +81,7 @@ const Button = ({
       type="button"
       onClick={onClick}
       $size={size}
+      $variant={variant}
       aria-label={label}
     >
       {content}

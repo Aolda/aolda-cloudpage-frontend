@@ -19,9 +19,11 @@ export const BrandLink = styled.a`
 `;
 
 export const BrandImg = styled.img`
-  width: 120px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: block;
+  border-radius: 50%;
+  object-fit: cover;
 `;
 
 // PartnerLogo 스타일

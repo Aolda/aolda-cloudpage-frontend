@@ -186,7 +186,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
   color: ${({theme:r})=>r.colors.text};
   opacity: 0.9;
   cursor: pointer;
-`;const jr=()=>{const r=[{label:"제품 소개",href:"/product"},{label:"공지사항",href:"/notice"},{label:"FAQ",href:"/FAQ"}];return h.jsxs(N1,{children:[h.jsx(Ou,{src:"/Logo.svg",alt:"Aolda",href:"/"}),h.jsx(j1,{items:r}),h.jsx(No,{label:"콘솔로 이동",href:"https://console.aoldacloud.com/",size:"lg"})]})},L1=R.div`
+`;const jr=()=>{const r=[{label:"제품 소개",href:"/product"},{label:"공지사항",href:"/notice"},{label:"FAQ",href:"/FAQ"}];return h.jsxs(N1,{children:[h.jsx(Ou,{src:"/main_logo.png",alt:"Aolda",href:"/"}),h.jsx(j1,{items:r}),h.jsx(No,{label:"콘솔로 이동",href:"https://console.aoldacloud.com/",size:"lg"})]})},L1=R.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
