@@ -1,6 +1,7 @@
-import Button from '../../atoms/Button';
-import NoticeItem, { type NoticeItemProps } from '../../molecules/NoticeItem';
+import { type NoticeItemProps } from '../../molecules/NoticeItem';
+import NoticeListHeader from '../NoticeListHeader';
 import NoticeFilters from '../NoticeFilters';
+import NoticeTable from '../NoticeTable';
 import Pagination from '../../molecules/Pagination';
 import * as S from './style';
 
@@ -72,13 +73,10 @@ const NoticeList = ({
 }: NoticeListProps) => {
   return (
     <S.NoticeListContainer>
-      <S.Header>
-        <S.Count>총 {totalCount}개</S.Count>
-        <Button
-          label="작성하기"
-          onClick={onWriteClick}
-        />
-      </S.Header>
+      <NoticeListHeader
+        totalCount={totalCount}
+        onWriteClick={onWriteClick}
+      />
 
       <NoticeFilters
         filters={filterOptions}
@@ -86,19 +84,7 @@ const NoticeList = ({
         onFilterChange={onFilterChange}
       />
 
-      <S.NoticeTable>
-        <S.TableHeader>
-          <S.HeaderCell>번호</S.HeaderCell>
-          <S.HeaderCell>카테고리</S.HeaderCell>
-          <S.HeaderCell>제목</S.HeaderCell>
-          <S.HeaderCell>날짜</S.HeaderCell>
-        </S.TableHeader>
-        <S.TableBody>
-          {notices.map((notice) => (
-            <NoticeItem key={notice.number} {...notice} />
-          ))}
-        </S.TableBody>
-      </S.NoticeTable>
+      <NoticeTable notices={notices} />
 
       {totalPages > 1 && (
         <Pagination

@@ -15,7 +15,7 @@ const defaultStats: StatItem[] = [
 ];
 
 const NumbersSection = ({ stats = defaultStats }: NumbersSectionProps) => (
-  <>
+  <S.Section>
     <IntroSectionTitle 
       title="숫자로 보는 아올다" 
       align="center" 
@@ -27,7 +27,7 @@ const NumbersSection = ({ stats = defaultStats }: NumbersSectionProps) => (
         <StatCard key={s.title} title={s.title} value={s.value} unit={s.unit} />
       ))}
     </S.Grid>
-  </>
+  </S.Section>
 );
 
 export default NumbersSection;

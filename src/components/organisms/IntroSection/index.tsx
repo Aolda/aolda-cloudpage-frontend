@@ -21,7 +21,13 @@ const IntroSection = () => (
       <ImageCard
         image="/intro/intro_herobanner.png"
         alt="아주인의 꿈을 펼칠 파란하늘 속 작은구름"
-        title="아주인의 꿈을 펼칠\n파란하늘 속 작은구름"
+        title={
+          <>
+            아주인의 꿈을 펼칠
+            <br />
+            파란하늘 속 작은구름
+          </>
+        }
         isBackground={true}
       />
     </S.Visual>

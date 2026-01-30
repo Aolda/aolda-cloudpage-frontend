@@ -11,10 +11,10 @@ export const Section = styled.section`
   margin: 0 auto;
 `;
 
-export const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.2rem;
+export const PromiseGrid = styled.div`
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
 `;
 

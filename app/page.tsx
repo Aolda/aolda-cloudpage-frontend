@@ -8,7 +8,8 @@ import IntroSection from '@/components/organisms/IntroSection';
 import MeetSection from '@/components/organisms/MeetSection';
 import NumbersSection from '@/components/organisms/NumbersSection';
 import PartnersSection from '@/components/organisms/PartnersSection';
-import ValuesSection from '@/components/organisms/ValuesSection';
+import InconveniencesSection from '@/components/organisms/InconveniencesSection';
+import PromisesSection from '@/components/organisms/PromisesSection';
 import ServiceInfoSection from '@/components/organisms/ServiceInfoSection';
 import ProductHeroSection from '@/components/organisms/ProductHeroSection';
 import ProductList from '@/components/organisms/ProductList';
@@ -21,6 +22,8 @@ import SimilarServicesSection from '@/components/organisms/SimilarServicesSectio
 import SideNavigation from '@/components/organisms/SideNavigation';
 import NoticeHeroSection from '@/components/organisms/NoticeHeroSection';
 import NoticeFilters from '@/components/organisms/NoticeFilters';
+import NoticeListHeader from '@/components/organisms/NoticeListHeader';
+import NoticeTable from '@/components/organisms/NoticeTable';
 import NoticeList from '@/components/organisms/NoticeList';
 import NoticeDetailContent from '@/components/organisms/NoticeDetailContent';
 import FAQHeroSection from '@/components/organisms/FAQHeroSection';
@@ -151,15 +154,23 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>7. ValuesSection</ComponentTitle>
+        <ComponentTitle>7. InconveniencesSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> Introduction
         </PageInfo>
-        <ValuesSection />
+        <InconveniencesSection />
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>8. ServiceInfoSection</ComponentTitle>
+        <ComponentTitle>8. PromisesSection</ComponentTitle>
+        <PageInfo>
+          <strong>사용 페이지:</strong> Introduction
+        </PageInfo>
+        <PromisesSection />
+      </ComponentSection>
+
+      <ComponentSection>
+        <ComponentTitle>9. ServiceInfoSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> Introduction
         </PageInfo>
@@ -167,7 +178,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>9. ProductHeroSection</ComponentTitle>
+        <ComponentTitle>10. ProductHeroSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> Product
         </PageInfo>
@@ -178,7 +189,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>10. ProductList</ComponentTitle>
+        <ComponentTitle>11. ProductList</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> Product
         </PageInfo>
@@ -211,7 +222,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>11. SideNavigation</ComponentTitle>
+        <ComponentTitle>12. SideNavigation</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> Product
         </PageInfo>
@@ -227,7 +238,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>12. ProductDetailHeroSection</ComponentTitle>
+        <ComponentTitle>13. ProductDetailHeroSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> ProductDetail
         </PageInfo>
@@ -240,7 +251,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>13. ProductOverviewSection</ComponentTitle>
+        <ComponentTitle>14. ProductOverviewSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> ProductDetail
         </PageInfo>
@@ -250,7 +261,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>14. ProblemsSection</ComponentTitle>
+        <ComponentTitle>15. ProblemsSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> ProductDetail
         </PageInfo>
@@ -275,7 +286,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>15. SolutionsSection</ComponentTitle>
+        <ComponentTitle>16. SolutionsSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> ProductDetail
         </PageInfo>
@@ -290,7 +301,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>16. DevelopersSection</ComponentTitle>
+        <ComponentTitle>17. DevelopersSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> ProductDetail
         </PageInfo>
@@ -305,7 +316,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>17. SimilarServicesSection</ComponentTitle>
+        <ComponentTitle>18. SimilarServicesSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> ProductDetail
         </PageInfo>
@@ -334,7 +345,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>18. NoticeHeroSection</ComponentTitle>
+        <ComponentTitle>19. NoticeHeroSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> Notice
         </PageInfo>
@@ -347,7 +358,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>19. NoticeFilters</ComponentTitle>
+        <ComponentTitle>20. NoticeFilters</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> Notice
         </PageInfo>
@@ -364,7 +375,43 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>20. NoticeList</ComponentTitle>
+        <ComponentTitle>21. NoticeListHeader</ComponentTitle>
+        <PageInfo>
+          <strong>사용 페이지:</strong> Notice
+        </PageInfo>
+        <NoticeListHeader
+          totalCount={24}
+          onWriteClick={() => console.log('작성하기')}
+        />
+      </ComponentSection>
+
+      <ComponentSection>
+        <ComponentTitle>22. NoticeTable</ComponentTitle>
+        <PageInfo>
+          <strong>사용 페이지:</strong> Notice
+        </PageInfo>
+        <NoticeTable
+          notices={[
+            {
+              number: 24,
+              category: "문의요청",
+              title: "문의요청과 관련된 공지사항 타이틀이에요",
+              date: "9999.99.99",
+              href: "/notice/24"
+            },
+            {
+              number: 23,
+              category: "공지",
+              title: "새로운 기능이 추가되었습니다",
+              date: "9999.99.98",
+              href: "/notice/23"
+            }
+          ]}
+        />
+      </ComponentSection>
+
+      <ComponentSection>
+        <ComponentTitle>23. NoticeList</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> Notice
         </PageInfo>
@@ -401,7 +448,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>21. NoticeDetailContent</ComponentTitle>
+        <ComponentTitle>24. NoticeDetailContent</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> NoticeDetail
         </PageInfo>
@@ -423,7 +470,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>22. FAQHeroSection</ComponentTitle>
+        <ComponentTitle>25. FAQHeroSection</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> FAQ
         </PageInfo>
@@ -435,7 +482,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>23. FAQCategoryFilter</ComponentTitle>
+        <ComponentTitle>26. FAQCategoryFilter</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> FAQ
         </PageInfo>
@@ -452,7 +499,7 @@ export default function HomePage() {
       </ComponentSection>
 
       <ComponentSection>
-        <ComponentTitle>24. FAQList</ComponentTitle>
+        <ComponentTitle>27. FAQList</ComponentTitle>
         <PageInfo>
           <strong>사용 페이지:</strong> FAQ
         </PageInfo>

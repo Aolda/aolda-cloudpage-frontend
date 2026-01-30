@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-export const NoticeListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-`;
-
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;

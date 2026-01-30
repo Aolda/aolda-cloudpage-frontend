@@ -9,7 +9,7 @@ const partners = [
 ];
 
 const PartnersSection = () => (
-  <>
+  <S.Section>
     <IntroSectionTitle
       title={
         <span style={{ color: '#000' }}>
@@ -31,7 +31,7 @@ const PartnersSection = () => (
         />
       ))}
     </S.Grid>
-  </>
+  </S.Section>
 );
 
 export default PartnersSection;
