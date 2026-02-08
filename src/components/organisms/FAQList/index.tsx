@@ -1,7 +1,7 @@
 import Accordion, { type AccordionProps } from '../../molecules/Accordion';
 import FAQCategoryFilter from '../FAQCategoryFilter';
 import Pagination from '../../molecules/Pagination';
-import type { FilterItem } from '../../molecules/Filter';
+import type { FilterItem } from '../../molecules/TagFilter';
 import * as S from './style';
 
 export interface FAQListProps {
@@ -25,7 +25,7 @@ export interface FAQListProps {
  * FAQ 목록 컴포넌트
  * 
  * FAQ 카테고리 필터, FAQ 목록, 페이지네이션을 포함하는 섹션입니다.
- * 
+ *
  * @param {FAQListProps} props - FAQ 목록 props
  * @param {AccordionProps[]} props.faqs - FAQ 목록
  * @param {Array} props.categoryOptions - 카테고리 옵션 목록
@@ -92,4 +92,3 @@ const FAQList = ({
 };
 
 export default FAQList;
-

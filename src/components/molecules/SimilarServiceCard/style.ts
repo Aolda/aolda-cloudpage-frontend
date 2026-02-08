@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const ServiceCardLink = styled.a`
   text-decoration: none;
@@ -31,51 +31,21 @@ export const HeaderSection = styled.div`
   position: relative;
   height: 45%;
   min-height: 120px;
-  gap: 0;
   background: #0f0f0f;
+  overflow: hidden;
 `;
 
-export const ServiceLogo = styled.img`
-  width: 100px;
-  height: 50px;
+export const MainLogo = styled.img`
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  position: relative;
-  z-index: 1;
-`;
-
-export const NaverLogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  position: relative;
-  z-index: 1;
-`;
-
-export const NaverLogoSquare = styled.div`
-  width: 24px;
-  height: 24px;
-  background: #ffffff;
-  border-radius: 2px;
-`;
-
-export const NaverLogoCircle = styled.div`
-  width: 24px;
-  height: 24px;
-  background: #ffffff;
-  border-radius: 50%;
-`;
-
-export const NaverTitleText = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.8rem;
-  letter-spacing: 0.05em;
-  line-height: 1.2;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3rem;
+  opacity: 1;
+  z-index: 0;
+  /* 필터 제거 - favicon의 원본 색상 유지 */
 `;
 
 export const MenuIcon = styled.svg`
@@ -134,28 +104,18 @@ export const ProviderSection = styled.div`
 `;
 
 export const SmallLogo = styled.img`
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.7;
-`;
-
-export const NaverIcon = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-`;
-
-export const NaverIconDash = styled.div`
-  width: 12px;
-  height: 2px;
-  background: #03c75a;
-  border-radius: 1px;
+  /* 필터 제거 - favicon의 원본 색상 유지 */
+  opacity: 0.9;
+  display: block;
+  flex-shrink: 0;
 `;
 
 export const ServiceProvider = styled.span`
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.5);
 `;
-

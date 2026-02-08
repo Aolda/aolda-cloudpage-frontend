@@ -16,7 +16,7 @@ export interface FAQHeroSectionProps {
  * 
  * FAQ 페이지 상단의 히어로 섹션입니다.
  * Breadcrumb, 제목, 검색바를 포함합니다.
- * 
+ *
  * @param {FAQHeroSectionProps} props - 히어로 섹션 props
  * @param {string} [props.searchTerm] - 검색어
  * @param {Function} [props.onSearchChange] - 검색어 변경 핸들러

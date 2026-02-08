@@ -19,7 +19,7 @@ export interface ProductDetailHeroSectionProps {
  * 
  * 제품 상세 페이지 상단의 히어로 섹션입니다.
  * 어두운 파란색 배경에 서비스 로고, 설명, 액션 버튼을 표시합니다.
- * 
+ *
  * @param {ProductDetailHeroSectionProps} props - 히어로 섹션 props
  * @param {string} props.name - 서비스 이름
  * @param {string} props.description - 서비스 설명

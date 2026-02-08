@@ -38,7 +38,7 @@ export interface NoticeDetailContentProps {
  * 공지사항 상세 내용 컴포넌트
  * 
  * 공지사항의 제목, 메타데이터, 본문, 첨부파일, 네비게이션을 표시합니다.
- * 
+ *
  * @param {NoticeDetailContentProps} props - 상세 내용 props
  * @param {NoticeDetailData} props.data - 공지사항 상세 데이터
  * @param {Function} [props.onListClick] - 목록 버튼 클릭 핸들러

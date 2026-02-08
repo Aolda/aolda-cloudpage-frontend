@@ -1,17 +1,24 @@
 import styled from "styled-components";
 
+/* NavBar */
 export const HeaderBar = styled.header`
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: white;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.2rem 0;
-  width: 100%;
   box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 16px;
+  position: relative;
+  width: 100%;
+  max-width: 1360px;
+  height: 72px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 1px solid #E2E2E2;
+  border-radius: 12px;
+
+  > *:nth-child(2) {
+    justify-self: center;
+  }
 `;
 
 export const Right = styled.div`

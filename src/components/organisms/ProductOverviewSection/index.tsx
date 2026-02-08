@@ -1,4 +1,4 @@
-import ImageTitle from '../../molecules/ImageTitle';
+import TagFilter from '../../molecules/TagFilter';
 import * as S from './style';
 
 export interface ProductOverviewSectionProps {
@@ -10,7 +10,7 @@ export interface ProductOverviewSectionProps {
  * 제품 개요 섹션 컴포넌트
  * 
  * 제품 상세 페이지의 개요 섹션입니다.
- * 
+ *
  * @param {ProductOverviewSectionProps} props - 제품 개요 섹션 props
  * @param {string} [props.content] - 제품 개요 내용
  * 
@@ -22,10 +22,11 @@ export interface ProductOverviewSectionProps {
 const ProductOverviewSection = ({ content }: ProductOverviewSectionProps) => {
   return (
     <S.OverviewSection>
-      <ImageTitle
-        icon="/product/product_detail/main_title_icon.png"
-        title="제품 개요"
-        alt="제품 개요 아이콘"
+      <TagFilter
+        items={[{ id: 'overview', label: '제품 개요' }]}
+        selectedId="overview"
+        onChange={() => {}}
+        prefix="≡ "
       />
       {content && <S.OverviewContent>{content}</S.OverviewContent>}
     </S.OverviewSection>
@@ -33,4 +34,3 @@ const ProductOverviewSection = ({ content }: ProductOverviewSectionProps) => {
 };
 
 export default ProductOverviewSection;
-

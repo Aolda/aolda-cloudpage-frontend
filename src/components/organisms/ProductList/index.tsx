@@ -19,7 +19,7 @@ export interface ProductListProps {
  * 제품 목록 컴포넌트
  * 
  * 검색바와 서비스 카드 그리드를 포함하는 제품 목록 섹션입니다.
- * 
+ *
  * @param {ProductListProps} props - 제품 목록 props
  * @param {string} [props.searchTerm] - 검색어
  * @param {Function} [props.onSearchChange] - 검색어 변경 핸들러

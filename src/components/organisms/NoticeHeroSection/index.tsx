@@ -18,7 +18,7 @@ export interface NoticeHeroSectionProps {
  * 
  * 공지사항 페이지 상단의 히어로 섹션입니다.
  * 제목과 검색바를 포함합니다.
- * 
+ *
  * @param {NoticeHeroSectionProps} props - 히어로 섹션 props
  * @param {string} props.title - 히어로 섹션 제목
  * @param {string} [props.searchTerm] - 검색어

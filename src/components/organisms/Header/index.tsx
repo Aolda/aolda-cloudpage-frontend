@@ -12,9 +12,8 @@ const Header = () => {
 
   return (
     <S.HeaderBar>
-      <Logo src="/Logo.svg" alt="Aolda" href="/" />
+      <Logo src="/main_logo.png" alt="Aolda" href="/" />
       <MainMenu items={items} />
-      <Button label="콘솔로 이동" href="https://console.aoldacloud.com/" size="lg" />
     </S.HeaderBar>
   );
 };

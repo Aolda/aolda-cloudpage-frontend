@@ -13,7 +13,7 @@ export interface ProductHeroSectionProps {
  * 
  * 제품 소개 페이지 상단의 히어로 섹션입니다.
  * 어두운 파란색 배경에 제목과 설명을 표시합니다.
- * 
+ *
  * @param {ProductHeroSectionProps} props - 히어로 섹션 props
  * @param {string} props.title - 히어로 섹션 제목
  * @param {string} props.description - 히어로 섹션 설명
@@ -42,4 +42,3 @@ const ProductHeroSection = ({ title, description }: ProductHeroSectionProps) => 
 };
 
 export default ProductHeroSection;
-

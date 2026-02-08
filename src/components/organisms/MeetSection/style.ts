@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
+  width: 1200px;
+  height: 796px;
+  padding-top: 160px;
+  gap: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
-  padding: 2.4rem 0 3.6rem;
+  margin: 0 auto;
 `;
 
 export const Divider = styled.span`

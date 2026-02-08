@@ -1,6 +1,7 @@
-import Button from '../../atoms/Button';
-import NoticeItem, { type NoticeItemProps } from '../../molecules/NoticeItem';
+import { type NoticeItemProps } from '../../molecules/NoticeItem';
+import NoticeListHeader from '../NoticeListHeader';
 import NoticeFilters from '../NoticeFilters';
+import NoticeTable from '../NoticeTable';
 import Pagination from '../../molecules/Pagination';
 import * as S from './style';
 
@@ -29,7 +30,7 @@ export interface NoticeListProps {
  * 공지사항 목록 컴포넌트
  * 
  * 공지사항 목록, 필터, 페이지네이션을 포함하는 섹션입니다.
- * 
+ *
  * @param {NoticeListProps} props - 공지사항 목록 props
  * @param {number} props.totalCount - 전체 공지사항 개수
  * @param {Function} [props.onWriteClick] - 작성하기 버튼 클릭 핸들러
@@ -72,14 +73,10 @@ const NoticeList = ({
 }: NoticeListProps) => {
   return (
     <S.NoticeListContainer>
-      <S.Header>
-        <S.Count>총 {totalCount}개</S.Count>
-        <Button
-          label="작성하기"
-          onClick={onWriteClick}
-          image="/icon-pencil.svg"
-        />
-      </S.Header>
+      <NoticeListHeader
+        totalCount={totalCount}
+        onWriteClick={onWriteClick}
+      />
 
       <NoticeFilters
         filters={filterOptions}
@@ -87,19 +84,7 @@ const NoticeList = ({
         onFilterChange={onFilterChange}
       />
 
-      <S.NoticeTable>
-        <S.TableHeader>
-          <S.HeaderCell>번호</S.HeaderCell>
-          <S.HeaderCell>카테고리</S.HeaderCell>
-          <S.HeaderCell>제목</S.HeaderCell>
-          <S.HeaderCell>날짜</S.HeaderCell>
-        </S.TableHeader>
-        <S.TableBody>
-          {notices.map((notice) => (
-            <NoticeItem key={notice.number} {...notice} />
-          ))}
-        </S.TableBody>
-      </S.NoticeTable>
+      <NoticeTable notices={notices} />
 
       {totalPages > 1 && (
         <Pagination

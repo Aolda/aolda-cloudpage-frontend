@@ -23,22 +23,22 @@ export const BackgroundPattern = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-
+  
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
+    background-image: 
       radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
       linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, transparent 100%);
   }
-
+  
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
+    background-image: 
       repeating-linear-gradient(
         45deg,
         transparent,

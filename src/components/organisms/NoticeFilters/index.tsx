@@ -1,4 +1,4 @@
-import Filter, { type FilterItem } from '../../molecules/Filter';
+import TagFilter, { type FilterItem } from '../../molecules/TagFilter';
 import * as S from './style';
 
 export interface NoticeFiltersProps {
@@ -14,7 +14,7 @@ export interface NoticeFiltersProps {
  * 공지사항 필터 컴포넌트
  * 
  * 공지사항을 카테고리별로 필터링할 수 있는 태그 목록입니다.
- * 
+ *
  * @param {NoticeFiltersProps} props - 필터 props
  * @param {FilterOption[]} props.filters - 필터 옵션 목록
  * @param {string} [props.selectedFilter] - 선택된 필터 ID
@@ -39,15 +39,13 @@ const NoticeFilters = ({
 }: NoticeFiltersProps) => {
   return (
     <S.FilterContainer>
-      <Filter
-        mode="tag"
+      <TagFilter
         items={filters}
-        selectedIds={selectedFilter}
-        onChange={(id) => onFilterChange?.(typeof id === 'string' ? id : '')}
+        selectedId={selectedFilter}
+        onChange={(id) => onFilterChange?.(id)}
       />
     </S.FilterContainer>
   );
 };
 
 export default NoticeFilters;
-
