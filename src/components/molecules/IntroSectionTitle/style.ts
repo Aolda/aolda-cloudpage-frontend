@@ -56,11 +56,11 @@ export const Title = styled.h2<{ $color?: string }>`
   display: block;
 `;
 
-export const Description = styled.p`
+export const Description = styled.p<{ $color?: string }>`
   margin: 0;
   margin-top: 12px;
   font-size: 1.6rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  color: ${({ $color, theme }) => $color ?? theme.colors.textMuted};
   max-width: 600px;
 `;
 

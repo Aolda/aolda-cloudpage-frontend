@@ -53,6 +53,8 @@ interface IntroSectionTitleProps {
   backgroundSrc?: string;
   /** 제목 텍스트 색상 */
   titleColor?: string;
+  /** 설명 텍스트 색상 */
+  descriptionColor?: string;
   /** 상단 bar 표시 여부 */
   showTopBar?: boolean;
 }
@@ -120,6 +122,7 @@ const IntroSectionTitle = ({
   align = 'left',
   backgroundSrc,
   titleColor,
+  descriptionColor,
   showTopBar = false,
 }: IntroSectionTitleProps) => (
   backgroundSrc ? (
@@ -130,6 +133,7 @@ const IntroSectionTitle = ({
         <S.Title $color={titleColor}>
           {title}
         </S.Title>
+        {description && <S.Description $color={descriptionColor}>{description}</S.Description>}
       </S.Overlay>
     </S.ImageContainer>
   ) : (
@@ -138,7 +142,7 @@ const IntroSectionTitle = ({
       <S.Title $color={titleColor}>
         {title}
       </S.Title>
-      {description && <S.Description>{description}</S.Description>}
+      {description && <S.Description $color={descriptionColor}>{description}</S.Description>}
     </S.Container>
   )
 );

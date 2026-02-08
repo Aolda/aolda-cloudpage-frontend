@@ -1,4 +1,4 @@
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import Breadcrumb from '../../molecules/Breadcrumb';
 import * as S from './style';
 
 export interface ProductHeroSectionProps {
@@ -6,6 +6,8 @@ export interface ProductHeroSectionProps {
   title: string;
   /** 히어로 섹션 설명 */
   description: string;
+  /** Breadcrumb 항목 목록 */
+  breadcrumbItems?: Array<{ label: string; href?: string }>;
 }
 
 /**
@@ -26,16 +28,22 @@ export interface ProductHeroSectionProps {
  * 
  * @returns {JSX.Element} 히어로 섹션 요소
  */
-const ProductHeroSection = ({ title, description }: ProductHeroSectionProps) => {
+const ProductHeroSection = ({ 
+  title, 
+  description,
+  breadcrumbItems = [
+    { label: '홈', href: '/' },
+    { label: '제품소개' },
+  ],
+}: ProductHeroSectionProps) => {
   return (
     <S.HeroSection>
       <S.HeroContent>
-        <IntroSectionTitle
-          title={title}
-          description={description}
-          titleColor="#ffffff"
-          align="left"
-        />
+        <S.BreadcrumbWrapper>
+          <Breadcrumb items={breadcrumbItems} />
+        </S.BreadcrumbWrapper>
+        <S.Title>{title}</S.Title>
+        <S.Description>{description}</S.Description>
       </S.HeroContent>
     </S.HeroSection>
   );

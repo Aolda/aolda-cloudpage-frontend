@@ -8,11 +8,11 @@ const sizeStyles = {
     gap: '0.8rem',
   },
   lg: {
-    padding: '12px 16px',
-    fontSize: '1.6rem',
+    padding: '12px 36px',
+    fontSize: '16px',
     gap: '8px',
-    width: '200px',
-    height: '48px',
+    width: 'auto',
+    height: '47px',
   },
 };
 
@@ -26,8 +26,9 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
   gap: ${({ $size }) => sizeStyles[$size].gap};
   padding: ${({ $size }) => sizeStyles[$size].padding};
   font-size: ${({ $size }) => sizeStyles[$size].fontSize};
-  font-weight: 800;
-  line-height: 1;
+  font-weight: 700;
+  line-height: ${({ $size }) => $size === 'lg' ? '19px' : '1'};
+  font-family: 'Noto Sans KR', sans-serif;
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.2s ease, transform 0.1s ease;
@@ -39,17 +40,22 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
       : $size === 'lg' 
         ? '#1572B8' 
         : 'rgb(32, 137, 207)'};
-  color: ${({ $variant }) => $variant === 'secondary' ? '#000000' : '#ffffff'};
+  color: ${({ $variant }) => $variant === 'secondary' ? '#181818' : '#ffffff'};
   border: ${({ $variant, $size }) => 
     $variant === 'secondary' 
-      ? '1px solid #E2E2E2' 
+      ? '1px solid #BFBFBF' 
       : $size === 'lg' 
         ? 'none' 
         : '1px solid rgb(32, 137, 207)'};
-  border-radius: ${({ $size }) => $size === 'lg' ? '8px' : '15px'};
+  border-radius: ${({ $size, $variant }) => 
+    $size === 'lg' && $variant === 'secondary' 
+      ? '30px' 
+      : $size === 'lg' 
+        ? '8px' 
+        : '15px'};
+  box-sizing: border-box;
   
   ${({ $size }) => $size === 'lg' && `
-    width: ${sizeStyles[$size].width};
     height: ${sizeStyles[$size].height};
     flex: none;
     order: 1;
@@ -78,8 +84,8 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
 
 /* Text */
 export const Label = styled.span<{ $variant: ButtonVariant }>`
-  width: 100px;
-  height: 19px;
+  width: auto;
+  height: 23px;
   /* Title-H4 */
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
@@ -88,7 +94,7 @@ export const Label = styled.span<{ $variant: ButtonVariant }>`
   line-height: 19px;
   text-align: center;
   /* White/White or Black */
-  color: ${({ $variant }) => $variant === 'secondary' ? '#000000' : '#FFFFFF'};
+  color: ${({ $variant }) => $variant === 'secondary' ? '#181818' : '#FFFFFF'};
   /* Inside auto layout */
   flex: none;
   order: 0;

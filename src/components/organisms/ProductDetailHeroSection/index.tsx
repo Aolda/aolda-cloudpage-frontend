@@ -1,4 +1,5 @@
 import Button from '../../atoms/Button';
+import Breadcrumb from '../../molecules/Breadcrumb';
 import * as S from './style';
 
 export interface ProductDetailHeroSectionProps {
@@ -6,8 +7,8 @@ export interface ProductDetailHeroSectionProps {
   name: string;
   /** 서비스 설명 */
   description: string;
-  /** 서비스 로고 (선택) */
-  logo?: string;
+  /** Breadcrumb 항목 목록 */
+  breadcrumbItems?: Array<{ label: string; href?: string }>;
   /** 제품 신청 링크 */
   applicationLink?: string;
   /** 프로젝트 링크 */
@@ -40,25 +41,31 @@ export interface ProductDetailHeroSectionProps {
 const ProductDetailHeroSection = ({
   name,
   description,
-  logo,
+  breadcrumbItems = [
+    { label: '홈', href: '/' },
+    { label: '제품소개', href: '/product' },
+    { label: name },
+  ],
   applicationLink,
   projectLink,
 }: ProductDetailHeroSectionProps) => {
   return (
     <S.HeroSection>
-      <S.HeroBackground>
-        <S.BackgroundPattern />
-      </S.HeroBackground>
       <S.HeroContent>
-        {logo && <S.ServiceLogo src={logo} alt={name} />}
-        {!logo && <S.ServiceName>{name}</S.ServiceName>}
+        <S.BreadcrumbWrapper>
+          <Breadcrumb items={breadcrumbItems} />
+        </S.BreadcrumbWrapper>
+        <S.TitleRow>
+          <S.ServiceIcon src="/product/product_detail/intro_header_icon.png" alt={name} />
+          <S.ServiceName>{name}</S.ServiceName>
+        </S.TitleRow>
         <S.ServiceDescription>{description}</S.ServiceDescription>
         <S.ActionButtons>
           {applicationLink && (
-            <Button label="제품 신청" href={applicationLink} size="lg" />
+            <Button label="제품 신청" href={applicationLink} size="lg" variant="secondary" />
           )}
           {projectLink && (
-            <Button label="프로젝트" href={projectLink} size="lg" />
+            <Button label="프로젝트" href={projectLink} size="lg" variant="secondary" />
           )}
         </S.ActionButtons>
       </S.HeroContent>
