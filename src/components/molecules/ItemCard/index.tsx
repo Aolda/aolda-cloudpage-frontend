@@ -14,6 +14,8 @@ export interface ItemCardProps {
   description: string;
   /** 아이콘 (IconVariant, 이미지 경로, 또는 React 요소) */
   icon?: string | ReactNode | IconVariant;
+  /** 카드 톤 (blue 또는 red) */
+  tone?: CardTone;
 }
 
 /**
@@ -36,7 +38,7 @@ export interface ItemCardProps {
  * 
  * @returns {JSX.Element} 아이템 카드 요소
  */
-const ItemCard = ({ title, description, icon }: ItemCardProps) => {
+const ItemCard = ({ title, description, icon, tone: propTone }: ItemCardProps) => {
   // IconVariant에 따른 tone 결정 함수
   const getToneFromIcon = (iconValue: string): CardTone => {
     const positiveIcons: IconVariant[] = ['free', 'instances', 'members'];
@@ -58,7 +60,7 @@ const ItemCard = ({ title, description, icon }: ItemCardProps) => {
     return typeof val === 'string' && iconVariants.includes(val as IconVariant);
   };
 
-  const tone = typeof icon === 'string' && isIconVariant(icon) ? getToneFromIcon(icon) : 'blue';
+  const tone = propTone || (typeof icon === 'string' && isIconVariant(icon) ? getToneFromIcon(icon) : 'blue');
 
   return (
     <S.ItemCard $tone={tone}>
@@ -73,7 +75,7 @@ const ItemCard = ({ title, description, icon }: ItemCardProps) => {
           )}
         </S.Icon>
       )}
-      <S.ItemTitle>{title}</S.ItemTitle>
+      <S.ItemTitle $tone={tone}>{title}</S.ItemTitle>
       <S.ItemDescription>{description}</S.ItemDescription>
     </S.ItemCard>
   );

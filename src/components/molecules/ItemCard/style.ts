@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import type { CardTone } from './index';
 
 export const ItemCard = styled.div<{ $tone: CardTone }>`
-  padding: 2.4rem 2rem;
+  padding: 32px 36px 32px 36px;
   border-radius: 1rem;
   border: 1px solid #e0e0e0;
   background: #ffffff;
@@ -35,18 +35,18 @@ export const IconImage = styled.img`
   display: block;
 `;
 
-export const ItemTitle = styled.h3`
+export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
   margin: 0 0 0.6rem 0;
-  font-size: 1.8rem;
+  font-size: 32px;
   font-weight: 700;
-  color: #3D90D4;
+  color: ${({ $tone }) => ($tone === 'red' ? 'rgb(233, 23, 23)' : '#3D90D4')};
   line-height: 1.3;
   letter-spacing: -0.02em;
 `;
 
 export const ItemDescription = styled.p`
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 16px;
   color: #666666;
   line-height: 1.5;
   letter-spacing: -0.01em;

@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import * as S from './style';
 
 export interface ImageCardProps {
@@ -6,7 +7,7 @@ export interface ImageCardProps {
   /** 이미지 대체 텍스트 */
   alt?: string;
   /** 카드 제목 */
-  title?: string;
+  title?: string | ReactNode;
   /** 카드 설명 */
   description?: string;
   /** 기간 정보 */
@@ -43,7 +44,7 @@ const ImageCard = ({ image, alt, title, description, period, isBackground = fals
   if (isBackground) {
     return (
       <S.ImageCard $tone="blue" $isBackground={isBackground}>
-        <S.Image src={image} alt={alt || title || ''} $isBackground={isBackground} />
+        <S.Image src={image} alt={alt || (typeof title === 'string' ? title : '') || ''} $isBackground={isBackground} />
         <S.Overlay $isBackground={isBackground} />
         {title && <S.ImageTitle $isBackground={isBackground}>{title}</S.ImageTitle>}
       </S.ImageCard>
@@ -53,7 +54,7 @@ const ImageCard = ({ image, alt, title, description, period, isBackground = fals
   return (
     <S.ImageCard $tone="blue" $isBackground={isBackground}>
       <S.ImageContainer>
-        <S.Image src={image} alt={alt || title || ''} $isBackground={isBackground} />
+        <S.Image src={image} alt={alt || (typeof title === 'string' ? title : '') || ''} $isBackground={isBackground} />
       </S.ImageContainer>
       <S.TextContainer>
         {title && <S.ImageTitle $isBackground={isBackground}>{title}</S.ImageTitle>}

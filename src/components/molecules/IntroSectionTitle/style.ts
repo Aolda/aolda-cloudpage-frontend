@@ -3,14 +3,14 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div<{ $align: 'left' | 'center' }>`
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 8px;
   text-align: ${({ $align }) => $align};
-
   ${({ $align }) =>
     $align === 'center' &&
     css`
       align-items: center;
     `}
+  
 `;
 
 export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
@@ -50,15 +50,17 @@ export const Title = styled.h2<{ $color?: string }>`
   margin: 0;
   font-size: 30px;
   line-height: 1.2;
+  gap: 12px;
   color: ${({ $color }) => $color ?? 'inherit'};
   white-space: pre-line;
   display: block;
 `;
 
-export const Description = styled.p`
+export const Description = styled.p<{ $color?: string }>`
   margin: 0;
+  margin-top: 12px;
   font-size: 1.6rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  color: ${({ $color, theme }) => $color ?? theme.colors.textMuted};
   max-width: 600px;
 `;
 
