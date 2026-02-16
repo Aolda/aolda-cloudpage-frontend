@@ -1,43 +1,10 @@
 'use client';
 
-import styled from 'styled-components';
-import Header from '@/components/organisms/Header';
-import Footer from '@/components/organisms/Footer';
-import Breadcrumb from '@/components/molecules/Breadcrumb';
-import ProductDetailHeroSection from '@/components/organisms/ProductDetailHeroSection';
-import ProductOverviewSection from '@/components/organisms/ProductOverviewSection';
-import ProblemsSection from '@/components/organisms/ProblemsSection';
-import SolutionsSection from '@/components/organisms/SolutionsSection';
-import DevelopersSection from '@/components/organisms/DevelopersSection';
-import SimilarServicesSection from '@/components/organisms/SimilarServicesSection';
+import ProductDetailPageTemplate from '@/components/templates/ProductDetailPageTemplate';
 import type { Problem } from '@/components/organisms/ProblemsSection';
 import type { Solution } from '@/components/organisms/SolutionsSection';
 import type { Developer } from '@/components/organisms/DevelopersSection';
 import type { SimilarService } from '@/components/organisms/SimilarServicesSection';
-
-const PageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
-
-const Page = styled.div`
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  flex: 1;
-  box-sizing: border-box;
-`;
-
-const MainContent = styled.main`
-  flex: 1;
-  padding: 2rem 0;
-`;
-
-const BreadcrumbWrapper = styled.div`
-  padding: 1.5rem 0;
-`;
 
 // 임시 데이터 - 실제로는 API나 데이터베이스에서 가져와야 합니다
 const getProductData = (id: string) => {
@@ -169,42 +136,22 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   const productData = getProductData(id);
 
   return (
-    <PageWrapper>
-      <Page>
-        <Header />
-        <MainContent>
-          <BreadcrumbWrapper>
-            <Breadcrumb
-              items={[
-                { label: '제품소개', href: '/product' },
-                { label: productData.name },
-              ]}
-            />
-          </BreadcrumbWrapper>
-          <ProductDetailHeroSection
-            name={productData.name}
-            description={productData.description}
-            logo={productData.logo}
-            applicationLink={productData.applicationLink}
-            projectLink={productData.projectLink}
-          />
-          <ProductOverviewSection content={productData.overview} />
-          {productData.problems.length > 0 && (
-            <ProblemsSection problems={productData.problems} />
-          )}
-          {productData.solutions.length > 0 && (
-            <SolutionsSection solutions={productData.solutions} />
-          )}
-          {productData.developers.length > 0 && (
-            <DevelopersSection developers={productData.developers} />
-          )}
-          {productData.similarServices.length > 0 && (
-            <SimilarServicesSection services={productData.similarServices} />
-          )}
-        </MainContent>
-      </Page>
-      <Footer />
-    </PageWrapper>
+    <ProductDetailPageTemplate
+      name={productData.name}
+      description={productData.description}
+      breadcrumbItems={[
+        { label: '홈', href: '/' },
+        { label: '제품소개', href: '/product' },
+        { label: productData.name },
+      ]}
+      applicationLink={productData.applicationLink}
+      projectLink={productData.projectLink}
+      overview={productData.overview}
+      problems={productData.problems}
+      solutions={productData.solutions}
+      developers={productData.developers}
+      similarServices={productData.similarServices}
+    />
   );
 }
 

@@ -7,11 +7,9 @@ export const HeroSection = styled.section`
   align-items: flex-start;
   padding: 0px 120px 80px;
   gap: 10px;
-  position: absolute;
-  width: 1440px;
+  position: relative;
+  width: 100%;
   height: 400px;
-  left: 0px;
-  top: 0px;
   overflow: hidden;
 
   &::before {
@@ -36,7 +34,8 @@ export const HeroContent = styled.div`
   align-items: flex-start;
   padding: 0px;
   gap: 12px;
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   height: 151px;
   flex: none;
   order: 0;
@@ -116,7 +115,8 @@ export const BreadcrumbWrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   height: 46px;
   font-family: 'Noto Sans KR';
   font-style: normal;
@@ -132,7 +132,8 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.p`
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   height: 58px;
   font-family: 'Noto Sans KR';
   font-style: normal;

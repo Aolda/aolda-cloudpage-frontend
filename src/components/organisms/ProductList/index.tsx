@@ -51,7 +51,7 @@ const ProductList = ({
     <S.ProductListContainer>
       <S.SearchSection>
         <Search
-          placeholder="계열/서비스를 검색해 보세요"
+          placeholder="제품/서비스를 검색해 보세요"
           value={searchTerm}
           onChange={onSearchChange}
           onSearch={onSearch}
