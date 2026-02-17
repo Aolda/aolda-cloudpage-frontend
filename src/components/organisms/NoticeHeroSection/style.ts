@@ -28,6 +28,10 @@ export const HeroContent = styled.div`
   gap: 2.4rem;
 `;
 
+export const BreadcrumbWrapper = styled.div`
+  width: 100%;
+`;
+
 export const SearchWrapper = styled.div`
   max-width: 600px;
 `;

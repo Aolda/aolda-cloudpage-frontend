@@ -1,5 +1,6 @@
 import IntroSectionTitle from '../../molecules/IntroSectionTitle';
 import Search from '../../molecules/Search';
+import Breadcrumb from '../../molecules/Breadcrumb';
 import * as S from './style';
 
 export interface NoticeHeroSectionProps {
@@ -11,6 +12,8 @@ export interface NoticeHeroSectionProps {
   onSearchChange?: (value: string) => void;
   /** 검색 실행 핸들러 */
   onSearch?: (value: string) => void;
+  /** Breadcrumb 항목 목록 */
+  breadcrumbItems?: Array<{ label: string; href?: string }>;
 }
 
 /**
@@ -40,10 +43,17 @@ const NoticeHeroSection = ({
   searchTerm = '',
   onSearchChange,
   onSearch,
+  breadcrumbItems = [
+    { label: '홈', href: '/' },
+    { label: '공지사항' },
+  ],
 }: NoticeHeroSectionProps) => {
   return (
     <S.HeroSection>
       <S.HeroContent>
+        <S.BreadcrumbWrapper>
+          <Breadcrumb items={breadcrumbItems} />
+        </S.BreadcrumbWrapper>
         <IntroSectionTitle
           title={title}
           titleColor="#ffffff"
