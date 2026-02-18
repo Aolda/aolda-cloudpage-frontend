@@ -3,20 +3,25 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div<{ $align: 'left' | 'center' }>`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0px;
+  width: 100%;
   text-align: ${({ $align }) => $align};
   ${({ $align }) =>
     $align === 'center' &&
     css`
       align-items: center;
     `}
-  
 `;
 
 export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
-  width: 50px;
-  height: 3px;
-  background-color:rgb(118, 120, 122);
+  width: 48px;
+  height: 0px;
+  border: 3px solid #777777;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
   align-self: ${({ $align }) => ($align === 'center' ? 'center' : 'flex-start')};
 `;
 
@@ -48,12 +53,15 @@ export const Overlay = styled.div`
 
 export const Title = styled.h2<{ $color?: string }>`
   margin: 0;
-  font-size: 30px;
-  line-height: 1.2;
-  gap: 12px;
-  color: ${({ $color }) => $color ?? 'inherit'};
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: ${({ $color }) => $color ?? '#232527'};
   white-space: pre-line;
   display: block;
+  width: 100%;
 `;
 
 export const Description = styled.p<{ $color?: string }>`

@@ -1,5 +1,6 @@
 import Breadcrumb from '../../molecules/Breadcrumb';
 import Search from '../../molecules/Search';
+import Image from 'next/image';
 import * as S from './style';
 
 export interface FAQHeroSectionProps {
@@ -9,6 +10,8 @@ export interface FAQHeroSectionProps {
   onSearchChange?: (value: string) => void;
   /** 검색 실행 핸들러 */
   onSearch?: (value: string) => void;
+  /** Breadcrumb 항목 목록 */
+  breadcrumbItems?: Array<{ label: string; href?: string }>;
 }
 
 /**
@@ -35,22 +38,45 @@ const FAQHeroSection = ({
   searchTerm = '',
   onSearchChange,
   onSearch,
+  breadcrumbItems = [
+    { label: '홈', href: '/' },
+    { label: 'FAQ' },
+  ],
 }: FAQHeroSectionProps) => {
   return (
     <S.HeroSection>
       <S.HeroContent>
-        <S.BreadcrumbWrapper>
-          <Breadcrumb items={[{ label: '홈', href: '/' }, { label: 'FAQ' }]} />
-        </S.BreadcrumbWrapper>
-        <S.Title>아올다 FAQ</S.Title>
-        <S.SearchWrapper>
-          <Search
-            placeholder="FAQ를 검색해 보세요."
-            value={searchTerm}
-            onChange={onSearchChange}
-            onSearch={onSearch}
-          />
-        </S.SearchWrapper>
+        <S.LeftSection>
+          <S.TitleSection>
+            <S.BreadcrumbWrapper>
+              <Breadcrumb items={breadcrumbItems} />
+            </S.BreadcrumbWrapper>
+            <S.Title>아올다 FAQ</S.Title>
+          </S.TitleSection>
+          <S.SearchWrapper>
+            <Search
+              placeholder="FAQ를 검색해 보세요."
+              value={searchTerm}
+              onChange={onSearchChange}
+              onSearch={onSearch}
+            />
+          </S.SearchWrapper>
+        </S.LeftSection>
+        <S.RightSection>
+          <S.IconWrapper>
+            <Image
+              src="/FAQ/FAQ_introheader.png"
+              alt="FAQ 아이콘"
+              width={629}
+              height={426}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+              }}
+            />
+          </S.IconWrapper>
+        </S.RightSection>
       </S.HeroContent>
     </S.HeroSection>
   );

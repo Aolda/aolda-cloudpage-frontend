@@ -8,64 +8,120 @@ export const DeveloperCardLink = styled(Link)`
 `;
 
 export const DeveloperCard = styled.div`
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 2rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1.2rem;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  }
+  padding: 24px 36px;
+  gap: 36px;
+  width: 220.8px;
+  height: 268px;
+  background: #FFFFFF;
+  border: 1px solid #E2E2E2;
+  border-radius: 20px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 `;
 
 export const CharacterContainer = styled.div`
-  width: 100%;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.5rem;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 `;
 
 export const CharacterImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
   display: block;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 `;
 
 export const DefaultCharacter = styled.svg`
-  width: 100%;
-  height: 100%;
-  max-width: 120px;
-  max-height: 120px;
+  width: 120px;
+  height: 120px;
+`;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 12px;
+  width: 148.8px;
+  height: 64px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+`;
+
+export const NameContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 12px;
+  width: 98px;
+  height: 29px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 `;
 
 export const CrewName = styled.h3`
-  margin: 0;
-  font-size: 1.6rem;
+  width: 56px;
+  height: 29px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
   font-weight: 700;
-  color: #1a1a1a;
+  font-size: 20px;
+  line-height: 24px;
   text-align: center;
-  line-height: 1.4;
+  color: #232527;
+  margin: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 `;
 
 export const CrewNameSuffix = styled.span`
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #666666;
+  width: 30px;
+  height: 23px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #777777;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 `;
 
 export const CrewInfo = styled.p`
-  margin: 0;
-  font-size: 1.4rem;
-  color: #666666;
+  width: 97px;
+  height: 23px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
-  line-height: 1.4;
+  color: #777777;
+  margin: 0;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 `;

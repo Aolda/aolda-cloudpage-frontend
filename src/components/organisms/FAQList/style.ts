@@ -11,3 +11,12 @@ export const FAQItems = styled.div`
   flex-direction: column;
 `;
 
+export const PaginationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 36px;
+  order: 3;
+`;
+

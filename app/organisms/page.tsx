@@ -238,7 +238,7 @@ export default function OrganismsPage() {
         <ProblemsSection
           problems={[
             {
-              title: "학생 프로젝트의 특징들",
+              title: "1. 학생 프로젝트의 특징들",
               descriptions: [
                 "DAU 저조: 대부분의 학생 프로젝트는 일일 활성 사용자(DAU)가 낮음.",
                 "자원 낭비 심각: 실제 사용 시간은 짧지만 서버가 24시간 가동되어 심각한 클라우드 자원 낭비 발생함."

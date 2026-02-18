@@ -4,11 +4,6 @@ export const ProblemItem = styled.div`
   display: flex;
   gap: 1.6rem;
   padding: 2rem 0;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-
-  &:last-child {
-    border-bottom: none;
-  }
 `;
 
 export const ProblemIcon = styled.svg`
@@ -44,5 +39,6 @@ export const ProblemListItem = styled.li`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.textMuted};
   line-height: 1.6;
+  margin-left: 10px;
 `;
 

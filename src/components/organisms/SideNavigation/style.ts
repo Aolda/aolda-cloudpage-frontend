@@ -5,16 +5,15 @@ export const Sidebar = styled.aside`
   max-width: 200px;
   flex-shrink: 0;
   padding: 2rem;
-  background: ${({ theme }) => theme.colors.surface};
-  border-radius: 10px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: #FFFFFF;
   box-sizing: border-box;
 `;
 
 export const SidebarTitle = styled.h2`
   font-size: 1.6rem;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.text};
+  color: #030303;
   margin: 0 0 2rem 0;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 

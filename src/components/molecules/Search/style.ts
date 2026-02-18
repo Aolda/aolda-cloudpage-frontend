@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 export const SearchForm = styled.form`
+  margin-top: 18px;
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 600px;
+  width: 996px;
+  max-width: 996px;
+  height: 48px;
+  
 `;
 
 export const SearchContainer = styled.div`
