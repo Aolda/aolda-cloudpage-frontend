@@ -1,34 +1,50 @@
 import styled from 'styled-components';
 
 export const SolutionCard = styled.div`
-  padding: 2.4rem;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
-  background: #ffffff;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  gap: 0.8rem;
-  min-height: 150px;
-  width: 344px;
-  height: 129px;
+  align-items: center;
+  padding: 20px 0px;
+  gap: 12px;
+  width: 384px;
+  height: 127px;
+  background: #FFFFFF;
+  border: 1px solid #E2E2E2;
+  border-radius: 12px;
+  flex: none;
 `;
 
 export const SolutionTitle = styled.h3`
-  margin: 0;
-  font-size: 2rem;
+  width: auto;
+  height: 29px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
   font-weight: 700;
-  color: #3D90D4;
+  font-size: 20px;
+  line-height: 24px;
+  color: #1A8EE5;
+  margin: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
   text-align: center;
 `;
 
 export const SolutionDescription = styled.p`
-  margin: 0;
-  font-size: 1.4rem;
-  color: #999999;
-  line-height: 1.6;
+  width: auto;
+  height: auto;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
+  color: #777777;
+  margin: 0;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 `;
 

@@ -3,10 +3,13 @@ import styled from 'styled-components';
 export const Breadcrumb = styled.nav`
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.textMuted};
-  margin-bottom: 1.6rem;
+  gap: 8px;
+  font-size: 16px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 0;
 `;
 
 export const BreadcrumbItem = styled.span`
@@ -15,21 +18,29 @@ export const BreadcrumbItem = styled.span`
 `;
 
 export const BreadcrumbLink = styled.a`
-  color: ${({ theme }) => theme.colors.textMuted};
+  color: inherit;
   text-decoration: none;
   transition: color 0.2s;
+  height: 23px;
+  display: flex;
+  align-items: center;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    opacity: 0.8;
   }
 `;
 
 export const BreadcrumbText = styled.span`
-  color: ${({ theme }) => theme.colors.text};
+  color: inherit;
+  display: flex;
+  align-items: center;
 `;
 
 export const Separator = styled.span`
   margin: 0 0.4rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `;
 

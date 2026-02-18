@@ -85,7 +85,7 @@ const ProductDetailPageTemplate = ({
           applicationLink={applicationLink}
           projectLink={projectLink}
         />
-        {overview && <ProductOverviewSection content={overview} />}
+        <ProductOverviewSection content={overview} />
         {problems.length > 0 && <ProblemsSection problems={problems} />}
         {solutions.length > 0 && <SolutionsSection solutions={solutions} />}
         {developers.length > 0 && <DevelopersSection developers={developers} />}

@@ -5,31 +5,27 @@ import { fontSize, colors } from "@/styles/theme";
 
 export const StyledHeader = styled.header`
     display: flex;
-    width: 1440px;
-    max-width: 85rem;
-    height: 4.5rem;
-    justify-content: space-between;
+    width: 1360px;
+    max-width: 1360px;
+    height: 72px;
     align-items: center;
-
-    padding: 1rem;
-    border: solid 1px ${colors.border};
-    border-radius: 0.75rem;
-    background-color: white;
-    
     position: absolute;
     top: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
 
+    padding: 18px 0 18px 16px;
+    border: solid 1px ${colors.border};
+    border-radius: 0.75rem;
+    background-color: white;
     box-sizing: border-box;
 
     .iconSection {
-        width: 2.25rem;
-        height: 2.25rem;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
         
         a {
             display: flex;
@@ -39,27 +35,35 @@ export const StyledHeader = styled.header`
         
         img {
             display: block;
-            width: 35px;
-            height: 36px;
+            width: 35px !important;
+            height: 36px !important;
             object-fit: contain;
         }
     }
 
     .linkSeciton {
-        display: inline-flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
         align-items: center;
         height: 2.5rem;
+        justify-content: center;
     }
 `;
 
 export const NavLink = styled.span<{ $isActive: boolean }>`
     height: 2.5rem;
     text-align: center;
-    padding: 0.5rem 2.25rem;
-    font-size: ${fontSize.base};
+    padding: 0 0.5rem;
+    margin: 0 2.25rem;
+    white-space: nowrap;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
     font-weight: 400;
-
-    color: ${props => props.$isActive ? colors.primary500 : colors.gray500};
+    font-size: 16px;
+    line-height: 19px;
+    color: ${props => props.$isActive ? colors.primary500 : '#777777'};
 
     text-decoration: none;
     transition: color 0.2s ease;

@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import BaseTemplate from '../BaseTemplate';
 import NoticeHeroSection from '../../organisms/NoticeHeroSection';
@@ -39,20 +40,34 @@ const NoticeDetailPageTemplate = ({
   data,
 }: NoticeDetailPageTemplateProps) => {
   const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   const handleListClick = () => {
     router.push('/notice');
+  };
+
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
+  };
+
+  const handleSearch = (value: string) => {
+    // 검색 기능은 목록 페이지로 이동
+    router.push(`/notice?search=${encodeURIComponent(value)}`);
   };
 
   return (
     <BaseTemplate>
       <S.TemplateContainer>
         <NoticeHeroSection
-          title="아올다에서 공지사항을 확인해 보세요."
+          title="아올다에서
+공지사항을 확인해 보세요."
+          searchTerm={searchTerm}
+          onSearchChange={handleSearchChange}
+          onSearch={handleSearch}
           breadcrumbItems={[
             { label: '홈', href: '/' },
             { label: '공지사항', href: '/notice' },
-            { label: data.title },
+            { label: `#${data.number}`, href: `/notice/${data.number}` },
           ]}
         />
         <S.ContentWrapper>

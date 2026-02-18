@@ -76,16 +76,19 @@ const FAQList = ({
             title={faq.title}
             content={faq.content}
             defaultExpanded={faq.defaultExpanded}
+            icon={faq.icon || '/FAQ/FAQ_accordion_icon.png'}
           />
         ))}
       </S.FAQItems>
 
       {totalPages > 1 && (
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={onPageChange}
-        />
+        <S.PaginationWrapper>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={onPageChange}
+          />
+        </S.PaginationWrapper>
       )}
     </S.FAQListContainer>
   );

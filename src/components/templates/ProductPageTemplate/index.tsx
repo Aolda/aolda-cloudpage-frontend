@@ -5,6 +5,7 @@ import BaseTemplate from '../BaseTemplate';
 import ProductHeroSection from '../../organisms/ProductHeroSection';
 import SideNavigation from '../../organisms/SideNavigation';
 import ProductList from '../../organisms/ProductList';
+import Search from '../../molecules/Search';
 import * as S from './style';
 
 export interface ProductPageTemplateProps {
@@ -20,6 +21,7 @@ export interface ProductPageTemplateProps {
     title: string;
     description: string;
     href: string;
+    category?: string;
   }>;
 }
 
@@ -37,7 +39,7 @@ const ProductPageTemplate = ({
   onSearch,
   services = [],
 }: ProductPageTemplateProps) => {
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(['favorites']);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   const categories = [
     { id: 'favorites', label: '즐겨찾기' },
@@ -52,92 +54,111 @@ const ProductPageTemplate = ({
       icon: "/product/product_serviceCard.png",
       title: "AMDB",
       description: "VM 대신 관리형 DB 서비스를 제공해서, 한정된 서버 자원을 더 효율적으로 사용하는 클라우드 DB 프로젝트입니다.",
-      href: "/product/amdb"
+      href: "/product/amdb",
+      category: "server"
+    },{
+      icon: "/product/product_serviceCard.png",
+      title: "AMDB",
+      description: "VM 대신 관리형 DB 서비스를 제공해서, 한정된 서버 자원을 더 효율적으로 사용하는 클라우드 DB 프로젝트입니다.",
+      href: "/product/amdb",
+      category: "server"
+    },{
+      icon: "/product/product_serviceCard.png",
+      title: "AMDB",
+      description: "VM 대신 관리형 DB 서비스를 제공해서, 한정된 서버 자원을 더 효율적으로 사용하는 클라우드 DB 프로젝트입니다.",
+      href: "/product/amdb",
+      category: "server"
+    },{
+      icon: "/product/product_serviceCard.png",
+      title: "AMDB",
+      description: "VM 대신 관리형 DB 서비스를 제공해서, 한정된 서버 자원을 더 효율적으로 사용하는 클라우드 DB 프로젝트입니다.",
+      href: "/product/amdb",
+      category: "server"
+    },{
+      icon: "/product/product_serviceCard.png",
+      title: "AMDB",
+      description: "VM 대신 관리형 DB 서비스를 제공해서, 한정된 서버 자원을 더 효율적으로 사용하는 클라우드 DB 프로젝트입니다.",
+      href: "/product/amdb",
+      category: "server"
     },
     {
       icon: "/product/product_serviceCard.png",
       title: "AMMS",
       description: "1줄일때",
-      href: "/product/amms"
+      href: "/product/amms",
+      category: "instance"
+    }, 
+    {
+      icon: "/product/product_serviceCard.png",
+      title: "AMMS",
+      description: "1줄일때",
+      href: "/product/amms",
+      category: "instance"
+    }, 
+    {
+      icon: "/product/product_serviceCard.png",
+      title: "AMMS",
+      description: "1줄일때",
+      href: "/product/amms",
+      category: "instance"
+    }, 
+    {
+      icon: "/product/product_serviceCard.png",
+      title: "AMMS",
+      description: "1줄일때",
+      href: "/product/amms",
+      category: "instance"
     },
     {
       icon: "/product/product_serviceCard.png",
       title: "ARISE",
       description: "2줄일 때 2줄일 때",
-      href: "/product/arise"
+      href: "/product/arise",
+      category: "storage"
     },
     {
       icon: "/product/product_serviceCard.png",
       title: "Service 4",
       description: "1줄일때",
-      href: "/product/service4"
+      href: "/product/service4",
+      category: "networking"
+    },
+    {
+      icon: "/product/product_serviceCard.png",
+      title: "Service 4",
+      description: "1줄일때",
+      href: "/product/service4",
+      category: "networking"
+    },
+    {
+      icon: "/product/product_serviceCard.png",
+      title: "Service 4",
+      description: "1줄일때",
+      href: "/product/service4",
+      category: "networking"
     },
     {
       icon: "/product/product_serviceCard.png",
       title: "Service 5",
       description: "2줄일 때 2줄일 때",
-      href: "/product/service5"
+      href: "/product/service5",
+      category: "server"
     },
     {
       icon: "/product/product_serviceCard.png",
       title: "Service 6",
       description: "1줄일때",
-      href: "/product/service6"
+      href: "/product/service6",
+      category: "instance"
     },
     {
       icon: "/product/product_serviceCard.png",
       title: "Service 7",
       description: "2줄일 때 2줄일 때",
-      href: "/product/service7"
+      href: "/product/service7",
+      category: "storage"
     },
-    {
-      icon: "/product/product_serviceCard.png",
-      title: "Service 8",
-      description: "1줄일때",
-      href: "/product/service8"
-    },
-    {
-      icon: "/product/product_serviceCard.png",
-      title: "Service 9",
-      description: "2줄일 때 2줄일 때",
-      href: "/product/service9"
-    },
-    {
-      icon: "/product/product_serviceCard.png",
-      title: "Service 10",
-      description: "1줄일때",
-      href: "/product/service10"
-    },
-    {
-      icon: "/product/product_serviceCard.png",
-      title: "Service 11",
-      description: "2줄일 때 2줄일 때",
-      href: "/product/service11"
-    },
-    {
-      icon: "/product/product_serviceCard.png",
-      title: "Service 12",
-      description: "1줄일때",
-      href: "/product/service12"
-    },
-    {
-      icon: "/product/product_serviceCard.png",
-      title: "Service 13",
-      description: "2줄일 때 2줄일 때",
-      href: "/product/service13"
-    },
-    {
-      icon: "/product/product_serviceCard.png",
-      title: "Service 14",
-      description: "1줄일때",
-      href: "/product/service14"
-    },
-    {
-      icon: "/product/product_serviceCard.png",
-      title: "Service 15",
-      description: "2줄일 때 2줄일 때",
-      href: "/product/service15"
-    },
+    
   ];
 
   const handleSearch = (value: string) => {
@@ -164,13 +185,48 @@ const ProductPageTemplate = ({
             />
           </S.SidebarWrapper>
           <S.MainContent>
-            <ProductList
-              searchTerm={searchTerm}
-              onSearchChange={onSearchChange}
-              onSearch={handleSearch}
-              services={services.length > 0 ? services : defaultServices}
-              sectionTitle="즐겨찾기"
-            />
+            <S.SearchSection>
+              <Search
+                placeholder="제품/서비스를 검색해 보세요"
+                value={searchTerm}
+                onChange={onSearchChange}
+                onSearch={handleSearch}
+              />
+            </S.SearchSection>
+            {categories.map((category) => {
+              // 선택된 카테고리만 표시
+              if (selectedCategories.length > 0 && !selectedCategories.includes(category.id)) {
+                return null;
+              }
+              
+              // 해당 카테고리의 서비스만 필터링
+              const allServices = services.length > 0 ? services : defaultServices;
+              const filteredServices = allServices.filter(
+                (service) => service.category === category.id
+              );
+              
+              // 즐겨찾기는 카테고리가 없는 서비스도 포함
+              const categoryServices = category.id === 'favorites' 
+                ? allServices.filter((service) => !service.category || service.category === 'favorites')
+                : filteredServices;
+              
+              // 서비스가 없으면 섹션을 표시하지 않음
+              if (categoryServices.length === 0) {
+                return null;
+              }
+              
+              return (
+                <ProductList
+                  key={category.id}
+                  searchTerm={searchTerm}
+                  onSearchChange={onSearchChange}
+                  onSearch={handleSearch}
+                  services={categoryServices}
+                  sectionTitle={category.label}
+                  showSearch={false}
+                />
+              );
+            })}
           </S.MainContent>
         </S.ContentWrapper>
       </S.TemplateContainer>

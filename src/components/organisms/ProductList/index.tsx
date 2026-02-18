@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Search from '../../molecules/Search';
 import ServiceCard, { type ServiceCardProps } from '../../molecules/ServiceCard';
 import * as S from './style';
@@ -13,6 +14,8 @@ export interface ProductListProps {
   services: ServiceCardProps[];
   /** 섹션 제목 */
   sectionTitle?: string;
+  /** 검색바 표시 여부 */
+  showSearch?: boolean;
 }
 
 /**
@@ -46,21 +49,34 @@ const ProductList = ({
   onSearch,
   services,
   sectionTitle,
+  showSearch = false,
 }: ProductListProps) => {
   return (
     <S.ProductListContainer>
-      <S.SearchSection>
-        <Search
-          placeholder="제품/서비스를 검색해 보세요"
-          value={searchTerm}
-          onChange={onSearchChange}
-          onSearch={onSearch}
-        />
-      </S.SearchSection>
+      {showSearch && (
+        <S.SearchSection>
+          <Search
+            placeholder="제품/서비스를 검색해 보세요"
+            value={searchTerm}
+            onChange={onSearchChange}
+            onSearch={onSearch}
+          />
+        </S.SearchSection>
+      )}
 
       {sectionTitle && (
         <S.SectionHeader>
-          <S.SectionTitle>{sectionTitle}</S.SectionTitle>
+          <S.SectionTitle>
+            <S.SectionIcon>
+              <Image
+                src="/product/main_title_icon.png"
+                alt=""
+                width={35}
+                height={35}
+              />
+            </S.SectionIcon>
+            {sectionTitle}
+          </S.SectionTitle>
         </S.SectionHeader>
       )}
 

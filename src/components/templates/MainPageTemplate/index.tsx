@@ -23,6 +23,9 @@ const MainPageTemplate = () => {
   return (
     <BaseTemplate>
       <S.BackgroundDecorations />
+      <S.Ellipse9 />
+      <S.Ellipse10 />
+      <S.Ellipse11 />
       <S.Ellipse12 />
       <S.MainContent>
         <S.SectionWrapper>

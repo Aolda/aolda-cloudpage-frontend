@@ -15,22 +15,26 @@ export const StyledFooter = styled.footer`
 
     padding: 3.75rem 7.5rem;
 
-    gap: 0.75rem;
+    gap: 1rem;
 
     .logoSection {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         width: 16.3125rem;
-        height: 3.5rem;
+        height: 6.5rem;
 
-        gap: 0.25rem;
+        gap: 0.5rem;
 
         .description {
             padding-left: 2.5rem;
-            color: ${colors.primary500};
+            color: white;
             font-size: ${fontSize.smaller};
-            font-weight: 500;
+            font-weight: 200;
+            margin-top: 3px;
+            padding-left: 4rem;
+            padding-bottom: 0.8rem;
+            line-height: 0.3;
         }
     }
 
@@ -39,13 +43,15 @@ export const StyledFooter = styled.footer`
         flex-direction: column;
         width: 18.84375rem;
         height: 2.5625rem;
-
+        gap: 0.5rem;
+        padding-left: 4.3rem;
         color: white;
-        padding-left: 2.5rem;
 
         .address {
             font-size: ${fontSize.smaller};
-            font-weight: 300;
+            font-weight: 200;
+            line-height: 1.4;
+            width: 200px;
         }
 
         .managementSection {
@@ -53,7 +59,8 @@ export const StyledFooter = styled.footer`
             align-items: center;
             gap: 0.5rem;
             font-size: ${fontSize.smaller};
-            font-weight: 300;
+            font-weight: 200;
+            line-height: 1.4;
 
             .divider {
                 width: 4px;

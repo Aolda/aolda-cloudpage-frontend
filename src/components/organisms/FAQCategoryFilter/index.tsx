@@ -44,6 +44,7 @@ const FAQCategoryFilter = ({
         selectedId={selectedCategory}
         onChange={(id) => onCategoryChange?.(id)}
         prefix="≡ "
+        faqStyle={true}
       />
     </S.FilterContainer>
   );

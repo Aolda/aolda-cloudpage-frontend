@@ -70,7 +70,6 @@ const FAQPageTemplate = ({
     {
       title: 'FAQ Question',
       content: 'This is the answer to the FAQ question.',
-      defaultExpanded: true,
     },
     {
       title: 'FAQ Question',
@@ -147,6 +146,10 @@ const FAQPageTemplate = ({
           searchTerm={searchTerm}
           onSearchChange={handleSearchChange}
           onSearch={handleSearch}
+          breadcrumbItems={[
+            { label: '홈', href: '/' },
+            { label: 'FAQ' },
+          ]}
         />
         <S.ContentWrapper>
           <FAQList

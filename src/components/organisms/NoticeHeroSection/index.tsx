@@ -1,11 +1,13 @@
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
 import Search from '../../molecules/Search';
 import Breadcrumb from '../../molecules/Breadcrumb';
+import Image from 'next/image';
 import * as S from './style';
+
+import type { ReactNode } from 'react';
 
 export interface NoticeHeroSectionProps {
   /** 히어로 섹션 제목 */
-  title: string;
+  title: string | ReactNode;
   /** 검색어 */
   searchTerm?: string;
   /** 검색어 변경 핸들러 */
@@ -48,25 +50,89 @@ const NoticeHeroSection = ({
     { label: '공지사항' },
   ],
 }: NoticeHeroSectionProps) => {
+  // title이 문자열인 경우 "공지사항" 부분만 파란색으로 처리하고 줄바꿈 처리
+  const renderTitle = () => {
+    if (typeof title === 'string') {
+      const parts = title.split('공지사항');
+      if (parts.length > 1) {
+        // 줄바꿈 처리
+        const firstLine = parts[0].trim();
+        const secondLine = parts[1].trim();
+        return (
+          <>
+            {firstLine}
+            <br />
+            <S.HighlightedText>공지사항</S.HighlightedText>
+            {secondLine}
+          </>
+        );
+      }
+      // 줄바꿈이 있는 경우 처리
+      if (title.includes('\n')) {
+        const lines = title.split('\n');
+        return (
+          <>
+            {lines.map((line, index) => {
+              if (line.includes('공지사항')) {
+                const lineParts = line.split('공지사항');
+                return (
+                  <span key={index}>
+                    {lineParts[0]}
+                    <S.HighlightedText>공지사항</S.HighlightedText>
+                    {lineParts[1]}
+                    {index < lines.length - 1 && <br />}
+                  </span>
+                );
+              }
+              return (
+                <span key={index}>
+                  {line}
+                  {index < lines.length - 1 && <br />}
+                </span>
+              );
+            })}
+          </>
+        );
+      }
+      return title;
+    }
+    return title;
+  };
+
   return (
     <S.HeroSection>
       <S.HeroContent>
-        <S.BreadcrumbWrapper>
-          <Breadcrumb items={breadcrumbItems} />
-        </S.BreadcrumbWrapper>
-        <IntroSectionTitle
-          title={title}
-          titleColor="#ffffff"
-          align="left"
-        />
-        <S.SearchWrapper>
-          <Search
-            placeholder="공지사항을 검색해 보세요"
-            value={searchTerm}
-            onChange={onSearchChange}
-            onSearch={onSearch}
-          />
-        </S.SearchWrapper>
+        <S.LeftSection>
+          <S.TitleSection>
+            <S.BreadcrumbWrapper>
+              <Breadcrumb items={breadcrumbItems} />
+            </S.BreadcrumbWrapper>
+            <S.Title>{renderTitle()}</S.Title>
+          </S.TitleSection>
+          <S.SearchWrapper>
+            <Search
+              placeholder="공지사항을 검색해 보세요."
+              value={searchTerm}
+              onChange={onSearchChange}
+              onSearch={onSearch}
+            />
+          </S.SearchWrapper>
+        </S.LeftSection>
+        <S.RightSection>
+          <S.IconWrapper>
+            <Image
+              src="/notice/notice_introicon.png"
+              alt="공지사항 아이콘"
+              width={281}
+              height={187}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+              }}
+            />
+          </S.IconWrapper>
+        </S.RightSection>
       </S.HeroContent>
     </S.HeroSection>
   );

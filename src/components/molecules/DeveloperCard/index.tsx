@@ -43,10 +43,13 @@ const DeveloperCard = ({ name, department, year, icon, href }: DeveloperCardProp
       <S.CharacterContainer>
         <S.CharacterImage src={icon} alt={`${name} 크루`} />
       </S.CharacterContainer>
-      <S.CrewName>
-        {name} <S.CrewNameSuffix>크루</S.CrewNameSuffix>
-      </S.CrewName>
-      <S.CrewInfo>{department} {year}</S.CrewInfo>
+      <S.TextContainer>
+        <S.NameContainer>
+          <S.CrewName>{name}</S.CrewName>
+          <S.CrewNameSuffix>크루</S.CrewNameSuffix>
+        </S.NameContainer>
+        <S.CrewInfo>{department} {year}</S.CrewInfo>
+      </S.TextContainer>
     </S.DeveloperCard>
   );
 

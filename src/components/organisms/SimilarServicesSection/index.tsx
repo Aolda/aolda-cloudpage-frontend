@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import IntroSectionTitle from '../../molecules/IntroSectionTitle';
 import SimilarServiceCard from '../../molecules/SimilarServiceCard';
 import * as S from './style';
@@ -49,13 +50,12 @@ const SimilarServicesSection = ({ services }: SimilarServicesSectionProps) => {
       <IntroSectionTitle
         title={
           <>
-            <S.ServiceIcon viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="8" r="4" stroke="#3D90D4" strokeWidth="2" />
-              <path
-                d="M4 20c1.5-3 4.5-5 8-5s6.5 2 8 5"
-                stroke="#3D90D4"
-                strokeWidth="2"
-                strokeLinecap="round"
+            <S.ServiceIcon>
+              <Image
+                src="/product/product_detail/title_icon3.png"
+                alt="유사 서비스"
+                width={35}
+                height={35}
               />
             </S.ServiceIcon>
             유사 서비스

@@ -11,9 +11,10 @@ export const TemplateContainer = styled.div`
 export const ContentWrapper = styled.div`
   max-width: 1440px;
   width: 100%;
-  margin: 0 auto;
+  margin: 430px auto 0;
   padding: 40px 120px;
   box-sizing: border-box;
   background: #FFFFFF;
+  margin-bottom: 120px;
 `;
 

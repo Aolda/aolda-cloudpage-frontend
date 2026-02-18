@@ -19,6 +19,7 @@ export const ContentWrapper = styled.div`
   padding: 40px 120px;
   box-sizing: border-box;
   background: #FFFFFF;
+  margin-bottom: 150px;
 `;
 
 export const SidebarWrapper = styled.div`
@@ -29,6 +30,13 @@ export const SidebarWrapper = styled.div`
 export const MainContent = styled.div`
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+`;
+
+export const SearchSection = styled.div`
+  width: 100%;
 `;
 
 

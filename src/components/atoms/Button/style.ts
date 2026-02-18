@@ -11,8 +11,6 @@ const sizeStyles = {
     padding: '12px 36px',
     fontSize: '16px',
     gap: '8px',
-    width: 'auto',
-    height: '47px',
   },
 };
 
@@ -34,33 +32,20 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
   transition: opacity 0.2s ease, transform 0.1s ease;
   
   /* 기본 스타일 */
-  background: ${({ $variant, $size }) => 
+  background: ${({ $variant }) => 
     $variant === 'secondary' 
       ? '#FFFFFF' 
-      : $size === 'lg' 
-        ? '#1572B8' 
-        : 'rgb(32, 137, 207)'};
+      : 'rgb(32, 137, 207)'};
   color: ${({ $variant }) => $variant === 'secondary' ? '#181818' : '#ffffff'};
-  border: ${({ $variant, $size }) => 
+  border: ${({ $variant }) => 
     $variant === 'secondary' 
       ? '1px solid #BFBFBF' 
-      : $size === 'lg' 
-        ? 'none' 
-        : '1px solid rgb(32, 137, 207)'};
-  border-radius: ${({ $size, $variant }) => 
-    $size === 'lg' && $variant === 'secondary' 
+      : '1px solid rgb(32, 137, 207)'};
+  border-radius: ${({ $variant }) => 
+    $variant === 'secondary' 
       ? '30px' 
-      : $size === 'lg' 
-        ? '8px' 
-        : '15px'};
+      : '15px'};
   box-sizing: border-box;
-  
-  ${({ $size }) => $size === 'lg' && `
-    height: ${sizeStyles[$size].height};
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-  `}
 
   &:hover {
     opacity: 0.9;
@@ -83,9 +68,10 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
 `;
 
 /* Text */
-export const Label = styled.span<{ $variant: ButtonVariant }>`
+export const Label = styled.span<{ $variant: ButtonVariant; $size: ButtonSize }>`
   width: auto;
   height: 23px;
+  margin-top: 3px;
   /* Title-H4 */
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
@@ -108,3 +94,4 @@ export const Image = styled.img<{ $variant: ButtonVariant }>`
   filter: ${({ $variant }) => $variant === 'secondary' ? 'none' : 'brightness(0) invert(1)'};
 `;
 
+  

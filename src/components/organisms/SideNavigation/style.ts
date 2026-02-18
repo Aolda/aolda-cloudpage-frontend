@@ -6,8 +6,6 @@ export const Sidebar = styled.aside`
   flex-shrink: 0;
   padding: 2rem;
   background: #FFFFFF;
-  border-radius: 10px;
-  border: 1px solid #E2E2E2;
   box-sizing: border-box;
 `;
 

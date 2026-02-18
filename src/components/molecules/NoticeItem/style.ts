@@ -11,40 +11,106 @@ export const NoticeItem = styled.div`
 `;
 
 export const NoticeRow = styled.div`
-  display: grid;
-  grid-template-columns: 60px 100px 1fr 120px;
-  gap: 1.6rem;
-  align-items: center;
-  padding: 1.6rem 0;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.surfaceAlt};
-  }
+  width: 1200px;
+  height: 64px;
+  position: relative;
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
 `;
 
 export const Number = styled.span`
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 16px;
+  gap: 10px;
+  position: absolute;
+  width: 64px;
+  height: 63px;
+  left: 0px;
+  top: 0px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
+  color: #777777;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
 `;
 
 export const Category = styled.span`
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.primary};
-  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 16px;
+  gap: 10px;
+  position: absolute;
+  width: 100px;
+  height: 63px;
+  left: 64px;
+  top: 0px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #1A8EE5;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 `;
 
 export const Title = styled.span`
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.text};
-  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 16px;
+  gap: 10px;
+  position: absolute;
+  width: 944px;
+  height: 63px;
+  left: 164px;
+  top: 0px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #232527;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 `;
 
 export const Date = styled.span`
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.textMuted};
-  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 16px;
+  gap: 10px;
+  position: absolute;
+  width: 92px;
+  height: 64px;
+  left: 1108px;
+  top: 0px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #777777;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 `;
 

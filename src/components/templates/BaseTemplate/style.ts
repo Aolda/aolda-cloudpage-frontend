@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 
 export const MainContent = styled.main`
     flex: 1;
-    padding-bottom: 5rem; 
+    padding-bottom: 0; 
     width: 100%;
 `;
 

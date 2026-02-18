@@ -4,13 +4,12 @@ export const HeroSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-start;
-  padding: 0px 120px 60px;
+  align-items: center;
+  padding: 0px 120px 80px;
   gap: 10px;
   position: relative;
-  width: 1440px;
+  width: 100%;
   height: 400px;
-  margin-bottom: 4rem;
   overflow: hidden;
 
   &::before {
@@ -22,10 +21,10 @@ export const HeroSection = styled.section`
     bottom: 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
                 url('/product/product_detail/product_detail_herosection.jpg');
-    background-size: contrain;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    transform: rotate(90deg) scaleX(2.0) scaleY(4.2);
+    transform: rotate(90deg) scaleX(2.4) scaleY(8);
     z-index: 0;
   }
 `;
@@ -49,75 +48,33 @@ export const HeroContent = styled.div`
   align-items: flex-start;
   padding: 0px;
   gap: 12px;
-  width: 1200px;
-  height: 175px;
+  max-width: 1200px;
+  width: 100%;
   flex: none;
   order: 0;
   flex-grow: 0;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 `;
 
 export const BreadcrumbWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 8px;
   width: auto;
+  min-width: 110px;
   height: 23px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin-bottom: 0;
-
+  
   nav {
-    gap: 8px;
-    margin-bottom: 0;
-    font-size: 16px;
-  }
-
-  span {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    display: flex;
-    align-items: center;
-    text-align: center;
     color: #FFFFFF;
-  }
-
-  a {
-    color: #FFFFFF;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    width: auto;
-    height: 23px;
-  }
-
-  /* Separator 스타일 */
-  span[style*="margin"] {
-    width: 16px;
-    height: 16px;
-    margin: 0;
-    position: relative;
     
-    &::before {
-      content: '';
-      position: absolute;
-      left: 35.94%;
-      right: 35.94%;
-      top: 21.88%;
-      bottom: 21.88%;
-      border: 2px solid #FFFFFF;
-      transform: rotate(45deg);
-      border-top: none;
-      border-left: none;
+    a, span {
+      color: #FFFFFF;
+    }
+    
+    span > span {
+      color: #FFFFFF;
+      
+      &::before {
+        border-color: #FFFFFF;
+      }
     }
   }
 `;
@@ -128,7 +85,8 @@ export const TitleRow = styled.div`
   align-items: center;
   padding: 0px;
   gap: 12px;
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   height: 46px;
   flex: none;
   order: 1;
@@ -160,7 +118,8 @@ export const ServiceName = styled.h1`
 `;
 
 export const ServiceDescription = styled.p`
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   height: 23px;
   font-family: 'Noto Sans KR';
   font-style: normal;
@@ -186,5 +145,31 @@ export const ActionButtons = styled.div`
   flex: none;
   order: 3;
   flex-grow: 0;
+  
+  > * {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 36px;
+    gap: 8px;
+    height: 47px;
+    background: #FFFFFF;
+    border: 1px solid #BFBFBF;
+    border-radius: 30px;
+    flex: none;
+    flex-grow: 0;
+    
+    &:nth-child(1) {
+      width: 135px;
+      order: 0;
+    }
+    
+    &:nth-child(2) {
+      width: 131px;
+      order: 1;
+    }
+  }
 `;
 

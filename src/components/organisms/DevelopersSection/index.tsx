@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import IntroSectionTitle from '../../molecules/IntroSectionTitle';
 import DeveloperCard from '../../molecules/DeveloperCard';
 import * as S from './style';
@@ -40,13 +41,12 @@ const DevelopersSection = ({ developers }: DevelopersSectionProps) => {
       <IntroSectionTitle
         title={
           <>
-            <S.DeveloperIcon viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="8" r="4" stroke="#3D90D4" strokeWidth="2" />
-              <path
-                d="M4 20c1.5-3 4.5-5 8-5s6.5 2 8 5"
-                stroke="#3D90D4"
-                strokeWidth="2"
-                strokeLinecap="round"
+            <S.DeveloperIcon>
+              <Image
+                src="/product/product_detail/title_icon3.png"
+                alt="개발진"
+                width={35}
+                height={35}
               />
             </S.DeveloperIcon>
             개발진
