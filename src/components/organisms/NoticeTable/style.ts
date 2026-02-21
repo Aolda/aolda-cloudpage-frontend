@@ -20,8 +20,8 @@ export const TableBody = styled.div`
 
 export const Separator = styled.div`
   width: 1200px;
-  height: 0px;
-  border: 0.1px solid #E2E2E2;
+  height: 1px;
+  background: #E2E2E2;
   flex: none;
   align-self: stretch;
   flex-grow: 0;

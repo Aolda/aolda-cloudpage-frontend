@@ -4,7 +4,6 @@ export const Container = styled.div<{ $align: 'left' | 'center' }>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
   padding: 0px;
   width: 100%;
   text-align: ${({ $align }) => $align};
@@ -24,6 +23,7 @@ export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
   flex: none;
   order: 0;
   flex-grow: 0;
+  margin-bottom: 12px;
   align-self: ${({ $align }) => ($align === 'center' ? 'center' : 'flex-start')};
 `;
   
@@ -58,18 +58,18 @@ export const Title = styled.h2<{ $color?: string }>`
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
   font-size: 32px;
-  line-height: 100%;
+  line-height: 140%;
   letter-spacing: 0;
   font-style: normal;
   color: ${({ $color }) => $color ?? '#232527'};
   white-space: pre-line;
   display: block;
   width: 100%;
+  margin-bottom: 24px;
 `;
 
 export const Description = styled.p<{ $color?: string }>`
   margin: 0;
-  margin-top: 12px;
   font-size: 1.6rem;
   color: ${({ $color, theme }) => $color ?? theme.colors.textMuted};
   max-width: 600px;

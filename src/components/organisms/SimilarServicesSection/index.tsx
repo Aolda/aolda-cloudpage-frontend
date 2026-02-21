@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import IconTitle from '../../molecules/IconTitle';
 import SimilarServiceCard from '../../molecules/SimilarServiceCard';
 import * as S from './style';
 
@@ -49,21 +48,12 @@ export interface SimilarServicesSectionProps {
 const SimilarServicesSection = ({ services }: SimilarServicesSectionProps) => {
   return (
     <S.SimilarServicesSection>
-      <IntroSectionTitle
-        title={
-          <>
-            <S.ServiceIcon>
-              <Image
-                src="/product/product_detail/title_icon3.png"
-                alt="유사 서비스"
-                width={35}
-                height={35}
-              />
-            </S.ServiceIcon>
-            유사 서비스
-          </>
-        }
+      <IconTitle
+        icon="/product/product_detail/title_icon3.png"
+        title="유사 서비스"
+        alt="유사 서비스"
         align="left"
+        iconSize={35}
       />
       <S.Description>
         본 제품과 관련 있는 유사 기능들을 제공하여 이해를 돕도록 위함.
