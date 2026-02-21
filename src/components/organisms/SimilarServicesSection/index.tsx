@@ -6,6 +6,8 @@ import * as S from './style';
 export interface SimilarService {
   /** 서비스 로고 이미지 경로 (선택, 없으면 자동 favicon) */
   logo?: string;
+  /** 서비스 배너 이미지 경로 (선택, HeaderSection 배경으로 사용) */
+  bannerImage?: string;
   /** 서비스 제목 */
   title: string;
   /** 서비스 설명 */
@@ -71,6 +73,7 @@ const SimilarServicesSection = ({ services }: SimilarServicesSectionProps) => {
           <SimilarServiceCard
             key={index}
             logo={service.logo}
+            bannerImage={service.bannerImage}
             title={service.title}
             description={service.description}
             href={service.href}

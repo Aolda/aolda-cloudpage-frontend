@@ -8,6 +8,12 @@ export interface SimilarServiceCardProps {
    * - public 폴더 경로 (예: "/logos/aws-logo.png") 또는 외부 URL 모두 지원
    */
   logo?: string;
+  /** 
+   * 서비스 배너 이미지 경로 (선택)
+   * - HeaderSection의 배경 이미지로 사용
+   * - public 폴더 경로 (예: "/banners/naver-cloud-banner.png") 또는 외부 URL 모두 지원
+   */
+  bannerImage?: string;
   /** 서비스 제목 */
   title: string;
   /** 서비스 설명 */
@@ -77,6 +83,7 @@ const getFaviconUrl = (domain: string): string => {
  */
 const SimilarServiceCard = ({
   logo,
+  bannerImage,
   title,
   description,
   href,
@@ -122,7 +129,7 @@ const SimilarServiceCard = ({
   return (
     <S.ServiceCardLink href={href} target="_blank" rel="noopener noreferrer">
       <S.ServiceCard>
-        <S.HeaderSection>
+        <S.HeaderSection $bannerImage={bannerImage}>
           {logoUrl && (
             <S.MainLogo 
               src={logoUrl} 
