@@ -43,65 +43,49 @@ const InPageNavigation = ({
   return (
     <S.NavigationContainer>
       <S.NavItem>
+        <S.NavLeft>
+          <S.ArrowIcon $direction="up" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M18 15L12 9L6 15"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </S.ArrowIcon>
+          <S.NavLabel>이전글</S.NavLabel>
+        </S.NavLeft>
         {prevTitle && prevHref ? (
-          <S.NavLink as={Link} href={prevHref}>
-            <S.ArrowIcon $direction="up" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M18 15L12 9L6 15"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </S.ArrowIcon>
-            <S.NavLabel>이전글</S.NavLabel>
-            <S.NavTitle>{prevTitle}</S.NavTitle>
-          </S.NavLink>
+          <S.NavTitleWrapper>
+            <S.NavTitleLink as={Link} href={prevHref}>{prevTitle}</S.NavTitleLink>
+          </S.NavTitleWrapper>
         ) : (
-          <S.NavEmpty>
-            <S.ArrowIcon $direction="up" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M18 15L12 9L6 15"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </S.ArrowIcon>
-            <S.NavLabel>이전글</S.NavLabel>
+          <S.NavTitleWrapper>
             <S.NavTitle>이전 글이 없습니다</S.NavTitle>
-          </S.NavEmpty>
+          </S.NavTitleWrapper>
         )}
       </S.NavItem>
       <S.NavItem>
+        <S.NavLeft>
+          <S.ArrowIcon $direction="down" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M6 9L12 15L18 9"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </S.ArrowIcon>
+          <S.NavLabel>다음글</S.NavLabel>
+        </S.NavLeft>
         {nextTitle && nextHref ? (
-          <S.NavLink as={Link} href={nextHref}>
-            <S.ArrowIcon $direction="down" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M6 9L12 15L18 9"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </S.ArrowIcon>
-            <S.NavLabel>다음글</S.NavLabel>
-            <S.NavTitle>{nextTitle}</S.NavTitle>
-          </S.NavLink>
+          <S.NavTitleWrapper>
+            <S.NavTitleLink as={Link} href={nextHref}>{nextTitle}</S.NavTitleLink>
+          </S.NavTitleWrapper>
         ) : (
-          <S.NavEmpty>
-            <S.ArrowIcon $direction="down" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M6 9L12 15L18 9"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </S.ArrowIcon>
-            <S.NavLabel>다음글</S.NavLabel>
+          <S.NavTitleWrapper>
             <S.NavTitle>다음 글이 없습니다</S.NavTitle>
-          </S.NavEmpty>
+          </S.NavTitleWrapper>
         )}
       </S.NavItem>
     </S.NavigationContainer>

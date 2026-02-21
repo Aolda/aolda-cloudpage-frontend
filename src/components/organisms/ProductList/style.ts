@@ -26,16 +26,36 @@ export const SectionTitle = styled.h2`
   display: flex;
   align-items: center;
   gap: 0.8rem;
+`;
 
-  &::before {
-    content: '❤️';
-    font-size: 1.6rem;
+export const SectionIcon = styled.span`
+  display: inline-block;
+  width: 24.85px;
+  height: 21.57px;
+  flex-shrink: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 `;
 
 export const ServiceGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.6rem;
+  grid-template-columns: repeat(4, 231px);
+  gap: 24px;
+  justify-content: flex-start;
+  
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 231px);
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 231px);
+  }
+  
+  @media (max-width: 500px) {
+    grid-template-columns: 231px;
+  }
 `;
 

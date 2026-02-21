@@ -30,17 +30,17 @@ export interface NoticeTableProps {
  * @returns {JSX.Element} 공지사항 테이블 요소
  */
 const NoticeTable = ({ notices }: NoticeTableProps) => {
+  // 강제로 10개만 표시
+  const limitedNotices = notices.slice(0, 10);
+  
   return (
     <S.NoticeTable>
-      <S.TableHeader>
-        <S.HeaderCell>번호</S.HeaderCell>
-        <S.HeaderCell>카테고리</S.HeaderCell>
-        <S.HeaderCell>제목</S.HeaderCell>
-        <S.HeaderCell>날짜</S.HeaderCell>
-      </S.TableHeader>
       <S.TableBody>
-        {notices.map((notice) => (
-          <NoticeItem key={notice.number} {...notice} />
+        {limitedNotices.map((notice, index) => (
+          <div key={notice.number}>
+            <NoticeItem {...notice} />
+            {index < limitedNotices.length - 1 && <S.Separator />}
+          </div>
         ))}
       </S.TableBody>
     </S.NoticeTable>

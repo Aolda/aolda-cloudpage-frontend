@@ -56,7 +56,7 @@ const Button = ({
   const content = (
     <>
       {image && <S.Image src={image} alt={label} $variant={variant} />}
-      <S.Label $variant={variant}>{label}</S.Label>
+      <S.Label $variant={variant} $size={size}>{label}</S.Label>
     </>
   );
 

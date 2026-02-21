@@ -41,7 +41,7 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
           ) : (
             <S.BreadcrumbText>{item.label}</S.BreadcrumbText>
           )}
-          {index < items.length - 1 && <S.Separator> &gt; </S.Separator>}
+          {index < items.length - 1 && <S.Separator>&gt;</S.Separator>}
         </S.BreadcrumbItem>
       ))}
     </S.Breadcrumb>

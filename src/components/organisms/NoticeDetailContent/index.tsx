@@ -1,3 +1,4 @@
+import ReactMarkdown from 'react-markdown';
 import Button from '../../atoms/Button';
 import InPageNavigation from '../../molecules/InPageNavigation';
 import * as S from './style';
@@ -67,11 +68,20 @@ const NoticeDetailContent = ({
       <S.Header>
         <S.Title>{data.title}</S.Title>
         <S.Meta>
-          <S.MetaItem>작성자 {data.author}</S.MetaItem>
+          <S.MetaItem>
+            <span>작성자</span>
+            <span>{data.author}</span>
+          </S.MetaItem>
           <S.MetaSeparator>|</S.MetaSeparator>
-          <S.MetaItem>{data.date}</S.MetaItem>
+          <S.MetaItem>
+            <span>작성일</span>
+            <span>{data.date}</span>
+          </S.MetaItem>
           <S.MetaSeparator>|</S.MetaSeparator>
-          <S.MetaItem>조회수 {data.views}</S.MetaItem>
+          <S.MetaItem>
+            <span>조회수</span>
+            <span>{data.views}</span>
+          </S.MetaItem>
         </S.Meta>
         {data.attachments && data.attachments.length > 0 && (
           <S.AttachmentList>
@@ -102,21 +112,23 @@ const NoticeDetailContent = ({
 
       <S.Content>
         {typeof data.content === 'string' ? (
-          <S.ContentText dangerouslySetInnerHTML={{ __html: data.content }} />
+          <ReactMarkdown>{data.content}</ReactMarkdown>
         ) : (
           data.content
         )}
       </S.Content>
 
       <S.Footer>
-        <InPageNavigation
-          prevTitle={data.prevTitle}
-          prevHref={data.prevHref}
-          nextTitle={data.nextTitle}
-          nextHref={data.nextHref}
-        />
+        <S.NavigationWrapper>
+          <InPageNavigation
+            prevTitle={data.prevTitle}
+            prevHref={data.prevHref}
+            nextTitle={data.nextTitle}
+            nextHref={data.nextHref}
+          />
+        </S.NavigationWrapper>
         <S.ListButtonWrapper>
-          <Button label="목록" onClick={onListClick} size="md" />
+          <Button label="목록" onClick={onListClick} size="lg" />
         </S.ListButtonWrapper>
       </S.Footer>
     </S.DetailContainer>

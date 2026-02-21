@@ -4,7 +4,7 @@ export const Section = styled.section`
   display: grid;
   grid-template-columns: 1fr 0.45fr;
   gap: 1.6rem;
-  padding: 2rem 0 3rem;
+  padding: 0 0 3rem;
   align-items: stretch;
   max-width: 1200px;
   margin: 0 auto;

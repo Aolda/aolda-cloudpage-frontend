@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  width: 1200px;
-  height: 796px;
+  max-width: 1200px;
+  width: 100%;
+  min-height: 474px;
   padding-top: 160px;
-  gap: 48px;
+  padding-bottom: 72px;
+  gap: 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  box-sizing: border-box;
 `;
 
 export const Divider = styled.span`

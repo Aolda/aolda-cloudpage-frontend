@@ -1,4 +1,5 @@
-import TagFilter from '../../molecules/TagFilter';
+import Image from 'next/image';
+import IntroSectionTitle from '../../molecules/IntroSectionTitle';
 import * as S from './style';
 
 export interface ProductOverviewSectionProps {
@@ -22,11 +23,21 @@ export interface ProductOverviewSectionProps {
 const ProductOverviewSection = ({ content }: ProductOverviewSectionProps) => {
   return (
     <S.OverviewSection>
-      <TagFilter
-        items={[{ id: 'overview', label: '제품 개요' }]}
-        selectedId="overview"
-        onChange={() => {}}
-        prefix="≡ "
+      <IntroSectionTitle
+        title={
+          <>
+            <S.OverviewIcon>
+              <Image
+                src="/product/product_detail/main_title_icon.png"
+                alt="제품 개요"
+                width={35}
+                height={35}
+              />
+            </S.OverviewIcon>
+            제품 개요
+          </>
+        }
+        align="left"
       />
       {content && <S.OverviewContent>{content}</S.OverviewContent>}
     </S.OverviewSection>

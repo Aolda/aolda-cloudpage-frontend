@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import IntroSectionTitle from '../../molecules/IntroSectionTitle';
 import ProblemItem from '../../molecules/ProblemItem';
 import * as S from './style';
@@ -43,10 +44,13 @@ const ProblemsSection = ({ problems }: ProblemsSectionProps) => {
       <IntroSectionTitle
         title={
           <>
-            <S.ProblemIcon viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="10" stroke="#EF4444" strokeWidth="2" />
-              <path d="M12 8v4" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
-              <path d="M12 16h.01" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
+            <S.ProblemIcon>
+              <Image
+                src="/product/product_detail/title_icon1.png"
+                alt="문제점"
+                width={24}
+                height={24}
+              />
             </S.ProblemIcon>
             문제점
           </>

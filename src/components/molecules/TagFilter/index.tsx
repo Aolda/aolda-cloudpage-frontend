@@ -16,6 +16,8 @@ export interface TagFilterProps {
   onChange?: (selectedId: string) => void;
   /** 태그 prefix (기본값: '#') */
   prefix?: string;
+  /** FAQ 스타일 적용 여부 */
+  faqStyle?: boolean;
 }
 
 /**
@@ -46,6 +48,7 @@ const TagFilter = ({
   selectedId,
   onChange,
   prefix = '#',
+  faqStyle = false,
 }: TagFilterProps) => {
   const handleClick = (itemId: string) => {
     if (!onChange) return;
@@ -53,11 +56,12 @@ const TagFilter = ({
   };
 
   return (
-    <S.Container>
+    <S.Container data-faq-style={faqStyle}>
       {items.map((item) => (
         <S.Button
           key={item.id}
           $isActive={selectedId === item.id}
+          $faqStyle={faqStyle}
           onClick={() => handleClick(item.id)}
         >
           {prefix}{item.label}
