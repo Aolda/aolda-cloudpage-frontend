@@ -17,14 +17,16 @@ export const Container = styled.div<{ $align: 'left' | 'center' }>`
 
 export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
   width: 48px;
-  height: 0px;
-  border: 3px solid #777777;
+  height: 3px;
+  background: #777777;
+  border-radius: 1.5px;
+  border: none;
   flex: none;
   order: 0;
   flex-grow: 0;
   align-self: ${({ $align }) => ($align === 'center' ? 'center' : 'flex-start')};
 `;
-
+  
 export const ImageContainer = styled.div`
   position: relative;
   border-radius: 1rem;
@@ -54,10 +56,11 @@ export const Overlay = styled.div`
 export const Title = styled.h2<{ $color?: string }>`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  line-height: 38px;
+  line-height: 100%;
+  letter-spacing: 0;
+  font-style: normal;
   color: ${({ $color }) => $color ?? '#232527'};
   white-space: pre-line;
   display: block;

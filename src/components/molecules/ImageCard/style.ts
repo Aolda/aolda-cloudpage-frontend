@@ -5,28 +5,26 @@ type CardTone = 'blue' | 'red';
 export const ImageCard = styled.div<{ $tone: CardTone; $isBackground?: boolean }>`
   box-sizing: border-box;
   display: flex;
-  flex-direction: ${({ $isBackground }) => ($isBackground ? 'column' : 'row')};
-  justify-content: ${({ $isBackground }) => ($isBackground ? 'center' : 'flex-start')};
-  align-items: ${({ $isBackground }) => ($isBackground ? 'center' : 'center')};
-  padding: ${({ $isBackground }) => ($isBackground ? '0' : '2rem')};
-  gap: ${({ $isBackground }) => ($isBackground ? '0' : '2rem')};
-  width: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
-  min-height: ${({ $isBackground }) => ($isBackground ? '100%' : 'auto')};
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: ${({ $isBackground }) => ($isBackground ? 'flex-start' : 'center')};
+  padding: ${({ $isBackground }) => ($isBackground ? '48px' : '2rem')};
+  gap: ${({ $isBackground }) => ($isBackground ? '10px' : '2rem')};
+  width: ${({ $isBackground }) => ($isBackground ? '792px' : '360px')};
+  min-height: ${({ $isBackground }) => ($isBackground ? '452px' : 'auto')};
+  height: ${({ $isBackground }) => ($isBackground ? '452px' : '120px')};
   background: ${({ $isBackground }) => ($isBackground ? 'transparent' : '#FFFFFF')};
   border: none;
-  border-radius: ${({ $isBackground }) => ($isBackground ? '10px' : '0')};
+  border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '0')};
   flex: none;
   order: 0;
-  flex-grow: ${({ $isBackground }) => ($isBackground ? '1' : '0')};
+  flex-grow: 0;
   overflow: hidden;
   position: relative;
-  width: 360px;
-  height: 120px;
   ${({ $isBackground }) =>
     $isBackground &&
     css`
       box-shadow: none;
-      min-height: 100%;
     `}
 `;
 
@@ -36,9 +34,9 @@ export const Overlay = styled.div<{ $isBackground?: boolean }>`
     css`
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
       z-index: 1;
-      border-radius: 10px;
+      border-radius: 12px;
     `}
 `;
 
@@ -55,8 +53,8 @@ export const Image = styled.img<{ $isBackground?: boolean }>`
   width: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
   height: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
   object-fit: cover;
-  border-radius: ${({ $isBackground }) => ($isBackground ? '10px' : '8px')};
-  background: #333333;
+  border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '8px')};
+  background: #ffffff;
   ${({ $isBackground }) =>
     $isBackground &&
     css`
@@ -85,9 +83,8 @@ export const ImageTitle = styled.h3<{ $isBackground?: boolean }>`
     css`
       position: relative;
       z-index: 2;
-      line-height: 1.4;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      padding: 24px 28px;
+      line-height: 100%;
+      padding: 48px;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;

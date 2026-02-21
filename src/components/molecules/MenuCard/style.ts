@@ -35,17 +35,59 @@ export const Title = styled.h2`
   align-self: flex-start;
 `;
 
+/* Frame 1 - 액션 영역 컨테이너 */
 export const ActionLabel = styled.span`
-  font-size: 1.8rem;
-  color: #666666;
-  align-self: flex-end;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
-  gap: 0.4rem;
+  padding: 0;
+  gap: 12px;
+  margin: 0 auto;
   margin-top: auto;
+  width: 326px;
+  height: 29px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
 `;
 
+/* 사용 가이드 - Title-H3 */
+export const ActionLabelText = styled.span`
+  height: 29px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #777777;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+`;
+
+/* famicons:chevron-forward-outline - 24x24, 화살표 90도(오른쪽) */
 export const ArrowIcon = styled.span`
-  color: #666666;
-  font-size: 1.5rem;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+`;
+
+/* Vector - 24x24, 90도 각도 chevron SVG */
+export const ArrowVector = styled.svg`
+  width: 24px;
+  height: 24px;
+  color: #777777;
+  display: block;
+  degree: 180deg;
 `;

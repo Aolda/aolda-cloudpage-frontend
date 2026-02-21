@@ -4,12 +4,24 @@ import ImageCard from '../../molecules/ImageCard';
 
 const CardItems = [
   {
-    title: '아올다,\n처음이신가요?',
+    title: (
+      <>
+        아올다,
+        <br />
+        처음이신가요?
+      </>
+    ),
     actionLabel: '사용 가이드 ',
     href: '/useinfo',
   },
   {
-    title: '저희의 활동을\n모아봤어요!',
+    title: (
+      <>
+        저희의 활동을
+        <br />
+        모아봤어요!
+      </>
+    ),
     actionLabel: '테크 블로그 ',
     href: '/blog',
   },
