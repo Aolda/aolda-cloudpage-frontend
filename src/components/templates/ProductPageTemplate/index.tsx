@@ -118,42 +118,42 @@ const ProductPageTemplate = ({
     },
     {
       icon: "/product/product_serviceCard.png",
-      title: "Service 4",
+      title: "AMDB",
       description: "1줄일때",
       href: "/product/service4",
       category: "networking"
     },
     {
       icon: "/product/product_serviceCard.png",
-      title: "Service 4",
+      title: "AMDB",
       description: "1줄일때",
       href: "/product/service4",
       category: "networking"
     },
     {
       icon: "/product/product_serviceCard.png",
-      title: "Service 4",
+      title: "AMDB",
       description: "1줄일때",
       href: "/product/service4",
       category: "networking"
     },
     {
       icon: "/product/product_serviceCard.png",
-      title: "Service 5",
+      title: "AMDB",
       description: "2줄일 때 2줄일 때",
       href: "/product/service5",
       category: "server"
     },
     {
       icon: "/product/product_serviceCard.png",
-      title: "Service 6",
+      title: "AMDB",
       description: "1줄일때",
       href: "/product/service6",
       category: "instance"
     },
     {
       icon: "/product/product_serviceCard.png",
-      title: "Service 7",
+      title: "AMDB",
       description: "2줄일 때 2줄일 때",
       href: "/product/service7",
       category: "storage"

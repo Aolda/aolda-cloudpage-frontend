@@ -5,8 +5,8 @@ export const PaginationContainer = styled.nav`
   flex-direction: row;
   align-items: center;
   padding: 0px;
-  gap: 36px;
-  width: 444px;
+  gap: 8px;
+  width: auto;
   height: 32px;
   flex: none;
   order: 2;
@@ -69,7 +69,7 @@ export const PageList = styled.div`
   align-items: center;
   padding: 0px;
   gap: 8px;
-  width: 272px;
+  width: auto;
   height: 32px;
   flex: none;
   order: 1;

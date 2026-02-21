@@ -1,58 +1,106 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import type { CardTone } from './index';
 
+/* Frame 41 */
 export const ItemCard = styled.div<{ $tone: CardTone }>`
-  padding: 32px 36px 32px 36px;
-  border-radius: 1rem;
-  border: 1px solid #e0e0e0;
-  background: #ffffff;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  gap: 0;
-  width: 100%;
-  min-height: 200px;
-  box-shadow: none;
-  position: relative;
-  box-sizing: border-box;
+  padding: 32px 36px;
+  gap: 36px;
+  width: 384px;
+  height: 400px;
+  background: #ffffff;
+  border: 2px solid #e2e2e2;
+  border-radius: 16px;
+  flex: none;
+  order: 0;
+  flex-grow: 1;
 `;
 
+/* image 452 - 컨테이너 120 고정, scale로 아이콘만 확대(여백은 잘림) */
 export const Icon = styled.span`
+  width: 120px;
+  height: 120px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.2rem;
-  width: 100%;
-  height: 140px;
-  flex-shrink: 0;
+  overflow: hidden;
 `;
 
-export const IconImage = styled.img`
-  width: 140px;
-  height: 140px;
+export const IconImage = styled.img<{ $scale?: number }>`
+  width: 120px;
+  height: 120px;
   object-fit: contain;
+  object-position: center;
   display: block;
+  transform: scale(${({ $scale = 1.2 }) => $scale});
+  transform-origin: center center;
 `;
 
+/* Frame 40 */
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 12px;
+  width: 312px;
+  height: 104px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+`;
+
+/* Title-H1 */
 export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
-  margin: 0 0 0.6rem 0;
-  font-size: 32px;
+  width: 313px;
+  height: 46px;
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: bold;
   font-weight: 700;
-  color: ${({ $tone }) => ($tone === 'red' ? 'rgb(233, 23, 23)' : '#3D90D4')};
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  font-size: 32px;
+  line-height: 100%;
+  text-align: center;
+  color: ${({ $tone }) => ($tone === 'red' ? 'rgb(233, 23, 23)' : '#1A8EE5')};
+  flex: none;
+  order: 0;
+  letter-spacing: 0%;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
+/* Content-C4 */
 export const ItemDescription = styled.p`
+  width: 312px;
+  height: 46px;
   margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 16px;
-  color: #666666;
-  line-height: 1.5;
-  letter-spacing: -0.01em;
+  line-height: 19px;
+  text-align: center;
+  color: #777777;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   word-wrap: break-word;
   word-break: break-word;
-  white-space: normal;
-  width: 100%;
 `;
 

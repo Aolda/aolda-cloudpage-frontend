@@ -22,7 +22,7 @@ export const ContentRow = styled.div`
   width: 100%;
   max-width: 1200px;
   height: auto;
-  min-height: 518px;
+  min-height: 488px;
   flex: none;
   order: 1;
   align-self: stretch;
@@ -37,8 +37,8 @@ export const LeftPanel = styled.div`
   padding: 0px;
   gap: 36px;
   width: 797px;
-  height: auto;
-  min-height: 518px;
+  height: 488px;
+  min-height: 488px;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -59,14 +59,16 @@ export const ImageWrapper = styled.div`
   flex-grow: 0;
 `;
 
-export const Description = styled.p`
+export const Description = styled.div`
   width: 797px;
-  height: 174px;
+  height: 144px;
+  margin-top:36px;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 19.7px;
-  line-height: 140%;
+  font-size: 20px;
+  line-height: 100%;
+  font-style: regular;
   letter-spacing: 0%;
   color: #777777;
   margin: 0;
@@ -81,7 +83,7 @@ export const RightPanel = styled.div`
   /* Rectangle 5 */
   position: relative;
   width: 379px;
-  height: 518px;
+  height: 488px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   border-radius: 12px;
   overflow: hidden;

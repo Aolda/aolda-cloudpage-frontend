@@ -12,12 +12,12 @@ export const ServiceCardWrapper = styled.div`
 
 export const ServiceCard = styled.div`
   background: #ffffff;
-  border-radius: 10px;
-  padding: 1.5rem;
+  border-radius: 8px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  border: 1px solid #e1e6f5;
+  gap: 8px;
+  border: 1px solid #E2E2E2;
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   height: 240px;
@@ -28,11 +28,32 @@ export const ServiceCard = styled.div`
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
+  
 `;
 
+/* Frame 1261158722 - 아이콘 + 제목 블록 */
+export const IconTitleBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 4px;
+  width: 58px;
+  max-width: 58px;
+  height: 60px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-bottom: 8px;
+`;
+
+/* tabler:database-heart - 32x32 */
 export const Icon = styled.img`
-  width: 4rem;
-  height: 4rem;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
   object-fit: contain;
 `;
 
@@ -40,15 +61,19 @@ export const Content = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 4px;
 `;
 
 export const AMDBIconContainer = styled.div`
+  width: 32px;
+  height: 32px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  margin-bottom: 0.4rem;
-  position: relative;
+  justify-content: center;
 `;
 
 export const DatabaseIcon = styled.svg`
@@ -66,17 +91,32 @@ export const HeartIcon = styled.svg`
   z-index: 1;
 `;
 
+/* Text - Title-H3 */
 export const Title = styled.h3`
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #1a1a1a;
+  width: 58px;
+  height: 24px;
   margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #232527;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Description = styled.p`
-  font-size: 1.4rem;
+  font-size: 12px;
   color: #5b6275;
-  line-height: 1.6;
+  font: noto sans kr;
+  font-style: regular;
+  line-height: 1.4;
   margin: 0;
 `;
 

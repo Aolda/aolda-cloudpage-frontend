@@ -100,6 +100,7 @@ const getProductData = (id: string) => {
         },
         {
           logo: '/naver-cloud-logo.png',
+          bannerImage: 'https://example.com/naver-cloud-banner.png', // 구글 이미지 URL을 여기에 넣으세요
           title: 'NAVER CLOUD PLATFORM',
           description:
             'cloud computing services for corporations, IaaS, PaaS, SaaS, with global region and security Technology Certification',

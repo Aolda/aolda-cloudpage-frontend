@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import IconTitle from '../../molecules/IconTitle';
 import * as S from './style';
 
 export interface ProductOverviewSectionProps {
@@ -23,21 +22,12 @@ export interface ProductOverviewSectionProps {
 const ProductOverviewSection = ({ content }: ProductOverviewSectionProps) => {
   return (
     <S.OverviewSection>
-      <IntroSectionTitle
-        title={
-          <>
-            <S.OverviewIcon>
-              <Image
-                src="/product/product_detail/main_title_icon.png"
-                alt="제품 개요"
-                width={35}
-                height={35}
-              />
-            </S.OverviewIcon>
-            제품 개요
-          </>
-        }
+      <IconTitle
+        icon="/product/product_detail/main_title_icon.png"
+        title="제품 개요"
+        alt="제품 개요"
         align="left"
+        iconSize={35}
       />
       {content && <S.OverviewContent>{content}</S.OverviewContent>}
     </S.OverviewSection>

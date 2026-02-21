@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import IconTitle from '../../molecules/IconTitle';
 import DeveloperCard from '../../molecules/DeveloperCard';
 import * as S from './style';
 
@@ -38,21 +37,12 @@ export interface DevelopersSectionProps {
 const DevelopersSection = ({ developers }: DevelopersSectionProps) => {
   return (
     <S.DevelopersSection>
-      <IntroSectionTitle
-        title={
-          <>
-            <S.DeveloperIcon>
-              <Image
-                src="/product/product_detail/title_icon3.png"
-                alt="개발진"
-                width={35}
-                height={35}
-              />
-            </S.DeveloperIcon>
-            개발진
-          </>
-        }
+      <IconTitle
+        icon="/product/product_detail/title_icon3.png"
+        title="개발진"
+        alt="개발진"
         align="left"
+        iconSize={35}
       />
       <S.DevelopersGrid>
         {developers.map((developer, index) => {

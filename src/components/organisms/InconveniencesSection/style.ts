@@ -14,6 +14,6 @@ export const PromiseGrid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.6rem;
+  gap: 24px;
 `;
 
