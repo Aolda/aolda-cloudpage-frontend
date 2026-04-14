@@ -94,7 +94,7 @@ export const Col = styled.div`
 /* Content-C4 */
 export const Caption = styled.p`
   width: 100%;
-  max-width: 164px;
+  max-width: 163px;
   height: 46px;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;

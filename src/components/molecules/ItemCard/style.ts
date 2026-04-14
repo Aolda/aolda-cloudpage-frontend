@@ -73,7 +73,7 @@ export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
   color: ${({ $tone }) => ($tone === 'red' ? 'rgb(233, 23, 23)' : '#1A8EE5')};
   flex: none;
   order: 0;
-  letter-spacing: 0%;
+  letter-spacing: 0%; 
   align-self: stretch;
   flex-grow: 0;
   display: flex;
