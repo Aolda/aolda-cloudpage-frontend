@@ -126,8 +126,8 @@ export const WriteText = styled.span`
 
 export const Separator = styled.div`
   width: 1200px;
-  height: 0px;
-  border: 1px solid #E2E2E2;
+  height: 1px;
+  background: #E2E2E2;
   flex: none;
   order: 1;
   align-self: stretch;

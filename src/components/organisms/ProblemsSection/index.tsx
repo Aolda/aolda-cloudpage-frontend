@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import IconTitle from '../../molecules/IconTitle';
 import ProblemItem from '../../molecules/ProblemItem';
 import * as S from './style';
 
@@ -41,21 +40,12 @@ export interface ProblemsSectionProps {
 const ProblemsSection = ({ problems }: ProblemsSectionProps) => {
   return (
     <S.ProblemsSection>
-      <IntroSectionTitle
-        title={
-          <>
-            <S.ProblemIcon>
-              <Image
-                src="/product/product_detail/title_icon1.png"
-                alt="문제점"
-                width={24}
-                height={24}
-              />
-            </S.ProblemIcon>
-            문제점
-          </>
-        }
+      <IconTitle
+        icon="/product/product_detail/title_icon1.png"
+        title="문제점"
+        alt="문제점"
         align="left"
+        iconSize={29}
       />
       <S.ProblemsList>
         {problems.map((problem, index) => (

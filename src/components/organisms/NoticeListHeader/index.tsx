@@ -32,6 +32,8 @@ const NoticeListHeader = ({ totalCount, onWriteClick }: NoticeListHeaderProps) =
       <Button
         label="작성하기"
         onClick={onWriteClick}
+        image="/notice/notice_createicon.png"
+        size="lg"
       />
     </S.Header>
   );

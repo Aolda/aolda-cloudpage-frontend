@@ -75,8 +75,10 @@ const ItemCard = ({ title, description, icon, tone: propTone }: ItemCardProps) =
           )}
         </S.Icon>
       )}
-      <S.ItemTitle $tone={tone}>{title}</S.ItemTitle>
-      <S.ItemDescription>{description}</S.ItemDescription>
+      <S.TextContainer>
+        <S.ItemTitle $tone={tone}>{title}</S.ItemTitle>
+        <S.ItemDescription>{description}</S.ItemDescription>
+      </S.TextContainer>
     </S.ItemCard>
   );
 };

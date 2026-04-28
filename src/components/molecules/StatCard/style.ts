@@ -18,7 +18,7 @@ export const StatCard = styled.div`
 export const StatValue = styled.span`
   font-size: 2.8rem;
   font-weight: 700;
-  color: rgb(61, 144, 212);
+  color: #0E76C4;
 `;
 
 export const StatLabel = styled.span`

@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import { pxToRem } from "@/styles/utils";
-import { fontSize, colors } from "@/styles/theme";
+import { colors } from "@/styles/theme";
 
 
 export const StyledHeader = styled.header`
@@ -17,7 +16,7 @@ export const StyledHeader = styled.header`
 
     padding: 18px 0 18px 16px;
     border: solid 1px ${colors.border};
-    border-radius: 0.75rem;
+    border-radius: 12px;
     background-color: white;
     box-sizing: border-box;
 
@@ -42,34 +41,52 @@ export const StyledHeader = styled.header`
     }
 
     .linkSeciton {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        /* TAB container */
         display: flex;
+        flex-direction: row;
         align-items: center;
-        height: 2.5rem;
-        justify-content: center;
+        padding: 0;
+        margin: 0 auto;
+        width: 272px;
+        height: 39px;
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+
+        a {
+            text-decoration: none;
+            display: flex;
+        }
     }
 `;
 
 export const NavLink = styled.span<{ $isActive: boolean }>`
-    height: 2.5rem;
-    text-align: center;
-    padding: 0 0.5rem;
-    margin: 0 2.25rem;
-    white-space: nowrap;
+    /* TAB */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 12px;
+    height: 39px;
+    flex: none;
+    flex-grow: 0;
+
+    /* Text */
     font-family: 'Noto Sans KR', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: ${props => props.$isActive ? colors.primary500 : '#777777'};
+    text-align: center;
+    color: ${(props) => (props.$isActive ? colors.primary500 : '#777777')};
+    white-space: nowrap;
 
     text-decoration: none;
     transition: color 0.2s ease;
     cursor: pointer;
 
     &:hover {
-        color:${colors.primary500}; /* 마우스를 올렸을 때도 미리 피드백 제공 */
+        color: ${colors.primary500};
     }
 `;

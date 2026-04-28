@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import IconTitle from '../../molecules/IconTitle';
 import SolutionCard from '../../molecules/SolutionCard';
 import * as S from './style';
 
@@ -36,21 +35,12 @@ export interface SolutionsSectionProps {
 const SolutionsSection = ({ solutions }: SolutionsSectionProps) => {
   return (
     <S.SolutionsSection>
-      <IntroSectionTitle
-        title={
-          <>
-            <S.SolutionIcon>
-              <Image
-                src="/product/product_detail/title_icon2.png"
-                alt="해결책"
-                width={35}
-                height={35}
-              />
-            </S.SolutionIcon>
-            해결책
-          </>
-        }
+      <IconTitle
+        icon="/product/product_detail/title_icon2.png"
+        title="해결책"
+        alt="해결책"
         align="left"
+        iconSize={35}
       />
       <S.SolutionsGrid>
         {Array.from({ length: Math.ceil(solutions.length / 3) }).map((_, rowIndex) => (

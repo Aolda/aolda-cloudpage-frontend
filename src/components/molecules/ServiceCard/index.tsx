@@ -39,27 +39,13 @@ const ServiceCard = ({
   description,
   href,
 }: ServiceCardProps) => {
-  const isAMDB = title.toUpperCase().includes('AMDB');
-  
   const content = (
     <S.ServiceCard>
-      {icon && <S.Icon src={icon} alt={title} />}
-      <S.Content>
-        {isAMDB && (
-          <S.AMDBIconContainer>
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                stroke="#3D90D4"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-          </S.AMDBIconContainer>
-        )}
+      <S.IconTitleBlock>
+        {icon && <S.Icon src={icon} alt={title} />}
         <S.Title>{title}</S.Title>
-        {description && <S.Description>{description}</S.Description>}
-      </S.Content>
+      </S.IconTitleBlock>
+      {description && <S.Description>{description}</S.Description>}
       {href && (
         <S.ArrowIcon viewBox="0 0 24 24" fill="none">
           <path

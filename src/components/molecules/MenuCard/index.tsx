@@ -38,7 +38,20 @@ const MenuCard = ({ title, href, actionLabel }: MenuCardProps) => {
           {title}
         </S.Title>
         <S.ActionLabel>
-          {actionLabel} <S.ArrowIcon>&gt;</S.ArrowIcon>
+          <S.ActionLabelText>{actionLabel}</S.ActionLabelText>
+          <S.ArrowIcon>
+            <S.ArrowVector
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              {/* 왼쪽 chevron: 오른쪽 꼭짓점 → 왼쪽 위, 오른쪽 꼭짓점 → 왼쪽 아래 */}
+              <path d="M 18 12 L 6 6 M 18 12 L 6 18" />
+            </S.ArrowVector>
+          </S.ArrowIcon>
         </S.ActionLabel>
       </S.MenuCard>
     </S.MenuCardLink>

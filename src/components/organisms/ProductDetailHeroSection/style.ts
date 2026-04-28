@@ -24,7 +24,7 @@ export const HeroSection = styled.section`
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    transform: rotate(90deg) scaleX(2.4) scaleY(8);
+    transform: rotate(90deg) scaleX(2.4) scaleY(3.6);
     z-index: 0;
   }
 `;

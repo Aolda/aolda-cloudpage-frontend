@@ -23,7 +23,7 @@ export const ServiceCard = styled.div`
   }
 `;
 
-export const HeaderSection = styled.div`
+export const HeaderSection = styled.div<{ $bannerImage?: string }>`
   padding: 2.4rem 2rem;
   display: flex;
   align-items: center;
@@ -31,8 +31,26 @@ export const HeaderSection = styled.div`
   position: relative;
   height: 45%;
   min-height: 120px;
-  background: #0f0f0f;
+  background: ${({ $bannerImage }) => ($bannerImage ? `url(${$bannerImage})` : '#0f0f0f')};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
+  
+  ${({ $bannerImage }) =>
+    $bannerImage &&
+    `
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 0;
+    }
+  `}
 `;
 
 export const MainLogo = styled.img`
@@ -44,7 +62,7 @@ export const MainLogo = styled.img`
   left: 0;
   padding: 3rem;
   opacity: 1;
-  z-index: 0;
+  z-index: 1;
   /* 필터 제거 - favicon의 원본 색상 유지 */
 `;
 
@@ -57,7 +75,7 @@ export const MenuIcon = styled.svg`
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   transition: color 0.2s;
-  z-index: 1;
+  z-index: 2;
   
   ${ServiceCard}:hover & {
     color: rgba(255, 255, 255, 0.9);

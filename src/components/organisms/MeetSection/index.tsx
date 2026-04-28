@@ -19,7 +19,7 @@ const MeetSection = () => (
 
     <S.Grid>
       <S.Col>
-        <S.Caption>아올다로 <br /> 꿈을 담아내고고 싶다면?</S.Caption>
+        <S.Caption>아올다로 <br /> 꿈을 담아내고 싶다면?</S.Caption>
         <Button 
           label="콘솔로 이동" 
           href="https://console.aoldacloud.com/" 

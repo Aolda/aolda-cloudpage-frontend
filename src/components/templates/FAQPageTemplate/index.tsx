@@ -8,6 +8,8 @@ import { type AccordionProps } from '../../molecules/Accordion';
 import type { FilterItem } from '../../molecules/TagFilter';
 import * as S from './style';
 
+const FAQ_ITEMS_PER_PAGE = 10;
+
 export interface FAQPageTemplateProps {
   /** 검색어 */
   searchTerm?: string;
@@ -41,12 +43,13 @@ const FAQPageTemplate = ({
   onSearch,
   faqs = [],
   categoryOptions = [],
-  currentPage = 1,
-  totalPages = 7,
-  onPageChange,
+  currentPage: externalCurrentPage,
+  totalPages: externalTotalPages,
+  onPageChange: externalOnPageChange,
 }: FAQPageTemplateProps) => {
   const [internalSearchTerm, setInternalSearchTerm] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [internalCurrentPage, setInternalCurrentPage] = useState<number>(1);
 
   // 외부에서 전달된 searchTerm이 있으면 사용, 없으면 내부 state 사용
   const searchTerm = externalSearchTerm !== undefined ? externalSearchTerm : internalSearchTerm;
@@ -56,6 +59,7 @@ const FAQPageTemplate = ({
     } else {
       setInternalSearchTerm(value);
     }
+    setInternalCurrentPage(1);
   };
 
   const defaultCategoryOptions: FilterItem[] = [
@@ -107,15 +111,26 @@ const FAQPageTemplate = ({
       title: 'FAQ Question',
       content: 'This is another FAQ answer.',
     },
+    {
+      title: 'FAQ Question',
+      content: 'This is another FAQ answer.',
+    },
+    {
+      title: 'FAQ Question',
+      content: 'This is another FAQ answer.',
+    },
+    {
+      title: 'FAQ Question',
+      content: 'This is another FAQ answer.',
+    },
+    {
+      title: 'FAQ Question',
+      content: 'This is another FAQ answer.',
+    },
   ];
 
   const handleSearch = (value: string) => {
     onSearch?.(value);
-  };
-
-  const handleCategoryChange = (categoryId: string) => {
-    setSelectedCategory(categoryId);
-    // 카테고리 변경 시 추가 로직 처리 가능
   };
 
   // 검색어와 카테고리에 따라 FAQ 목록 필터링
@@ -139,6 +154,38 @@ const FAQPageTemplate = ({
     return filtered;
   }, [faqs, defaultFaqs, searchTerm, selectedCategory]);
 
+  // 10개씩 페이지네이션: 10개 이상이면 다음 페이지에서 볼 수 있도록
+  const totalPages = useMemo(
+    () => Math.max(1, Math.ceil(filteredFaqs.length / FAQ_ITEMS_PER_PAGE)),
+    [filteredFaqs.length]
+  );
+
+  const currentPage =
+    externalCurrentPage !== undefined ? externalCurrentPage : internalCurrentPage;
+
+  const paginatedFaqs = useMemo(
+    () =>
+      filteredFaqs.slice(
+        (currentPage - 1) * FAQ_ITEMS_PER_PAGE,
+        currentPage * FAQ_ITEMS_PER_PAGE
+      ),
+    [filteredFaqs, currentPage]
+  );
+
+  const handlePageChange = (page: number) => {
+    if (externalOnPageChange) {
+      externalOnPageChange(page);
+    } else {
+      setInternalCurrentPage(page);
+    }
+  };
+
+  // 필터 변경 시 1페이지로 이동
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setInternalCurrentPage(1);
+  };
+
   return (
     <BaseTemplate>
       <S.TemplateContainer>
@@ -153,13 +200,13 @@ const FAQPageTemplate = ({
         />
         <S.ContentWrapper>
           <FAQList
-            faqs={filteredFaqs}
+            faqs={paginatedFaqs}
             categoryOptions={categoryOptions.length > 0 ? categoryOptions : defaultCategoryOptions}
             selectedCategory={selectedCategory}
             onCategoryChange={handleCategoryChange}
             currentPage={currentPage}
             totalPages={totalPages}
-            onPageChange={onPageChange}
+            onPageChange={handlePageChange}
           />
         </S.ContentWrapper>
       </S.TemplateContainer>
