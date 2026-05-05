@@ -11,13 +11,15 @@ export const ServiceCardWrapper = styled.div`
 `;
 
 export const ServiceCard = styled.div`
-  background: #ffffff;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
   border-radius: 8px;
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border: 1px solid #E2E2E2;
+  border: 1px solid ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   height: 240px;
@@ -102,7 +104,7 @@ export const Title = styled.h3`
   font-size: 20px;
   line-height: 24px;
   text-align: center;
-  color: #232527;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -113,7 +115,7 @@ export const Title = styled.h3`
 
 export const Description = styled.p`
   font-size: 12px;
-  color: #5b6275;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
   font: noto sans kr;
   font-style: regular;
   line-height: 1.4;
@@ -126,6 +128,6 @@ export const ArrowIcon = styled.svg`
   right: 1.5rem;
   width: 2rem;
   height: 2rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
 `;
 

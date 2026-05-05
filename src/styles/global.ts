@@ -2,8 +2,15 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    color-scheme: light;
     font-size: 62.5%;
+  }
+
+  html[data-theme='light'] {
+    color-scheme: light;
+  }
+
+  html[data-theme='dark'] {
+    color-scheme: dark;
   }
 
   *, *::before, *::after {
@@ -15,9 +22,10 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     font-size: 1.6rem;
     font-family: ${({ theme }) => theme.typography.fontFamily};
-    background: #FFFFFF;
+    background: ${({ theme }) => theme.colors.surface};
     color: ${({ theme }) => theme.colors.text};
     overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   img {

@@ -10,8 +10,10 @@ export const SolutionCard = styled.div`
   gap: 12px;
   width: 384px;
   height: 127px;
-  background: #FFFFFF;
-  border: 1px solid #E2E2E2;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
+  border: 1px solid ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
   border-radius: 12px;
   flex: none;
 `;
@@ -41,7 +43,7 @@ export const SolutionDescription = styled.p`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #777777;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
   margin: 0;
   flex: none;
   order: 1;

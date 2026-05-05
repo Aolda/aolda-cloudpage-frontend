@@ -5,14 +5,14 @@ export const Sidebar = styled.aside`
   max-width: 200px;
   flex-shrink: 0;
   padding: 2rem;
-  background: #FFFFFF;
+  background: transparent;
   box-sizing: border-box;
 `;
 
 export const SidebarTitle = styled.h2`
   font-size: 1.6rem;
   font-weight: 600;
-  color: #030303;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0 0 2rem 0;
   font-family: 'Noto Sans KR', sans-serif;
 `;

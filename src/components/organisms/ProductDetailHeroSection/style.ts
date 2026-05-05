@@ -171,5 +171,10 @@ export const ActionButtons = styled.div`
       order: 1;
     }
   }
+
+  a span,
+  button span {
+    color: #000000 !important;
+  }
 `;
 

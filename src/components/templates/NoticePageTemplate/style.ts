@@ -14,7 +14,7 @@ export const ContentWrapper = styled.div`
   margin: 400px auto 0;
   padding: 40px 120px;
   box-sizing: border-box;
-  background: #FFFFFF;
+  background: ${({ theme }) => theme.colors.surface};
   margin-bottom: 120px;
 `;
 

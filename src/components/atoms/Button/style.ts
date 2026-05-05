@@ -34,12 +34,12 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
   /* 기본 스타일 */
   background: ${({ $variant }) => 
     $variant === 'secondary' 
-      ? '#FFFFFF' 
+      ? 'transparent' 
       : 'rgb(32, 137, 207)'};
-  color: ${({ $variant }) => $variant === 'secondary' ? '#181818' : '#ffffff'};
-  border: ${({ $variant }) => 
+  color: ${({ $variant, theme }) => $variant === 'secondary' ? theme.colors.text : '#ffffff'};
+  border: ${({ $variant, theme }) => 
     $variant === 'secondary' 
-      ? '1px solid #BFBFBF' 
+      ? `1px solid ${theme.colors.borderStrong}` 
       : '1px solid rgb(32, 137, 207)'};
   border-radius: ${({ $variant }) => 
     $variant === 'secondary' 
@@ -80,7 +80,7 @@ export const Label = styled.span<{ $variant: ButtonVariant; $size: ButtonSize }>
   line-height: 19px;
   text-align: center;
   /* White/White or Black */
-  color: ${({ $variant }) => $variant === 'secondary' ? '#181818' : '#FFFFFF'};
+  color: ${({ $variant, theme }) => $variant === 'secondary' ? theme.colors.text : '#FFFFFF'};
   /* Inside auto layout */
   flex: none;
   order: 0;

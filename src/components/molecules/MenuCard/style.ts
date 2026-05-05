@@ -8,21 +8,24 @@ export const MenuCardLink = styled(Link)`
 `;
 
 export const MenuCard = styled.div`
-  background: #ffffff;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : '#ffffff'};
+  border: 1px solid
+    ${({ theme }) => (theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border)};
   border-radius: 10px;
   padding: 2.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 150px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: ${({ theme }) => (theme.mode === 'dark' ? 'none' : '0 2px 8px rgba(0, 0, 0, 0.08)')};
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   width:384px;
   height: 216px;
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: ${({ theme }) => (theme.mode === 'dark' ? 'none' : '0 4px 12px rgba(0, 0, 0, 0.12)')};
   }
 `;
 

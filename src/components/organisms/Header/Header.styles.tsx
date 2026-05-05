@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import { colors } from "@/styles/theme";
-
 
 export const StyledHeader = styled.header`
     display: flex;
+    justify-content: space-between;
     width: 1360px;
     max-width: 1360px;
     height: 72px;
@@ -14,16 +13,17 @@ export const StyledHeader = styled.header`
     transform: translateX(-50%);
     z-index: 10;
 
-    padding: 18px 0 18px 16px;
-    border: solid 1px ${colors.border};
+    padding: 18px 16px;
+    border: solid 1px ${({ theme }) => theme.colors.border};
     border-radius: 12px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.surface};
     box-sizing: border-box;
 
     .iconSection {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        width: 220px;
         flex-shrink: 0;
         
         a {
@@ -45,18 +45,26 @@ export const StyledHeader = styled.header`
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         padding: 0;
         margin: 0 auto;
         width: 272px;
         height: 39px;
-        flex: none;
-        order: 2;
-        flex-grow: 0;
 
         a {
             text-decoration: none;
             display: flex;
         }
+    }
+
+    .actionSection {
+        width: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
     }
 `;
 
@@ -79,7 +87,7 @@ export const NavLink = styled.span<{ $isActive: boolean }>`
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: ${(props) => (props.$isActive ? colors.primary500 : '#777777')};
+    color: ${(props) => (props.$isActive ? props.theme.colors.primary500 : props.theme.colors.gray600)};
     white-space: nowrap;
 
     text-decoration: none;
@@ -87,6 +95,6 @@ export const NavLink = styled.span<{ $isActive: boolean }>`
     cursor: pointer;
 
     &:hover {
-        color: ${colors.primary500};
+        color: ${({ theme }) => theme.colors.primary500};
     }
 `;

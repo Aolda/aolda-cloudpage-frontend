@@ -37,6 +37,6 @@ export const TitleText = styled.h2`
   line-height: 140%;
   letter-spacing: 0;
   font-style: normal;
-  color: #232527;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
   white-space: pre-line;
 `;

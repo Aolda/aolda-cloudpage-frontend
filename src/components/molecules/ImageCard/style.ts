@@ -13,8 +13,18 @@ export const ImageCard = styled.div<{ $tone: CardTone; $isBackground?: boolean }
   width: ${({ $isBackground }) => ($isBackground ? '792px' : '360px')};
   min-height: ${({ $isBackground }) => ($isBackground ? '452px' : 'auto')};
   height: ${({ $isBackground }) => ($isBackground ? '452px' : '120px')};
-  background: ${({ $isBackground }) => ($isBackground ? 'transparent' : '#FFFFFF')};
-  border: none;
+  background: ${({ $isBackground, theme }) =>
+    $isBackground
+      ? 'transparent'
+      : theme.mode === 'dark'
+        ? 'var(--Mode-Background, #2A2A2A)'
+        : '#FFFFFF'};
+  border: ${({ $isBackground, theme }) =>
+    $isBackground
+      ? 'none'
+      : theme.mode === 'dark'
+        ? '1px solid var(--Mode-Border, #636363)'
+        : 'none'};
   border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '0')};
   flex: none;
   order: 0;

@@ -17,8 +17,10 @@ export const DeveloperCard = styled.div`
   gap: 36px;
   width: 220.8px;
   height: 268px;
-  background: #FFFFFF;
-  border: 1px solid #E2E2E2;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
+  border: 1px solid ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
   border-radius: 20px;
   flex: none;
   order: 0;
@@ -88,7 +90,7 @@ export const CrewName = styled.h3`
   font-size: 20px;
   line-height: 24px;
   text-align: center;
-  color: #232527;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
   margin: 0;
   flex: none;
   order: 0;
@@ -104,7 +106,7 @@ export const CrewNameSuffix = styled.span`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #777777;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -119,7 +121,7 @@ export const CrewInfo = styled.p`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #777777;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
   margin: 0;
   flex: none;
   order: 1;

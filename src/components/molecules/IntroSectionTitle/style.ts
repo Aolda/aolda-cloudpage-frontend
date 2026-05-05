@@ -61,7 +61,21 @@ export const Title = styled.h2<{ $color?: string }>`
   line-height: 140%;
   letter-spacing: 0;
   font-style: normal;
-  color: ${({ $color }) => $color ?? '#232527'};
+  color: ${({ $color, theme }) => {
+    const normalized = ($color ?? '').replace(/\s/g, '').toLowerCase();
+    const isDarkOverride =
+      normalized === 'rgb(0,0,0)' ||
+      normalized === 'rgb(3,3,3)' ||
+      normalized === '#000000' ||
+      normalized === '#030303' ||
+      normalized === '#232527';
+
+    if (theme.mode === 'dark' && (!$color || isDarkOverride)) {
+      return '#FFFFFF';
+    }
+
+    return $color ?? '#232527';
+  }};
   white-space: pre-line;
   display: block;
   width: 100%;

@@ -12,8 +12,10 @@ export const ItemCard = styled.div<{ $tone: CardTone }>`
   gap: 36px;
   width: 384px;
   height: 400px;
-  background: #ffffff;
-  border: 2px solid #e2e2e2;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : '#ffffff'};
+  border: 1px solid
+    ${({ theme }) => (theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : '#e2e2e2')};
   border-radius: 16px;
   flex: none;
   order: 0;

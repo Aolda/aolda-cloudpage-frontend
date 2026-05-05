@@ -7,8 +7,10 @@ export const StatCard = styled.div`
   gap: 0.8rem;
   min-width: 220px;
   align-items: center;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : '#ffffff'};
+  border: 1px solid
+    ${({ theme }) => (theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : '#e0e0e0')};
   border-radius: 10px;
   text-align: center;
   height: 133px;
