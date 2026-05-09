@@ -8,7 +8,7 @@ import { StyledHeader, NavLink } from "./Header.styles";
 const NAV_ITEMS = [
     { label: '제품 소개', href: '/product' },
     { label: '공지사항', href: '/notice' },
-    { label: 'FAQ', href: '/FAQ' },
+    { label: 'FAQ', href: '/faq' },
 ];
 
 const Header = () => {

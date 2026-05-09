@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { sanitizeHtml } from '@/lib/sanitizeHtml';
 import * as S from './style';
 
 export interface AccordionProps {
@@ -66,7 +67,9 @@ const Accordion = ({
       </S.TitleButton>
       {isExpanded && (
         <S.Content>
-          <S.ContentText dangerouslySetInnerHTML={{ __html: content }} />
+          <S.ContentText
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}
+          />
         </S.Content>
       )}
     </S.Accordion>

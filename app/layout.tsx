@@ -1,8 +1,4 @@
-'use client';
-
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from '@/styles/global';
-import { theme } from '@/styles/theme';
+import StyledComponentsProvider from '@/components/providers/StyledComponentsProvider';
 
 export default function RootLayout({
   children,
@@ -12,12 +8,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          {children}
-        </ThemeProvider>
+        <StyledComponentsProvider>{children}</StyledComponentsProvider>
       </body>
     </html>
   );
 }
-

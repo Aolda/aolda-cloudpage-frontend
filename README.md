@@ -1,93 +1,121 @@
 # aolda-cloudpage-frontend
 
+아주대학교 클라우드 서비스 **아올다(Aolda)** 소개·안내를 위한 공식 웹 프론트엔드입니다. 서비스 소개(랜딩), 제품(프로젝트) 목록·상세, 공지사항, FAQ를 제공합니다.
 
+## 요구 사항
 
-## Getting started
+- **Node.js** 18.x 이상 권장  
+- 패키지 매니저: **npm** (또는 호환되는 `yarn`, `pnpm`)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## 실행 방법
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+저장소를 클론한 뒤 프로젝트 루트에서:
 
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://git.ajou.ac.kr/aolda/aolda-cloudpage-frontend.git
-git branch -M main
-git push -uf origin main
+```bash
+npm install
+npm run dev
 ```
 
-## Integrate with your tools
+브라우저에서 [http://localhost:3000](http://localhost:3000) 으로 접속합니다.
 
-- [ ] [Set up project integrations](https://git.ajou.ac.kr/aolda/aolda-cloudpage-frontend/-/settings/integrations)
+### npm 스크립트
 
-## Collaborate with your team
+| 명령 | 설명 |
+|------|------|
+| `npm run dev` | 개발 서버 (Next.js) |
+| `npm run build` | 프로덕션 빌드 |
+| `npm run start` | 빌드 결과 실행 (`build` 후) |
+| `npm run lint` | ESLint (`next lint`) |
+| `npm test` | 단위 테스트 (Vitest) |
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+## 기술 스택
 
-## Test and Deploy
+| 구분 | 사용 기술 |
+|------|-----------|
+| 프레임워크 | [Next.js 14](https://nextjs.org/) (App Router) |
+| UI | [React 18](https://react.dev/) |
+| 언어 | [TypeScript](https://www.typescriptlang.org/) |
+| 스타일 | [styled-components v6](https://styled-components.com/) + 테마(`src/styles/theme.ts`) |
+| 마크다운 | [react-markdown](https://github.com/remarkjs/react-markdown) |
+| HTML 정제 | [isomorphic-dompurify](https://github.com/kkomelin/isomorphic-dompurify) |
+| 테스트 | [Vitest](https://vitest.dev/) |
 
-Use the built-in continuous integration in GitLab.
+`next.config.js`에서 **styled-components 컴파일러**가 켜져 있으며, App Router SSR을 위해 `StyledComponentsProvider`에서 `ServerStyleSheet` + `useServerInsertedHTML` 패턴을 사용합니다.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## 폴더 구조
 
-***
+```
+aolda-cloudpage-frontend/
+├── app/                      # App Router (라우트·레이아웃·에러 경계)
+│   ├── layout.tsx            # 루트 레이아웃 (서버) + StyledComponentsProvider
+│   ├── page.tsx              # / (메인)
+│   ├── loading.tsx           # 전역 로딩 UI
+│   ├── error.tsx             # 세그먼트 에러
+│   ├── global-error.tsx      # 루트 레이아웃 에러
+│   ├── not-found.tsx         # 404
+│   ├── faq/page.tsx          # /faq
+│   ├── notice/
+│   │   ├── page.tsx          # /notice
+│   │   └── [id]/page.tsx     # /notice/:id
+│   └── product/
+│       ├── page.tsx          # /product
+│       └── [id]/page.tsx     # /product/:id
+├── middleware.ts             # FAQ 경로 대소문자 정규화 등
+├── public/                   # 정적 자산 (이미지 등)
+├── src/
+│   ├── components/
+│   │   ├── atoms/            # 최소 UI 단위
+│   │   ├── molecules/        # 조합 컴포넌트
+│   │   ├── organisms/        # 섹션 단위 UI
+│   │   ├── templates/        # 페이지 단위 템플릿 (BaseTemplate 등)
+│   │   └── providers/        # StyledComponentsProvider
+│   ├── lib/
+│   │   ├── data/             # 목 데이터·조회 (공지·제품 상세 등)
+│   │   └── sanitizeHtml.ts   # HTML 문자열 정제
+│   └── styles/               # GlobalStyle, theme
+├── next.config.js
+├── tsconfig.json
+├── vitest.config.ts
+└── package.json
+```
 
-# Editing this README
+경로 별칭: `@/*` → `src/*` (`tsconfig.json`).
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+> 과거 개발용으로만 쓰이던 `app/molecules`, `app/organisms` **라우트는 제거**되었습니다. 디자인 시스템 컴포넌트는 `src/components/molecules`, `src/components/organisms`에 그대로 있습니다.
 
-## Suggestions for a good README
+## 주요 페이지
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+| 경로 | 설명 |
+|------|------|
+| `/` | 메인 랜딩: 소개, 수치, 파트너, 불편 해소·약속, CTA 등 |
+| `/product` | 제품(서비스) 목록, 검색·카테고리, 카드 그리드 |
+| `/product/[id]` | 제품 상세: 개요, 문제·해결, 개발진, 유사 서비스 등 (예: `amdb`) |
+| `/notice` | 공지 목록·검색·필터·페이지네이션 |
+| `/notice/[id]` | 공지 상세 (없는 id는 404) |
+| `/faq` | FAQ 검색·카테고리·아코디언 |
 
-## Name
-Choose a self-explaining name for your project.
+공식 네비게이션의 FAQ 링크는 소문자 **`/faq`** 입니다. `/FAQ` 등 대소문자만 다른 요청은 `middleware`에서 **`/faq`로 301/308 리다이렉트**됩니다.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+## 데이터
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+- 공지·제품 상세 등은 현재 **`src/lib/data`** 의 목 데이터를 사용합니다.
+- API·CMS 연동 시 동일 모듈을 fetch/서버 액션 등으로 교체하면 됩니다.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## 배포
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+일반적인 **Next.js Node 서버** 배포 방식을 따릅니다.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+1. 빌드: `npm run build`
+2. 실행: `npm run start` (기본 포트 3000)
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+호스팅 예시:
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+- **[Vercel](https://vercel.com/)**: 저장소 연결 후 프레임워크 프리셋 Next.js  
+- **자체 서버 / Docker**: Node 런타임에서 `next start` 실행  
+- **정적 내보내기**가 필요하면 `output: 'export'` 등 별도 설정이 필요하며, 현재 저장소는 기본 설정(SSR/동적 라우트) 기준입니다.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+환경 변수는 현재 필수 항목이 거의 없으나, 추후 API URL 등을 추가할 때 `.env.local` 및 호스팅 대시보드에 동일 키를 등록하면 됩니다.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## 라이선스 및 문의
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+저장소 정책에 따릅니다. 이슈·문의는 해당 Git 호스팅(예: GitHub / 학교 GitLab)의 이슈 트래커를 이용해 주세요.

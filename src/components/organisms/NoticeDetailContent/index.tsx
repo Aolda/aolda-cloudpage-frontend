@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import { isProbablyHtmlString, sanitizeHtml } from '@/lib/sanitizeHtml';
 import Button from '../../atoms/Button';
 import InPageNavigation from '../../molecules/InPageNavigation';
 import * as S from './style';
@@ -112,7 +113,15 @@ const NoticeDetailContent = ({
 
       <S.Content>
         {typeof data.content === 'string' ? (
-          <ReactMarkdown>{data.content}</ReactMarkdown>
+          isProbablyHtmlString(data.content) ? (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: sanitizeHtml(data.content),
+              }}
+            />
+          ) : (
+            <ReactMarkdown>{data.content}</ReactMarkdown>
+          )
         ) : (
           data.content
         )}

@@ -1,13 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import ProductPageTemplate from '@/components/templates/ProductPageTemplate';
 
-export default function ProductPage() {
+function ProductPageInner() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
 
+  useEffect(() => {
+    const q = searchParams.get('search');
+    if (q) setSearchTerm(q);
+  }, [searchParams]);
+
   const handleSearch = (value: string) => {
-    console.log('검색:', value);
+    router.push(`/product?search=${encodeURIComponent(value)}`);
   };
 
   return (
@@ -19,3 +27,25 @@ export default function ProductPage() {
   );
 }
 
+export default function ProductPage() {
+  return (
+    <Suspense
+      fallback={
+        <div
+          style={{
+            padding: '3rem',
+            textAlign: 'center',
+            color: '#666',
+            fontFamily: 'system-ui, sans-serif',
+          }}
+          aria-busy="true"
+          aria-live="polite"
+        >
+          로딩 중...
+        </div>
+      }
+    >
+      <ProductPageInner />
+    </Suspense>
+  );
+}
