@@ -17,7 +17,8 @@ export const Section = styled.section`
 export const Divider = styled.span`
   width: 24px;
   height: 2px;
-  background: ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? theme.colors.text : theme.colors.border};
   border-radius: 2px;
 `;
 
@@ -103,7 +104,7 @@ export const Caption = styled.p`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #777777;
+  color: ${({ theme }) => theme.colors.textMuted};
   flex: none;
   order: 0;
   flex-grow: 0;

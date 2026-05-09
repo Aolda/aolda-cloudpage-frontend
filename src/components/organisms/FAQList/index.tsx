@@ -76,7 +76,8 @@ const FAQList = ({
             title={faq.title}
             content={faq.content}
             defaultExpanded={faq.defaultExpanded}
-            icon={faq.icon || '/FAQ/FAQ_accordion_icon.png'}
+            icon={faq.icon}
+            qBadge
           />
         ))}
       </S.FAQItems>

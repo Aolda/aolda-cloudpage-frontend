@@ -28,7 +28,7 @@ export const StyledFooter = styled.footer`
 
         .description {
             padding-left: 2.5rem;
-            color: white;
+            color: #1a8ee5;
             font-size: ${fontSize.smaller};
             font-weight: 200;
             margin-top: 3px;

@@ -4,8 +4,8 @@ export const PaginationContainer = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
-  gap: 8px;
+  padding: 0;
+  gap: ${({ theme }) => (theme.mode === 'dark' ? '36px' : '8px')};
   width: auto;
   height: 32px;
   flex: none;
@@ -17,7 +17,7 @@ export const PrevButton = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 4px;
   width: 50px;
   height: 23px;
@@ -27,7 +27,7 @@ export const PrevButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -42,7 +42,7 @@ export const NextButton = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 4px;
   width: 50px;
   height: 23px;
@@ -52,7 +52,7 @@ export const NextButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -67,7 +67,7 @@ export const PageList = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: auto;
   height: 32px;
@@ -82,7 +82,7 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px 8px;
+  padding: 0 8px;
   gap: 10px;
   width: 32px;
   height: 32px;
@@ -92,17 +92,19 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
   border: none;
   border-bottom: ${({ $isActive }) => ($isActive ? '2px solid #1A8EE5' : 'none')};
   cursor: pointer;
-  
-  font-family: 'Noto Sans KR';
+
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: ${({ $isActive }) => ($isActive ? '#1A8EE5' : '#777777')};
+  color: ${({ $isActive, theme }) =>
+    $isActive ? '#1A8EE5' : theme.mode === 'dark' ? '#FAFAFA' : '#777777'};
 
   &:hover:not(:disabled) {
-    color: ${({ $isActive }) => ($isActive ? '#1A8EE5' : '#555555')};
+    color: ${({ $isActive, theme }) =>
+      $isActive ? '#1A8EE5' : theme.mode === 'dark' ? '#FAFAFA' : '#555555'};
   }
 
   &:focus {
@@ -118,7 +120,7 @@ export const ChevronLeft = styled.span`
   flex-grow: 0;
   position: relative;
   display: inline-block;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -127,8 +129,10 @@ export const ChevronLeft = styled.span`
     bottom: 21.88%;
     width: 6px;
     height: 6px;
-    border-left: 2px solid #777777;
-    border-bottom: 2px solid #777777;
+    border-left: 2px solid
+      ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
+    border-bottom: 2px solid
+      ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
     transform: rotate(45deg);
     box-sizing: border-box;
   }
@@ -142,7 +146,7 @@ export const ChevronRight = styled.span`
   flex-grow: 0;
   position: relative;
   display: inline-block;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -151,8 +155,10 @@ export const ChevronRight = styled.span`
     bottom: 21.88%;
     width: 6px;
     height: 6px;
-    border-right: 2px solid #777777;
-    border-bottom: 2px solid #777777;
+    border-right: 2px solid
+      ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
+    border-bottom: 2px solid
+      ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
     transform: rotate(-45deg);
     box-sizing: border-box;
   }
@@ -163,7 +169,7 @@ export const ButtonText = styled.span`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 10px;
   width: 30px;
   height: 23px;
@@ -171,18 +177,15 @@ export const ButtonText = styled.span`
   flex: none;
   order: 0;
   flex-grow: 0;
-  
-  font-family: 'Noto Sans KR';
+
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  display: flex;
-  align-items: center;
   text-align: center;
-  color: #777777;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
   flex: none;
   order: 0;
   flex-grow: 0;
 `;
-

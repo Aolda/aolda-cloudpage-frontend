@@ -2,7 +2,11 @@ import styled, { css } from 'styled-components';
 
 type CardTone = 'blue' | 'red';
 
-export const ImageCard = styled.div<{ $tone: CardTone; $isBackground?: boolean }>`
+export const ImageCard = styled.div<{
+  $tone: CardTone;
+  $isBackground?: boolean;
+  $solidThumbnail?: boolean;
+}>`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -19,12 +23,14 @@ export const ImageCard = styled.div<{ $tone: CardTone; $isBackground?: boolean }
       : theme.mode === 'dark'
         ? 'var(--Mode-Background, #2A2A2A)'
         : '#FFFFFF'};
-  border: ${({ $isBackground, theme }) =>
+  border: ${({ $isBackground, theme, $solidThumbnail }) =>
     $isBackground
       ? 'none'
-      : theme.mode === 'dark'
-        ? '1px solid var(--Mode-Border, #636363)'
-        : 'none'};
+      : $solidThumbnail
+        ? '1px solid transparent'
+        : theme.mode === 'dark'
+          ? '1px solid var(--Mode-Border, #636363)'
+          : 'none'};
   border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '0')};
   flex: none;
   order: 0;
@@ -59,12 +65,25 @@ export const ImageContainer = styled.div`
   justify-content: center;
 `;
 
+/** Figma Rectangle 7 — 파트너 카드 등 이미지 대체 */
+export const SolidThumbnail = styled.div`
+  width: 120px;
+  height: 120px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border-radius: 12px;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? '#FAFAFA' : '#232527'};
+`;
+
 export const Image = styled.img<{ $isBackground?: boolean }>`
   width: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
   height: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
   object-fit: cover;
   border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '8px')};
-  background: #ffffff;
+  background: ${({ $isBackground, theme }) =>
+    $isBackground ? 'transparent' : theme.mode === 'dark' ? '#FAFAFA' : '#ffffff'};
   ${({ $isBackground }) =>
     $isBackground &&
     css`
@@ -86,7 +105,8 @@ export const ImageTitle = styled.h3<{ $isBackground?: boolean }>`
   margin: 0;
   font-size: ${({ $isBackground }) => ($isBackground ? '4rem' : '1.8rem')};
   font-weight: 700;
-  color: ${({ $isBackground, theme }) => ($isBackground ? '#ffffff' : '#333333')};
+  color: ${({ $isBackground, theme }) =>
+    $isBackground ? '#ffffff' : theme.mode === 'dark' ? theme.colors.text : '#333333'};
   white-space: pre-line;
   ${({ $isBackground }) =>
     $isBackground &&
@@ -106,14 +126,14 @@ export const ImageTitle = styled.h3<{ $isBackground?: boolean }>`
 export const ImageDescription = styled.p`
   margin: 0;
   font-size: 1.4rem;
-  color: #999999;
+  color: ${({ theme }) => (theme.mode === 'dark' ? theme.colors.textMuted : '#999999')};
   line-height: 1.5;
 `;
 
 export const ImagePeriod = styled.p`
   margin: 0;
   font-size: 1.2rem;
-  color: #999999;
+  color: ${({ theme }) => (theme.mode === 'dark' ? theme.colors.textMuted : '#999999')};
   line-height: 1.5;
 `;
 

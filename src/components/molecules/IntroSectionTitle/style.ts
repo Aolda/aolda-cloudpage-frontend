@@ -17,7 +17,7 @@ export const Container = styled.div<{ $align: 'left' | 'center' }>`
 export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
   width: 48px;
   height: 3px;
-  background: #777777;
+  background: ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
   border-radius: 1.5px;
   border: none;
   flex: none;
@@ -71,7 +71,7 @@ export const Title = styled.h2<{ $color?: string }>`
       normalized === '#232527';
 
     if (theme.mode === 'dark' && (!$color || isDarkOverride)) {
-      return '#FFFFFF';
+      return '#FAFAFA';
     }
 
     return $color ?? '#232527';

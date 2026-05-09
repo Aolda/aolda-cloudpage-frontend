@@ -70,7 +70,7 @@ export const Description = styled.div`
   line-height: 100%;
   font-style: regular;
   letter-spacing: 0%;
-  color: #777777;
+  color: ${({ theme }) => theme.colors.textMuted};
   margin: 0;
   flex: none;
   order: 1;

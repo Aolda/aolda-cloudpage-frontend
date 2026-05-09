@@ -9,8 +9,8 @@ export const StatCard = styled.div`
   align-items: center;
   background: ${({ theme }) =>
     theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : '#ffffff'};
-  border: 1px solid
-    ${({ theme }) => (theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : '#e0e0e0')};
+  border: ${({ theme }) =>
+    theme.mode === 'dark' ? `2px solid ${theme.colors.border}` : '1px solid #e0e0e0'};
   border-radius: 10px;
   text-align: center;
   height: 133px;
@@ -20,7 +20,7 @@ export const StatCard = styled.div`
 export const StatValue = styled.span`
   font-size: 2.8rem;
   font-weight: 700;
-  color: #0E76C4;
+  color: ${({ theme }) => theme.colors.statAccent};
 `;
 
 export const StatLabel = styled.span`

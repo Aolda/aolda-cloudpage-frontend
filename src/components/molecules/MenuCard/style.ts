@@ -9,9 +9,8 @@ export const MenuCardLink = styled(Link)`
 
 export const MenuCard = styled.div`
   background: ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : '#ffffff'};
-  border: 1px solid
-    ${({ theme }) => (theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border)};
+    theme.mode === 'dark' ? theme.colors.surface : '#ffffff'};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 10px;
   padding: 2.4rem;
   display: flex;
@@ -33,7 +32,7 @@ export const Title = styled.h2`
   margin: 0;
   font-size: 2.4rem;
   font-weight: 700;
-  color: #333333;
+  color: ${({ theme }) => theme.colors.primary500};
   line-height: 1.3;
   align-self: flex-start;
 `;
@@ -64,7 +63,8 @@ export const ActionLabelText = styled.span`
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  color: #777777;
+  color: ${({ theme }) =>
+    theme.mode === 'dark' ? theme.colors.text : theme.colors.gray600};
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -90,7 +90,8 @@ export const ArrowIcon = styled.span`
 export const ArrowVector = styled.svg`
   width: 24px;
   height: 24px;
-  color: #777777;
+  color: ${({ theme }) =>
+    theme.mode === 'dark' ? theme.colors.text : theme.colors.gray600};
   display: block;
   degree: 180deg;
 `;

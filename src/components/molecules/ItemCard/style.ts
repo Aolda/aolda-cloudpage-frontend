@@ -14,8 +14,8 @@ export const ItemCard = styled.div<{ $tone: CardTone }>`
   height: 400px;
   background: ${({ theme }) =>
     theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : '#ffffff'};
-  border: 1px solid
-    ${({ theme }) => (theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : '#e2e2e2')};
+  border: ${({ theme }) =>
+    theme.mode === 'dark' ? `2px solid ${theme.colors.border}` : '1px solid #e2e2e2'};
   border-radius: 16px;
   flex: none;
   order: 0;
@@ -72,7 +72,8 @@ export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
   font-size: 32px;
   line-height: 100%;
   text-align: center;
-  color: ${({ $tone }) => ($tone === 'red' ? 'rgb(233, 23, 23)' : '#1A8EE5')};
+  color: ${({ $tone, theme }) =>
+    $tone === 'red' ? theme.colors.statusNegative : theme.colors.primary500};
   flex: none;
   order: 0;
   letter-spacing: 0%; 
@@ -94,7 +95,7 @@ export const ItemDescription = styled.p`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: #777777;
+  color: ${({ theme }) => theme.colors.textMuted};
   flex: none;
   order: 1;
   align-self: stretch;

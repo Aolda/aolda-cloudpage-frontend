@@ -43,7 +43,7 @@ const FAQCategoryFilter = ({
         items={categories}
         selectedId={selectedCategory}
         onChange={(id) => onCategoryChange?.(id)}
-        prefix="≡ "
+        prefix=""
         faqStyle={true}
       />
     </S.FilterContainer>
