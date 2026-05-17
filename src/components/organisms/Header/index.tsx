@@ -33,7 +33,7 @@ const Header = () => {
                     );
                 })}
             </nav>
-            <section className="iconSection"></section>
+            <button type="button" className="menuToggle" aria-label="메뉴 열기" />
         </StyledHeader>
     );
 }

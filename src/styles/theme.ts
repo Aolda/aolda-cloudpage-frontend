@@ -59,6 +59,19 @@ export const theme = {
 
 export type AppTheme = typeof theme;
 
+/** Figma Mobile 375 / Tablet 744 기준 — 744px 뷰포트는 tablet 구간 */
+export const breakpoints = {
+  mobile: 743,
+  tablet: 1024,
+} as const;
+
+export const media = {
+  mobile: `@media (max-width: ${breakpoints.mobile}px)`,
+  tablet: `@media (min-width: ${breakpoints.mobile + 1}px) and (max-width: ${breakpoints.tablet}px)`,
+  desktop: `@media (min-width: ${breakpoints.tablet + 1}px)`,
+  belowDesktop: `@media (max-width: ${breakpoints.tablet}px)`,
+} as const;
+
 declare module 'styled-components' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface DefaultTheme extends AppTheme {}

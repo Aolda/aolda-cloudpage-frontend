@@ -1,17 +1,25 @@
 import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const Container = styled.div<{ $align: 'left' | 'center' }>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   width: 100%;
   text-align: ${({ $align }) => $align};
+  box-sizing: border-box;
+
   ${({ $align }) =>
     $align === 'center' &&
     css`
       align-items: center;
     `}
+
+  ${media.tablet} {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
@@ -21,12 +29,17 @@ export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
   border-radius: 1.5px;
   border: none;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   margin-bottom: 12px;
   align-self: ${({ $align }) => ($align === 'center' ? 'center' : 'flex-start')};
+
+  ${media.tablet} {
+    width: 24px;
+    height: 2px;
+    margin-bottom: 12px;
+    align-self: center;
+  }
 `;
-  
+
 export const ImageContainer = styled.div`
   position: relative;
   border-radius: 1rem;
@@ -50,7 +63,7 @@ export const Overlay = styled.div`
   padding: 2rem;
   color: #ffffff;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.2));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2));
 `;
 
 export const Title = styled.h2<{ $color?: string }>`
@@ -59,19 +72,31 @@ export const Title = styled.h2<{ $color?: string }>`
   font-weight: 700;
   font-size: 32px;
   line-height: 140%;
-  letter-spacing: 0;
-  font-style: normal;
   color: ${({ $color }) => $color ?? '#232527'};
   white-space: pre-line;
   display: block;
   width: 100%;
   margin-bottom: 24px;
+
+  ${media.tablet} {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
 `;
 
 export const Description = styled.p<{ $color?: string }>`
   margin: 0;
   font-size: 1.6rem;
+  line-height: 150%;
   color: ${({ $color, theme }) => $color ?? theme.colors.textMuted};
   max-width: 600px;
-`;
 
+  ${media.tablet} {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    max-width: 486px;
+  }
+`;

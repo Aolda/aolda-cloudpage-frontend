@@ -1,14 +1,21 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { media } from '@/styles/theme';
 
 export const MenuCardLink = styled(Link)`
   text-decoration: none;
   color: inherit;
   display: block;
+
+  ${media.tablet} {
+    flex: 1;
+    min-width: 0;
+  }
 `;
 
 export const MenuCard = styled.div`
-  background: #ffffff;
+  background: #fefefe;
+  border: 1px solid #efefef;
   border-radius: 10px;
   padding: 2.4rem;
   display: flex;
@@ -18,11 +25,24 @@ export const MenuCard = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
-  width:384px;
+  width: 384px;
   height: 216px;
+  box-sizing: border-box;
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: none;
+    height: 101px;
+    min-height: 101px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    gap: 0;
+    box-shadow: none;
   }
 `;
 
@@ -30,12 +50,16 @@ export const Title = styled.h2`
   margin: 0;
   font-size: 2.4rem;
   font-weight: 700;
-  color: #333333;
+  color: #181818;
   line-height: 1.3;
   align-self: flex-start;
+
+  ${media.tablet} {
+    font-size: 16px;
+    line-height: 19px;
+  }
 `;
 
-/* Frame 1 - 액션 영역 컨테이너 */
 export const ActionLabel = styled.span`
   display: flex;
   flex-direction: row;
@@ -51,9 +75,16 @@ export const ActionLabel = styled.span`
   order: 1;
   align-self: stretch;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 290px;
+    margin: 0;
+    height: 23px;
+    gap: 12px;
+  }
 `;
 
-/* 사용 가이드 - Title-H3 */
 export const ActionLabelText = styled.span`
   height: 29px;
   font-family: 'Noto Sans KR', sans-serif;
@@ -68,9 +99,14 @@ export const ActionLabelText = styled.span`
   display: flex;
   align-items: center;
   white-space: nowrap;
+
+  ${media.tablet} {
+    font-size: 16px;
+    line-height: 19px;
+    height: auto;
+  }
 `;
 
-/* famicons:chevron-forward-outline - 24x24, 화살표 90도(오른쪽) */
 export const ArrowIcon = styled.span`
   width: 24px;
   height: 24px;
@@ -81,13 +117,21 @@ export const ArrowIcon = styled.span`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+
+  ${media.tablet} {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
-/* Vector - 24x24, 90도 각도 chevron SVG */
 export const ArrowVector = styled.svg`
   width: 24px;
   height: 24px;
   color: #777777;
   display: block;
-  degree: 180deg;
+
+  ${media.tablet} {
+    width: 20px;
+    height: 20px;
+  }
 `;

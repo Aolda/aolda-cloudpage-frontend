@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const StatCard = styled.div`
   padding: 2.4rem;
@@ -7,22 +8,43 @@ export const StatCard = styled.div`
   gap: 0.8rem;
   min-width: 220px;
   align-items: center;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  justify-content: center;
+  background: #fefefe;
+  border: 1px solid #efefef;
   border-radius: 10px;
   text-align: center;
   height: 133px;
   width: 348px;
+  box-sizing: border-box;
+
+  ${media.tablet} {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 87px;
+    padding: 16px 32px;
+    gap: 8px;
+    border-radius: 8px;
+  }
 `;
 
 export const StatValue = styled.span`
   font-size: 2.8rem;
   font-weight: 700;
-  color: #0E76C4;
+  color: #1a8ee5;
+
+  ${media.tablet} {
+    font-size: 20px;
+    line-height: 24px;
+  }
 `;
 
 export const StatLabel = styled.span`
   font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.text};
-`;
+  color: #777777;
 
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+`;

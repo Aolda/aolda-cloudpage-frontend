@@ -1,92 +1,136 @@
-import styled from "styled-components"
-import { colors } from "@/styles/theme";
-
+import styled from 'styled-components';
+import { colors, media } from '@/styles/theme';
 
 export const StyledHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(136rem, calc(100vw - 3.2rem));
+  max-width: 136rem;
+  height: 7.2rem;
+  position: absolute;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 1.8rem 1.6rem;
+  border: solid 0.1rem ${colors.border};
+  border-radius: 1.2rem;
+  background-color: #ffffff;
+  box-sizing: border-box;
+
+  ${media.belowDesktop} {
+    width: 100%;
+    max-width: none;
+    top: 0;
+    left: 0;
+    transform: none;
+    position: relative;
+    margin: 0;
+    padding: 2rem 3.2rem;
+    border: none;
+    border-radius: 0;
+    height: 6.8rem;
+  }
+
+  ${media.mobile} {
+    padding: 2rem 2.4rem;
+  }
+
+  .iconSection {
     display: flex;
-    width: 1360px;
-    max-width: 1360px;
-    height: 72px;
     align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      display: block;
+      width: 3.5rem !important;
+      height: 3.6rem !important;
+      object-fit: contain;
+    }
+  }
+
+  .linkSeciton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    padding: 0;
+    width: 27.2rem;
+    height: 3.9rem;
 
-    padding: 18px 0 18px 16px;
-    border: solid 1px ${colors.border};
-    border-radius: 12px;
-    background-color: white;
-    box-sizing: border-box;
-
-    .iconSection {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        
-        a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        img {
-            display: block;
-            width: 35px !important;
-            height: 36px !important;
-            object-fit: contain;
-        }
+    a {
+      text-decoration: none;
+      display: flex;
     }
 
-    .linkSeciton {
-        /* TAB container */
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0;
-        margin: 0 auto;
-        width: 272px;
-        height: 39px;
-        flex: none;
-        order: 2;
-        flex-grow: 0;
-
-        a {
-            text-decoration: none;
-            display: flex;
-        }
+    ${media.belowDesktop} {
+      display: none;
     }
+  }
+
+  .menuToggle {
+    display: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 0.2rem;
+      background: #777777;
+      border-radius: 0.1rem;
+    }
+
+    &::before {
+      margin-bottom: 0.5rem;
+      box-shadow: 0 0.6rem 0 #777777;
+    }
+
+    ${media.belowDesktop} {
+      display: block;
+    }
+  }
 `;
 
 export const NavLink = styled.span<{ $isActive: boolean }>`
-    /* TAB */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 20px;
-    gap: 12px;
-    height: 39px;
-    flex: none;
-    flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  gap: 1.2rem;
+  height: 3.9rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  text-align: center;
+  color: ${(props) => (props.$isActive ? colors.primary500 : '#777777')};
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
 
-    /* Text */
-    font-family: 'Noto Sans KR', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: ${(props) => (props.$isActive ? colors.primary500 : '#777777')};
-    white-space: nowrap;
-
-    text-decoration: none;
-    transition: color 0.2s ease;
-    cursor: pointer;
-
-    &:hover {
-        color: ${colors.primary500};
-    }
+  &:hover {
+    color: ${colors.primary500};
+  }
 `;

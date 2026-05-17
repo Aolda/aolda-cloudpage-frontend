@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const PageWrapper = styled.div`
   position: relative;
@@ -94,6 +95,13 @@ export const Ellipse9 = styled.div`
   backdrop-filter: blur(66.55px);
   pointer-events: none;
   z-index: 0;
+
+  ${media.tablet} {
+    width: 401.09px;
+    height: 401.09px;
+    transform: translateX(calc(-50% + 97px));
+    top: -219px;
+  }
 `;
 
 export const Ellipse10 = styled.div`
@@ -109,6 +117,13 @@ export const Ellipse10 = styled.div`
   backdrop-filter: blur(66.55px);
   pointer-events: none;
   z-index: 0;
+
+  ${media.tablet} {
+    width: 636.63px;
+    height: 636.63px;
+    transform: translateX(calc(-50% + 187px)) rotate(55.23deg);
+    top: -108px;
+  }
 `;
 
 export const Ellipse11 = styled.div`
@@ -123,6 +138,13 @@ export const Ellipse11 = styled.div`
   filter: blur(31px);
   pointer-events: none;
   z-index: 0;
+
+  ${media.tablet} {
+    width: 139.15px;
+    height: 139.15px;
+    transform: translateX(calc(-50% + 243px));
+    top: 29px;
+  }
 `;
 
 export const Ellipse12 = styled.div`
@@ -139,6 +161,13 @@ export const Ellipse12 = styled.div`
   backdrop-filter: blur(66.55px);
   pointer-events: none;
   z-index: 0;
+
+  ${media.tablet} {
+    width: 547.52px;
+    height: 547.52px;
+    transform: translateX(calc(-50% - 229px)) rotate(90deg);
+    top: 518px;
+  }
 `;
 
 
@@ -155,6 +184,11 @@ export const MainContent = styled.main`
   padding-bottom: 0;
   z-index: 1;
   box-sizing: border-box;
+
+  ${media.tablet} {
+    padding: 0 32px 60px;
+    padding-top: 0;
+  }
 `;
 
 export const SectionWrapper = styled.div`
@@ -164,6 +198,12 @@ export const SectionWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto;
+  box-sizing: border-box;
+
+  ${media.tablet} {
+    max-width: 680px;
+    width: 100%;
+  }
 
   /* Frame 144 - IntroSection */
   &:nth-of-type(1) {
@@ -171,6 +211,13 @@ export const SectionWrapper = styled.div`
     gap: 24px;
     height: auto;
     min-height: 524px;
+
+    ${media.tablet} {
+      padding: 32px 0 0;
+      gap: 20px;
+      min-height: auto;
+      align-items: stretch;
+    }
   }
 
   /* Frame 12 - NumbersSection */
@@ -180,6 +227,12 @@ export const SectionWrapper = styled.div`
     height: auto;
     min-height: 383px;
     align-items: center;
+
+    ${media.tablet} {
+      padding: 60px 0 0;
+      gap: 20px;
+      min-height: auto;
+    }
   }
 
   /* Frame 19 - ServiceInfoSection */
@@ -188,6 +241,12 @@ export const SectionWrapper = styled.div`
     gap: 24px;
     height: auto;
     min-height: 852px;
+
+    ${media.tablet} {
+      padding: 60px 0 0;
+      gap: 20px;
+      min-height: auto;
+    }
   }
 
   /* Frame 29 - PartnersSection */
@@ -197,6 +256,13 @@ export const SectionWrapper = styled.div`
     height: auto;
     min-height: 670px;
     padding-bottom: 20px;
+
+    ${media.tablet} {
+      padding: 60px 0 0;
+      gap: 20px;
+      min-height: auto;
+      padding-bottom: 0;
+    }
   }
 
   /* Frame 45 - InconveniencesSection */
@@ -207,6 +273,13 @@ export const SectionWrapper = styled.div`
     min-height: 794px;
     padding-bottom: 0px;
     margin-bottom: -180px;
+
+    ${media.tablet} {
+      padding: 60px 0 0;
+      gap: 20px;
+      min-height: auto;
+      margin-bottom: 0;
+    }
   }
 
   /* Frame 145 - PromisesSection */
@@ -216,6 +289,13 @@ export const SectionWrapper = styled.div`
     height: auto;
     min-height: 794px;
     margin-top: -80px;
+
+    ${media.tablet} {
+      padding: 60px 0 0;
+      gap: 20px;
+      min-height: auto;
+      margin-top: 0;
+    }
   }
 
   /* Frame 146 - MeetSection */
@@ -226,6 +306,13 @@ export const SectionWrapper = styled.div`
     min-height: 474px;
     align-items: center;
     margin-top: -80px;
+
+    ${media.tablet} {
+      padding: 60px 0 0;
+      gap: 24px;
+      min-height: auto;
+      margin-top: 0;
+    }
   }
 `;
 

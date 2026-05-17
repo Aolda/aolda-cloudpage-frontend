@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import type { CardTone } from './index';
+import { media } from '@/styles/theme';
 
-/* Frame 41 */
 export const ItemCard = styled.div<{ $tone: CardTone }>`
   box-sizing: border-box;
   display: flex;
@@ -16,21 +16,34 @@ export const ItemCard = styled.div<{ $tone: CardTone }>`
   border: 2px solid #e2e2e2;
   border-radius: 16px;
   flex: none;
-  order: 0;
   flex-grow: 1;
+
+  ${media.tablet} {
+    width: auto;
+    max-width: none;
+    height: 240px;
+    min-height: 240px;
+    padding: 24px 20px;
+    gap: 20px;
+    border: 1px solid #efefef;
+    border-radius: 12px;
+    flex: 1;
+  }
 `;
 
-/* image 452 - 컨테이너 120 고정, scale로 아이콘만 확대(여백은 잘림) */
 export const Icon = styled.span`
   width: 120px;
   height: 120px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  ${media.tablet} {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 export const IconImage = styled.img<{ $scale?: number }>`
@@ -41,9 +54,14 @@ export const IconImage = styled.img<{ $scale?: number }>`
   display: block;
   transform: scale(${({ $scale = 1.2 }) => $scale});
   transform-origin: center center;
+
+  ${media.tablet} {
+    width: 60px;
+    height: 60px;
+    transform: scale(1);
+  }
 `;
 
-/* Frame 40 */
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -54,53 +72,48 @@ export const TextContainer = styled.div`
   width: 312px;
   height: 104px;
   flex: none;
-  order: 1;
   align-self: stretch;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    width: 176px;
+    height: auto;
+    gap: 8px;
+  }
 `;
 
-/* Title-H1 */
 export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
-  width: 313px;
-  height: 46px;
+  width: 100%;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: bold;
   font-weight: 700;
   font-size: 32px;
   line-height: 100%;
   text-align: center;
-  color: ${({ $tone }) => ($tone === 'red' ? 'rgb(233, 23, 23)' : '#1A8EE5')};
-  flex: none;
-  order: 0;
-  letter-spacing: 0%; 
-  align-self: stretch;
-  flex-grow: 0;
+  color: ${({ $tone }) => ($tone === 'red' ? '#e15651' : '#1a8ee5')};
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${media.tablet} {
+    font-size: 16px;
+    line-height: 19px;
+  }
 `;
 
-/* Content-C4 */
 export const ItemDescription = styled.p`
-  width: 312px;
-  height: 46px;
+  width: 100%;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
   color: #777777;
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   word-wrap: break-word;
-  word-break: break-word;
-`;
+  word-break: keep-all;
 
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+`;

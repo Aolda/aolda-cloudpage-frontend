@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const Section = styled.section`
   display: grid;
@@ -9,9 +10,14 @@ export const Section = styled.section`
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
+  ${media.tablet} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    max-width: 680px;
   }
 `;
 
@@ -20,7 +26,7 @@ export const Visual = styled.div`
   overflow: hidden;
   min-height: 100%;
   display: flex;
-  
+
   > div {
     position: relative;
     border-radius: 10px;
@@ -30,7 +36,7 @@ export const Visual = styled.div`
     padding: 0;
     overflow: hidden;
     display: flex;
-    
+
     img {
       position: absolute;
       top: 0;
@@ -41,15 +47,33 @@ export const Visual = styled.div`
       border-radius: 10px;
       transform: scale(1.05);
     }
-    
+
     > h3 {
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 700;
       font-style: normal;
       font-size: 24px;
-      line-height: 1.4;
+      line-height: 29px;
       letter-spacing: 0;
       color: #ffffff;
+    }
+  }
+
+  ${media.tablet} {
+    width: 100%;
+
+    > div {
+      min-height: 320px;
+      border-radius: 12px;
+
+      img {
+        border-radius: 12px;
+      }
+
+      > h3 {
+        font-size: 24px;
+        line-height: 29px;
+      }
     }
   }
 `;
@@ -58,5 +82,10 @@ export const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-`;
 
+  ${media.tablet} {
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+  }
+`;

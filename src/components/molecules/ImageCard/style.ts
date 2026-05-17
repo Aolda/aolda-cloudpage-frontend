@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 type CardTone = 'blue' | 'red';
 
@@ -13,19 +14,30 @@ export const ImageCard = styled.div<{ $tone: CardTone; $isBackground?: boolean }
   width: ${({ $isBackground }) => ($isBackground ? '792px' : '360px')};
   min-height: ${({ $isBackground }) => ($isBackground ? '452px' : 'auto')};
   height: ${({ $isBackground }) => ($isBackground ? '452px' : '120px')};
-  background: ${({ $isBackground }) => ($isBackground ? 'transparent' : '#FFFFFF')};
-  border: none;
-  border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '0')};
+  background: ${({ $isBackground }) => ($isBackground ? 'transparent' : '#fefefe')};
+  border: ${({ $isBackground }) => ($isBackground ? 'none' : '1px solid #efefef')};
+  border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '8px')};
   flex: none;
   order: 0;
   flex-grow: 0;
   overflow: hidden;
   position: relative;
+
   ${({ $isBackground }) =>
     $isBackground &&
     css`
       box-shadow: none;
     `}
+
+  ${media.tablet} {
+    width: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
+    max-width: ${({ $isBackground }) => ($isBackground ? '680px' : 'none')};
+    min-height: ${({ $isBackground }) => ($isBackground ? '320px' : 'auto')};
+    height: ${({ $isBackground }) => ($isBackground ? '320px' : '104px')};
+    padding: ${({ $isBackground }) => ($isBackground ? '32px' : '12px')};
+    gap: ${({ $isBackground }) => ($isBackground ? '10px' : '12px')};
+    border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '8px')};
+  }
 `;
 
 export const Overlay = styled.div<{ $isBackground?: boolean }>`
@@ -47,14 +59,20 @@ export const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${media.tablet} {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 export const Image = styled.img<{ $isBackground?: boolean }>`
-  width: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
-  height: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '8px')};
-  background: #ffffff;
+  border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '12px')};
+  background: ${({ $isBackground }) => ($isBackground ? 'transparent' : '#232527')};
+
   ${({ $isBackground }) =>
     $isBackground &&
     css`
@@ -68,16 +86,24 @@ export const Image = styled.img<{ $isBackground?: boolean }>`
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 4px;
   flex: 1;
+  justify-content: space-between;
+  min-height: 80px;
+
+  ${media.tablet} {
+    gap: 4px;
+    min-height: 80px;
+  }
 `;
 
 export const ImageTitle = styled.h3<{ $isBackground?: boolean }>`
   margin: 0;
   font-size: ${({ $isBackground }) => ($isBackground ? '4rem' : '1.8rem')};
   font-weight: 700;
-  color: ${({ $isBackground, theme }) => ($isBackground ? '#ffffff' : '#333333')};
+  color: ${({ $isBackground }) => ($isBackground ? '#ffffff' : '#181818')};
   white-space: pre-line;
+
   ${({ $isBackground }) =>
     $isBackground &&
     css`
@@ -91,19 +117,34 @@ export const ImageTitle = styled.h3<{ $isBackground?: boolean }>`
       width: 100%;
       height: 100%;
     `}
+
+  ${media.tablet} {
+    font-size: ${({ $isBackground }) => ($isBackground ? '24px' : '16px')};
+    line-height: ${({ $isBackground }) => ($isBackground ? '29px' : '19px')};
+    padding: ${({ $isBackground }) => ($isBackground ? '32px' : '0')};
+  }
 `;
 
 export const ImageDescription = styled.p`
   margin: 0;
   font-size: 1.4rem;
-  color: #999999;
-  line-height: 1.5;
+  color: #777777;
+  line-height: 150%;
+
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
 `;
 
 export const ImagePeriod = styled.p`
   margin: 0;
   font-size: 1.2rem;
-  color: #999999;
-  line-height: 1.5;
-`;
+  color: #777777;
+  line-height: 150%;
 
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+`;

@@ -1,73 +1,158 @@
-import styled from "styled-components";
-import { pxToRem } from "@/styles/utils";
-import { colors, fontSize } from "@/styles/theme";
+import styled from 'styled-components';
+import { media } from '@/styles/theme';
+
+export const FooterOuter = styled.div`
+  width: 100%;
+  background: #061c2c;
+  margin-top: auto;
+`;
 
 export const StyledFooter = styled.footer`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 14.375rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 23.1rem;
+  padding: 6rem 12rem;
+  gap: 1rem;
+  background: #061c2c;
 
-    background-color: #061C2C;
-
-    position: relative;
-    bottom: 0;
-
-    padding: 3.75rem 7.5rem;
-
+  ${media.tablet} {
+    min-height: 20.7rem;
+    padding: 4.8rem 3.2rem;
     gap: 1rem;
+  }
 
-    .logoSection {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 16.3125rem;
-        height: 6.5rem;
+  ${media.mobile} {
+    min-height: 14.2rem;
+    padding: 2.4rem 1.6rem;
+    gap: 1rem;
+  }
+`;
 
-        gap: 0.5rem;
+export const FooterContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.6rem;
+  width: 100%;
+  max-width: 120rem;
 
-        .description {
-            padding-left: 2.5rem;
-            color: white;
-            font-size: ${fontSize.smaller};
-            font-weight: 200;
-            margin-top: 3px;
-            padding-left: 4rem;
-            padding-bottom: 0.8rem;
-            line-height: 0.3;
-        }
-    }
+  ${media.tablet} {
+    max-width: none;
+    gap: 1.6rem;
+  }
 
-    .addressSection {
-        display: flex;
-        flex-direction: column;
-        width: 18.84375rem;
-        height: 2.5625rem;
-        gap: 0.5rem;
-        padding-left: 4.3rem;
-        color: white;
+  ${media.mobile} {
+    max-width: none;
+    gap: 1.2rem;
+  }
+`;
 
-        .address {
-            font-size: ${fontSize.smaller};
-            font-weight: 200;
-            line-height: 1.4;
-            width: 200px;
-        }
+export const LogoWrap = styled.div`
+  width: 3.2rem;
+  height: 3.2rem;
+  flex-shrink: 0;
 
-        .managementSection {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: ${fontSize.smaller};
-            font-weight: 200;
-            line-height: 1.4;
+  img {
+    object-fit: contain;
+  }
 
-            .divider {
-                width: 4px;
-                height: 0px;
-                border-width: 0.5px;
-                transform: rotate(-90deg);
-            }
-        }
-    }
+  ${media.mobile} {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+`;
+
+export const TextColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1;
+  min-width: 0;
+`;
+
+export const BrandBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+`;
+
+export const BrandName = styled.span`
+  font-family: 'Leon Sans', 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 3.3rem;
+  color: #fefefe;
+  white-space: nowrap;
+
+  ${media.mobile} {
+    font-size: 2.4rem;
+    line-height: 2.5rem;
+  }
+`;
+
+export const Tagline = styled.span`
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: #1a8ee5;
+  word-break: keep-all;
+
+  ${media.mobile} {
+    font-size: 1rem;
+    line-height: 150%;
+  }
+`;
+
+export const InfoBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+`;
+
+export const Address = styled.span`
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: #fefefe;
+
+  ${media.mobile} {
+    font-size: 1rem;
+    line-height: 150%;
+  }
+`;
+
+export const ManagementRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+`;
+
+export const ManagementText = styled.span`
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: #fefefe;
+  white-space: nowrap;
+
+  ${media.mobile} {
+    font-size: 1rem;
+    line-height: 150%;
+  }
+`;
+
+export const Divider = styled.span`
+  width: 0.4rem;
+  height: 0;
+  border: 0.1rem solid #fefefe;
+  transform: rotate(90deg);
+  flex: none;
 `;

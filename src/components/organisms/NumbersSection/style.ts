@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const Section = styled.section`
   width: 100%;
@@ -9,6 +10,12 @@ export const Section = styled.section`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  box-sizing: border-box;
+
+  ${media.tablet} {
+    max-width: 680px;
+    gap: 20px;
+  }
 `;
 
 export const Grid = styled.div`
@@ -17,8 +24,7 @@ export const Grid = styled.div`
   gap: 1.2rem;
   width: 100%;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+  ${media.tablet} {
+    gap: 12px;
   }
 `;
-

@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const Section = styled.section`
   max-width: 1200px;
@@ -12,6 +13,14 @@ export const Section = styled.section`
   align-items: center;
   margin: 0 auto;
   box-sizing: border-box;
+
+  ${media.tablet} {
+    max-width: 680px;
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 24px;
+  }
 `;
 
 export const Divider = styled.span`
@@ -21,7 +30,6 @@ export const Divider = styled.span`
   border-radius: 2px;
 `;
 
-/* Frame 149 */
 export const Grid = styled.div`
   display: flex;
   flex-direction: row;
@@ -33,9 +41,14 @@ export const Grid = styled.div`
   flex: none;
   order: 1;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: 344px;
+    height: 82px;
+    gap: 24px;
+  }
 `;
 
-/* Frame 147 / Frame 148 */
 export const Col = styled.div`
   display: flex;
   flex-direction: column;
@@ -54,7 +67,6 @@ export const Col = styled.div`
     order: 1;
   }
 
-  /* Button - Frame 149 첫 번째: Primary/600 */
   &:first-of-type a,
   &:first-of-type button {
     width: 200px;
@@ -67,7 +79,6 @@ export const Col = styled.div`
     color: #ffffff;
   }
 
-  /* Button - Frame 148: White + border */
   &:last-of-type a,
   &:last-of-type button {
     width: 200px;
@@ -80,7 +91,6 @@ export const Col = styled.div`
     color: #181818;
   }
 
-  /* Button 내부 아이콘 24x24 */
   a img,
   button img {
     width: 24px;
@@ -89,16 +99,35 @@ export const Col = styled.div`
     order: 0;
     flex-grow: 0;
   }
+
+  ${media.tablet} {
+    width: 160px;
+    height: 82px;
+    gap: 8px;
+
+    &:first-of-type a,
+    &:first-of-type button,
+    &:last-of-type a,
+    &:last-of-type button {
+      width: 160px;
+      height: 38px;
+      padding: 11px 16px;
+    }
+
+    a img,
+    button img {
+      width: 16px;
+      height: 16px;
+    }
+  }
 `;
 
-/* Content-C4 */
 export const Caption = styled.p`
   width: 100%;
   max-width: 163px;
   height: 46px;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
@@ -110,5 +139,11 @@ export const Caption = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
 
+  ${media.tablet} {
+    max-width: 122px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 150%;
+  }
+`;
