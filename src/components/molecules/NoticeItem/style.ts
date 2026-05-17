@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const NoticeLink = styled.a`
   display: block;
@@ -34,8 +34,8 @@ export const Number = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   color: #777777;
   flex: none;
@@ -59,8 +59,8 @@ export const Category = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   color: #1A8EE5;
   flex: none;
@@ -82,8 +82,8 @@ export const Title = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   color: #232527;
   flex: none;
   order: 0;
@@ -105,8 +105,8 @@ export const Date = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   text-align: center;
   color: #777777;
   flex: none;

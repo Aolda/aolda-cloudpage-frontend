@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const ServiceLink = styled.a`
   display: block;
@@ -101,8 +101,8 @@ export const Title = styled.h3`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 2rem;
+  line-height: 2.4rem;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
   flex: none;
@@ -114,7 +114,7 @@ export const Title = styled.h3`
 `;
 
 export const Description = styled.p`
-  font-size: 12px;
+  font-size: 1.2rem;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
   font: noto sans kr;
   font-style: regular;

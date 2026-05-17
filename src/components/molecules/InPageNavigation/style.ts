@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const NavigationContainer = styled.div`
   display: flex;
@@ -104,8 +104,8 @@ export const NavLabel = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   display: flex;
   align-items: center;
   text-align: center;
@@ -135,8 +135,8 @@ export const NavTitle = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   display: flex;
   align-items: center;
   text-align: center;
@@ -152,8 +152,8 @@ export const NavTitleLink = styled.a`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   display: flex;
   align-items: center;
   text-align: center;

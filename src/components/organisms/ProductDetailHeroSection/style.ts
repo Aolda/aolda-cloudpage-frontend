@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const HeroSection = styled.section`
   display: flex;
@@ -108,8 +108,8 @@ export const ServiceName = styled.h1`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
   color: #FFFFFF;
   margin: 0;
   flex: none;
@@ -124,8 +124,8 @@ export const ServiceDescription = styled.p`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   color: #FFFFFF;
   margin: 0;
   flex: none;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const NoticeListContainer = styled.div`
   display: flex;
@@ -47,8 +47,8 @@ export const Count = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 2rem;
+  line-height: 2.4rem;
   color: #232527;
   flex: none;
   order: 0;
@@ -115,8 +115,8 @@ export const WriteText = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   color: #1572B8;
   flex: none;

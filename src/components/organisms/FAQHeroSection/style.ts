@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+﻿import styled, { css } from 'styled-components';
 
 export const HeroSection = styled.section`
   position: relative;
@@ -60,8 +60,8 @@ export const BreadcrumbWrapper = styled.div`
       color: #fefefe;
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
     }
   }
 `;
@@ -69,8 +69,8 @@ export const BreadcrumbWrapper = styled.div`
 export const Title = styled.h1`
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
   color: #fefefe;
   margin: 0;
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 import type { CardTone } from './index';
 
 /* Frame 41 */
@@ -69,7 +69,7 @@ export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: bold;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 3.2rem;
   line-height: 100%;
   text-align: center;
   color: ${({ $tone, theme }) =>
@@ -92,8 +92,8 @@ export const ItemDescription = styled.p`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   color: ${({ theme }) => theme.colors.textMuted};
   flex: none;

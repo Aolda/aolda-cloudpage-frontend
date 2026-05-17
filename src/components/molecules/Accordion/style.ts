@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+﻿import styled, { css } from 'styled-components';
 
 export const Accordion = styled.div`
   background: transparent;
@@ -75,8 +75,8 @@ export const QBadge = styled.span`
     theme.mode === 'dark' ? theme.colors.widgetBorder : '#444444'};
   font-family: 'Gmarket Sans', 'Noto Sans KR', sans-serif;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
   color: #fefefe;
 `;
 
@@ -89,8 +89,8 @@ export const IconImage = styled.img`
 
 export const TitleText = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   font-weight: 700;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.text)};
   flex: 1;

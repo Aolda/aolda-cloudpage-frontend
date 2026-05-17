@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const PaginationContainer = styled.nav`
   display: flex;
@@ -96,8 +96,8 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   color: ${({ $isActive, theme }) =>
     $isActive ? '#1A8EE5' : theme.mode === 'dark' ? '#FAFAFA' : '#777777'};
@@ -181,8 +181,8 @@ export const ButtonText = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
   flex: none;

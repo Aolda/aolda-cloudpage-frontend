@@ -1,73 +1,134 @@
-import styled from "styled-components";
-import { pxToRem } from "@/styles/utils";
-import { colors, fontSize } from "@/styles/theme";
+import styled from 'styled-components';
+
+export const FooterOuter = styled.div`
+  width: 100%;
+  background: #061c2c;
+  margin-top: auto;
+`;
 
 export const StyledFooter = styled.footer`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 14.375rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  min-height: 23.1rem;
+  padding: 6rem 12rem;
+  gap: 1rem;
+  background: #061c2c;
 
-    background-color: #061C2C;
+  @media (max-width: 76.8rem) {
+    padding: 4rem 2.4rem;
+  }
+`;
 
-    position: relative;
-    bottom: 0;
+export const FooterContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  gap: 1.6rem;
+  width: 100%;
+  max-width: 120rem;
+  min-height: 11.1rem;
+`;
 
-    padding: 3.75rem 7.5rem;
+export const LogoWrap = styled.div`
+  position: relative;
+  width: 3.2rem;
+  height: 3.2rem;
+  flex: none;
+  flex-shrink: 0;
 
-    gap: 1rem;
+  img {
+    object-fit: contain;
+  }
+`;
 
-    .logoSection {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 16.3125rem;
-        height: 6.5rem;
+export const TextColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 1.2rem;
+  flex: 1;
+  min-width: 0;
+`;
 
-        gap: 0.5rem;
+export const BrandBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0.4rem;
+`;
 
-        .description {
-            padding-left: 2.5rem;
-            color: #1a8ee5;
-            font-size: ${fontSize.smaller};
-            font-weight: 200;
-            margin-top: 3px;
-            padding-left: 4rem;
-            padding-bottom: 0.8rem;
-            line-height: 0.3;
-        }
-    }
+export const BrandName = styled.span`
+  display: block;
+  font-family: 'Leon Sans', 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 3.3rem;
+  color: #fefefe;
+  white-space: nowrap;
+`;
 
-    .addressSection {
-        display: flex;
-        flex-direction: column;
-        width: 18.84375rem;
-        height: 2.5625rem;
-        gap: 0.5rem;
-        padding-left: 4.3rem;
-        color: white;
+export const Tagline = styled.span`
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #1a8ee5;
+  word-break: keep-all;
+`;
 
-        .address {
-            font-size: ${fontSize.smaller};
-            font-weight: 200;
-            line-height: 1.4;
-            width: 200px;
-        }
+export const InfoBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0.8rem;
+  width: 100%;
+`;
 
-        .managementSection {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: ${fontSize.smaller};
-            font-weight: 200;
-            line-height: 1.4;
+export const Address = styled.span`
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #fefefe;
+`;
 
-            .divider {
-                width: 4px;
-                height: 0px;
-                border-width: 0.5px;
-                transform: rotate(-90deg);
-            }
-        }
-    }
+export const ManagementRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 0.8rem;
+`;
+
+export const ManagementText = styled.span`
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #fefefe;
+  white-space: nowrap;
+`;
+
+export const Divider = styled.span`
+  width: 0.4rem;
+  height: 0;
+  border: 0.1rem solid #fefefe;
+  transform: rotate(90deg);
+  flex: none;
 `;

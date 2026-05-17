@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const Section = styled.section`
   max-width: 1200px;
@@ -68,7 +68,7 @@ export const Col = styled.div`
     color: #ffffff;
   }
 
-  /* Button - Frame 148: White + border */
+  /* Button - Frame 148: White + border (팀 아올다 합류) */
   &:last-of-type a,
   &:last-of-type button {
     width: 200px;
@@ -78,7 +78,11 @@ export const Col = styled.div`
     background: #ffffff;
     border: 1px solid #bfbfbf;
     border-radius: 8px;
-    color: #181818;
+    color: #000000;
+
+    span {
+      color: #000000;
+    }
   }
 
   /* Button 내부 아이콘 24x24 */
@@ -94,15 +98,16 @@ export const Col = styled.div`
 
 /* Content-C4 */
 export const Caption = styled.p`
-  width: 100%;
-  max-width: 163px;
-  height: 46px;
+  width: 120%;
+  max-width: 162px;
+  height: 48px;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 150%;
+  letter-spacing: -1%;
   text-align: center;
   color: ${({ theme }) => theme.colors.textMuted};
   flex: none;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 import Link from 'next/link';
 
 export const DeveloperCardLink = styled(Link)`
@@ -87,8 +87,8 @@ export const CrewName = styled.h3`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 2rem;
+  line-height: 2.4rem;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
   margin: 0;
@@ -103,8 +103,8 @@ export const CrewNameSuffix = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
   flex: none;
@@ -118,8 +118,8 @@ export const CrewInfo = styled.p`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
   margin: 0;

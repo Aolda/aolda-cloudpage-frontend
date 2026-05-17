@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const SolutionCard = styled.div`
   box-sizing: border-box;
@@ -24,8 +24,8 @@ export const SolutionTitle = styled.h3`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 2rem;
+  line-height: 2.4rem;
   color: #1A8EE5;
   margin: 0;
   flex: none;
@@ -40,8 +40,8 @@ export const SolutionDescription = styled.p`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
   margin: 0;

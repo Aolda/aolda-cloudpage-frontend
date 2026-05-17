@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const DetailContainer = styled.article`
   width: 100%;
@@ -210,8 +210,8 @@ export const ListButtonWrapper = styled.div`
     background: #1A8EE5;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
     color: #FFFFFF;
     
     span {

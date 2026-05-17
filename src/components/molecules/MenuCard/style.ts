@@ -32,7 +32,8 @@ export const Title = styled.h2`
   margin: 0;
   font-size: 2.4rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.primary500};
+  color: ${({ theme }) =>
+    theme.mode === 'dark' ? theme.colors.primary500 : theme.colors.text};
   line-height: 1.3;
   align-self: flex-start;
 `;
@@ -57,14 +58,13 @@ export const ActionLabel = styled.span`
 
 /* 사용 가이드 - Title-H3 */
 export const ActionLabelText = styled.span`
-  height: 29px;
+  height: 2.9rem;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: ${({ theme }) =>
-    theme.mode === 'dark' ? theme.colors.text : theme.colors.gray600};
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: ${({ theme }) => theme.colors.text};
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -88,10 +88,9 @@ export const ArrowIcon = styled.span`
 
 /* Vector - 24x24, 90도 각도 chevron SVG */
 export const ArrowVector = styled.svg`
-  width: 24px;
-  height: 24px;
-  color: ${({ theme }) =>
-    theme.mode === 'dark' ? theme.colors.text : theme.colors.gray600};
+  width: 2.4rem;
+  height: 2.4rem;
+  color: ${({ theme }) => theme.colors.text};
   display: block;
   degree: 180deg;
 `;

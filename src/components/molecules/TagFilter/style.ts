@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+﻿import styled, { css } from 'styled-components';
 
 export const MenuIcon = styled.span`
   display: inline-flex;
@@ -52,8 +52,8 @@ export const Button = styled.button<{ $isActive: boolean; $faqStyle?: boolean }>
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
   text-align: center;
 
   background: ${({ $isActive }) => ($isActive ? '#181818' : '#FFFFFF')};
@@ -70,7 +70,7 @@ export const Button = styled.button<{ $isActive: boolean; $faqStyle?: boolean }>
       flex: 1 1 0;
       height: 48px;
       border-radius: 0;
-      font-size: 16px;
+      font-size: 1.6rem;
       line-height: ${$isActive ? '19px' : '24px'};
       font-weight: ${$isActive ? '700' : '400'};
 

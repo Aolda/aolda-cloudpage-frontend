@@ -25,8 +25,8 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input<{ $embedded?: boolean }>`
   flex: 1;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: ${({ $embedded }) => ($embedded ? '16px' : '1.5rem')};
-  line-height: 19px;
+  font-size: ${({ $embedded }) => ($embedded ? '1.6rem' : '1.5rem')};
+  line-height: 1.9rem;
   color: ${({ theme }) => theme.colors.text};
   transition: border-color 0.2s;
 

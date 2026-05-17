@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const HeroSection = styled.section`
   display: flex;
@@ -75,8 +75,8 @@ export const Title = styled.h1`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
   color: #FFFFFF;
   margin: 0;
   flex: none;
@@ -92,8 +92,8 @@ export const Description = styled.p`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 2rem;
+  line-height: 2.4rem;
   color: #FFFFFF;
   margin: 0;
   flex: none;

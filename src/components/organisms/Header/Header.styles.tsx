@@ -1,4 +1,4 @@
-import styled from "styled-components"
+﻿import styled from "styled-components"
 
 export const StyledHeader = styled.header`
     display: flex;
@@ -89,8 +89,8 @@ export const NavLink = styled.span<{ $isActive: boolean }>`
     font-family: 'Noto Sans KR', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
     text-align: center;
     color: ${(props) =>
       props.$isActive

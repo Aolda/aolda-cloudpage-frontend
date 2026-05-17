@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 import type { ButtonSize, ButtonVariant } from './index';
 
 const sizeStyles = {
@@ -8,9 +8,9 @@ const sizeStyles = {
     gap: '0.8rem',
   },
   lg: {
-    padding: '12px 36px',
-    fontSize: '16px',
-    gap: '8px',
+    padding: '1.2rem 3.6rem',
+    fontSize: '1.6rem',
+    gap: '0.8rem',
   },
 };
 
@@ -25,7 +25,7 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
   padding: ${({ $size }) => sizeStyles[$size].padding};
   font-size: ${({ $size }) => sizeStyles[$size].fontSize};
   font-weight: 700;
-  line-height: ${({ $size }) => $size === 'lg' ? '19px' : '1'};
+  line-height: ${({ $size }) => ($size === 'lg' ? '1.9rem' : '1')};
   font-family: 'Noto Sans KR', sans-serif;
   cursor: pointer;
   text-decoration: none;
@@ -76,8 +76,8 @@ export const Label = styled.span<{ $variant: ButtonVariant; $size: ButtonSize }>
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
   /* White/White or Black */
   color: ${({ $variant, theme }) => $variant === 'secondary' ? theme.colors.text : '#FFFFFF'};

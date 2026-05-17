@@ -37,8 +37,8 @@ export const LeftPanel = styled.div`
   padding: 0px;
   gap: 36px;
   width: 797px;
-  height: 488px;
-  min-height: 488px;
+  height: 524px;
+  min-height: 524px;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -60,15 +60,14 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Description = styled.div`
-  width: 797px;
-  height: 144px;
-  margin-top:36px;
+  width: 800px;
+  max-width: 100%;
+  min-height: 14.4rem;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 100%;
-  font-style: regular;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 150%;
   letter-spacing: 0%;
   color: ${({ theme }) => theme.colors.textMuted};
   margin: 0;
@@ -83,7 +82,7 @@ export const RightPanel = styled.div`
   /* Rectangle 5 */
   position: relative;
   width: 379px;
-  height: 488px;
+  height: 524px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   border-radius: 12px;
   overflow: hidden;

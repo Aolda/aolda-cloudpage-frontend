@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const SimilarServicesSection = styled.section`
   padding: 4rem 0;
@@ -30,7 +30,7 @@ export const ServiceIcon = styled.span`
 export const Description = styled.p`
   
   margin: 1rem 0 0;
-  font-size: 20px;
+  font-size: 2rem;
   color: ${({ theme }) => theme.colors.textMuted};
   line-height: 1.7;
   width: 100%;

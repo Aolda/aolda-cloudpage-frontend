@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const Breadcrumb = styled.nav`
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  line-height: 19px;
+  line-height: 1.9rem;
   margin-bottom: 0;
 `;
 

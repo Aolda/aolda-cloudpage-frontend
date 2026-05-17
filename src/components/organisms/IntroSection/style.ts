@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const Section = styled.section`
   display: grid;
@@ -46,7 +46,7 @@ export const Visual = styled.div`
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 700;
       font-style: normal;
-      font-size: 24px;
+      font-size: 2.4rem;
       line-height: 1.4;
       letter-spacing: 0;
       color: #ffffff;

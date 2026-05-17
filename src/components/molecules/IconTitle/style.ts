@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const Container = styled.div<{ $align?: 'left' | 'center' }>`
   display: flex;
@@ -33,7 +33,7 @@ export const TitleText = styled.h2`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 140%;
   letter-spacing: 0;
   font-style: normal;
