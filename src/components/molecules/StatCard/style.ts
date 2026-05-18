@@ -26,6 +26,17 @@ export const StatCard = styled.div`
     gap: 8px;
     border-radius: 8px;
   }
+
+  ${media.mobile} {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 56px;
+    padding: 8px 12px;
+    gap: 8px;
+    align-items: flex-start;
+    text-align: left;
+  }
 `;
 
 export const StatValue = styled.span`
@@ -37,6 +48,13 @@ export const StatValue = styled.span`
     font-size: 20px;
     line-height: 24px;
   }
+
+  ${media.mobile} {
+    font-size: 12px;
+    line-height: 14px;
+    align-self: stretch;
+    text-align: right;
+  }
 `;
 
 export const StatLabel = styled.span`
@@ -46,5 +64,11 @@ export const StatLabel = styled.span`
   ${media.tablet} {
     font-size: 12px;
     line-height: 150%;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+    color: #232527;
   }
 `;

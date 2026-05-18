@@ -15,10 +15,12 @@ const PartnerCard = ({
   name,
   description,
   period,
+  compact = false,
 }: {
   name: string;
   description?: string;
   period?: string;
+  compact?: boolean;
 }) => (
   <ImageCard
     image="/intro/intro_used.png"
@@ -26,6 +28,7 @@ const PartnerCard = ({
     title={name}
     description={description}
     period={period}
+    compact={compact}
   />
 );
 
@@ -48,7 +51,6 @@ const PartnersSection = () => {
         showTopBar={true}
       />
 
-      {/* 데스크톱: 무한 캐러셀 */}
       <S.CarouselWrap>
         <S.Row>
           {firstRowPartners.map((p, index) => (
@@ -68,10 +70,9 @@ const PartnersSection = () => {
         </S.Row>
       </S.CarouselWrap>
 
-      {/* 태블릿: 2×3 그리드 */}
       <S.PartnerGrid>
         {partners.map((p, index) => (
-          <PartnerCard key={`grid-${index}`} {...p} />
+          <PartnerCard key={`grid-${index}`} {...p} compact />
         ))}
       </S.PartnerGrid>
     </S.Section>

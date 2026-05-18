@@ -6,8 +6,14 @@ export const MenuCardLink = styled(Link)`
   text-decoration: none;
   color: inherit;
   display: block;
+  min-width: 0;
 
   ${media.tablet} {
+    flex: 1;
+    min-width: 0;
+  }
+
+  ${media.mobile} {
     flex: 1;
     min-width: 0;
   }
@@ -44,6 +50,17 @@ export const MenuCard = styled.div`
     gap: 0;
     box-shadow: none;
   }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: none;
+    height: 64px;
+    min-height: 64px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    gap: 4px;
+    box-shadow: none;
+  }
 `;
 
 export const Title = styled.h2`
@@ -57,6 +74,11 @@ export const Title = styled.h2`
   ${media.tablet} {
     font-size: 16px;
     line-height: 19px;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 12px;
   }
 `;
 
@@ -83,6 +105,12 @@ export const ActionLabel = styled.span`
     height: 23px;
     gap: 12px;
   }
+
+  ${media.mobile} {
+    max-width: 141.5px;
+    height: 16px;
+    gap: 4px;
+  }
 `;
 
 export const ActionLabelText = styled.span`
@@ -105,6 +133,12 @@ export const ActionLabelText = styled.span`
     line-height: 19px;
     height: auto;
   }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+    font-weight: 400;
+  }
 `;
 
 export const ArrowIcon = styled.span`
@@ -122,6 +156,11 @@ export const ArrowIcon = styled.span`
     width: 20px;
     height: 20px;
   }
+
+  ${media.mobile} {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const ArrowVector = styled.svg`
@@ -133,5 +172,10 @@ export const ArrowVector = styled.svg`
   ${media.tablet} {
     width: 20px;
     height: 20px;
+  }
+
+  ${media.mobile} {
+    width: 16px;
+    height: 16px;
   }
 `;

@@ -14,6 +14,8 @@ export interface ImageCardProps {
   period?: string;
   /** 배경 이미지 모드 (이미지 위에 텍스트 오버레이) */
   isBackground?: boolean;
+  /** 모바일 파트너 카드 — 텍스트 전용 컴팩트 레이아웃 */
+  compact?: boolean;
 }
 
 /**
@@ -40,7 +42,15 @@ export interface ImageCardProps {
  * 
  * @returns {JSX.Element} 이미지 카드 요소
  */
-const ImageCard = ({ image, alt, title, description, period, isBackground = false }: ImageCardProps) => {
+const ImageCard = ({
+  image,
+  alt,
+  title,
+  description,
+  period,
+  isBackground = false,
+  compact = false,
+}: ImageCardProps) => {
   if (isBackground) {
     return (
       <S.ImageCard $tone="blue" $isBackground={isBackground}>
@@ -52,15 +62,14 @@ const ImageCard = ({ image, alt, title, description, period, isBackground = fals
   }
 
   return (
-    <S.ImageCard $tone="blue" $isBackground={isBackground}>
-      <S.ImageContainer>
+    <S.ImageCard $tone="blue" $isBackground={isBackground} $compact={compact}>
+      <S.ImageContainer $compact={compact}>
         <S.Image src={image} alt={alt || (typeof title === 'string' ? title : '') || ''} $isBackground={isBackground} />
       </S.ImageContainer>
-      <S.TextContainer>
-        {title && <S.ImageTitle $isBackground={isBackground}>{title}</S.ImageTitle>}
-        {description && <S.ImageDescription>{description}</S.ImageDescription>}
-        <br></br>
-        {period && <S.ImagePeriod>{period}</S.ImagePeriod>}
+      <S.TextContainer $compact={compact}>
+        {title && <S.ImageTitle $isBackground={isBackground} $compact={compact}>{title}</S.ImageTitle>}
+        {period && <S.ImagePeriod $compact={compact}>{period}</S.ImagePeriod>}
+        {description && <S.ImageDescription $compact={compact}>{description}</S.ImageDescription>}
       </S.TextContainer>
     </S.ImageCard>
   );

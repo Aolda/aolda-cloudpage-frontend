@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import type { ButtonSize, ButtonVariant } from './index';
+import { media } from '@/styles/theme';
 
 const sizeStyles = {
   md: {
@@ -65,6 +66,10 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+  ${media.mobile} {
+    max-width: 100%;
+  }
 `;
 
 /* Text */
@@ -85,6 +90,13 @@ export const Label = styled.span<{ $variant: ButtonVariant; $size: ButtonSize }>
   flex: none;
   order: 0;
   flex-grow: 0;
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 12px;
+    height: auto;
+    margin-top: 0;
+  }
 `;
 
 export const Image = styled.img<{ $variant: ButtonVariant }>`

@@ -21,6 +21,15 @@ export const Section = styled.section`
     gap: 20px;
     overflow: visible;
   }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    gap: 12px;
+    align-items: stretch;
+    overflow: visible;
+  }
 `;
 
 const slideRight = keyframes`
@@ -40,7 +49,7 @@ export const CarouselWrap = styled.div`
   flex-direction: column;
   gap: 24px;
 
-  ${media.tablet} {
+  ${media.belowDesktop} {
     display: none;
   }
 `;
@@ -69,9 +78,17 @@ export const PartnerGrid = styled.div`
   width: 100%;
   box-sizing: border-box;
 
-  ${media.tablet} {
+  ${media.belowDesktop} {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
+  }
+
+  ${media.mobile} {
+    gap: 8px;
+
+    > * {
+      min-width: 0;
+    }
   }
 `;

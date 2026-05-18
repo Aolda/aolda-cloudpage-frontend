@@ -1,6 +1,22 @@
 import styled from 'styled-components';
 import { media } from '@/styles/theme';
 
+/** 데스크톱 전용 줄바꿈 (태블릿·모바일 숨김) */
+export const DesktopBreak = styled.br`
+  ${media.tablet} {
+    display: none;
+  }
+`;
+
+/** 태블릿 전용 줄바꿈 — 본문 중간 1곳만 */
+export const TabletBreak = styled.br`
+  display: none;
+
+  ${media.tablet} {
+    display: block;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,6 +35,17 @@ export const Container = styled.div`
 
     h2 {
       text-align: center;
+    }
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+    align-items: stretch;
+
+    h2 {
+      text-align: left;
     }
   }
 `;
@@ -41,6 +68,14 @@ export const ContentRow = styled.div`
     min-height: auto;
     max-width: 680px;
   }
+
+  ${media.mobile} {
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    align-items: flex-start;
+  }
 `;
 
 export const LeftPanel = styled.div`
@@ -60,6 +95,10 @@ export const LeftPanel = styled.div`
     min-height: auto;
     flex: 1;
     gap: 20px;
+  }
+
+  ${media.mobile} {
+    display: none;
   }
 `;
 
@@ -111,6 +150,35 @@ export const RightPanel = styled.div`
     width: 190px;
     height: 345.63px;
     flex-shrink: 0;
+  }
+
+  ${media.mobile} {
+    width: 80px;
+    height: 120px;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+`;
+
+export const MobileDescription = styled.div`
+  display: none;
+
+  ${media.mobile} {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 150%;
+    color: #777777;
+    word-break: keep-all;
+
+    p {
+      margin: 0;
+    }
   }
 `;
 

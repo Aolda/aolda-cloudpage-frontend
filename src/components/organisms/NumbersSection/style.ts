@@ -16,6 +16,13 @@ export const Section = styled.section`
     max-width: 680px;
     gap: 20px;
   }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+    align-items: stretch;
+  }
 `;
 
 export const Grid = styled.div`
@@ -26,5 +33,9 @@ export const Grid = styled.div`
 
   ${media.tablet} {
     gap: 12px;
+  }
+
+  ${media.mobile} {
+    gap: 8px;
   }
 `;

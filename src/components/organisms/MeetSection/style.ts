@@ -21,6 +21,16 @@ export const Section = styled.section`
     padding-bottom: 0;
     gap: 24px;
   }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 20px;
+    align-items: stretch;
+  }
 `;
 
 export const Divider = styled.span`
@@ -46,6 +56,14 @@ export const Grid = styled.div`
     width: 344px;
     height: 82px;
     gap: 24px;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    gap: 12px;
+    align-self: stretch;
   }
 `;
 
@@ -120,6 +138,53 @@ export const Col = styled.div`
       height: 16px;
     }
   }
+
+  ${media.mobile} {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 55px;
+    align-items: flex-start;
+
+    &:first-of-type a,
+    &:first-of-type button,
+    &:last-of-type a,
+    &:last-of-type button {
+      && {
+        width: 100%;
+        height: 32px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 10px;
+        line-height: 12px;
+        gap: 8px;
+      }
+    }
+
+    &:first-of-type a,
+    &:first-of-type button {
+      && {
+        background: #1572b8;
+        border: none;
+        color: #ffffff;
+      }
+    }
+
+    &:last-of-type a,
+    &:last-of-type button {
+      && {
+        background: #fefefe;
+        border: 1px solid #efefef;
+        color: #232527;
+      }
+    }
+
+    a img,
+    button img {
+      width: 16px;
+      height: 16px;
+    }
+  }
 `;
 
 export const Caption = styled.p`
@@ -145,5 +210,14 @@ export const Caption = styled.p`
     height: 36px;
     font-size: 12px;
     line-height: 150%;
+  }
+
+  ${media.mobile} {
+    max-width: none;
+    height: auto;
+    font-size: 10px;
+    line-height: 150%;
+    text-align: left;
+    justify-content: flex-start;
   }
 `;

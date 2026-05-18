@@ -73,6 +73,7 @@ const ProductList = ({
                 alt=""
                 width={35}
                 height={35}
+                sizes="(max-width: 743px) 14px, 24px"
               />
             </S.SectionIcon>
             {sectionTitle}

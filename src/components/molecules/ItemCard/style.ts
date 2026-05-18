@@ -29,6 +29,22 @@ export const ItemCard = styled.div<{ $tone: CardTone }>`
     border-radius: 12px;
     flex: 1;
   }
+
+  ${media.mobile} {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    height: 75px;
+    min-height: 75px;
+    padding: 12px;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    background: #fefefe;
+    border: 1px solid #efefef;
+    flex-grow: 0;
+  }
 `;
 
 export const Icon = styled.span`
@@ -43,6 +59,11 @@ export const Icon = styled.span`
   ${media.tablet} {
     width: 60px;
     height: 60px;
+  }
+
+  ${media.mobile} {
+    width: 48px;
+    height: 48px;
   }
 `;
 
@@ -59,6 +80,11 @@ export const IconImage = styled.img<{ $scale?: number }>`
     width: 60px;
     height: 60px;
     transform: scale(1);
+  }
+
+  ${media.mobile} {
+    width: 48px;
+    height: 48px;
   }
 `;
 
@@ -79,6 +105,16 @@ export const TextContainer = styled.div`
     height: auto;
     gap: 8px;
   }
+
+  ${media.mobile} {
+    width: auto;
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    gap: 4px;
+    height: auto;
+    min-height: 0;
+  }
 `;
 
 export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
@@ -98,6 +134,13 @@ export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
     font-size: 16px;
     line-height: 19px;
   }
+
+  ${media.mobile} {
+    font-size: 12px;
+    line-height: 14px;
+    justify-content: flex-start;
+    text-align: left;
+  }
 `;
 
 export const ItemDescription = styled.p`
@@ -115,5 +158,11 @@ export const ItemDescription = styled.p`
   ${media.tablet} {
     font-size: 12px;
     line-height: 150%;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+    text-align: left;
   }
 `;

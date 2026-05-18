@@ -21,6 +21,15 @@ export const Section = styled.section`
     padding-top: 0;
     gap: 20px;
   }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding-top: 0;
+    gap: 12px;
+    align-items: stretch;
+  }
 `;
 
 export const PromiseGrid = styled.div`
@@ -32,5 +41,10 @@ export const PromiseGrid = styled.div`
   ${media.tablet} {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
+  }
+
+  ${media.mobile} {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 `;

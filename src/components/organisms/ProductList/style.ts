@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const ProductListContainer = styled.div`
   flex: 1;
@@ -6,6 +7,16 @@ export const ProductListContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  box-sizing: border-box;
+
+  ${media.belowDesktop} {
+    gap: 20px;
+    width: 100%;
+  }
+
+  ${media.mobile} {
+    gap: 12px;
+  }
 `;
 
 export const SearchSection = styled.div`
@@ -16,6 +27,14 @@ export const SectionHeader = styled.div`
   display: flex;
   align-items: center;
   gap: 0.8rem;
+
+  ${media.belowDesktop} {
+    gap: 12px;
+  }
+
+  ${media.mobile} {
+    gap: 8px;
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -26,6 +45,21 @@ export const SectionTitle = styled.h2`
   display: flex;
   align-items: center;
   gap: 0.8rem;
+
+  ${media.belowDesktop} {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #232527;
+    gap: 12px;
+  }
+
+  ${media.mobile} {
+    font-size: 12px;
+    line-height: 14px;
+    gap: 8px;
+  }
 `;
 
 export const SectionIcon = styled.span`
@@ -33,10 +67,31 @@ export const SectionIcon = styled.span`
   width: 24.85px;
   height: 21.57px;
   flex-shrink: 0;
+
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+
+  ${media.belowDesktop} {
+    width: 24px;
+    height: 24px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  ${media.mobile} {
+    width: 14px;
+    height: 14px;
+
+    img {
+      width: 14px;
+      height: 14px;
+    }
   }
 `;
 
@@ -45,17 +100,20 @@ export const ServiceGrid = styled.div`
   grid-template-columns: repeat(4, 231px);
   gap: 24px;
   justify-content: flex-start;
-  
-  @media (max-width: 1200px) {
+
+  @media (min-width: 1025px) and (max-width: 1200px) {
     grid-template-columns: repeat(3, 231px);
   }
-  
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 231px);
+
+  ${media.belowDesktop} {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    justify-content: stretch;
   }
-  
-  @media (max-width: 500px) {
-    grid-template-columns: 231px;
+
+  ${media.mobile} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 `;
-

@@ -3,7 +3,7 @@ import { media } from '@/styles/theme';
 
 type CardTone = 'blue' | 'red';
 
-export const ImageCard = styled.div<{ $tone: CardTone; $isBackground?: boolean }>`
+export const ImageCard = styled.div<{ $tone: CardTone; $isBackground?: boolean; $compact?: boolean }>`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -38,6 +38,32 @@ export const ImageCard = styled.div<{ $tone: CardTone; $isBackground?: boolean }
     gap: ${({ $isBackground }) => ($isBackground ? '10px' : '12px')};
     border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '8px')};
   }
+
+  ${media.mobile} {
+    width: ${({ $isBackground, $compact }) =>
+      $isBackground ? '100%' : $compact ? '100%' : '100%'};
+    max-width: 100%;
+    min-height: ${({ $isBackground }) => ($isBackground ? '161.41px' : 'auto')};
+    height: ${({ $isBackground }) => ($isBackground ? '161.41px' : '64px')};
+    padding: ${({ $isBackground }) => ($isBackground ? '16px' : '8px 12px')};
+    flex-grow: ${({ $isBackground }) => ($isBackground ? '0' : '1')};
+  }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        height: 83px;
+        min-height: 83px;
+        padding: 12px;
+        gap: 8px;
+        border-radius: 8px;
+      }
+    `}
 `;
 
 export const Overlay = styled.div<{ $isBackground?: boolean }>`
@@ -52,7 +78,7 @@ export const Overlay = styled.div<{ $isBackground?: boolean }>`
     `}
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div<{ $compact?: boolean }>`
   flex-shrink: 0;
   width: 120px;
   height: 120px;
@@ -64,6 +90,14 @@ export const ImageContainer = styled.div`
     width: 80px;
     height: 80px;
   }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        display: none;
+      }
+    `}
 `;
 
 export const Image = styled.img<{ $isBackground?: boolean }>`
@@ -83,7 +117,7 @@ export const Image = styled.img<{ $isBackground?: boolean }>`
     `}
 `;
 
-export const TextContainer = styled.div`
+export const TextContainer = styled.div<{ $compact?: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -95,9 +129,19 @@ export const TextContainer = styled.div`
     gap: 4px;
     min-height: 80px;
   }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        min-height: 0;
+        gap: 4px;
+        justify-content: center;
+      }
+    `}
 `;
 
-export const ImageTitle = styled.h3<{ $isBackground?: boolean }>`
+export const ImageTitle = styled.h3<{ $isBackground?: boolean; $compact?: boolean }>`
   margin: 0;
   font-size: ${({ $isBackground }) => ($isBackground ? '4rem' : '1.8rem')};
   font-weight: 700;
@@ -123,9 +167,29 @@ export const ImageTitle = styled.h3<{ $isBackground?: boolean }>`
     line-height: ${({ $isBackground }) => ($isBackground ? '29px' : '19px')};
     padding: ${({ $isBackground }) => ($isBackground ? '32px' : '0')};
   }
+
+  ${media.mobile} {
+    font-size: ${({ $isBackground }) => ($isBackground ? '16px' : '10px')};
+    line-height: ${({ $isBackground }) => ($isBackground ? '19px' : '12px')};
+    padding: ${({ $isBackground }) => ($isBackground ? '16px' : '0')};
+    height: ${({ $isBackground }) => ($isBackground ? 'auto' : 'auto')};
+    align-items: ${({ $isBackground }) => ($isBackground ? 'flex-start' : 'center')};
+    justify-content: ${({ $isBackground }) => ($isBackground ? 'flex-start' : 'center')};
+  }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        font-size: 12px;
+        line-height: 14px;
+        color: #232527;
+        text-align: left;
+      }
+    `}
 `;
 
-export const ImageDescription = styled.p`
+export const ImageDescription = styled.p<{ $compact?: boolean }>`
   margin: 0;
   font-size: 1.4rem;
   color: #777777;
@@ -135,9 +199,18 @@ export const ImageDescription = styled.p`
     font-size: 12px;
     line-height: 150%;
   }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        font-size: 10px;
+        line-height: 150%;
+      }
+    `}
 `;
 
-export const ImagePeriod = styled.p`
+export const ImagePeriod = styled.p<{ $compact?: boolean }>`
   margin: 0;
   font-size: 1.2rem;
   color: #777777;
@@ -147,4 +220,13 @@ export const ImagePeriod = styled.p`
     font-size: 12px;
     line-height: 150%;
   }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        font-size: 10px;
+        line-height: 150%;
+      }
+    `}
 `;

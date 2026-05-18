@@ -20,6 +20,11 @@ export const Container = styled.div<{ $align: 'left' | 'center' }>`
     align-items: center;
     text-align: center;
   }
+
+  ${media.mobile} {
+    align-items: flex-start;
+    text-align: left;
+  }
 `;
 
 export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
@@ -37,6 +42,10 @@ export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
     height: 2px;
     margin-bottom: 12px;
     align-self: center;
+  }
+
+  ${media.mobile} {
+    display: none;
   }
 `;
 
@@ -84,6 +93,13 @@ export const Title = styled.h2<{ $color?: string }>`
     margin-bottom: 12px;
     text-align: center;
   }
+
+  ${media.mobile} {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 8px;
+    text-align: left;
+  }
 `;
 
 export const Description = styled.p<{ $color?: string }>`
@@ -98,5 +114,12 @@ export const Description = styled.p<{ $color?: string }>`
     line-height: 150%;
     text-align: center;
     max-width: 486px;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+    text-align: left;
+    max-width: 100%;
   }
 `;

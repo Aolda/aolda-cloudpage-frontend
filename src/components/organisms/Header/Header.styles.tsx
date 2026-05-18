@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors, media } from '@/styles/theme';
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,6 +31,7 @@ export const StyledHeader = styled.header`
     border: none;
     border-radius: 0;
     height: 6.8rem;
+    z-index: ${({ $menuOpen }) => ($menuOpen ? 110 : 10)};
   }
 
   ${media.mobile} {
@@ -98,6 +99,7 @@ export const StyledHeader = styled.header`
       height: 0.2rem;
       background: #777777;
       border-radius: 0.1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, margin 0.2s ease;
     }
 
     &::before {
@@ -108,6 +110,85 @@ export const StyledHeader = styled.header`
     ${media.belowDesktop} {
       display: block;
     }
+
+    &.isOpen::before {
+      margin-bottom: 0;
+      box-shadow: none;
+      transform: translateY(0.35rem) rotate(45deg);
+    }
+
+    &.isOpen::after {
+      transform: translateY(-0.35rem) rotate(-45deg);
+    }
+  }
+`;
+
+export const MobileMenuOverlay = styled.div<{ $open: boolean }>`
+  display: none;
+
+  ${media.belowDesktop} {
+    display: block;
+    position: fixed;
+    inset: 0;
+    top: 6.8rem;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    opacity: ${({ $open }) => ($open ? 1 : 0)};
+    visibility: ${({ $open }) => ($open ? 'visible' : 'hidden')};
+    pointer-events: ${({ $open }) => ($open ? 'auto' : 'none')};
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+`;
+
+export const MobileMenuPanel = styled.nav<{ $open: boolean }>`
+  display: none;
+
+  ${media.belowDesktop} {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: fixed;
+    top: 6.8rem;
+    left: 0;
+    right: 0;
+    background: #fefefe;
+    z-index: 101;
+    padding: 1.6rem;
+    gap: 0.4rem;
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.08);
+    opacity: ${({ $open }) => ($open ? 1 : 0)};
+    visibility: ${({ $open }) => ($open ? 'visible' : 'hidden')};
+    pointer-events: ${({ $open }) => ($open ? 'auto' : 'none')};
+    transform: ${({ $open }) => ($open ? 'translateY(0)' : 'translateY(-0.8rem)')};
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease,
+      transform 0.2s ease;
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+  }
+`;
+
+export const MobileMenuLink = styled.span<{ $isActive: boolean }>`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 4.8rem;
+  padding: 1.2rem 1.6rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: ${({ $isActive }) => ($isActive ? colors.primary500 : '#232527')};
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 0.8rem;
+
+  &:hover {
+    color: ${colors.primary500};
   }
 `;
 
