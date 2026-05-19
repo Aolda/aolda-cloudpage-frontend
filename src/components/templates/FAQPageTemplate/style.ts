@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const TemplateContainer = styled.div`
   position: relative;
@@ -14,7 +15,13 @@ export const ContentWrapper = styled.div`
   margin: 430px auto 0;
   padding: 40px 120px;
   box-sizing: border-box;
-  background: #FFFFFF;
+  background: #ffffff;
   margin-bottom: 120px;
-`;
 
+  ${media.tablet} {
+    max-width: 744px;
+    margin-top: 400px;
+    margin-bottom: 60px;
+    padding: 32px;
+  }
+`;

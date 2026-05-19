@@ -41,6 +41,15 @@ export const PageWrapper = styled.div`
   }
 `;
 
+/** 배경 장식 — 스크롤 영역 밖으로 나가지 않도록 클리핑 */
+export const DecorationLayer = styled.div`
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+`;
+
 export const BackgroundDecorations = styled.div`
   position: absolute;
   width: 3646.25px;
@@ -206,7 +215,7 @@ export const MainContent = styled.main`
   padding: 0px 120px;
   position: relative;
   width: 100%;
-  flex: 1;
+  flex: none;
   padding-top: calc(2.5rem + 4.5rem + 72px); /* Header top (40px) + Header height (72px) + 72px gap = 184px */
   padding-bottom: 0;
   z-index: 1;

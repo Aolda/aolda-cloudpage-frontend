@@ -6,6 +6,12 @@ export const ServiceCardLink = styled.a`
   color: inherit;
   display: block;
   cursor: pointer;
+
+  ${media.mobile} {
+    width: 100%;
+    height: 156.49px;
+    min-width: 0;
+  }
 `;
 
 export const ServiceCard = styled.div`
@@ -36,10 +42,12 @@ export const ServiceCard = styled.div`
   }
 
   ${media.mobile} {
-    height: 156px;
+    width: 100%;
+    height: 156.49px;
     border-radius: 10px;
     border: 1px solid #efefef;
     box-shadow: none;
+    box-sizing: border-box;
 
     &:hover {
       transform: none;
@@ -57,11 +65,14 @@ export const HeaderSection = styled.div<{ $bannerImage?: string }>`
   height: 45%;
   min-height: 120px;
 
-  ${media.mobile} {
-    padding: 1.2rem 1rem;
-    min-height: 72px;
-  }
   background: ${({ $bannerImage }) => ($bannerImage ? `url(${$bannerImage})` : '#0f0f0f')};
+
+  ${media.mobile} {
+    flex: none;
+    height: 72px;
+    min-height: 72px;
+    padding: 0.8rem;
+  }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -93,7 +104,10 @@ export const MainLogo = styled.img`
   padding: 3rem;
   opacity: 1;
   z-index: 1;
-  /* 필터 제거 - favicon의 원본 색상 유지 */
+
+  ${media.mobile} {
+    padding: 0.8rem;
+  }
 `;
 
 export const MenuIcon = styled.svg`
@@ -110,6 +124,10 @@ export const MenuIcon = styled.svg`
   ${ServiceCard}:hover & {
     color: rgba(255, 255, 255, 0.9);
   }
+
+  ${media.mobile} {
+    display: none;
+  }
 `;
 
 export const ContentSection = styled.div`
@@ -122,8 +140,12 @@ export const ContentSection = styled.div`
   height: 55%;
 
   ${media.mobile} {
-    padding: 1rem;
-    gap: 0.6rem;
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    padding: 8px;
+    gap: 4px;
+    overflow: hidden;
   }
 `;
 
@@ -135,8 +157,13 @@ export const ServiceTitle = styled.h4`
   line-height: 1.5;
 
   ${media.mobile} {
-    font-size: 1rem;
-    line-height: 1.4;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
   }
 `;
 
@@ -153,9 +180,11 @@ export const ServiceDescription = styled.p`
   text-overflow: ellipsis;
 
   ${media.mobile} {
-    font-size: 0.75rem;
-    line-height: 1.5;
+    font-size: 9px;
+    line-height: 150%;
     -webkit-line-clamp: 2;
+    flex: 1;
+    min-height: 0;
   }
 `;
 
@@ -165,6 +194,10 @@ export const ProviderSection = styled.div`
   gap: 0.8rem;
   margin-top: auto;
   padding-top: 0.8rem;
+
+  ${media.mobile} {
+    display: none;
+  }
 `;
 
 export const SmallLogo = styled.img`

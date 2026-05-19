@@ -64,6 +64,14 @@ export const ServicesGrid = styled.div`
 
   ${media.mobile} {
     margin-top: 0;
-    gap: 16px;
+    width: 100%;
+    max-width: 343px;
+    min-height: 324.99px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 156.49px);
+    column-gap: 16px;
+    row-gap: 12px;
+    align-self: stretch;
   }
 `;

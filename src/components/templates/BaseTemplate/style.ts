@@ -11,8 +11,10 @@ export const Wrapper = styled.div`
 `;
 
 export const MainContent = styled.main`
+    position: relative;
     flex: 1;
-    padding-bottom: 0; 
+    padding-bottom: 0;
     width: 100%;
+    overflow-x: hidden;
 `;
 

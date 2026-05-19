@@ -1,33 +1,35 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const PaginationContainer = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: auto;
   height: 32px;
   flex: none;
-  order: 2;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    gap: 28px;
+    height: 32px;
+  }
 `;
 
 export const PrevButton = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 4px;
   width: 50px;
   height: 23px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   background: transparent;
   border: none;
   cursor: pointer;
-  
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -35,6 +37,11 @@ export const PrevButton = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  ${media.tablet} {
+    width: 43px;
+    height: 16px;
   }
 `;
 
@@ -42,17 +49,15 @@ export const NextButton = styled.button`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 4px;
   width: 50px;
   height: 23px;
   flex: none;
-  order: 2;
-  flex-grow: 0;
   background: transparent;
   border: none;
   cursor: pointer;
-  
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -61,19 +66,26 @@ export const NextButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  ${media.tablet} {
+    width: 43px;
+    height: 16px;
+  }
 `;
 
 export const PageList = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 8px;
   width: auto;
   height: 32px;
   flex: none;
-  order: 1;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    gap: 8px;
+  }
 `;
 
 export const PageButton = styled.button<{ $isActive: boolean }>`
@@ -82,19 +94,17 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px 8px;
+  padding: 0 8px;
   gap: 10px;
   width: 32px;
   height: 32px;
   flex: none;
-  flex-grow: 0;
   background: transparent;
   border: none;
   border-bottom: ${({ $isActive }) => ($isActive ? '2px solid #1A8EE5' : 'none')};
   cursor: pointer;
-  
-  font-family: 'Noto Sans KR';
-  font-style: normal;
+
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
@@ -108,17 +118,22 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
   &:focus {
     outline: none;
   }
+
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    color: ${({ $isActive }) => ($isActive ? '#1A8EE5' : '#777777')};
+  }
 `;
 
 export const ChevronLeft = styled.span`
   width: 16px;
   height: 16px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   position: relative;
   display: inline-block;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -138,11 +153,9 @@ export const ChevronRight = styled.span`
   width: 16px;
   height: 16px;
   flex: none;
-  order: 1;
-  flex-grow: 0;
   position: relative;
   display: inline-block;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -163,26 +176,25 @@ export const ButtonText = styled.span`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 10px;
   width: 30px;
   height: 23px;
   border-radius: 8px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
-  
-  font-family: 'Noto Sans KR';
-  font-style: normal;
+
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  display: flex;
-  align-items: center;
   text-align: center;
   color: #777777;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-`;
 
+  ${media.tablet} {
+    width: 23px;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+  }
+`;
