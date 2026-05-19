@@ -40,7 +40,7 @@ const SolutionsSection = ({ solutions }: SolutionsSectionProps) => {
         title="해결책"
         alt="해결책"
         align="left"
-        iconSize={35}
+        iconSize={24}
       />
       <S.SolutionsGrid>
         {Array.from({ length: Math.ceil(solutions.length / 3) }).map((_, rowIndex) => (

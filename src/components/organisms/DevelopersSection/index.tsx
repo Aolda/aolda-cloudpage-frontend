@@ -42,7 +42,7 @@ const DevelopersSection = ({ developers }: DevelopersSectionProps) => {
         title="개발진"
         alt="개발진"
         align="left"
-        iconSize={35}
+        iconSize={24}
       />
       <S.DevelopersGrid>
         {developers.map((developer, index) => {

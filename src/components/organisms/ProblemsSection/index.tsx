@@ -16,26 +16,8 @@ export interface ProblemsSectionProps {
 
 /**
  * 문제점 섹션 컴포넌트
- * 
- * 제품 상세 페이지의 문제점 섹션입니다.
  *
- * @param {ProblemsSectionProps} props - 문제점 섹션 props
- * @param {Problem[]} props.problems - 문제점 목록
- * 
- * @example
- * <ProblemsSection
- *   problems={[
- *     {
- *       title: "학생 프로젝트의 특징들",
- *       descriptions: [
- *         "DAU 저조: 대부분의 학생 프로젝트는 일일 활성 사용자(DAU)가 낮음.",
- *         "자원 낭비 심각: 실제 사용 시간은 짧지만 서버가 24시간 가동되어 심각한 클라우드 자원 낭비 발생함."
- *       ]
- *     }
- *   ]}
- * />
- * 
- * @returns {JSX.Element} 문제점 섹션 요소
+ * 제품 상세 페이지의 문제점 섹션입니다.
  */
 const ProblemsSection = ({ problems }: ProblemsSectionProps) => {
   return (
@@ -45,7 +27,7 @@ const ProblemsSection = ({ problems }: ProblemsSectionProps) => {
         title="문제점"
         alt="문제점"
         align="left"
-        iconSize={29}
+        iconSize={24}
       />
       <S.ProblemsList>
         {problems.map((problem, index) => (
@@ -61,4 +43,3 @@ const ProblemsSection = ({ problems }: ProblemsSectionProps) => {
 };
 
 export default ProblemsSection;
-

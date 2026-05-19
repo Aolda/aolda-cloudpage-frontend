@@ -53,7 +53,7 @@ const SimilarServicesSection = ({ services }: SimilarServicesSectionProps) => {
         title="유사 서비스"
         alt="유사 서비스"
         align="left"
-        iconSize={35}
+        iconSize={24}
       />
       <S.Description>
         본 제품과 관련 있는 유사 기능들을 제공하여 이해를 돕도록 위함.
@@ -62,11 +62,11 @@ const SimilarServicesSection = ({ services }: SimilarServicesSectionProps) => {
         {services.map((service, index) => (
           <SimilarServiceCard
             key={index}
+            href={service.href}
             logo={service.logo}
             bannerImage={service.bannerImage}
             title={service.title}
             description={service.description}
-            href={service.href}
             provider={service.provider}
           />
         ))}

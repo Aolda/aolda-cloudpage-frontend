@@ -67,6 +67,11 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
     cursor: not-allowed;
   }
 
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
   ${media.mobile} {
     max-width: 100%;
   }
@@ -90,6 +95,14 @@ export const Label = styled.span<{ $variant: ButtonVariant; $size: ButtonSize }>
   flex: none;
   order: 0;
   flex-grow: 0;
+
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 14px;
+    height: auto;
+    margin-top: 0;
+    color: #232527;
+  }
 
   ${media.mobile} {
     font-size: 10px;

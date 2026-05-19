@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const ServiceCardLink = styled.a`
   text-decoration: none;
@@ -21,6 +22,30 @@ export const ServiceCard = styled.div`
     transform: translateY(-4px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   }
+
+  ${media.tablet} {
+    height: 316px;
+    border-radius: 10px;
+    border: 1px solid #efefef;
+    box-shadow: none;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  ${media.mobile} {
+    height: 156px;
+    border-radius: 10px;
+    border: 1px solid #efefef;
+    box-shadow: none;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
 `;
 
 export const HeaderSection = styled.div<{ $bannerImage?: string }>`
@@ -31,6 +56,11 @@ export const HeaderSection = styled.div<{ $bannerImage?: string }>`
   position: relative;
   height: 45%;
   min-height: 120px;
+
+  ${media.mobile} {
+    padding: 1.2rem 1rem;
+    min-height: 72px;
+  }
   background: ${({ $bannerImage }) => ($bannerImage ? `url(${$bannerImage})` : '#0f0f0f')};
   background-size: cover;
   background-position: center;
@@ -90,6 +120,11 @@ export const ContentSection = styled.div`
   gap: 1.6rem;
   flex: 1;
   height: 55%;
+
+  ${media.mobile} {
+    padding: 1rem;
+    gap: 0.6rem;
+  }
 `;
 
 export const ServiceTitle = styled.h4`
@@ -98,6 +133,11 @@ export const ServiceTitle = styled.h4`
   font-weight: 500;
   color: #ffffff;
   line-height: 1.5;
+
+  ${media.mobile} {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
 `;
 
 export const ServiceDescription = styled.p`
@@ -111,6 +151,12 @@ export const ServiceDescription = styled.p`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  ${media.mobile} {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    -webkit-line-clamp: 2;
+  }
 `;
 
 export const ProviderSection = styled.div`

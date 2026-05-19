@@ -30,7 +30,7 @@ const getProductData = (id: string) => {
           title: '2. 현재 경제적 부담 및 운영의 문제',
           descriptions: [
             '경제적 부담: 개인 사용 시 사용량과 무관한 월 1~2만 원의 고정 비용 발생함.',
-            '비효율적 할당: 마을다 방식(검수 후 24시간 VM 할당) 역시 낮은 사용률로 자원 낭비 지속됨.',
+            '비효율적 할당: 아올다 방식(검수 후 24시간 VM 할당) 역시 낮은 사용률로 자원 낭비 지속됨.',
           ],
         },
         {
@@ -52,8 +52,9 @@ const getProductData = (id: string) => {
         },
         {
           title: '확장성',
-          description: '하나의 VM으로 수십 개의 학생 프로젝트 지원 가능',
-        },{
+          description: 'DAU가 낮은 여러 프로젝트가 자원을 효율적으로 공유',
+        },
+        {
           title: '경제성',
           description: '하나의 VM으로 수십 개의 학생 프로젝트 지원 가능',
         },
@@ -75,12 +76,10 @@ const getProductData = (id: string) => {
           name: '인승진 크루',
           info: '소프트웨어 21',
         },
-        {name: '한동현 크루',
+        {
+          name: '한동현 크루',
           info: '소프트웨어 21',
         },
-        {name: '한동현 크루',
-          info: '소프트웨어 21',
-        } 
       ] as Developer[],
       similarServices: [
         {

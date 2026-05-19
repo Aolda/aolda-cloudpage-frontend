@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const DevelopersSection = styled.section`
   padding: 4rem 0;
@@ -8,21 +9,18 @@ export const DevelopersSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-`;
+  box-sizing: border-box;
 
-export const DeveloperIcon = styled.span`
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.8rem;
-  width: 35px;
-  height: 35px;
-  flex-shrink: 0;
-  margin-bottom: 10px;
-  margin-right: 15px;
-  img {
+  ${media.tablet} {
+    padding: 0;
+    max-width: 680px;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    gap: 16px;
+  }
+
+  ${media.mobile} {
+    max-width: 343px;
+    gap: 12px;
   }
 `;
 
@@ -32,5 +30,23 @@ export const DevelopersGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 24px;
   width: 100%;
-`;
 
+  ${media.tablet} {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+
+  ${media.mobile} {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+  }
+`;

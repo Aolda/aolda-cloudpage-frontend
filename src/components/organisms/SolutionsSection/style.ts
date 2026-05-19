@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const SolutionsSection = styled.section`
   padding: 4rem 0;
@@ -8,44 +9,58 @@ export const SolutionsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-`;
+  box-sizing: border-box;
 
-export const SolutionIcon = styled.span`
-  display: inline-block;
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
-  margin-left: -10px;
-  margin-right: 5px;
-  flex-shrink: 0;
-  margin-bottom: 10px;
-  img {
+  ${media.tablet} {
+    padding: 0;
+    max-width: 680px;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    gap: 16px;
+  }
+
+  ${media.mobile} {
+    max-width: 343px;
+    gap: 12px;
   }
 `;
 
 export const SolutionsGrid = styled.div`
-
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 16px;
-  width: 1200px;
+  width: 100%;
+
+  ${media.tablet} {
+    margin-top: 0;
+    gap: 20px;
+    width: 100%;
+  }
+
+  ${media.mobile} {
+    margin-top: 0;
+    gap: 8px;
+  }
 `;
 
 export const SolutionsRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0;
   gap: 24px;
-  width: 1200px;
-  flex: none;
-  align-self: stretch;
-  flex-grow: 0;
-`;
+  width: 100%;
 
+  ${media.tablet} {
+    gap: 20px;
+    width: 100%;
+  }
+
+  ${media.mobile} {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+`;

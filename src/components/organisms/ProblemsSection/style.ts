@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const ProblemsSection = styled.section`
   padding: 4rem 0;
@@ -8,27 +9,36 @@ export const ProblemsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-`;
+  box-sizing: border-box;
 
-export const ProblemIcon = styled.span`
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.8rem;
-  width: 35px;
-  height: 35px;
-  flex-shrink: 0;
-  
-  img {
+  ${media.tablet} {
+    padding: 0;
+    max-width: 680px;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    margin: 0;
+    gap: 16px;
+  }
+
+  ${media.mobile} {
+    max-width: 343px;
+    gap: 12px;
   }
 `;
 
 export const ProblemsList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 32px;
   width: 100%;
-`;
+  margin-top: 16px;
 
+  ${media.tablet} {
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  ${media.mobile} {
+    gap: 16px;
+    margin-top: 0;
+  }
+`;
