@@ -4,10 +4,10 @@ type TextPosition = 'left-top' | 'left-center' | 'left-bottom' | 'center' | 'rig
 
 export const HeroContainer = styled.div`
   position: relative;
-  width: 793px;
-  height: 452px;
+  width: 49.5625rem;
+  height: 28.25rem;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0.625rem;
 `;
 
 export const BackgroundImage = styled.img`
@@ -34,7 +34,7 @@ export const ContentContainer = styled.div<{ $position: TextPosition }>`
   z-index: 2;
   display: flex;
   flex-direction: column;
-  padding: 3rem;
+  padding: 1.875rem;
   ${({ $position }) => {
     switch ($position) {
       case 'left-top':
@@ -91,22 +91,22 @@ export const ContentContainer = styled.div<{ $position: TextPosition }>`
 
 export const Title = styled.h2<{ $color: string }>`
   margin: 0;
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-weight: 700;
   color: ${({ $color }) => $color};
   line-height: 1.4;
   white-space: pre-line;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.5);
   opacity: 0.9;
 `;
 
 export const Description = styled.p<{ $color: string }>`
-  margin: 1.2rem 0 0 0;
-  font-size: 1.8rem;
+  margin: 0.75rem 0 0 0;
+  font-size: 1.125rem;
   color: ${({ $color }) => $color};
   line-height: 1.6;
   white-space: pre-line;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.4);
   opacity: 0.95;
 `;
 

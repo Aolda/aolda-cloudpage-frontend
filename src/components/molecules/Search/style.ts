@@ -1,17 +1,17 @@
 import styled, { css } from 'styled-components';
 
 export const SearchForm = styled.form<{ $embedded?: boolean }>`
-  margin-top: ${({ $embedded }) => ($embedded ? 0 : '18px')};
+  margin-top: ${({ $embedded }) => ($embedded ? 0 : '1.125rem')};
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: ${({ $embedded }) => ($embedded ? 'none' : '996px')};
-  height: ${({ $embedded }) => ($embedded ? 'auto' : '48px')};
+  max-width: ${({ $embedded }) => ($embedded ? 'none' : '62.25rem')};
+  height: ${({ $embedded }) => ($embedded ? 'auto' : '3rem')};
 
   ${({ $embedded }) =>
     !$embedded &&
     css`
-      max-width: 996px;
+      max-width: 62.25rem;
     `}
 `;
 
@@ -25,20 +25,20 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input<{ $embedded?: boolean }>`
   flex: 1;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: ${({ $embedded }) => ($embedded ? '1.6rem' : '1.5rem')};
-  line-height: 1.9rem;
+  font-size: ${({ $embedded }) => ($embedded ? '1rem' : '0.9375rem')};
+  line-height: 1.1875rem;
   color: ${({ theme }) => theme.colors.text};
   transition: border-color 0.2s;
 
   ${({ $embedded, theme }) =>
     $embedded
       ? css`
-          padding: 0 40px 0 0;
+          padding: 0 2.5rem 0 0;
           border: none;
           border-radius: 0;
           background: transparent;
           height: auto;
-          min-height: 19px;
+          min-height: 1.1875rem;
           color: ${theme.mode === 'dark' ? '#FAFAFA' : '#777777'};
 
           &::placeholder {
@@ -51,12 +51,12 @@ export const SearchInput = styled.input<{ $embedded?: boolean }>`
           }
         `
       : css`
-          padding: 1.2rem 4.5rem 1.2rem 1.6rem;
+          padding: 0.75rem 2.8125rem 0.75rem 1rem;
           border: 1px solid
             ${theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.borderStrong};
-          border-bottom: 2px solid
+          border-bottom: 0.125rem solid
             ${theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.borderStrong};
-          border-radius: 8px;
+          border-radius: 0.5rem;
           background: transparent;
 
           &:focus {
@@ -73,11 +73,11 @@ export const SearchInput = styled.input<{ $embedded?: boolean }>`
 
 export const SearchIcon = styled.svg<{ $embedded?: boolean }>`
   position: ${({ $embedded }) => ($embedded ? 'static' : 'absolute')};
-  right: ${({ $embedded }) => ($embedded ? 'auto' : '1.6rem')};
+  right: ${({ $embedded }) => ($embedded ? 'auto' : '1rem')};
   margin-left: ${({ $embedded }) => ($embedded ? 'auto' : '0')};
   flex-shrink: 0;
-  width: ${({ $embedded }) => ($embedded ? '24px' : '2rem')};
-  height: ${({ $embedded }) => ($embedded ? '24px' : '2rem')};
+  width: ${({ $embedded }) => ($embedded ? '1.5rem' : '1.25rem')};
+  height: ${({ $embedded }) => ($embedded ? '1.5rem' : '1.25rem')};
   color: ${({ theme, $embedded }) =>
     $embedded ? theme.colors.primary300 : theme.colors.primary500};
   pointer-events: none;

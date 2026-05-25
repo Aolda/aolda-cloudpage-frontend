@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fontSize } from '@/styles/theme';
 
 export const FooterOuter = styled.div`
   width: 100%;
@@ -13,13 +14,14 @@ export const StyledFooter = styled.footer`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  min-height: 23.1rem;
-  padding: 6rem 12rem;
-  gap: 1rem;
+  min-height: 14.375rem;
+  padding: 3.75rem 7.5rem;
+  gap: 0.625rem;
   background: #061c2c;
 
-  @media (max-width: 76.8rem) {
-    padding: 4rem 2.4rem;
+  @media (max-width: 48rem) {
+    padding: 2.5rem 1.5rem;
+    min-height: auto;
   }
 `;
 
@@ -29,16 +31,15 @@ export const FooterContent = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0;
-  gap: 1.6rem;
+  gap: 1rem;
   width: 100%;
-  max-width: 120rem;
-  min-height: 11.1rem;
+  max-width: 75rem;
 `;
 
 export const LogoWrap = styled.div`
   position: relative;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 2rem;
+  height: 2rem;
   flex: none;
   flex-shrink: 0;
 
@@ -52,7 +53,7 @@ export const TextColumn = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 1.2rem;
+  gap: 0.75rem;
   flex: 1;
   min-width: 0;
 `;
@@ -62,7 +63,7 @@ export const BrandBlock = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 0.4rem;
+  gap: 0.25rem;
 `;
 
 export const BrandName = styled.span`
@@ -70,10 +71,9 @@ export const BrandName = styled.span`
   font-family: 'Leon Sans', 'Pretendard Variable', 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 3.2rem;
-  line-height: 3.3rem;
+  font-size: ${fontSize.h2};
+  line-height: 1.3;
   color: #fefefe;
-  white-space: nowrap;
 `;
 
 export const Tagline = styled.span`
@@ -81,7 +81,7 @@ export const Tagline = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: ${fontSize.smaller};
   line-height: 1.5;
   color: #1a8ee5;
   word-break: keep-all;
@@ -92,7 +92,7 @@ export const InfoBlock = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 0.8rem;
+  gap: 0.5rem;
   width: 100%;
 `;
 
@@ -101,7 +101,7 @@ export const Address = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: ${fontSize.smaller};
   line-height: 1.5;
   color: #fefefe;
 `;
@@ -112,23 +112,22 @@ export const ManagementRow = styled.div`
   align-items: center;
   flex-wrap: wrap;
   padding: 0;
-  gap: 0.8rem;
+  gap: 0.5rem;
 `;
 
 export const ManagementText = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: ${fontSize.smaller};
   line-height: 1.5;
   color: #fefefe;
-  white-space: nowrap;
 `;
 
 export const Divider = styled.span`
-  width: 0.4rem;
+  width: 0.25rem;
   height: 0;
-  border: 0.1rem solid #fefefe;
+  border: 1px solid #fefefe;
   transform: rotate(90deg);
   flex: none;
 `;

@@ -151,7 +151,7 @@ export const MainContent = styled.main`
   position: relative;
   width: 100%;
   flex: 1;
-  padding-top: calc(2.5rem + 4.5rem + 72px); /* Header top (40px) + Header height (72px) + 72px gap = 184px */
+  padding-top: calc(1.5625rem + 2.8125rem + 72px); /* Header top (40px) + Header height (72px) + 72px gap = 184px */
   padding-bottom: 0;
   z-index: 1;
   box-sizing: border-box;

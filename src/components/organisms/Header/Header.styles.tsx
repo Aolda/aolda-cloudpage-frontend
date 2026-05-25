@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
     height: 72px;
     align-items: center;
     position: absolute;
-    top: 2.5rem;
+    top: 1.5625rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -89,8 +89,8 @@ export const NavLink = styled.span<{ $isActive: boolean }>`
     font-family: 'Noto Sans KR', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.9rem;
+    font-size: 1rem;
+    line-height: 1.1875rem;
     text-align: center;
     color: ${(props) =>
       props.$isActive

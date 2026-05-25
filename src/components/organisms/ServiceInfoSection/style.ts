@@ -5,10 +5,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 24px;
+  padding: 0rem;
+  gap: 1.5rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75rem;
   height: auto;
 `;
 
@@ -17,12 +17,12 @@ export const ContentRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
-  gap: 24px;
+  padding: 0rem;
+  gap: 1.5rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75rem;
   height: auto;
-  min-height: 488px;
+  min-height: 30.5rem;
   flex: none;
   order: 1;
   align-self: stretch;
@@ -34,11 +34,11 @@ export const LeftPanel = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 36px;
-  width: 797px;
-  height: 524px;
-  min-height: 524px;
+  padding: 0rem;
+  gap: 2.25rem;
+  width: 49.8125rem;
+  height: 32.75rem;
+  min-height: 32.75rem;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -48,10 +48,10 @@ export const ImageWrapper = styled.div`
   /* Rectangle 3 */
   position: relative;
   width: 100%;
-  max-width: 797px;
-  height: 308px;
+  max-width: 49.8125rem;
+  height: 19.25rem;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
-  border-radius: 12px;
+  border-radius: 0.75rem;
   overflow: hidden;
   flex: none;
   order: 0;
@@ -60,15 +60,14 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Description = styled.div`
-  width: 800px;
+  width: 50rem;
   max-width: 100%;
-  min-height: 14.4rem;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 2rem;
-  line-height: 150%;
-  letter-spacing: 0%;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: ${({ theme }) => theme.colors.textMuted};
   margin: 0;
   flex: none;
@@ -81,10 +80,10 @@ export const Description = styled.div`
 export const RightPanel = styled.div`
   /* Rectangle 5 */
   position: relative;
-  width: 379px;
-  height: 524px;
+  width: 23.6875rem;
+  height: 32.75rem;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-  border-radius: 12px;
+  border-radius: 0.75rem;
   overflow: hidden;
   flex: none;
   order: 1;
@@ -93,11 +92,11 @@ export const RightPanel = styled.div`
 `;
 
 export const InfoPanel = styled.div`
-  margin-top: 2.6rem;
-  padding: 2.6rem;
-  border-radius: 2rem;
+  margin-top: 1.625rem;
+  padding: 1.625rem;
+  border-radius: 1.25rem;
   display: grid;
-  gap: 2rem;
+  gap: 1.25rem;
   img {
     object-position: center center !important;
   }
@@ -106,7 +105,7 @@ export const InfoPanel = styled.div`
 export const TextStack = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  font-size: 1.5rem;
+  gap: 0.625rem;
+  font-size: 0.9375rem;
 `;
 

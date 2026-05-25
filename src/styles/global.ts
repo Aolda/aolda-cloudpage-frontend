@@ -1,10 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  :root {
-    font-size: 62.5%;
-  }
-
   html[data-theme='light'] {
     color-scheme: light;
   }
@@ -20,9 +16,6 @@ export const GlobalStyle = createGlobalStyle`
 
   *, *::before, *::after {
     box-sizing: border-box;
-    white-space: nowrap;
-    word-break: keep-all;
-    overflow-wrap: break-word;
   }
 
   /* 본문·레이아웃: 공백 단위 줄바꿈 허용 (한국어 keep-all 유지) */
@@ -64,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     min-height: 100vh;
-    font-size: 1.6rem;
+    font-size: 0.625rem;
     font-family: ${({ theme }) => theme.typography.fontFamily};
     background: ${({ theme }) => theme.colors.surface};
     color: ${({ theme }) => theme.colors.text};

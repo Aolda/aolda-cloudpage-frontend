@@ -1,3 +1,3 @@
-/** :root { font-size: 62.5% } 기준 (1rem = 10px) */
-export const pxToRem = (px: number) => `${px / 10}rem`;
+/** 표준 root 기준 (0.625rem = 16px) */
+export const pxToRem = (px: number) => `${px / 16}rem`;
 

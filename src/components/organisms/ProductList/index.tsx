@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Search from '../../molecules/Search';
 import ServiceCard, { type ServiceCardProps } from '../../molecules/ServiceCard';
 import * as S from './style';
@@ -20,28 +19,8 @@ export interface ProductListProps {
 
 /**
  * 제품 목록 컴포넌트
- * 
- * 검색바와 서비스 카드 그리드를 포함하는 제품 목록 섹션입니다.
  *
- * @param {ProductListProps} props - 제품 목록 props
- * @param {string} [props.searchTerm] - 검색어
- * @param {Function} [props.onSearchChange] - 검색어 변경 핸들러
- * @param {Function} [props.onSearch] - 검색 실행 핸들러
- * @param {ServiceCardProps[]} props.services - 서비스 목록
- * @param {string} [props.sectionTitle] - 섹션 제목
- * 
- * @example
- * <ProductList
- *   searchTerm={searchTerm}
- *   onSearchChange={setSearchTerm}
- *   onSearch={handleSearch}
- *   services={[
- *     { title: 'AMDB', description: '설명', icon: '/icon.png', href: '/service/amdb' },
- *   ]}
- *   sectionTitle="즐겨찾기"
- * />
- * 
- * @returns {JSX.Element} 제품 목록 요소
+ * 검색바와 서비스 카드 그리드를 포함하는 제품 목록 섹션입니다.
  */
 const ProductList = ({
   searchTerm = '',
@@ -67,15 +46,18 @@ const ProductList = ({
       {sectionTitle && (
         <S.SectionHeader>
           <S.SectionTitle>
-            <S.SectionIcon>
-              <Image
-                src="/product/main_title_icon.png"
-                alt=""
-                width={35}
-                height={35}
-              />
+            <S.SectionIcon aria-hidden>
+              <S.HeartVector viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 20.25l-1.09-1.01C5.14 14.24 2 11.28 2 7.5 2 4.42 4.42 2 7.5 2c1.74 0 3.41.95 4.5 2.36C13.09 2.95 14.76 2 16.5 2 19.58 2 22 4.42 22 7.5c0 3.78-3.16 6.74-8.91 11.74L12 20.25z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </S.HeartVector>
             </S.SectionIcon>
-            {sectionTitle}
+            <S.SectionTitleText>{sectionTitle}</S.SectionTitleText>
           </S.SectionTitle>
         </S.SectionHeader>
       )}
@@ -93,4 +75,3 @@ const ProductList = ({
 };
 
 export default ProductList;
-

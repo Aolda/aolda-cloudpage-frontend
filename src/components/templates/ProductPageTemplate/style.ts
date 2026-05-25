@@ -32,7 +32,7 @@ export const MainContent = styled.div`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.5rem;
 `;
 
 export const SearchSection = styled.div`

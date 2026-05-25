@@ -3,12 +3,12 @@
 export const Breadcrumb = styled.nav`
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.6rem;
+  gap: 0.5rem;
+  font-size: 1rem;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.9rem;
+  line-height: 1.1875rem;
   margin-bottom: 0;
 `;
 
@@ -21,7 +21,7 @@ export const BreadcrumbLink = styled.a`
   color: inherit;
   text-decoration: none;
   transition: color 0.2s;
-  height: 23px;
+  height: 1.4375rem;
   display: flex;
   align-items: center;
 
@@ -37,7 +37,7 @@ export const BreadcrumbText = styled.span`
 `;
 
 export const Separator = styled.span`
-  margin: 0 0.4rem;
+  margin: 0 0.25rem;
   color: inherit;
   display: inline-flex;
   align-items: center;

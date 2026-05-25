@@ -13,23 +13,23 @@ export const DeveloperCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px 36px;
-  gap: 36px;
-  width: 220.8px;
-  height: 268px;
+  padding: 1.5rem 2.25rem;
+  gap: 2.25rem;
+  width: 13.8rem;
+  height: 16.75rem;
   background: ${({ theme }) =>
     theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
   border: 1px solid ${({ theme }) =>
     theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
-  border-radius: 20px;
+  border-radius: 1.25rem;
   flex: none;
   order: 0;
   flex-grow: 0;
 `;
 
 export const CharacterContainer = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 7.5rem;
+  height: 7.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,8 +39,8 @@ export const CharacterContainer = styled.div`
 `;
 
 export const CharacterImage = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 7.5rem;
+  height: 7.5rem;
   object-fit: contain;
   display: block;
   flex: none;
@@ -49,18 +49,17 @@ export const CharacterImage = styled.img`
 `;
 
 export const DefaultCharacter = styled.svg`
-  width: 120px;
-  height: 120px;
+  width: 7.5rem;
+  height: 7.5rem;
 `;
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
-  gap: 12px;
-  width: 148.8px;
-  height: 64px;
+  padding: 0;
+  gap: 0.75rem;
+  width: 100%;
   flex: none;
   order: 1;
   align-self: stretch;
@@ -72,57 +71,43 @@ export const NameContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
-  gap: 12px;
-  width: 98px;
-  height: 29px;
+  padding: 0;
+  gap: 0.75rem;
   flex: none;
   order: 0;
   flex-grow: 0;
 `;
 
 export const CrewName = styled.h3`
-  width: 56px;
-  height: 29px;
-  font-family: 'Noto Sans KR';
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 2rem;
-  line-height: 2.4rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
-  margin: 0;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 `;
 
 export const CrewNameSuffix = styled.span`
-  width: 30px;
-  height: 23px;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
+  font-size: 1rem;
+  line-height: 1.5;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 `;
 
 export const CrewInfo = styled.p`
-  width: 97px;
-  height: 23px;
-  font-family: 'Noto Sans KR';
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
+  font-size: 1rem;
+  line-height: 1.5;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
-  margin: 0;
   flex: none;
   order: 1;
   flex-grow: 0;

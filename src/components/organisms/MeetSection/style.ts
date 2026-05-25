@@ -1,12 +1,12 @@
 ﻿import styled from 'styled-components';
 
 export const Section = styled.section`
-  max-width: 1200px;
+  max-width: 75rem;
   width: 100%;
-  min-height: 474px;
-  padding-top: 160px;
-  padding-bottom: 72px;
-  gap: 12px;
+  min-height: 29.625rem;
+  padding-top: 10rem;
+  padding-bottom: 4.5rem;
+  gap: 0.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,11 +15,11 @@ export const Section = styled.section`
 `;
 
 export const Divider = styled.span`
-  width: 24px;
-  height: 2px;
+  width: 1.5rem;
+  height: 0.125rem;
   background: ${({ theme }) =>
     theme.mode === 'dark' ? theme.colors.text : theme.colors.border};
-  border-radius: 2px;
+  border-radius: 0.125rem;
 `;
 
 /* Frame 149 */
@@ -28,9 +28,9 @@ export const Grid = styled.div`
   flex-direction: row;
   align-items: flex-start;
   padding: 0;
-  gap: 24px;
-  width: 424px;
-  height: 106px;
+  gap: 1.5rem;
+  width: 26.5rem;
+  height: 6.625rem;
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -42,9 +42,9 @@ export const Col = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0;
-  gap: 12px;
-  width: 200px;
-  height: 106px;
+  gap: 0.75rem;
+  width: 12.5rem;
+  height: 6.625rem;
   flex: none;
   flex-grow: 0;
 
@@ -58,26 +58,26 @@ export const Col = styled.div`
   /* Button - Frame 149 첫 번째: Primary/600 */
   &:first-of-type a,
   &:first-of-type button {
-    width: 200px;
-    height: 48px;
-    padding: 12px 16px;
-    gap: 8px;
+    width: 12.5rem;
+    height: 3rem;
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
     background: #1572b8;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     color: #ffffff;
   }
 
   /* Button - Frame 148: White + border (팀 아올다 합류) */
   &:last-of-type a,
   &:last-of-type button {
-    width: 200px;
-    height: 48px;
-    padding: 12px 16px;
-    gap: 8px;
+    width: 12.5rem;
+    height: 3rem;
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
     background: #ffffff;
     border: 1px solid #bfbfbf;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     color: #000000;
 
     span {
@@ -88,8 +88,8 @@ export const Col = styled.div`
   /* Button 내부 아이콘 24x24 */
   a img,
   button img {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -99,13 +99,13 @@ export const Col = styled.div`
 /* Content-C4 */
 export const Caption = styled.p`
   width: 120%;
-  max-width: 162px;
-  height: 48px;
+  max-width: 10.125rem;
+  height: 3rem;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1rem;
   line-height: 150%;
   letter-spacing: -1%;
   text-align: center;

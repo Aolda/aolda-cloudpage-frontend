@@ -3,15 +3,15 @@
 export const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  max-width: 1440px;
+  max-width: 90rem;
   margin: 0 auto;
-  height: 400px;
+  height: 25rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 120px 60px;
-  gap: 365px;
+  padding: 0 7.5rem 3.75rem;
+  gap: 22.8125rem;
   isolation: isolate;
   background: ${({ theme }) => theme.colors.primary300};
   overflow: hidden;
@@ -26,7 +26,7 @@ export const HeroContent = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
   min-height: 0;
 `;
@@ -35,8 +35,8 @@ export const LeftSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
-  width: 475px;
+  gap: 0.75rem;
+  width: 29.6875rem;
   max-width: 100%;
   flex-shrink: 0;
   z-index: 2;
@@ -46,11 +46,11 @@ export const TitleSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: 0.75rem;
 `;
 
 export const BreadcrumbWrapper = styled.div`
-  min-height: 19px;
+  min-height: 1.1875rem;
 
   nav {
     color: #fefefe;
@@ -60,8 +60,8 @@ export const BreadcrumbWrapper = styled.div`
       color: #fefefe;
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 400;
-      font-size: 1.6rem;
-      line-height: 1.9rem;
+      font-size: 1rem;
+      line-height: 1.1875rem;
     }
   }
 `;
@@ -69,8 +69,8 @@ export const BreadcrumbWrapper = styled.div`
 export const Title = styled.h1`
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 3.2rem;
-  line-height: 3.8rem;
+  font-size: 2rem;
+  line-height: 2.375rem;
   color: #fefefe;
   margin: 0;
 `;
@@ -81,11 +81,11 @@ export const SearchWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;
-  width: 475px;
+  padding: 0.75rem 1rem;
+  width: 29.6875rem;
   max-width: 100%;
-  height: 48px;
-  border-radius: 8px;
+  height: 3rem;
+  border-radius: 0.5rem;
   flex: none;
   align-self: stretch;
 
@@ -112,19 +112,19 @@ export const SearchWrapper = styled.div`
 
 export const IconWrapper = styled.div`
   position: absolute;
-  width: min(629px, 50vw);
-  max-width: 629px;
-  height: 426px;
-  right: 120px;
+  width: min(39.3125rem, 50vw);
+  max-width: 39.3125rem;
+  height: 26.625rem;
+  right: 7.5rem;
   bottom: 0;
   z-index: 1;
   pointer-events: none;
 
-  @media (max-width: 1100px) {
-    right: 40px;
+  @media (max-width: 68.75rem) {
+    right: 2.5rem;
     opacity: 0.85;
     width: 45vw;
     height: auto;
-    max-height: 320px;
+    max-height: 20rem;
   }
 `;

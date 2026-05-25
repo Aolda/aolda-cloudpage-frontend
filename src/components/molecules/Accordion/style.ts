@@ -11,8 +11,8 @@ export const TitleButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72px;
-  padding: 20px 16px;
+  min-height: 4.5rem;
+  padding: 1.25rem 1rem;
   box-sizing: border-box;
   background: transparent;
   border: none;
@@ -30,8 +30,8 @@ export const TitleButton = styled.button`
           }
 
           &:focus {
-            outline: 2px solid ${theme.colors.primary500};
-            outline-offset: -2px;
+            outline: 0.125rem solid ${theme.colors.primary500};
+            outline-offset: -0.125rem;
           }
         `
       : css`
@@ -42,8 +42,8 @@ export const TitleButton = styled.button`
           }
 
           &:focus {
-            outline: 2px solid ${({ theme }) => theme.colors.primary};
-            outline-offset: -2px;
+            outline: 0.125rem solid ${({ theme }) => theme.colors.primary};
+            outline-offset: -0.125rem;
           }
         `}
 `;
@@ -51,13 +51,13 @@ export const TitleButton = styled.button`
 export const TitleContent = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   flex: 1;
   min-width: 0;
 `;
 
 export const TitleIcon = styled.div`
-  width: 64px;
+  width: 4rem;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -68,29 +68,29 @@ export const QBadge = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 200px;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 12.5rem;
   background: ${({ theme }) =>
     theme.mode === 'dark' ? theme.colors.widgetBorder : '#444444'};
   font-family: 'Gmarket Sans', 'Noto Sans KR', sans-serif;
   font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 1.8rem;
+  font-size: 1rem;
+  line-height: 1.125rem;
   color: #fefefe;
 `;
 
 export const IconImage = styled.img`
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
   display: block;
 `;
 
 export const TitleText = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
+  font-size: 1rem;
+  line-height: 1.1875rem;
   font-weight: 700;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.text)};
   flex: 1;
@@ -98,8 +98,8 @@ export const TitleText = styled.span`
 `;
 
 export const ChevronIcon = styled.svg<{ $expanded: boolean }>`
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   flex-shrink: 0;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.textMuted)};
   transition: transform 0.2s;
@@ -107,7 +107,7 @@ export const ChevronIcon = styled.svg<{ $expanded: boolean }>`
 `;
 
 const contentPadding = css`
-  padding: 20px 16px 20px calc(16px + 64px + 10px);
+  padding: 1.25rem 1rem 1.25rem calc(1rem + 4rem + 0.625rem);
 `;
 
 export const Content = styled.div`
@@ -133,14 +133,14 @@ export const ContentText = styled.div`
   word-break: break-word;
   flex: 1;
   min-width: 0;
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
   line-height: 1.8;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.text)};
 
   p {
-    margin: 1rem 0;
+    margin: 0.625rem 0;
     line-height: 1.8;
     font-size: inherit;
     color: inherit;
@@ -148,13 +148,13 @@ export const ContentText = styled.div`
 
   ul,
   ol {
-    margin: 1rem 0;
-    padding-left: 2rem;
+    margin: 0.625rem 0;
+    padding-left: 1.25rem;
     line-height: 1.8;
   }
 
   li {
-    margin: 0.5rem 0;
+    margin: 0.3125rem 0;
     line-height: 1.8;
   }
 `;

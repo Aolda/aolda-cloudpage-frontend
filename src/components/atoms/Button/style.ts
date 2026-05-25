@@ -3,14 +3,14 @@ import type { ButtonSize, ButtonVariant } from './index';
 
 const sizeStyles = {
   md: {
-    padding: '1.1rem 1.9rem',
-    fontSize: '1.5rem',
-    gap: '0.8rem',
+    padding: '0.6875rem 1.1875rem',
+    fontSize: '0.9375rem',
+    gap: '0.5rem',
   },
   lg: {
-    padding: '1.2rem 3.6rem',
-    fontSize: '1.6rem',
-    gap: '0.8rem',
+    padding: '0.75rem 2.25rem',
+    fontSize: '1rem',
+    gap: '0.5rem',
   },
 };
 
@@ -25,7 +25,7 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
   padding: ${({ $size }) => sizeStyles[$size].padding};
   font-size: ${({ $size }) => sizeStyles[$size].fontSize};
   font-weight: 700;
-  line-height: ${({ $size }) => ($size === 'lg' ? '1.9rem' : '1')};
+  line-height: ${({ $size }) => ($size === 'lg' ? '1.1875rem' : '1')};
   font-family: 'Noto Sans KR', sans-serif;
   cursor: pointer;
   text-decoration: none;
@@ -76,8 +76,8 @@ export const Label = styled.span<{ $variant: ButtonVariant; $size: ButtonSize }>
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
+  font-size: 1rem;
+  line-height: 1.1875rem;
   text-align: center;
   /* White/White or Black */
   color: ${({ $variant, theme }) => $variant === 'secondary' ? theme.colors.text : '#FFFFFF'};

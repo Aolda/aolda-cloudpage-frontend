@@ -2,8 +2,8 @@
 
 export const MenuIcon = styled.span`
   display: inline-flex;
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -19,16 +19,16 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 0;
-  gap: 12px;
-  height: 31px;
+  gap: 0.75rem;
+  height: 1.9375rem;
   flex: none;
   order: 0;
   flex-grow: 0;
 
   &[data-faq-style='true'] {
     width: 100%;
-    max-width: 1200px;
-    height: 48px;
+    max-width: 75rem;
+    height: 3rem;
     gap: 0;
     padding: 0;
   }
@@ -40,10 +40,10 @@ export const Button = styled.button<{ $isActive: boolean; $faqStyle?: boolean }>
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 7px 16px;
-  gap: 8px;
-  height: 31px;
-  border-radius: 200px;
+  padding: 0.4375rem 1rem;
+  gap: 0.5rem;
+  height: 1.9375rem;
+  border-radius: 12.5rem;
   flex: none;
   flex-grow: 0;
   cursor: pointer;
@@ -52,8 +52,8 @@ export const Button = styled.button<{ $isActive: boolean; $faqStyle?: boolean }>
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
   text-align: center;
 
   background: ${({ $isActive }) => ($isActive ? '#181818' : '#FFFFFF')};
@@ -63,15 +63,15 @@ export const Button = styled.button<{ $isActive: boolean; $faqStyle?: boolean }>
   ${({ $faqStyle, $isActive, theme }) =>
     $faqStyle &&
     css`
-      padding: 12px 20px;
-      gap: 12px;
+      padding: 0.75rem 1.25rem;
+      gap: 0.75rem;
       min-width: 0;
       width: auto;
       flex: 1 1 0;
-      height: 48px;
+      height: 3rem;
       border-radius: 0;
-      font-size: 1.6rem;
-      line-height: ${$isActive ? '19px' : '24px'};
+      font-size: 1rem;
+      line-height: ${$isActive ? '1.1875rem' : '1.5rem'};
       font-weight: ${$isActive ? '700' : '400'};
 
       ${theme.mode === 'dark'

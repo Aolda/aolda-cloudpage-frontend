@@ -6,8 +6,8 @@ export const FilterContainer = styled.div`
   align-items: center;
   padding: 0;
   width: 100%;
-  max-width: 1200px;
-  min-height: 48px;
+  max-width: 75rem;
+  min-height: 3rem;
   flex: none;
   order: 0;
   flex-grow: 0;
