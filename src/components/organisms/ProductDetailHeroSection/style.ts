@@ -1,15 +1,15 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const HeroSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 0px 120px 80px;
-  gap: 10px;
+  padding: 0rem 7.5rem 5rem;
+  gap: 0.625rem;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 25rem;
   overflow: hidden;
 
   &::before {
@@ -46,9 +46,9 @@ export const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
-  max-width: 1200px;
+  padding: 0rem;
+  gap: 0.75rem;
+  max-width: 75rem;
   width: 100%;
   flex: none;
   order: 0;
@@ -59,8 +59,8 @@ export const HeroContent = styled.div`
 
 export const BreadcrumbWrapper = styled.div`
   width: auto;
-  min-width: 110px;
-  height: 23px;
+  min-width: 6.875rem;
+  height: 1.4375rem;
   
   nav {
     color: #FFFFFF;
@@ -83,11 +83,11 @@ export const TitleRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
-  gap: 12px;
-  max-width: 1200px;
+  padding: 0rem;
+  gap: 0.75rem;
+  max-width: 75rem;
   width: 100%;
-  height: 46px;
+  height: 2.875rem;
   flex: none;
   order: 1;
   align-self: stretch;
@@ -95,21 +95,21 @@ export const TitleRow = styled.div`
 `;
 
 export const ServiceIcon = styled.img`
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   flex: none;
   order: 0;
   flex-grow: 0;
 `;
 
 export const ServiceName = styled.h1`
-  width: 93px;
-  height: 46px;
+  width: 5.8125rem;
+  height: 2.875rem;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 2rem;
+  line-height: 2.375rem;
   color: #FFFFFF;
   margin: 0;
   flex: none;
@@ -118,14 +118,14 @@ export const ServiceName = styled.h1`
 `;
 
 export const ServiceDescription = styled.p`
-  max-width: 1200px;
+  max-width: 75rem;
   width: 100%;
-  height: 23px;
+  height: 1.4375rem;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.1875rem;
   color: #FFFFFF;
   margin: 0;
   flex: none;
@@ -138,10 +138,10 @@ export const ActionButtons = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
-  width: 278px;
-  height: 47px;
+  padding: 0rem;
+  gap: 0.75rem;
+  width: 17.375rem;
+  height: 2.9375rem;
   flex: none;
   order: 3;
   flex-grow: 0;
@@ -152,24 +152,29 @@ export const ActionButtons = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 12px 36px;
-    gap: 8px;
-    height: 47px;
+    padding: 0.75rem 2.25rem;
+    gap: 0.5rem;
+    height: 2.9375rem;
     background: #FFFFFF;
     border: 1px solid #BFBFBF;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     flex: none;
     flex-grow: 0;
     
     &:nth-child(1) {
-      width: 135px;
+      width: 8.4375rem;
       order: 0;
     }
     
     &:nth-child(2) {
-      width: 131px;
+      width: 8.1875rem;
       order: 1;
     }
+  }
+
+  a span,
+  button span {
+    color: #000000 !important;
   }
 `;
 

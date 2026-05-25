@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const ServiceLink = styled.a`
   display: block;
@@ -11,22 +11,24 @@ export const ServiceCardWrapper = styled.div`
 `;
 
 export const ServiceCard = styled.div`
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 24px;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
+  border-radius: 0.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  border: 1px solid #E2E2E2;
+  gap: 0.5rem;
+  border: 1px solid ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
-  height: 240px;
-  min-width: 231px;
-  width: 231px;
+  height: 15rem;
+  min-width: 14.4375rem;
+  width: 14.4375rem;
   box-sizing: border-box;
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
   }
   
 `;
@@ -37,20 +39,18 @@ export const IconTitleBlock = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 4px;
-  width: 58px;
-  max-width: 58px;
-  height: 60px;
+  gap: 0.25rem;
+  width: 100%;
   flex: none;
   order: 0;
   flex-grow: 0;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 `;
 
 /* tabler:database-heart - 32x32 */
 export const Icon = styled.img`
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -61,12 +61,12 @@ export const Content = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
 `;
 
 export const AMDBIconContainer = styled.div`
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -77,55 +77,52 @@ export const AMDBIconContainer = styled.div`
 `;
 
 export const DatabaseIcon = styled.svg`
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   flex-shrink: 0;
 `;
 
 export const HeartIcon = styled.svg`
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   flex-shrink: 0;
-  margin-left: -0.2rem;
+  margin-left: -0.125rem;
   position: relative;
   z-index: 1;
 `;
 
 /* Text - Title-H3 */
 export const Title = styled.h3`
-  width: 58px;
-  height: 24px;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: center;
-  color: #232527;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  text-align: left;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
+  align-self: stretch;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 `;
 
 export const Description = styled.p`
-  font-size: 12px;
-  color: #5b6275;
-  font: noto sans kr;
-  font-style: regular;
-  line-height: 1.4;
   margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
+  word-break: keep-all;
+  overflow-wrap: break-word;
 `;
 
 export const ArrowIcon = styled.svg`
   position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 2rem;
-  height: 2rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  bottom: 0.9375rem;
+  right: 0.9375rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
 `;
 

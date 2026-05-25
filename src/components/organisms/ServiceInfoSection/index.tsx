@@ -7,13 +7,13 @@ const ServiceInfoSection = () => (
     <IntroSectionTitle
       title={
         <>
-          <span style={{ color: '#232527' }}>아올다 클라우드는</span>
+          <span>아올다 클라우드는</span>
           <br />
           <span style={{ color: '#1A8EE5' }}>아주대학교 학생</span>
-          <span style={{ color: '#232527' }}>을 위한</span>
+          <span>을 위한</span>
           <br />
           <span style={{ color: '#1A8EE5' }}>무료 클라우드 서비스</span>
-          <span style={{ color: '#232527' }}>입니다.</span>
+          <span>입니다.</span>
         </>
       }
       align="left"

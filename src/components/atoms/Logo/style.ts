@@ -28,14 +28,14 @@ export const BrandImg = styled.img`
 
 // PartnerLogo 스타일
 export const PartnerCard = styled.div`
-  padding: 1.8rem;
-  border-radius: 1.6rem;
+  padding: 1.125rem;
+  border-radius: 1rem;
   border: 1px solid ${({ theme }) => theme.colors.border};
   background: ${({ theme }) => theme.colors.surface};
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.5rem;
   min-height: 150px;
   box-shadow: ${({ theme }) => theme.shadows.soft};
 `;
@@ -54,13 +54,13 @@ export const PartnerInitial = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
+  font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.primary};
   font-weight: 700;
 `;
 
 export const PartnerName = styled.span`
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   color: ${({ theme }) => theme.colors.text};
   font-weight: 600;
   text-align: center;

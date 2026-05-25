@@ -9,6 +9,8 @@ export interface SearchProps {
   onChange?: (value: string) => void;
   /** 검색 실행 핸들러 */
   onSearch?: (value: string) => void;
+  /** 외곽 박스(FAQ 히어로 등) 안에서 테두리 없는 입력 */
+  embedded?: boolean;
 }
 
 /**
@@ -37,6 +39,7 @@ const Search = ({
   value = '',
   onChange,
   onSearch,
+  embedded = false,
 }: SearchProps) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,19 +51,20 @@ const Search = ({
   };
 
   return (
-    <S.SearchForm onSubmit={handleSubmit}>
+    <S.SearchForm onSubmit={handleSubmit} $embedded={embedded}>
       <S.SearchContainer>
         <S.SearchInput
           type="text"
           placeholder={placeholder}
           value={value}
           onChange={handleChange}
+          $embedded={embedded}
         />
-        <S.SearchIcon viewBox="0 0 24 24" fill="none">
+        <S.SearchIcon viewBox="0 0 24 24" fill="none" $embedded={embedded}>
           <path
             d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth={embedded ? '1.5' : '2'}
             strokeLinecap="round"
             strokeLinejoin="round"
           />

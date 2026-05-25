@@ -18,7 +18,7 @@ export const ContentWrapper = styled.div`
   margin: 0 auto;
   padding: 40px 120px;
   box-sizing: border-box;
-  background: #FFFFFF;
+  background: ${({ theme }) => theme.colors.surface};
   margin-bottom: 150px;
 `;
 
@@ -32,7 +32,7 @@ export const MainContent = styled.div`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.5rem;
 `;
 
 export const SearchSection = styled.div`

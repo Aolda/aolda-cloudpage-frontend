@@ -1,111 +1,78 @@
-import styled from 'styled-components';
+﻿import styled, { css } from 'styled-components';
 
 export const HeroSection = styled.section`
+  position: relative;
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  height: 25rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0px 120px 60px;
-  gap: 365px;
+  padding: 0 7.5rem 3.75rem;
+  gap: 22.8125rem;
   isolation: isolate;
-  position: absolute;
-  width: 1440px;
-  height: 400px;
-  left: calc(50% - 1440px / 2);
-  top: 0px;
-  background: #76BBEF;
+  background: ${({ theme }) => theme.colors.primary300};
   overflow: hidden;
+  box-sizing: border-box;
 `;
 
 export const HeroContent = styled.div`
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0px;
-  gap: 215px;
-  width: 1200px;
-  height: 187px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  position: relative;
-  z-index: 1;
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  min-height: 0;
 `;
 
 export const LeftSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
-  width: 475px;
-  height: 141px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 0;
+  gap: 0.75rem;
+  width: 29.6875rem;
+  max-width: 100%;
+  flex-shrink: 0;
+  z-index: 2;
 `;
 
 export const TitleSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
-  width: 158px;
-  height: 81px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  gap: 0.75rem;
 `;
 
 export const BreadcrumbWrapper = styled.div`
-  width: 77px;
-  height: 23px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  
+  min-height: 1.1875rem;
+
   nav {
-    color: #FFFFFF;
-    
-    a, span {
-      color: #FFFFFF;
-      font-family: 'Noto Sans KR';
-      font-style: normal;
+    color: #fefefe;
+
+    a,
+    span {
+      color: #fefefe;
+      font-family: 'Noto Sans KR', sans-serif;
       font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-    }
-    
-    span > span {
-      color: #FFFFFF;
-      
-      &::before {
-        border-color: #FFFFFF;
-        border-width: 2px;
-      }
+      font-size: 1rem;
+      line-height: 1.1875rem;
     }
   }
 `;
 
 export const Title = styled.h1`
-  width: 200px;
-  height: 46px;
-  font-family: 'Noto Sans KR';
-  font-style: normal;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
-  color: #FFFFFF;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  color: #fefefe;
   margin: 0;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 `;
 
 export const SearchWrapper = styled.div`
@@ -114,72 +81,50 @@ export const SearchWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;
-  gap: 90px;
-  width: 475px;
-  height: 48px;
-  background: #FFFFFF;
-  border: 1px solid #E2E2E2;
-  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  width: 29.6875rem;
+  max-width: 100%;
+  height: 3rem;
+  border-radius: 0.5rem;
   flex: none;
-  order: 1;
   align-self: stretch;
-  flex-grow: 0;
-  
+
+  ${({ theme }) =>
+    theme.mode === 'dark'
+      ? css`
+          background: #2a2a2a;
+          border: 1px solid ${theme.colors.widgetBorder};
+        `
+      : css`
+          background: #ffffff;
+          border: 1px solid #e2e2e2;
+        `}
+
   form {
     margin: 0;
     width: 100%;
     height: 100%;
     max-width: 100%;
+    display: flex;
+    align-items: center;
   }
-  
-  input {
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #777777;
-    width: 174px;
-    height: 23px;
-    
-    &:focus {
-      outline: none;
-      border: none;
-      border-bottom: none;
-    }
-  }
-  
-  svg {
-    width: 24px;
-    height: 24px;
-    color: #76BBEF;
-    position: relative;
-    right: 0;
-  }
-`;
-
-export const RightSection = styled.div`
-  position: relative;
-  width: 30%;
-  height: 10%;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 `;
 
 export const IconWrapper = styled.div`
   position: absolute;
-  width: 629px;
-  height: 426px;
-  right: -20px;
-  bottom: -80px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+  width: min(39.3125rem, 50vw);
+  max-width: 39.3125rem;
+  height: 26.625rem;
+  right: 7.5rem;
+  bottom: 0;
   z-index: 1;
-`;
+  pointer-events: none;
 
+  @media (max-width: 68.75rem) {
+    right: 2.5rem;
+    opacity: 0.85;
+    width: 45vw;
+    height: auto;
+    max-height: 20rem;
+  }
+`;

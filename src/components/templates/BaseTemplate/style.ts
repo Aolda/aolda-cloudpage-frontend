@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     min-height: 100vh;
     width: 100%;
     position: relative;
-    background: #FFFFFF;
+    background: ${({ theme }) => theme.colors.surface};
     overflow-x: hidden;
 `;
 

@@ -1,28 +1,30 @@
 import styled from 'styled-components';
 
 export const StatCard = styled.div`
-  padding: 2.4rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  min-width: 220px;
+  gap: 0.5rem;
+  min-width: 13.75rem;
   align-items: center;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : '#ffffff'};
+  border: ${({ theme }) =>
+    theme.mode === 'dark' ? `0.125rem solid ${theme.colors.border}` : '1px solid #e0e0e0'};
+  border-radius: 0.625rem;
   text-align: center;
-  height: 133px;
-  width: 348px;
+  height: 8.3125rem;
+  width: 21.75rem;
 `;
 
 export const StatValue = styled.span`
-  font-size: 2.8rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  color: #0E76C4;
+  color: ${({ theme }) => theme.colors.statAccent};
 `;
 
 export const StatLabel = styled.span`
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
   color: ${({ theme }) => theme.colors.text};
 `;
 

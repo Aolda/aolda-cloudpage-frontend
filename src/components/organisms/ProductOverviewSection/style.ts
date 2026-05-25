@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 
 export const OverviewSection = styled.section`
-  padding: 4rem 0;
-  max-width: 1200px;
+  padding: 2.5rem 0;
+  max-width: 75rem;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: -40px;
+  margin-bottom: -2.5rem;
 `;
 
 export const OverviewIcon = styled.span`
   display: inline-block;
   vertical-align: middle;
-  margin-right: 0.8rem;
-  width: 35px;
-  height: 35px;
+  margin-right: 0.5rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
   flex-shrink: 0;
-  margin-bottom: 10px;
-  margin-right: 15px;
+  margin-bottom: 0.625rem;
+  margin-right: 0.9375rem;
   img {
     width: 100%;
     height: 100%;
@@ -28,8 +28,8 @@ export const OverviewIcon = styled.span`
 `;
 
 export const OverviewContent = styled.p`
-  margin-top: 3rem;
-  font-size: 1.6rem;
+  margin-top: 1.875rem;
+  font-size: 1rem;
   color: ${({ theme }) => theme.colors.textMuted};
   line-height: 1.7;
   width: 100%;

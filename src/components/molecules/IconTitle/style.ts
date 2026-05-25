@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const Container = styled.div<{ $align?: 'left' | 'center' }>`
   display: flex;
@@ -11,15 +11,15 @@ export const Container = styled.div<{ $align?: 'left' | 'center' }>`
 export const IconTitleRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 0.75rem;
 `;
 
 export const IconWrapper = styled.span<{ $size?: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 29px;
-  height: 29px;
+  width: 1.8125rem;
+  height: 1.8125rem;
   flex-shrink: 0;
 
   img {
@@ -33,10 +33,10 @@ export const TitleText = styled.h2`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 140%;
   letter-spacing: 0;
   font-style: normal;
-  color: #232527;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
   white-space: pre-line;
 `;

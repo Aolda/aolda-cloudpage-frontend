@@ -38,26 +38,31 @@ const ComponentSection = styled.section`
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid
+    ${({ theme }) => (theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : '#e0e0e0')};
   border-radius: 8px;
-  background: #fff;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'transparent' : '#fff'};
 `;
 
 const ComponentTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : '#333')};
   border-bottom: 2px solid #3d90d4;
   padding-bottom: 0.5rem;
 `;
 
 const PageInfo = styled.div`
   font-size: 1.2rem;
-  color: #666;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : '#666')};
   margin-bottom: 1rem;
   padding: 0.5rem;
-  background: #f5f5f5;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'transparent' : '#f5f5f5'};
+  border: 1px solid
+    ${({ theme }) => (theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : 'transparent')};
   border-radius: 4px;
   
   strong {
@@ -92,7 +97,7 @@ export default function MoleculesPage() {
           items={[
             { label: '제품 소개', href: '/product' },
             { label: '공지사항', href: '/notice' },
-            { label: 'FAQ', href: '/FAQ' },
+            { label: 'FAQ', href: '/faq' },
           ]}
         />
       </ComponentSection>

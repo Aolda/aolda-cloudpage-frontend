@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const ImageTitleContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1.6rem 0;
+  gap: 0.75rem;
+  padding: 1rem 0;
   background: #ffffff;
 `;
 
@@ -17,7 +17,7 @@ export const IconImage = styled.img`
 
 export const TitleText = styled.h3`
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: #333333;
   line-height: 1.4;
