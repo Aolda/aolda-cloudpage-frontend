@@ -15,4 +15,10 @@ export const FilterContainer = styled.div`
     max-width: 680px;
     height: 48px;
   }
+
+  ${media.mobile} {
+    max-width: 343px;
+    height: 64px;
+    align-items: flex-start;
+  }
 `;

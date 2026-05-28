@@ -15,6 +15,12 @@ export const PaginationContainer = styled.nav`
     gap: 28px;
     height: 32px;
   }
+
+  ${media.mobile} {
+    gap: 12px;
+    width: 304px;
+    justify-content: center;
+  }
 `;
 
 export const PrevButton = styled.button`
@@ -41,6 +47,11 @@ export const PrevButton = styled.button`
 
   ${media.tablet} {
     width: 43px;
+    height: 16px;
+  }
+
+  ${media.mobile} {
+    width: 39px;
     height: 16px;
   }
 `;
@@ -71,6 +82,11 @@ export const NextButton = styled.button`
     width: 43px;
     height: 16px;
   }
+
+  ${media.mobile} {
+    width: 39px;
+    height: 16px;
+  }
 `;
 
 export const PageList = styled.div`
@@ -85,6 +101,10 @@ export const PageList = styled.div`
 
   ${media.tablet} {
     gap: 8px;
+  }
+
+  ${media.mobile} {
+    width: 202px;
   }
 `;
 
@@ -124,6 +144,15 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
     line-height: 14px;
     font-weight: 700;
     color: ${({ $isActive }) => ($isActive ? '#1A8EE5' : '#777777')};
+  }
+
+  ${media.mobile} {
+    width: 22px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 700;
   }
 `;
 
@@ -195,6 +224,14 @@ export const ButtonText = styled.span`
     height: 14px;
     font-size: 12px;
     line-height: 14px;
+    font-weight: 700;
+  }
+
+  ${media.mobile} {
+    width: 19px;
+    height: 12px;
+    font-size: 10px;
+    line-height: 12px;
     font-weight: 700;
   }
 `;

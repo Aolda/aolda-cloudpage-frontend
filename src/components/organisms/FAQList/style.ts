@@ -11,6 +11,10 @@ export const FAQListContainer = styled.div`
   ${media.tablet} {
     gap: 24px;
   }
+
+  ${media.mobile} {
+    gap: 20px;
+  }
 `;
 
 export const FAQItems = styled.div`
@@ -20,6 +24,10 @@ export const FAQItems = styled.div`
 
   ${media.tablet} {
     max-width: 680px;
+  }
+
+  ${media.mobile} {
+    max-width: 343px;
   }
 `;
 
@@ -32,5 +40,9 @@ export const PaginationWrapper = styled.div`
 
   ${media.tablet} {
     margin-top: 36px;
+  }
+
+  ${media.mobile} {
+    margin-top: 12px;
   }
 `;

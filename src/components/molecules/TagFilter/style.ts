@@ -21,6 +21,16 @@ export const Container = styled.div`
       max-width: 680px;
       height: 48px;
     }
+
+    ${media.mobile} {
+      width: 100%;
+      max-width: 343px;
+      height: 64px;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      row-gap: 0;
+      column-gap: 0;
+    }
   }
 `;
 
@@ -79,6 +89,22 @@ export const Button = styled.button<{ $isActive: boolean; $faqStyle?: boolean }>
         line-height: ${$isActive ? '19px' : '24px'};
         background: ${$isActive ? '#1a8ee5' : '#fefefe'};
         border: ${$isActive ? 'none' : '1px solid #efefef'};
+        color: ${$isActive ? '#fefefe' : '#777777'};
+      }
+
+      ${media.mobile} {
+        width: 85.75px;
+        height: 32px;
+        min-width: 0;
+        max-width: none;
+        padding: 8px 20px;
+        flex: 0 0 25%;
+        font-size: 10px;
+        line-height: ${$isActive ? '12px' : '15px'};
+        font-weight: ${$isActive ? 700 : 400};
+        border-radius: 0;
+        border: ${$isActive ? 'none' : '1px solid #efefef'};
+        background: ${$isActive ? '#1a8ee5' : '#fefefe'};
         color: ${$isActive ? '#fefefe' : '#777777'};
       }
     `}

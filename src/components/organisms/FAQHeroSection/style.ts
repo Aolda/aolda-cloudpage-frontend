@@ -27,6 +27,31 @@ export const HeroSection = styled.section`
     padding: 0 32px 48px;
     gap: 0;
   }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 375px;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 16px 30px;
+    align-items: flex-end;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 314.5px;
+      height: 213px;
+      right: -88.5px;
+      bottom: 7px;
+      background-image: url('/FAQ/FAQ_introheader.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
 `;
 
 export const HeroContent = styled.div`
@@ -49,6 +74,13 @@ export const HeroContent = styled.div`
     gap: 0;
     align-items: flex-end;
   }
+
+  ${media.mobile} {
+    max-width: 343px;
+    height: 92px;
+    align-items: flex-end;
+    z-index: 1;
+  }
 `;
 
 export const LeftSection = styled.div`
@@ -67,6 +99,11 @@ export const LeftSection = styled.div`
     height: auto;
     flex-shrink: 0;
   }
+
+  ${media.mobile} {
+    width: 343px;
+    gap: 8px;
+  }
 `;
 
 export const TitleSection = styled.div`
@@ -83,6 +120,10 @@ export const TitleSection = styled.div`
     width: auto;
     height: auto;
     gap: 12px;
+  }
+
+  ${media.mobile} {
+    gap: 8px;
   }
 `;
 
@@ -127,6 +168,20 @@ export const BreadcrumbWrapper = styled.div`
       }
     }
   }
+
+  ${media.mobile} {
+    height: 16px;
+
+    nav {
+      gap: 4px;
+
+      a,
+      span {
+        font-size: 10px;
+        line-height: 15px;
+      }
+    }
+  }
 `;
 
 export const Title = styled.h1`
@@ -145,6 +200,13 @@ export const Title = styled.h1`
     height: auto;
     font-size: 32px;
     line-height: 38px;
+  }
+
+  ${media.mobile} {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    line-height: 24px;
   }
 `;
 
@@ -202,6 +264,33 @@ export const SearchWrapper = styled.div`
     height: 48px;
     border: 1px solid #efefef;
   }
+
+  ${media.mobile} {
+    width: 343px;
+    height: 32px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #efefef;
+    gap: 12px;
+
+    form {
+      height: 100%;
+    }
+
+    input {
+      width: 100%;
+      height: 15px;
+      font-size: 10px;
+      line-height: 150%;
+      color: #777777;
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      color: #777777;
+    }
+  }
 `;
 
 export const RightSection = styled.div`
@@ -215,6 +304,10 @@ export const RightSection = styled.div`
     height: auto;
     flex: 1;
     min-width: 0;
+  }
+
+  ${media.mobile} {
+    display: none;
   }
 `;
 
@@ -232,5 +325,13 @@ export const IconWrapper = styled.div`
     height: 426px;
     right: -91px;
     bottom: 0;
+  }
+
+  ${media.mobile} {
+    width: 314.5px;
+    height: 213px;
+    right: -88.5px;
+    bottom: 7px;
+    z-index: 0;
   }
 `;

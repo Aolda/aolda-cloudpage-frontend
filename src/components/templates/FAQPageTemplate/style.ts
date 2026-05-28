@@ -24,4 +24,11 @@ export const ContentWrapper = styled.div`
     margin-bottom: 60px;
     padding: 32px;
   }
+
+  ${media.mobile} {
+    max-width: 375px;
+    margin-top: 268px;
+    margin-bottom: 30px;
+    padding: 20px 16px;
+  }
 `;
