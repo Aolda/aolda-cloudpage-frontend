@@ -1,15 +1,15 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const HeroSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 0px 120px 80px;
-  gap: 10px;
+  padding: 0rem 7.5rem 5rem;
+  gap: 0.625rem;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 25rem;
   overflow: hidden;
 
   &::before {
@@ -34,11 +34,11 @@ export const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
-  max-width: 1200px;
+  padding: 0rem;
+  gap: 0.75rem;
+  max-width: 75rem;
   width: 100%;
-  height: 151px;
+  height: 9.4375rem;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -48,8 +48,8 @@ export const HeroContent = styled.div`
 
 export const BreadcrumbWrapper = styled.div`
   width: auto;
-  min-width: 110px;
-  height: 23px;
+  min-width: 6.875rem;
+  height: 1.4375rem;
   
   nav {
     color: #FFFFFF;
@@ -69,14 +69,14 @@ export const BreadcrumbWrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  max-width: 1200px;
+  max-width: 75rem;
   width: 100%;
-  height: 46px;
+  height: 2.875rem;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 2rem;
+  line-height: 2.375rem;
   color: #FFFFFF;
   margin: 0;
   flex: none;
@@ -86,14 +86,14 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.p`
-  max-width: 1200px;
+  max-width: 75rem;
   width: 100%;
-  height: 58px;
+  height: 3.625rem;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
   color: #FFFFFF;
   margin: 0;
   flex: none;

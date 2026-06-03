@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const NoticeListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 36px;
-  width: 1200px;
+  padding: 0rem;
+  gap: 2.25rem;
+  width: 75rem;
   flex: none;
   order: 1;
   align-self: stretch;
@@ -17,10 +17,10 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 20px;
-  width: 1200px;
-  height: 68px;
+  padding: 0rem;
+  gap: 1.25rem;
+  width: 75rem;
+  height: 4.25rem;
   flex: none;
   order: 0;
   align-self: stretch;
@@ -32,10 +32,10 @@ export const Header = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px;
-  gap: 20px;
-  width: 1200px;
-  height: 48px;
+  padding: 0rem;
+  gap: 1.25rem;
+  width: 75rem;
+  height: 3rem;
   flex: none;
   order: 0;
   align-self: stretch;
@@ -43,12 +43,12 @@ export const Header = styled.div`
 `;
 
 export const Count = styled.span`
-  height: 29px;
+  height: 1.8125rem;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
   color: #232527;
   flex: none;
   order: 0;
@@ -60,11 +60,11 @@ export const WriteButton = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 12px 16px;
-  gap: 8px;
-  width: 123px;
-  height: 48px;
-  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  gap: 0.5rem;
+  width: 7.6875rem;
+  height: 3rem;
+  border-radius: 0.5rem;
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -82,9 +82,9 @@ export const WriteButton = styled.button`
 `;
 
 export const WriteIcon = styled.span`
-  width: 24px;
-  height: 24px;
-  border-radius: 20px;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.25rem;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -104,10 +104,10 @@ export const WriteText = styled.span`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px;
-  gap: 10px;
-  width: 59px;
-  height: 23px;
+  padding: 0rem;
+  gap: 0.625rem;
+  width: 3.6875rem;
+  height: 1.4375rem;
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -115,8 +115,8 @@ export const WriteText = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.1875rem;
   text-align: center;
   color: #1572B8;
   flex: none;
@@ -125,7 +125,7 @@ export const WriteText = styled.span`
 `;
 
 export const Separator = styled.div`
-  width: 1200px;
+  width: 75rem;
   height: 1px;
   background: #E2E2E2;
   flex: none;
@@ -139,7 +139,7 @@ export const PaginationWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 36px;
+  margin-top: 2.25rem;
   order: 3;
 `;
 

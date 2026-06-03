@@ -1,27 +1,36 @@
 'use client';
 
-import Image from "next/image";
-import { StyledFooter } from "./Footer.styles"
+import Image from 'next/image';
+import * as S from './Footer.styles';
 
 const Footer = () => {
-    return (
-        <StyledFooter>
-            <section className="logoSection">
-                <Image src="/Logo_white.svg" alt="logo" width={130} height={33}/>
-                <span className="description">교내 클라우드 인프라 개발/운영 소학회</span>
-            </section>
-            <section className="addressSection">
-                <span className="address">경기도 수원시 영통구 원천동 월드컵로 206 아주대학교</span>
-                <section className="managementSection">
-                    <span className="management">회장 이나현</span>
-                    <span className="divider"></span>
-                    <span className="management">부회장 조예진</span>
-                    <span className="divider"></span>
-                    <span className="management">총무 김화균</span>
-                </section>
-            </section>
-        </StyledFooter>
-    );
+  return (
+    <S.FooterOuter>
+      <S.StyledFooter>
+        <S.FooterContent>
+          <S.LogoWrap>
+            <Image src="/main_logo.png" alt="Aolda" width={32} height={32} />
+          </S.LogoWrap>
+          <S.TextColumn>
+            <S.BrandBlock>
+              <S.BrandName>Aolda</S.BrandName>
+              <S.Tagline>교내 클라우드 인프라 개발/운영 소학회</S.Tagline>
+            </S.BrandBlock>
+            <S.InfoBlock>
+              <S.Address>경기도 수원시 영통구 원천동 월드컵로 206 아주대학교</S.Address>
+              <S.ManagementRow>
+                <S.ManagementText>회장 이나현</S.ManagementText>
+                <S.Divider aria-hidden />
+                <S.ManagementText>부회장 조예진</S.ManagementText>
+                <S.Divider aria-hidden />
+                <S.ManagementText>총무 김화균</S.ManagementText>
+              </S.ManagementRow>
+            </S.InfoBlock>
+          </S.TextColumn>
+        </S.FooterContent>
+      </S.StyledFooter>
+    </S.FooterOuter>
+  );
 };
 
 export default Footer;

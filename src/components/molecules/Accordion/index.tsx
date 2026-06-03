@@ -8,29 +8,17 @@ export interface AccordionProps {
   content: string;
   /** 초기 확장 상태 */
   defaultExpanded?: boolean;
-  /** 아이콘 이미지 경로 */
+  /** 아이콘 이미지 경로 (`qBadge`가 아닐 때) */
   icon?: string;
+  /** FAQ용 Q 원형 배지 */
+  qBadge?: boolean;
 }
 
 /**
  * 아코디언 컴포넌트
- * 
+ *
  * 제목을 클릭하면 내용이 펼쳐지거나 접히는 아코디언 형태의 컴포넌트입니다.
- * 
- * @param {AccordionProps} props - 아코디언 props
- * @param {string} props.title - 아코디언 제목
- * @param {string} props.content - 아코디언 내용
- * @param {boolean} [props.defaultExpanded] - 초기 확장 상태
- * @param {string} [props.icon] - 아이콘 이미지 경로
- * 
- * @example
- * <Accordion
- *   title="FAQ Question"
- *   content="This is the answer to the FAQ question."
- *   defaultExpanded={false}
- *   icon="/FAQ/FAQ_accordion_icon.png"
- * />
- * 
+ *
  * @returns {JSX.Element} 아코디언 요소
  */
 const Accordion = ({
@@ -38,6 +26,7 @@ const Accordion = ({
   content,
   defaultExpanded = false,
   icon,
+  qBadge = false,
 }: AccordionProps) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
@@ -47,18 +36,22 @@ const Accordion = ({
 
   return (
     <S.Accordion>
-      <S.TitleButton onClick={handleToggle} aria-expanded={isExpanded}>
+      <S.TitleButton type="button" onClick={handleToggle} aria-expanded={isExpanded}>
         <S.TitleContent>
           <S.TitleIcon>
-            <S.IconImage src={icon} alt={title} />
+            {qBadge ? (
+              <S.QBadge aria-hidden>Q</S.QBadge>
+            ) : icon ? (
+              <S.IconImage src={icon} alt="" />
+            ) : null}
           </S.TitleIcon>
           <S.TitleText>{title}</S.TitleText>
         </S.TitleContent>
-        <S.ChevronIcon $expanded={isExpanded} viewBox="0 0 24 24" fill="none">
+        <S.ChevronIcon $expanded={isExpanded} viewBox="0 0 24 24" fill="none" aria-hidden>
           <path
             d="M6 9L12 15L18 9"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -74,4 +67,3 @@ const Accordion = ({
 };
 
 export default Accordion;
-

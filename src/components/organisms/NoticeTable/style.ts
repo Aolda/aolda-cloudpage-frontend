@@ -4,8 +4,8 @@ export const NoticeTable = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  width: 1200px;
+  padding: 0rem;
+  width: 75rem;
   flex: none;
   order: 2;
   align-self: stretch;
@@ -19,7 +19,7 @@ export const TableBody = styled.div`
 `;
 
 export const Separator = styled.div`
-  width: 1200px;
+  width: 75rem;
   height: 1px;
   background: #E2E2E2;
   flex: none;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const DevelopersSection = styled.section`
-  padding: 4rem 0;
-  max-width: 1200px;
+  padding: 2.5rem 0;
+  max-width: 75rem;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -13,12 +13,12 @@ export const DevelopersSection = styled.section`
 export const DeveloperIcon = styled.span`
   display: inline-block;
   vertical-align: middle;
-  margin-right: 0.8rem;
-  width: 35px;
-  height: 35px;
+  margin-right: 0.5rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
   flex-shrink: 0;
-  margin-bottom: 10px;
-  margin-right: 15px;
+  margin-bottom: 0.625rem;
+  margin-right: 0.9375rem;
   img {
     width: 100%;
     height: 100%;
@@ -27,10 +27,10 @@ export const DeveloperIcon = styled.span`
 `;
 
 export const DevelopersGrid = styled.div`
-  margin-top: 3rem;
+  margin-top: 1.875rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1.5rem;
   width: 100%;
 `;
 

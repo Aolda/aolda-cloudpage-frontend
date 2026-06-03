@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.75rem;
 `;
 
 export const Option = styled.div`
@@ -14,8 +14,8 @@ export const Option = styled.div`
 export const Label = styled.label`
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 1.4rem;
+  gap: 0.5rem;
+  font-size: 0.875rem;
   color: ${({ theme }) => theme.colors.text};
   cursor: pointer;
   user-select: none;
@@ -31,10 +31,10 @@ export const Input = styled.input`
 
 export const Checkmark = styled.span<{ $checked: boolean }>`
   position: relative;
-  width: 2rem;
-  height: 2rem;
-  border: 2px solid ${({ theme, $checked }) => ($checked ? theme.colors.primary : theme.colors.border)};
-  border-radius: 4px;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.125rem solid ${({ theme, $checked }) => ($checked ? theme.colors.primary : theme.colors.border)};
+  border-radius: 0.25rem;
   background: ${({ theme, $checked }) => ($checked ? theme.colors.primary : 'transparent')};
   transition: all 0.2s;
 
@@ -42,12 +42,12 @@ export const Checkmark = styled.span<{ $checked: boolean }>`
     content: '';
     position: absolute;
     display: ${({ $checked }) => ($checked ? 'block' : 'none')};
-    left: 0.5rem;
-    top: 0.2rem;
-    width: 0.4rem;
-    height: 0.8rem;
+    left: 0.3125rem;
+    top: 0.125rem;
+    width: 0.25rem;
+    height: 0.5rem;
     border: solid #ffffff;
-    border-width: 0 2px 2px 0;
+    border-width: 0 0.125rem 0.125rem 0;
     transform: rotate(45deg);
   }
 `;

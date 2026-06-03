@@ -6,24 +6,24 @@ export const MainMenu = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
+  padding: 0rem;
   margin: 0 auto;
-  width: 272px;
-  height: 40px;
+  width: 17rem;
+  height: 2.5rem;
   /* Inside auto layout */
   flex: none;
   order: 2;
   flex-grow: 0;
-  gap: 2.4rem;
+  gap: 1.5rem;
 `;
 
 export const MenuItem = styled.a`
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #9E9E9E;
   text-decoration: none;
   transition: color 0.2s;
-  padding: 0.4rem 0;
+  padding: 0.25rem 0;
   position: relative;
 
   &:hover {
@@ -31,8 +31,8 @@ export const MenuItem = styled.a`
   }
 
   &:focus {
-    outline: 2px solid ${({ theme }) => theme.colors.primary};
-    outline-offset: 2px;
-    border-radius: 2px;
+    outline: 0.125rem solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 0.125rem;
+    border-radius: 0.125rem;
   }
 `;

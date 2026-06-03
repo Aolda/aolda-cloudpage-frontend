@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const SolutionCard = styled.div`
   box-sizing: border-box;
@@ -6,43 +6,40 @@ export const SolutionCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0px;
-  gap: 12px;
-  width: 384px;
-  height: 127px;
-  background: #FFFFFF;
-  border: 1px solid #E2E2E2;
-  border-radius: 12px;
+  padding: 1.25rem 0rem;
+  gap: 0.75rem;
+  width: 24rem;
+  height: 7.9375rem;
+  background: ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
+  border: 1px solid ${({ theme }) =>
+    theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
+  border-radius: 0.75rem;
   flex: none;
 `;
 
 export const SolutionTitle = styled.h3`
-  width: auto;
-  height: 29px;
-  font-family: 'Noto Sans KR';
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: #1A8EE5;
-  margin: 0;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: ${({ theme }) => theme.colors.primary500};
   text-align: center;
+  word-break: keep-all;
 `;
 
 export const SolutionDescription = styled.p`
-  width: auto;
-  height: auto;
-  font-family: 'Noto Sans KR';
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.5;
   text-align: center;
-  color: #777777;
-  margin: 0;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
+  word-break: keep-all;
   flex: none;
   order: 1;
   flex-grow: 0;

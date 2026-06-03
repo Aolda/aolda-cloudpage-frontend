@@ -1,17 +1,17 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const HeroSection = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0px 120px 60px;
-  gap: 365px;
+  padding: 0rem 7.5rem 3.75rem;
+  gap: 22.8125rem;
   position: absolute;
-  width: 1440px;
-  height: 400px;
-  left: calc(50% - 1440px / 2);
-  top: 0px;
+  width: 90rem;
+  height: 25rem;
+  left: calc(50% - 90rem / 2);
+  top: 0rem;
   background: url('/notice/notice_introheader.png');
   background-size: cover;
   background-position: center;
@@ -34,10 +34,10 @@ export const HeroContent = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0px;
-  gap: 215px;
-  width: 1200px;
-  height: 187px;
+  padding: 0rem;
+  gap: 13.4375rem;
+  width: 75rem;
+  height: 11.6875rem;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -49,10 +49,10 @@ export const LeftSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
-  width: 475px;
-  height: 187px;
+  padding: 0rem;
+  gap: 0.75rem;
+  width: 29.6875rem;
+  height: 11.6875rem;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -62,18 +62,18 @@ export const TitleSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  gap: 12px;
-  width: 349px;
-  height: 127px;
+  padding: 0rem;
+  gap: 0.75rem;
+  width: 21.8125rem;
+  height: 7.9375rem;
   flex: none;
   order: 0;
   flex-grow: 0;
 `;
 
 export const BreadcrumbWrapper = styled.div`
-  width: 200px;
-  height: 23px;
+  width: 12.5rem;
+  height: 1.4375rem;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -86,8 +86,8 @@ export const BreadcrumbWrapper = styled.div`
       font-family: 'Noto Sans KR';
       font-style: normal;
       font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 1rem;
+      line-height: 1.1875rem;
     }
     
     span > span {
@@ -101,13 +101,13 @@ export const BreadcrumbWrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  width: 358px;
-  height: 92px;
+  width: 22.375rem;
+  height: 5.75rem;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 2rem;
+  line-height: 2.375rem;
   color: #232527;
   margin: 0;
   flex: none;
@@ -125,13 +125,13 @@ export const SearchWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;
-  gap: 90px;
-  width: 475px;
-  height: 48px;
+  padding: 0.75rem 1rem;
+  gap: 5.625rem;
+  width: 29.6875rem;
+  height: 3rem;
   background: #FFFFFF;
   border: 1px solid #E2E2E2;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   flex: none;
   order: 1;
   align-self: stretch;
@@ -151,11 +151,11 @@ export const SearchWrapper = styled.div`
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1rem;
+    line-height: 1.1875rem;
     color: #777777;
-    width: 174px;
-    height: 23px;
+    width: 10.875rem;
+    height: 1.4375rem;
     
     &:focus {
       outline: none;
@@ -165,8 +165,8 @@ export const SearchWrapper = styled.div`
   }
   
   svg {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     color: #76BBEF;
     position: relative;
     right: 0;
@@ -178,7 +178,7 @@ export const RightSection = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  padding: 0px;
+  padding: 0rem;
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -186,8 +186,8 @@ export const RightSection = styled.div`
 `;
 
 export const IconWrapper = styled.div`
-  width: 280.5px;
-  height: 187px;
+  width: 17.53125rem;
+  height: 11.6875rem;
   position: relative;
   flex: none;
   order: 1;

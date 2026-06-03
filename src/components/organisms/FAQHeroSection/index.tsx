@@ -59,25 +59,24 @@ const FAQHeroSection = ({
               value={searchTerm}
               onChange={onSearchChange}
               onSearch={onSearch}
+              embedded
             />
           </S.SearchWrapper>
         </S.LeftSection>
-        <S.RightSection>
-          <S.IconWrapper>
-            <Image
-              src="/FAQ/FAQ_introheader.png"
-              alt="FAQ 아이콘"
-              width={629}
-              height={426}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-              }}
-            />
-          </S.IconWrapper>
-        </S.RightSection>
       </S.HeroContent>
+      <S.IconWrapper>
+        <Image
+          src="/FAQ/FAQ_introheader.png"
+          alt=""
+          width={629}
+          height={426}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+          }}
+        />
+      </S.IconWrapper>
     </S.HeroSection>
   );
 };

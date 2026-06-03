@@ -7,7 +7,7 @@ export const Header = styled.div`
 `;
 
 export const Count = styled.span`
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
 `;

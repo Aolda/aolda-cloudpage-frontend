@@ -1,40 +1,40 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const DetailContainer = styled.article`
   width: 100%;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.surface};
-  margin-top: 15px;
-  margin-left: 50px;
+  margin-top: 0.9375rem;
+  margin-left: 3.125rem;
 `;
 
 export const Header = styled.div`
-  padding-bottom: 2rem;
+  padding-bottom: 1.25rem;
 `;
 
 export const Title = styled.h1`
-  font-size: 2.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
-  margin: 0 0 1.6rem 0;
+  margin: 0 0 1rem 0;
   line-height: 1.4;
 `;
 
 export const Meta = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  font-size: 1.4rem;
+  gap: 0.75rem;
+  font-size: 0.875rem;
   color: ${({ theme }) => theme.colors.textMuted};
-  margin-bottom: 1.6rem;
+  margin-bottom: 1rem;
 `;
 
 export const MetaItem = styled.span`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   color: ${({ theme }) => theme.colors.textMuted};
   span {
     display: inline-block;
@@ -43,21 +43,21 @@ export const MetaItem = styled.span`
 
 export const MetaSeparator = styled.span`
   color: ${({ theme }) => theme.colors.textMuted};
-  margin: 0 0.8rem;
+  margin: 0 0.5rem;
   width: 1px;
 `;
 
 export const AttachmentList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.5rem;
 `;
 
 export const AttachmentItem = styled.a`
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 1.4rem;
+  gap: 0.5rem;
+  font-size: 0.875rem;
   color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
   transition: color 0.2s;
@@ -68,58 +68,58 @@ export const AttachmentItem = styled.a`
 `;
 
 export const AttachmentIcon = styled.svg`
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.125rem;
+  height: 1.125rem;
   color: ${({ theme }) => theme.colors.textMuted};
   flex-shrink: 0;
 `;
 
 export const Content = styled.div`
-  margin-top: -40px;
-  width: 1200px;
-  padding: 3rem 0;
-  min-height: 200px;
+  margin-top: -2.5rem;
+  width: 75rem;
+  padding: 1.875rem 0;
+  min-height: 12.5rem;
   line-height: 1.8;
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
   color: ${({ theme }) => theme.colors.text};
   word-break: break-word;
 
   h1 {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin: 2rem 0 1rem 0;
+    margin: 1.25rem 0 0.625rem 0;
     color: ${({ theme }) => theme.colors.text};
     line-height: 1.4;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin: 1.8rem 0 0.8rem 0;
+    margin: 1.125rem 0 0.5rem 0;
     color: ${({ theme }) => theme.colors.text};
     line-height: 1.4;
   }
 
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.125rem;
     font-weight: 600;
-    margin: 1.6rem 0 0.6rem 0;
+    margin: 1rem 0 0.375rem 0;
     color: ${({ theme }) => theme.colors.text};
     line-height: 1.4;
   }
 
   p {
-    margin: 1rem 0;
+    margin: 0.625rem 0;
     line-height: 1.8;
   }
 
   ul, ol {
-    margin: 1rem 0;
-    padding-left: 2rem;
+    margin: 0.625rem 0;
+    padding-left: 1.25rem;
   }
 
   li {
-    margin: 0.5rem 0;
+    margin: 0.3125rem 0;
     line-height: 1.8;
   }
 
@@ -134,18 +134,18 @@ export const Content = styled.div`
 
   code {
     background: ${({ theme }) => theme.colors.border};
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.3rem;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.1875rem;
     font-size: 0.9em;
     font-family: monospace;
   }
 
   pre {
     background: ${({ theme }) => theme.colors.border};
-    padding: 1rem;
-    border-radius: 0.5rem;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
     overflow-x: auto;
-    margin: 1rem 0;
+    margin: 0.625rem 0;
     
     code {
       background: none;
@@ -154,27 +154,27 @@ export const Content = styled.div`
   }
 
   blockquote {
-    border-left: 4px solid ${({ theme }) => theme.colors.primary};
-    padding-left: 1rem;
-    margin: 1rem 0;
+    border-left: 0.25rem solid ${({ theme }) => theme.colors.primary};
+    padding-left: 0.625rem;
+    margin: 0.625rem 0;
     color: ${({ theme }) => theme.colors.textMuted};
   }
 
   img {
     max-width: 100%;
     height: auto;
-    margin: 1rem 0;
+    margin: 0.625rem 0;
   }
 
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0;
+    margin: 0.625rem 0;
   }
 
   th, td {
     border: 1px solid ${({ theme }) => theme.colors.border};
-    padding: 0.8rem;
+    padding: 0.5rem;
     text-align: left;
   }
 
@@ -187,8 +187,8 @@ export const Content = styled.div`
 export const Footer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
   width: 100%;
   box-sizing: border-box;
 `;
@@ -200,23 +200,23 @@ export const NavigationWrapper = styled.div`
 export const ListButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 1200px;
+  width: 75rem;
   
   /* 목록 버튼 스타일 */
   button {
-    width: 94px;
-    height: 43px;
-    padding: 12px 32px;
+    width: 5.875rem;
+    height: 2.6875rem;
+    padding: 0.75rem 2rem;
     background: #1A8EE5;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    line-height: 19px;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.1875rem;
     color: #FFFFFF;
     
     span {
-      width: 30px;
-      height: 19px;
+      width: 1.875rem;
+      height: 1.1875rem;
     }
   }
 `;

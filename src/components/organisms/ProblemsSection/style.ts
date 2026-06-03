@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const ProblemsSection = styled.section`
-  padding: 4rem 0;
-  max-width: 1200px;
+  padding: 2.5rem 0;
+  max-width: 75rem;
   width: 100%;
-  margin-bottom: -40px;
+  margin-bottom: -2.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -13,9 +13,9 @@ export const ProblemsSection = styled.section`
 export const ProblemIcon = styled.span`
   display: inline-block;
   vertical-align: middle;
-  margin-right: 0.8rem;
-  width: 35px;
-  height: 35px;
+  margin-right: 0.5rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
   flex-shrink: 0;
   
   img {

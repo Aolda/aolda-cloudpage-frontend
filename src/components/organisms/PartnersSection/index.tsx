@@ -34,21 +34,19 @@ const PartnersSection = () => {
           {firstRowPartners.map((p, index) => (
             <ImageCard
               key={`first-row-${index}`}
-              image="/intro/intro_used.png"
-              alt={p.name}
               title={p.name}
               description={p.description}
               period={p.period}
+              solidThumbnail
             />
           ))}
           {firstRowPartners.map((p, index) => (
             <ImageCard
               key={`first-row-duplicate-${index}`}
-              image="/intro/intro_used.png"
-              alt={p.name}
               title={p.name}
               description={p.description}
               period={p.period}
+              solidThumbnail
             />
           ))}
         </S.Row>
@@ -57,21 +55,19 @@ const PartnersSection = () => {
           {secondRowPartners.map((p, index) => (
             <ImageCard
               key={`second-row-${index}`}
-              image="/intro/intro_used.png"
-              alt={p.name}
               title={p.name}
               description={p.description}
               period={p.period}
+              solidThumbnail
             />
           ))}
           {secondRowPartners.map((p, index) => (
             <ImageCard
               key={`second-row-duplicate-${index}`}
-              image="/intro/intro_used.png"
-              alt={p.name}
               title={p.name}
               description={p.description}
               period={p.period}
+              solidThumbnail
             />
           ))}
         </S.Row>
