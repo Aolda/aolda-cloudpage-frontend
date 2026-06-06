@@ -11,70 +11,71 @@ const partners = [
   { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
 ];
 
+const PartnerCard = ({
+  name,
+  description,
+  period,
+  compact = false,
+}: {
+  name: string;
+  description?: string;
+  period?: string;
+  compact?: boolean;
+}) => (
+  <ImageCard
+    title={name}
+    description={description}
+    period={period}
+    compact={compact}
+    solidThumbnail={!compact}
+  />
+);
+
 const PartnersSection = () => {
-  const firstRowPartners = partners.slice(0, 3); // 처음 3개
-  const secondRowPartners = partners.slice(3, 6); // 마지막 3개
+  const firstRowPartners = partners.slice(0, 3);
+  const secondRowPartners = partners.slice(3, 6);
 
   return (
     <S.Section>
       <IntroSectionTitle
         title={
           <>
-            이미 <span style={{ color:' #1A8EE5' }}>많은 곳에서 사용</span>되고 있는
+            이미 <span style={{ color: '#1A8EE5' }}>많은 곳에서 사용</span>되고 있는
             {'\n'}
-            <span style={{ color: ' #1A8EE5' }}>아올다 클라우드</span>
+            <span style={{ color: '#1A8EE5' }}>아올다 클라우드</span>
           </>
         }
         description="아올다 클라우드는 아주대학교 대/내외적으로 사용되는 다양한 서비스를 안정적으로 운영하기 위해 이곳저곳에서 사용되고 있어요"
+        align="center"
         showTopBar={true}
       />
-      <S.GridContainer>
-        {/* 첫 번째 줄 */}
+
+      <S.CarouselWrap>
         <S.Row>
           {firstRowPartners.map((p, index) => (
-            <ImageCard
-              key={`first-row-${index}`}
-              title={p.name}
-              description={p.description}
-              period={p.period}
-              solidThumbnail
-            />
+            <PartnerCard key={`carousel-row1-${index}`} {...p} />
           ))}
           {firstRowPartners.map((p, index) => (
-            <ImageCard
-              key={`first-row-duplicate-${index}`}
-              title={p.name}
-              description={p.description}
-              period={p.period}
-              solidThumbnail
-            />
+            <PartnerCard key={`carousel-row1-dup-${index}`} {...p} />
           ))}
         </S.Row>
-        {/* 두 번째 줄 */}
         <S.Row>
           {secondRowPartners.map((p, index) => (
-            <ImageCard
-              key={`second-row-${index}`}
-              title={p.name}
-              description={p.description}
-              period={p.period}
-              solidThumbnail
-            />
+            <PartnerCard key={`carousel-row2-${index}`} {...p} />
           ))}
           {secondRowPartners.map((p, index) => (
-            <ImageCard
-              key={`second-row-duplicate-${index}`}
-              title={p.name}
-              description={p.description}
-              period={p.period}
-              solidThumbnail
-            />
+            <PartnerCard key={`carousel-row2-dup-${index}`} {...p} />
           ))}
         </S.Row>
-      </S.GridContainer>
+      </S.CarouselWrap>
+
+      <S.PartnerGrid>
+        {partners.map((p, index) => (
+          <PartnerCard key={`grid-${index}`} {...p} compact />
+        ))}
+      </S.PartnerGrid>
     </S.Section>
   );
 };
 
 export default PartnersSection;
-

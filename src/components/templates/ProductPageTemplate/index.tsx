@@ -175,7 +175,14 @@ const ProductPageTemplate = ({
             { label: '홈', href: '/' },
             { label: '제품소개' },
           ]}
-        />
+        >
+          <Search
+            placeholder="제품/서비스를 검색해 보세요"
+            value={searchTerm}
+            onChange={onSearchChange}
+            onSearch={handleSearch}
+          />
+        </ProductHeroSection>
         <S.ContentWrapper>
           <S.SidebarWrapper>
             <SideNavigation

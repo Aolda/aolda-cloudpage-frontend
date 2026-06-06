@@ -1,4 +1,5 @@
-﻿import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const Accordion = styled.div`
   background: transparent;
@@ -11,14 +12,13 @@ export const TitleButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 4.5rem;
-  padding: 1.25rem 1rem;
-  box-sizing: border-box;
+  padding: 1.6rem 2rem;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
   transition: background-color 0.2s;
+  box-sizing: border-box;
 
   ${({ theme }) =>
     theme.mode === 'dark'
@@ -30,38 +30,65 @@ export const TitleButton = styled.button`
           }
 
           &:focus {
-            outline: 0.125rem solid ${theme.colors.primary500};
-            outline-offset: -0.125rem;
+            outline: 2px solid ${theme.colors.primary500};
+            outline-offset: -2px;
           }
         `
       : css`
-          border-bottom: 1px solid #e0e0e0;
+          border-bottom: 1px solid ${theme.colors.border};
 
           &:hover {
-            background-color: #f5f5f5;
+            background-color: ${theme.colors.surfaceMuted};
           }
 
           &:focus {
-            outline: 0.125rem solid ${({ theme }) => theme.colors.primary};
-            outline-offset: -0.125rem;
+            outline: 2px solid ${theme.colors.primary};
+            outline-offset: -2px;
           }
         `}
+
+  ${media.tablet} {
+    height: 72px;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 `;
 
 export const TitleContent = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: 1.6rem;
   flex: 1;
   min-width: 0;
+
+  ${media.tablet} {
+    gap: 0;
+    height: 100%;
+    align-items: stretch;
+  }
 `;
 
 export const TitleIcon = styled.div`
   width: 4rem;
-  flex-shrink: 0;
+  height: 4rem;
+  border-radius: 50%;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+
+  ${media.tablet} {
+    width: 64px;
+    height: 72px;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    border-radius: 0;
+    background: transparent;
+  }
 `;
 
 export const QBadge = styled.span`
@@ -81,80 +108,112 @@ export const QBadge = styled.span`
 `;
 
 export const IconImage = styled.img`
-  width: 2rem;
-  height: 2rem;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
+
+  ${media.tablet} {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    background: ${({ theme }) =>
+      theme.mode === 'dark' ? theme.colors.widgetBorder : '#444444'};
+    border-radius: 200px;
+    box-sizing: border-box;
+    object-fit: contain;
+  }
 `;
 
 export const TitleText = styled.span`
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1rem;
-  line-height: 1.1875rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.text)};
-  flex: 1;
-  min-width: 0;
+
+  ${media.tablet} {
+    flex: 1;
+    min-width: 0;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.text)};
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const ChevronIcon = styled.svg<{ $expanded: boolean }>`
-  width: 1.5rem;
-  height: 1.5rem;
-  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.textMuted)};
   transition: transform 0.2s;
   transform: ${({ $expanded }) => ($expanded ? 'rotate(180deg)' : 'rotate(0deg)')};
-`;
+  flex-shrink: 0;
 
-const contentPadding = css`
-  padding: 1.25rem 1rem 1.25rem calc(1rem + 4rem + 0.625rem);
+  ${media.tablet} {
+    flex-shrink: 0;
+    width: 56px;
+    min-width: 56px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${({ theme }) => theme.colors.gray600};
+    padding: 0;
+    box-sizing: border-box;
+  }
 `;
 
 export const Content = styled.div`
+  padding: 2rem;
+  padding-left: calc(2rem + 4rem + 1.6rem);
   box-sizing: border-box;
   width: 100%;
-  ${contentPadding}
 
   ${({ theme }) =>
     theme.mode === 'dark'
       ? css`
-          background: #444444;
-          border-bottom: 1px solid #444444;
+          background: ${theme.colors.widgetBorder};
+          border-bottom: 1px solid ${theme.colors.widgetBorder};
         `
       : css`
-          background: #f5f5f5;
-          border-bottom: 1px solid #e0e0e0;
+          background: ${theme.colors.surfaceMuted};
+          border-bottom: 1px solid ${theme.colors.border};
         `}
+
+  ${media.tablet} {
+    padding: 16px 16px 16px 64px;
+  }
 `;
 
 export const ContentText = styled.div`
-  box-sizing: border-box;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.text)};
   white-space: pre-wrap;
   word-break: break-word;
-  flex: 1;
-  min-width: 0;
-  font-size: 0.9375rem;
-  line-height: 1.8;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 400;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.text)};
 
   p {
-    margin: 0.625rem 0;
+    margin: 1rem 0;
     line-height: 1.8;
-    font-size: inherit;
-    color: inherit;
   }
 
   ul,
   ol {
-    margin: 0.625rem 0;
-    padding-left: 1.25rem;
-    line-height: 1.8;
+    margin: 1rem 0;
+    padding-left: 2rem;
   }
 
   li {
-    margin: 0.3125rem 0;
-    line-height: 1.8;
+    margin: 0.5rem 0;
+  }
+
+  ${media.tablet} {
+    font-size: 14px;
+    line-height: 150%;
+    color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.gray600)};
   }
 `;

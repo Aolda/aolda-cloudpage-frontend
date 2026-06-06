@@ -1,4 +1,5 @@
-﻿import styled from 'styled-components';
+import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const Container = styled.div<{ $align?: 'left' | 'center' }>`
   display: flex;
@@ -11,21 +12,39 @@ export const Container = styled.div<{ $align?: 'left' | 'center' }>`
 export const IconTitleRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.2rem;
+
+  ${media.tablet} {
+    gap: 12px;
+  }
+
+  ${media.mobile} {
+    gap: 8px;
+  }
 `;
 
 export const IconWrapper = styled.span<{ $size?: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.8125rem;
-  height: 1.8125rem;
+  width: ${({ $size = 29 }) => $size}px;
+  height: ${({ $size = 29 }) => $size}px;
   flex-shrink: 0;
 
   img {
-    width: 120%;
-    height: 120%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+  }
+
+  ${media.tablet} {
+    width: 24px;
+    height: 24px;
+  }
+
+  ${media.mobile} {
+    width: 19px;
+    height: 19px;
   }
 `;
 
@@ -33,10 +52,18 @@ export const TitleText = styled.h2`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 24px;
   line-height: 140%;
-  letter-spacing: 0;
-  font-style: normal;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
   white-space: pre-line;
+
+  ${media.tablet} {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  ${media.mobile} {
+    font-size: 16px;
+    line-height: 19px;
+  }
 `;

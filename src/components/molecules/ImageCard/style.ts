@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 type CardTone = 'blue' | 'red';
 
@@ -6,41 +7,78 @@ export const ImageCard = styled.div<{
   $tone: CardTone;
   $isBackground?: boolean;
   $solidThumbnail?: boolean;
+  $compact?: boolean;
 }>`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: ${({ $isBackground }) => ($isBackground ? 'flex-start' : 'center')};
-  padding: ${({ $isBackground }) => ($isBackground ? '3rem' : '1.25rem')};
-  gap: ${({ $isBackground }) => ($isBackground ? '0.625rem' : '1.25rem')};
-  width: ${({ $isBackground }) => ($isBackground ? '49.5rem' : '22.5rem')};
-  min-height: ${({ $isBackground }) => ($isBackground ? '28.25rem' : 'auto')};
-  height: ${({ $isBackground }) => ($isBackground ? '28.25rem' : '7.5rem')};
+  padding: ${({ $isBackground }) => ($isBackground ? '48px' : '2rem')};
+  gap: ${({ $isBackground }) => ($isBackground ? '10px' : '2rem')};
+  width: ${({ $isBackground }) => ($isBackground ? '792px' : '360px')};
+  min-height: ${({ $isBackground }) => ($isBackground ? '452px' : 'auto')};
+  height: ${({ $isBackground }) => ($isBackground ? '452px' : '120px')};
   background: ${({ $isBackground, theme }) =>
     $isBackground
       ? 'transparent'
       : theme.mode === 'dark'
-        ? 'var(--Mode-Background, #2A2A2A)'
-        : '#FFFFFF'};
+        ? theme.colors.surface
+        : theme.colors.surface};
   border: ${({ $isBackground, theme, $solidThumbnail }) =>
     $isBackground
       ? 'none'
       : $solidThumbnail
         ? '1px solid transparent'
         : theme.mode === 'dark'
-          ? '1px solid var(--Mode-Border, #636363)'
-          : 'none'};
-  border-radius: ${({ $isBackground }) => ($isBackground ? '0.75rem' : '0')};
+          ? `1px solid ${theme.colors.widgetBorder}`
+          : `1px solid ${theme.colors.border}`};
+  border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '8px')};
   flex: none;
   order: 0;
   flex-grow: 0;
   overflow: hidden;
   position: relative;
+
   ${({ $isBackground }) =>
     $isBackground &&
     css`
       box-shadow: none;
+    `}
+
+  ${media.tablet} {
+    width: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
+    max-width: ${({ $isBackground }) => ($isBackground ? '680px' : 'none')};
+    min-height: ${({ $isBackground }) => ($isBackground ? '320px' : 'auto')};
+    height: ${({ $isBackground }) => ($isBackground ? '320px' : '104px')};
+    padding: ${({ $isBackground }) => ($isBackground ? '32px' : '12px')};
+    gap: ${({ $isBackground }) => ($isBackground ? '10px' : '12px')};
+    border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '8px')};
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 100%;
+    min-height: ${({ $isBackground }) => ($isBackground ? '161.41px' : 'auto')};
+    height: ${({ $isBackground }) => ($isBackground ? '161.41px' : '64px')};
+    padding: ${({ $isBackground }) => ($isBackground ? '16px' : '8px 12px')};
+    flex-grow: ${({ $isBackground }) => ($isBackground ? '0' : '1')};
+  }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        height: 83px;
+        min-height: 83px;
+        padding: 12px;
+        gap: 8px;
+        border-radius: 8px;
+      }
     `}
 `;
 
@@ -52,38 +90,54 @@ export const Overlay = styled.div<{ $isBackground?: boolean }>`
       inset: 0;
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
       z-index: 1;
-      border-radius: 0.75rem;
+      border-radius: 12px;
     `}
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div<{ $compact?: boolean }>`
   flex-shrink: 0;
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${media.tablet} {
+    width: 80px;
+    height: 80px;
+  }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        display: none;
+      }
+    `}
 `;
 
-/** Figma Rectangle 7 — 파트너 카드 등 이미지 대체 */
 export const SolidThumbnail = styled.div`
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 120px;
+  height: 120px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
-  border-radius: 0.75rem;
+  border-radius: 12px;
   background: ${({ theme }) =>
-    theme.mode === 'dark' ? '#FAFAFA' : '#232527'};
+    theme.mode === 'dark' ? '#FAFAFA' : theme.colors.text};
+
+  ${media.tablet} {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 export const Image = styled.img<{ $isBackground?: boolean }>`
-  width: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
-  height: ${({ $isBackground }) => ($isBackground ? '100%' : '100%')};
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: ${({ $isBackground }) => ($isBackground ? '0.75rem' : '0.5rem')};
+  border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '12px')};
   background: ${({ $isBackground, theme }) =>
-    $isBackground ? 'transparent' : theme.mode === 'dark' ? '#FAFAFA' : '#ffffff'};
+    $isBackground ? 'transparent' : theme.mode === 'dark' ? '#FAFAFA' : theme.colors.surface};
+
   ${({ $isBackground }) =>
     $isBackground &&
     css`
@@ -94,46 +148,117 @@ export const Image = styled.img<{ $isBackground?: boolean }>`
     `}
 `;
 
-export const TextContainer = styled.div`
+export const TextContainer = styled.div<{ $compact?: boolean }>`
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 4px;
   flex: 1;
+  justify-content: space-between;
+  min-height: 80px;
+
+  ${media.tablet} {
+    gap: 4px;
+    min-height: 80px;
+  }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        min-height: 0;
+        gap: 4px;
+        justify-content: center;
+      }
+    `}
 `;
 
-export const ImageTitle = styled.h3<{ $isBackground?: boolean }>`
+export const ImageTitle = styled.h3<{ $isBackground?: boolean; $compact?: boolean }>`
   margin: 0;
-  font-size: ${({ $isBackground }) => ($isBackground ? '2.5rem' : '1.125rem')};
+  font-size: ${({ $isBackground }) => ($isBackground ? '4rem' : '1.8rem')};
   font-weight: 700;
   color: ${({ $isBackground, theme }) =>
-    $isBackground ? '#ffffff' : theme.mode === 'dark' ? theme.colors.text : '#333333'};
+    $isBackground ? '#ffffff' : theme.mode === 'dark' ? theme.colors.text : theme.colors.text};
   white-space: pre-line;
+
   ${({ $isBackground }) =>
     $isBackground &&
     css`
       position: relative;
       z-index: 2;
       line-height: 100%;
-      padding: 3rem;
+      padding: 48px;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
       width: 100%;
       height: 100%;
     `}
+
+  ${media.tablet} {
+    font-size: ${({ $isBackground }) => ($isBackground ? '24px' : '16px')};
+    line-height: ${({ $isBackground }) => ($isBackground ? '29px' : '19px')};
+    padding: ${({ $isBackground }) => ($isBackground ? '32px' : '0')};
+  }
+
+  ${media.mobile} {
+    font-size: ${({ $isBackground }) => ($isBackground ? '16px' : '10px')};
+    line-height: ${({ $isBackground }) => ($isBackground ? '19px' : '12px')};
+    padding: ${({ $isBackground }) => ($isBackground ? '16px' : '0')};
+    height: auto;
+    align-items: ${({ $isBackground }) => ($isBackground ? 'flex-start' : 'center')};
+    justify-content: ${({ $isBackground }) => ($isBackground ? 'flex-start' : 'center')};
+  }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        font-size: 12px;
+        line-height: 14px;
+        color: ${({ theme }) => theme.colors.text};
+        text-align: left;
+      }
+    `}
 `;
 
-export const ImageDescription = styled.p`
+export const ImageDescription = styled.p<{ $compact?: boolean }>`
   margin: 0;
-  font-size: 0.875rem;
-  color: ${({ theme }) => (theme.mode === 'dark' ? theme.colors.textMuted : '#999999')};
-  line-height: 1.5;
+  font-size: 1.4rem;
+  color: ${({ theme }) => theme.colors.gray600};
+  line-height: 150%;
+
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        font-size: 10px;
+        line-height: 150%;
+      }
+    `}
 `;
 
-export const ImagePeriod = styled.p`
+export const ImagePeriod = styled.p<{ $compact?: boolean }>`
   margin: 0;
-  font-size: 0.75rem;
-  color: ${({ theme }) => (theme.mode === 'dark' ? theme.colors.textMuted : '#999999')};
-  line-height: 1.5;
-`;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.colors.gray600};
+  line-height: 150%;
 
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  ${({ $compact }) =>
+    $compact &&
+    css`
+      ${media.mobile} {
+        font-size: 10px;
+        line-height: 150%;
+      }
+    `}
+`;

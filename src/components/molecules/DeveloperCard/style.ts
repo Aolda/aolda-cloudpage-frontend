@@ -1,10 +1,23 @@
-﻿import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Link from 'next/link';
+import { media } from '@/styles/theme';
 
 export const DeveloperCardLink = styled(Link)`
   text-decoration: none;
   color: inherit;
   display: block;
+
+  ${media.tablet} {
+    flex: 1;
+    min-width: 0;
+    max-width: calc(25% - 15px);
+  }
+
+  ${media.mobile} {
+    flex: none;
+    max-width: none;
+    width: 100%;
+  }
 `;
 
 export const DeveloperCard = styled.div`
@@ -13,44 +26,79 @@ export const DeveloperCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 2.25rem;
-  gap: 2.25rem;
-  width: 13.8rem;
-  height: 16.75rem;
+  padding: 24px 36px;
+  gap: 36px;
+  width: 220.8px;
+  height: 268px;
   background: ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
+    theme.mode === 'dark' ? theme.colors.surface : theme.colors.surface};
   border: 1px solid ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
-  border-radius: 1.25rem;
+    theme.mode === 'dark' ? theme.colors.widgetBorder : theme.colors.border};
+  border-radius: 20px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    flex: 1 1 calc(25% - 15px);
+    min-width: 140px;
+    max-width: calc(25% - 15px);
+    width: auto;
+    height: 189px;
+    padding: 24px 16px;
+    gap: 20px;
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    border-radius: 12px;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    height: 59px;
+    padding: 12px;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    border-radius: 8px;
+  }
 `;
 
 export const CharacterContainer = styled.div`
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: none;
-  order: 0;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    width: 80px;
+    height: 80px;
+  }
+
+  ${media.mobile} {
+    display: none;
+  }
 `;
 
 export const CharacterImage = styled.img`
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
   display: block;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 export const DefaultCharacter = styled.svg`
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 120px;
+  height: 120px;
+
+  ${media.tablet} {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -58,12 +106,20 @@ export const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0;
-  gap: 0.75rem;
+  gap: 12px;
   width: 100%;
   flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    gap: 8px;
+    width: 100%;
+    height: auto;
+  }
+
+  ${media.mobile} {
+    align-items: flex-start;
+    gap: 8px;
+  }
 `;
 
 export const NameContainer = styled.div`
@@ -72,43 +128,89 @@ export const NameContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0;
-  gap: 0.75rem;
+  gap: 12px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    gap: 8px;
+    width: auto;
+    height: auto;
+  }
+
+  ${media.mobile} {
+    justify-content: flex-start;
+    gap: 8px;
+    height: 15px;
+  }
 `;
 
 export const CrewName = styled.h3`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 20px;
+  line-height: 24px;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
+  flex: none;
+
+  ${media.tablet} {
+    font-size: 16px;
+    line-height: 19px;
+    width: auto;
+    height: auto;
+  }
+
+  ${media.mobile} {
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+  }
 `;
 
 export const CrewNameSuffix = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
+  flex: none;
+
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+    width: auto;
+    height: auto;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+    text-align: left;
+  }
 `;
 
 export const CrewInfo = styled.p`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
   flex: none;
-  order: 1;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 14px;
+    width: auto;
+    height: auto;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 12px;
+    text-align: left;
+  }
 `;

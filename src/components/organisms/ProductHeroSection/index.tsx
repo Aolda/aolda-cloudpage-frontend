@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import Breadcrumb from '../../molecules/Breadcrumb';
 import * as S from './style';
 
@@ -8,6 +9,8 @@ export interface ProductHeroSectionProps {
   description: string;
   /** Breadcrumb 항목 목록 */
   breadcrumbItems?: Array<{ label: string; href?: string }>;
+  /** 히어로 하단 영역 (태블릿: 검색바) */
+  children?: ReactNode;
 }
 
 /**
@@ -28,23 +31,27 @@ export interface ProductHeroSectionProps {
  * 
  * @returns {JSX.Element} 히어로 섹션 요소
  */
-const ProductHeroSection = ({ 
-  title, 
+const ProductHeroSection = ({
+  title,
   description,
   breadcrumbItems = [
     { label: '홈', href: '/' },
     { label: '제품소개' },
   ],
+  children,
 }: ProductHeroSectionProps) => {
   return (
     <S.HeroSection>
-      <S.HeroContent>
-        <S.BreadcrumbWrapper>
-          <Breadcrumb items={breadcrumbItems} />
-        </S.BreadcrumbWrapper>
-        <S.Title>{title}</S.Title>
-        <S.Description>{description}</S.Description>
-      </S.HeroContent>
+      <S.HeroInner>
+        <S.HeroContent>
+          <S.BreadcrumbWrapper>
+            <Breadcrumb items={breadcrumbItems} />
+          </S.BreadcrumbWrapper>
+          <S.Title>{title}</S.Title>
+          <S.Description>{description}</S.Description>
+        </S.HeroContent>
+        {children ? <S.HeroSearch>{children}</S.HeroSearch> : null}
+      </S.HeroInner>
     </S.HeroSection>
   );
 };

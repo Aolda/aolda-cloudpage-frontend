@@ -1,16 +1,20 @@
-﻿import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const PaginationContainer = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0;
-  gap: ${({ theme }) => (theme.mode === 'dark' ? '2.25rem' : '0.5rem')};
+  gap: 8px;
   width: auto;
-  height: 2rem;
+  height: 32px;
   flex: none;
-  order: 2;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    gap: 28px;
+    height: 32px;
+  }
 `;
 
 export const PrevButton = styled.button`
@@ -18,12 +22,10 @@ export const PrevButton = styled.button`
   flex-direction: row;
   align-items: center;
   padding: 0;
-  gap: 0.25rem;
-  width: 3.125rem;
-  height: 1.4375rem;
+  gap: 4px;
+  width: 50px;
+  height: 23px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -35,6 +37,11 @@ export const PrevButton = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  ${media.tablet} {
+    width: 43px;
+    height: 16px;
   }
 `;
 
@@ -43,12 +50,10 @@ export const NextButton = styled.button`
   flex-direction: row;
   align-items: center;
   padding: 0;
-  gap: 0.25rem;
-  width: 3.125rem;
-  height: 1.4375rem;
+  gap: 4px;
+  width: 50px;
+  height: 23px;
   flex: none;
-  order: 2;
-  flex-grow: 0;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -61,6 +66,11 @@ export const NextButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  ${media.tablet} {
+    width: 43px;
+    height: 16px;
+  }
 `;
 
 export const PageList = styled.div`
@@ -68,12 +78,14 @@ export const PageList = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 0;
-  gap: 0.5rem;
+  gap: 8px;
   width: auto;
-  height: 2rem;
+  height: 32px;
   flex: none;
-  order: 1;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    gap: 8px;
+  }
 `;
 
 export const PageButton = styled.button<{ $isActive: boolean }>`
@@ -82,42 +94,43 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0 0.5rem;
-  gap: 0.625rem;
-  width: 2rem;
-  height: 2rem;
+  padding: 0 8px;
+  gap: 10px;
+  width: 32px;
+  height: 32px;
   flex: none;
-  flex-grow: 0;
   background: transparent;
   border: none;
-  border-bottom: ${({ $isActive }) => ($isActive ? '0.125rem solid #1A8EE5' : 'none')};
+  border-bottom: ${({ $isActive }) => ($isActive ? '2px solid #1A8EE5' : 'none')};
   cursor: pointer;
 
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.1875rem;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
-  color: ${({ $isActive, theme }) =>
-    $isActive ? '#1A8EE5' : theme.mode === 'dark' ? '#FAFAFA' : '#777777'};
+  color: ${({ $isActive }) => ($isActive ? '#1A8EE5' : '#777777')};
 
   &:hover:not(:disabled) {
-    color: ${({ $isActive, theme }) =>
-      $isActive ? '#1A8EE5' : theme.mode === 'dark' ? '#FAFAFA' : '#555555'};
+    color: ${({ $isActive }) => ($isActive ? '#1A8EE5' : '#555555')};
   }
 
   &:focus {
     outline: none;
   }
+
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+    color: ${({ $isActive }) => ($isActive ? '#1A8EE5' : '#777777')};
+  }
 `;
 
 export const ChevronLeft = styled.span`
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   position: relative;
   display: inline-block;
 
@@ -127,23 +140,19 @@ export const ChevronLeft = styled.span`
     left: 35.94%;
     right: 35.94%;
     bottom: 21.88%;
-    width: 0.375rem;
-    height: 0.375rem;
-    border-left: 0.125rem solid
-      ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
-    border-bottom: 0.125rem solid
-      ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid #777777;
+    border-bottom: 2px solid #777777;
     transform: rotate(45deg);
     box-sizing: border-box;
   }
 `;
 
 export const ChevronRight = styled.span`
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
   flex: none;
-  order: 1;
-  flex-grow: 0;
   position: relative;
   display: inline-block;
 
@@ -153,12 +162,10 @@ export const ChevronRight = styled.span`
     left: 35.94%;
     right: 35.94%;
     bottom: 21.88%;
-    width: 0.375rem;
-    height: 0.375rem;
-    border-right: 0.125rem solid
-      ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
-    border-bottom: 0.125rem solid
-      ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid #777777;
+    border-bottom: 2px solid #777777;
     transform: rotate(-45deg);
     box-sizing: border-box;
   }
@@ -170,19 +177,24 @@ export const ButtonText = styled.span`
   justify-content: center;
   align-items: center;
   padding: 0;
-  gap: 0.625rem;
-  border-radius: 0.5rem;
+  gap: 10px;
+  width: 30px;
+  height: 23px;
+  border-radius: 8px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
+
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.1875rem;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : '#777777')};
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  color: ${({ theme }) => theme.colors.gray600};
+
+  ${media.tablet} {
+    width: 23px;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 700;
+  }
 `;

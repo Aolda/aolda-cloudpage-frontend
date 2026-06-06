@@ -1,30 +1,74 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const StatCard = styled.div`
-  padding: 1.5rem;
+  padding: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  min-width: 13.75rem;
+  gap: 0.8rem;
+  min-width: 220px;
   align-items: center;
-  background: ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : '#ffffff'};
-  border: ${({ theme }) =>
-    theme.mode === 'dark' ? `0.125rem solid ${theme.colors.border}` : '1px solid #e0e0e0'};
-  border-radius: 0.625rem;
+  justify-content: center;
+  background: ${({ theme }) => theme.colors.surface};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 10px;
   text-align: center;
-  height: 8.3125rem;
-  width: 21.75rem;
+  height: 133px;
+  width: 348px;
+  box-sizing: border-box;
+
+  ${media.tablet} {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 87px;
+    padding: 16px 32px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+
+  ${media.mobile} {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 56px;
+    padding: 8px 12px;
+    gap: 8px;
+    align-items: flex-start;
+    text-align: left;
+  }
 `;
 
 export const StatValue = styled.span`
-  font-size: 1.75rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.statAccent};
+  color: #1a8ee5;
+
+  ${media.tablet} {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  ${media.mobile} {
+    font-size: 12px;
+    line-height: 14px;
+    align-self: stretch;
+    text-align: right;
+  }
 `;
 
 export const StatLabel = styled.span`
-  font-size: 0.9375rem;
-  color: ${({ theme }) => theme.colors.text};
-`;
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors.gray600};
 
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+    color: ${({ theme }) => theme.colors.text};
+  }
+`;
