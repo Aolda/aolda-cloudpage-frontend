@@ -10,10 +10,10 @@ export const ItemCard = styled.div<{ $tone: CardTone }>`
   align-items: center;
   padding: 32px 36px;
   gap: 36px;
-  width: 384px;
+  width: 100%;
   height: 400px;
   background: ${({ theme }) => theme.colors.surface};
-  border: 2px solid #e2e2e2;
+  border: 2px solid ${({ theme }) => theme.colors.border};
   border-radius: 16px;
   flex: none;
   flex-grow: 1;
@@ -125,7 +125,8 @@ export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
   font-size: 32px;
   line-height: 100%;
   text-align: center;
-  color: ${({ $tone }) => ($tone === 'red' ? '#e15651' : '#1a8ee5')};
+  color: ${({ $tone, theme }) =>
+    $tone === 'red' ? theme.colors.statusNegative : theme.colors.primary500};
   display: flex;
   align-items: center;
   justify-content: center;

@@ -116,6 +116,14 @@ export const Title = styled.h2<{ $color?: string }>`
   }
 `;
 
+export const AccentBlue = styled.span`
+  color: ${({ theme }) => theme.colors.primary500};
+`;
+
+export const AccentRed = styled.span`
+  color: ${({ theme }) => theme.colors.statusNegative};
+`;
+
 export const Description = styled.p<{ $color?: string }>`
   margin: 0;
   font-size: 1.6rem;

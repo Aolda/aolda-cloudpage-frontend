@@ -13,6 +13,7 @@ const ThemeToggleButton = () => {
       onClick={toggleThemeMode}
       size="md"
       variant="secondary"
+      lightTextInDarkMode
     />
   );
 };

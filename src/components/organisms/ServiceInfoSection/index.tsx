@@ -1,4 +1,4 @@
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import IntroSectionTitle, { AccentBlue } from '../../molecules/IntroSectionTitle';
 import Image from 'next/image';
 import * as S from './style';
 
@@ -9,10 +9,10 @@ const ServiceInfoSection = () => (
         <>
           <span>아올다 클라우드는</span>
           <br />
-          <span style={{ color: '#1A8EE5' }}>아주대학교 학생</span>
+          <AccentBlue>아주대학교 학생</AccentBlue>
           <span>을 위한</span>
           <br />
-          <span style={{ color: '#1A8EE5' }}>무료 클라우드 서비스</span>
+          <AccentBlue>무료 클라우드 서비스</AccentBlue>
           <span>입니다.</span>
         </>
       }

@@ -340,75 +340,59 @@ export const SectionWrapper = styled.div`
 
   /* Frame 45 - InconveniencesSection */
   &:nth-of-type(5) {
-    padding: 20px 0px 0px;
+    padding: 100px 0 0;
     gap: 48px;
     height: auto;
-    min-height: 794px;
-    padding-bottom: 0px;
-    margin-bottom: -180px;
+    min-height: auto;
 
     ${media.tablet} {
       padding: 60px 0 0;
       gap: 20px;
-      min-height: auto;
-      margin-bottom: 0;
     }
 
     ${media.mobile} {
       padding: 40px 0 0;
       gap: 12px;
       align-items: stretch;
-      min-height: auto;
-      margin-bottom: 0;
     }
   }
 
   /* Frame 145 - PromisesSection */
   &:nth-of-type(6) {
-    padding: 0px 0px 0px;
+    padding: 100px 0 0;
     gap: 48px;
     height: auto;
-    min-height: 794px;
-    margin-top: -80px;
+    min-height: auto;
 
     ${media.tablet} {
       padding: 60px 0 0;
       gap: 20px;
-      min-height: auto;
-      margin-top: 0;
     }
 
     ${media.mobile} {
       padding: 40px 0 0;
       gap: 12px;
       align-items: stretch;
-      min-height: auto;
-      margin-top: 0;
     }
   }
 
   /* Frame 146 - MeetSection */
   &:nth-of-type(7) {
-    padding: 0px 0px 72px;
+    padding: 100px 0 72px;
     gap: 36px;
     height: auto;
-    min-height: 474px;
+    min-height: auto;
     align-items: center;
-    margin-top: -80px;
 
     ${media.tablet} {
       padding: 60px 0 0;
       gap: 24px;
-      min-height: auto;
-      margin-top: 0;
     }
 
     ${media.mobile} {
       padding: 40px 0 48px;
       gap: 20px;
       align-items: stretch;
-      min-height: auto;
-      margin-top: 0;
     }
   }
 `;

@@ -84,10 +84,11 @@ export const LeftPanel = styled.div`
   align-items: flex-start;
   padding: 0;
   gap: 36px;
-  width: 797px;
-  height: 488px;
+  flex: 1;
+  width: auto;
+  min-width: 0;
+  height: auto;
   min-height: 488px;
-  flex: none;
 
   ${media.tablet} {
     width: 470px;
@@ -119,7 +120,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Description = styled.div`
-  width: 797px;
+  width: 100%;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 20px;

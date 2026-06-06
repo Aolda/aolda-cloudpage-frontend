@@ -5,8 +5,8 @@ export const Section = styled.section`
   width: 1200px;
   max-width: 100%;
   height: auto;
-  min-height: 796px;
-  padding-top: 160px;
+  min-height: auto;
+  padding-top: 0;
   gap: 48px;
   display: flex;
   flex-direction: column;

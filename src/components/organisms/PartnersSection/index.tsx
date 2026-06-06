@@ -1,4 +1,4 @@
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import IntroSectionTitle, { AccentBlue } from '../../molecules/IntroSectionTitle';
 import ImageCard from '../../molecules/ImageCard';
 import * as S from './style';
 
@@ -40,9 +40,9 @@ const PartnersSection = () => {
       <IntroSectionTitle
         title={
           <>
-            이미 <span style={{ color: '#1A8EE5' }}>많은 곳에서 사용</span>되고 있는
+            이미 <AccentBlue>많은 곳에서 사용</AccentBlue>되고 있는
             {'\n'}
-            <span style={{ color: '#1A8EE5' }}>아올다 클라우드</span>
+            <AccentBlue>아올다 클라우드</AccentBlue>
           </>
         }
         description="아올다 클라우드는 아주대학교 대/내외적으로 사용되는 다양한 서비스를 안정적으로 운영하기 위해 이곳저곳에서 사용되고 있어요"

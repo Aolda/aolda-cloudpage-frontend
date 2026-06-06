@@ -6,7 +6,7 @@ export const StatCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  min-width: 220px;
+  min-width: 0;
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.colors.surface};
@@ -14,7 +14,7 @@ export const StatCard = styled.div`
   border-radius: 10px;
   text-align: center;
   height: 133px;
-  width: 348px;
+  width: 100%;
   box-sizing: border-box;
 
   ${media.tablet} {
@@ -42,7 +42,7 @@ export const StatCard = styled.div`
 export const StatValue = styled.span`
   font-size: 2.8rem;
   font-weight: 700;
-  color: #1a8ee5;
+  color: ${({ theme }) => theme.colors.primary500};
 
   ${media.tablet} {
     font-size: 20px;

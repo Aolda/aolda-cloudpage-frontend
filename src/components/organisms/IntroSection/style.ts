@@ -3,7 +3,7 @@ import { media } from '@/styles/theme';
 
 export const Section = styled.section`
   display: grid;
-  grid-template-columns: 1fr 0.45fr;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 384px);
   gap: 1.6rem;
   padding: 0;
   align-items: stretch;

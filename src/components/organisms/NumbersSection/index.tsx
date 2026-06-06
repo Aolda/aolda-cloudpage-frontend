@@ -20,7 +20,6 @@ const NumbersSection = ({ stats = defaultStats }: NumbersSectionProps) => (
       title="숫자로 보는 아올다"
       align="center"
       showTopBar={true}
-      titleColor="#232527"
     />
     <S.Grid>
       {stats.map((s) => (

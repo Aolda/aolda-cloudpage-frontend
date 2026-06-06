@@ -12,16 +12,20 @@ export const TemplateContainer = styled.div`
 export const ContentWrapper = styled.div`
   max-width: 1440px;
   width: 100%;
-  margin: 430px auto 0;
+  margin: 0 auto;
   padding: 40px 120px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.surface};
   margin-bottom: 120px;
 
   ${media.tablet} {
-    max-width: 744px;
-    margin-top: 400px;
+    max-width: 100%;
     margin-bottom: 60px;
     padding: 32px;
+  }
+
+  ${media.mobile} {
+    margin-bottom: 48px;
+    padding: 24px 16px;
   }
 `;

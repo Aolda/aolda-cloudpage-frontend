@@ -2,31 +2,33 @@ import styled, { css } from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const HeroSection = styled.section`
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 120px 60px;
-  gap: 365px;
-  isolation: isolate;
-  position: absolute;
-  width: 1440px;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
   height: 400px;
-  left: calc(50% - 1440px / 2);
-  top: 0;
+  margin: 0 auto;
+  padding: 0 120px 60px;
+  gap: 24px;
+  isolation: isolate;
   background: ${({ theme }) => theme.colors.primary300};
   overflow: hidden;
   box-sizing: border-box;
 
   ${media.tablet} {
-    width: 100%;
-    max-width: 744px;
+    max-width: 100%;
     height: 400px;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 0 32px 48px;
     gap: 0;
+  }
+
+  ${media.mobile} {
+    height: 240px;
+    padding: 16px 16px 24px;
+    align-items: flex-end;
   }
 `;
 
@@ -36,19 +38,24 @@ export const HeroContent = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   padding: 0;
-  gap: 215px;
-  width: 1200px;
-  height: 187px;
-  flex: none;
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  flex: 1;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  min-width: 0;
 
   ${media.tablet} {
-    width: 100%;
     max-width: 680px;
-    height: auto;
     gap: 0;
     align-items: flex-end;
+  }
+
+  ${media.mobile} {
+    max-width: 100%;
+    align-items: flex-start;
   }
 `;
 
@@ -59,14 +66,18 @@ export const LeftSection = styled.div`
   padding: 0;
   gap: 12px;
   width: 475px;
-  height: 141px;
+  max-width: 100%;
   flex: none;
-  z-index: 0;
+  z-index: 2;
 
   ${media.tablet} {
     width: 475px;
-    height: auto;
     flex-shrink: 0;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    gap: 8px;
   }
 `;
 
@@ -76,20 +87,16 @@ export const TitleSection = styled.div`
   align-items: flex-start;
   padding: 0;
   gap: 12px;
-  width: 158px;
-  height: 81px;
+  width: auto;
   flex: none;
 
-  ${media.tablet} {
-    width: auto;
-    height: auto;
-    gap: 12px;
+  ${media.mobile} {
+    gap: 8px;
   }
 `;
 
 export const BreadcrumbWrapper = styled.div`
-  width: 77px;
-  height: 23px;
+  width: auto;
   flex: none;
 
   nav {
@@ -102,6 +109,7 @@ export const BreadcrumbWrapper = styled.div`
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;
+      text-decoration: none;
     }
 
     span > span {
@@ -115,24 +123,21 @@ export const BreadcrumbWrapper = styled.div`
   }
 
   ${media.tablet} {
-    width: auto;
-    height: 23px;
-
     nav {
       gap: 8px;
+    }
+  }
 
-      a,
-      span {
-        font-size: 16px;
-        line-height: 19px;
-      }
+  ${media.mobile} {
+    nav a,
+    nav span {
+      font-size: 12px;
+      line-height: 14px;
     }
   }
 `;
 
 export const Title = styled.h1`
-  width: 200px;
-  height: 46px;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
   font-size: 32px;
@@ -142,10 +147,13 @@ export const Title = styled.h1`
   flex: none;
 
   ${media.tablet} {
-    width: auto;
-    height: auto;
     font-size: 32px;
     line-height: 38px;
+  }
+
+  ${media.mobile} {
+    font-size: 20px;
+    line-height: 24px;
   }
 `;
 
@@ -156,25 +164,22 @@ export const SearchWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 12px 16px;
-  gap: 90px;
+  gap: 12px;
   width: 475px;
+  max-width: 100%;
   height: 48px;
   background: ${({ theme }) => theme.colors.surface};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 8px;
+  flex: none;
+  align-self: stretch;
 
   ${({ theme }) =>
     theme.mode === 'dark'
       ? css`
-          background: ${theme.colors.surface};
           border: 1px solid ${theme.colors.widgetBorder};
         `
-      : css`
-          background: ${theme.colors.surface};
-          border: 1px solid ${theme.colors.border};
-        `}
-  flex: none;
-  align-self: stretch;
+      : ''}
 
   form {
     margin: 0;
@@ -192,8 +197,10 @@ export const SearchWrapper = styled.div`
     font-size: 16px;
     line-height: 19px;
     color: ${({ theme }) => theme.colors.gray600};
-    width: 174px;
+    width: 100%;
+    min-width: 0;
     height: 23px;
+    background: transparent;
 
     &:focus {
       outline: none;
@@ -204,29 +211,24 @@ export const SearchWrapper = styled.div`
   svg {
     width: 24px;
     height: 24px;
-    color: #76bbef;
-    position: relative;
-    right: 0;
+    color: ${({ theme }) => theme.colors.primary300};
+    flex-shrink: 0;
   }
 
-  ${media.tablet} {
-    width: 475px;
-    height: 48px;
-    border: 1px solid ${({ theme }) => theme.colors.border};
-  }
-`;
+  ${media.mobile} {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
 
-export const RightSection = styled.div`
-  position: relative;
-  width: 30%;
-  height: 10%;
-  flex: none;
+    input {
+      font-size: 14px;
+      line-height: 17px;
+    }
 
-  ${media.tablet} {
-    width: auto;
-    height: auto;
-    flex: 1;
-    min-width: 0;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 `;
 
@@ -238,11 +240,25 @@ export const IconWrapper = styled.div`
   bottom: -80px;
   flex: none;
   z-index: 1;
+  pointer-events: none;
+
+  img {
+    object-fit: contain;
+    object-position: right bottom;
+  }
 
   ${media.tablet} {
-    width: 629px;
-    height: 426px;
-    right: -91px;
-    bottom: 0;
+    width: 420px;
+    height: 284px;
+    right: -60px;
+    bottom: -40px;
+  }
+
+  ${media.mobile} {
+    width: 200px;
+    height: 136px;
+    right: -40px;
+    bottom: -20px;
+    opacity: 0.9;
   }
 `;

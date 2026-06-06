@@ -6,13 +6,17 @@ export const FilterContainer = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 0;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   height: 48px;
   flex: none;
 
   ${media.tablet} {
-    width: 100%;
     max-width: 680px;
     height: 48px;
+  }
+
+  ${media.mobile} {
+    height: 40px;
   }
 `;

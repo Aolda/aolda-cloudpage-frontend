@@ -7,7 +7,6 @@ const MeetSection = () => (
     <IntroSectionTitle
       title="아올다의 새로운 크루가 되어주세요"
       align="left"
-      titleColor="rgb(0, 0, 0)"
       showTopBar={true}
     />
 
@@ -29,6 +28,7 @@ const MeetSection = () => (
           size="lg"
           variant="secondary"
           image="/intro/intro_teampage_logo.png"
+          lightTextInDarkMode
         />
       </S.Col>
     </S.Grid>

@@ -7,9 +7,18 @@ export const FAQListContainer = styled.div`
   align-items: center;
   gap: 2.4rem;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 
   ${media.tablet} {
     gap: 24px;
+    max-width: 680px;
+  }
+
+  ${media.mobile} {
+    gap: 16px;
+    max-width: 100%;
+    align-items: stretch;
   }
 `;
 
@@ -20,6 +29,10 @@ export const FAQItems = styled.div`
 
   ${media.tablet} {
     max-width: 680px;
+  }
+
+  ${media.mobile} {
+    max-width: 100%;
   }
 `;
 

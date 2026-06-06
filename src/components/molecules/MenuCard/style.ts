@@ -31,7 +31,8 @@ export const MenuCard = styled.div`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
-  width: 384px;
+  width: 100%;
+  max-width: 384px;
   height: 216px;
   box-sizing: border-box;
 

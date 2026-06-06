@@ -1,6 +1,18 @@
-﻿import styled from 'styled-components';
+﻿import styled, { css } from 'styled-components';
 import type { ButtonSize, ButtonVariant } from './index';
 import { media } from '@/styles/theme';
+
+const resolveTextColor = (
+  variant: ButtonVariant,
+  lightTextInDarkMode: boolean,
+  theme: { mode: string; colors: { text: string } },
+  lightFallback = '#FFFFFF',
+) => {
+  if (lightTextInDarkMode && theme.mode === 'dark') {
+    return '#ffffff';
+  }
+  return variant === 'secondary' ? theme.colors.text : lightFallback;
+};
 
 const sizeStyles = {
   md: {
@@ -15,7 +27,11 @@ const sizeStyles = {
   },
 };
 
-export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant }>`
+export const Button = styled.button<{
+  $size: ButtonSize;
+  $variant: ButtonVariant;
+  $lightTextInDarkMode?: boolean;
+}>`
   /* Button */
   /* Auto layout */
   display: flex;
@@ -37,7 +53,8 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
     $variant === 'secondary' 
       ? 'transparent' 
       : 'rgb(32, 137, 207)'};
-  color: ${({ $variant, theme }) => $variant === 'secondary' ? theme.colors.text : '#ffffff'};
+  color: ${({ $variant, theme, $lightTextInDarkMode = false }) =>
+    resolveTextColor($variant, $lightTextInDarkMode, theme)};
   border: ${({ $variant, theme }) => 
     $variant === 'secondary' 
       ? `1px solid ${theme.colors.borderStrong}` 
@@ -78,7 +95,11 @@ export const Button = styled.button<{ $size: ButtonSize; $variant: ButtonVariant
 `;
 
 /* Text */
-export const Label = styled.span<{ $variant: ButtonVariant; $size: ButtonSize }>`
+export const Label = styled.span<{
+  $variant: ButtonVariant;
+  $size: ButtonSize;
+  $lightTextInDarkMode?: boolean;
+}>`
   width: auto;
   height: 23px;
   margin-top: 3px;
@@ -90,7 +111,8 @@ export const Label = styled.span<{ $variant: ButtonVariant; $size: ButtonSize }>
   line-height: 1.1875rem;
   text-align: center;
   /* White/White or Black */
-  color: ${({ $variant, theme }) => $variant === 'secondary' ? theme.colors.text : '#FFFFFF'};
+  color: ${({ $variant, theme, $lightTextInDarkMode = false }) =>
+    resolveTextColor($variant, $lightTextInDarkMode, theme)};
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -101,7 +123,18 @@ export const Label = styled.span<{ $variant: ButtonVariant; $size: ButtonSize }>
     line-height: 14px;
     height: auto;
     margin-top: 0;
-    color: #232527;
+    ${({ $variant, theme, $lightTextInDarkMode = false }) =>
+      $lightTextInDarkMode && theme.mode === 'dark'
+        ? css`
+            color: #ffffff;
+          `
+        : $variant === 'secondary'
+          ? css`
+              color: #232527;
+            `
+          : css`
+              color: #ffffff;
+            `}
   }
 
   ${media.mobile} {

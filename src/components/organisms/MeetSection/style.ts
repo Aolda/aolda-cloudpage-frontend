@@ -4,9 +4,9 @@ import { media } from '@/styles/theme';
 export const Section = styled.section`
   max-width: 1200px;
   width: 100%;
-  min-height: 474px;
-  padding-top: 160px;
-  padding-bottom: 72px;
+  min-height: auto;
+  padding-top: 0;
+  padding-bottom: 0;
   gap: 12px;
   display: flex;
   flex-direction: column;
@@ -91,7 +91,7 @@ export const Col = styled.div`
     height: 48px;
     padding: 12px 16px;
     gap: 8px;
-    background: #1572b8;
+    background: ${({ theme }) => theme.colors.primary600};
     border: none;
     border-radius: 8px;
     color: #ffffff;
@@ -104,7 +104,7 @@ export const Col = styled.div`
     padding: 12px 16px;
     gap: 8px;
     background: ${({ theme }) => theme.colors.surface};
-    border: 1px solid #bfbfbf;
+    border: 1px solid ${({ theme }) => theme.colors.border};
     border-radius: 8px;
     color: ${({ theme }) => theme.colors.text};
   }
@@ -164,7 +164,7 @@ export const Col = styled.div`
     &:first-of-type a,
     &:first-of-type button {
       && {
-        background: #1572b8;
+        background: ${({ theme }) => theme.colors.primary600};
         border: none;
         color: #ffffff;
       }

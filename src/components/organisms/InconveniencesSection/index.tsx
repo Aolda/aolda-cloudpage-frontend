@@ -1,4 +1,4 @@
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import IntroSectionTitle, { AccentBlue } from '../../molecules/IntroSectionTitle';
 import ItemCard from '../../molecules/ItemCard';
 import * as S from './style';
 
@@ -16,7 +16,7 @@ const InconveniencesSection = () => (
           자유롭게 꿈을 펼치기 위해
           <br />
           아올다가 없앤{' '}
-          <span style={{ color: 'rgb(61, 144, 212)' }}>불편함 3가지</span>
+          <AccentBlue>불편함 3가지</AccentBlue>
         </>
       }
       description={
@@ -28,7 +28,6 @@ const InconveniencesSection = () => (
       }
       align="center"
       showTopBar={true}
-      titleColor="rgb(3, 3, 3)"
     />
     <S.PromiseGrid>
       {inconveniences.map((item) => (
