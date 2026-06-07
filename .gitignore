@@ -36,6 +36,3 @@ next-env.d.ts
 
 # md 파일
 MOLECULE_DOC.md
-
-*storybook.log
-storybook-static
