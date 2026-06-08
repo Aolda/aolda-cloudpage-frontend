@@ -55,6 +55,11 @@ export const TitleButton = styled.button`
       background-color: transparent;
     }
   }
+
+  ${media.mobile} {
+    height: 54px;
+    min-height: 54px;
+  }
 `;
 
 export const TitleContent = styled.div`
@@ -88,6 +93,12 @@ export const TitleIcon = styled.div`
     box-sizing: border-box;
     border-radius: 0;
     background: transparent;
+  }
+
+  ${media.mobile} {
+    width: 40px;
+    height: 54px;
+    padding: 16px 8px;
   }
 `;
 
@@ -123,6 +134,12 @@ export const IconImage = styled.img`
     box-sizing: border-box;
     object-fit: contain;
   }
+
+  ${media.mobile} {
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+  }
 `;
 
 export const TitleText = styled.span`
@@ -142,6 +159,12 @@ export const TitleText = styled.span`
     color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.text)};
     display: flex;
     align-items: center;
+  }
+
+  ${media.mobile} {
+    padding: 20px 8px;
+    font-size: 12px;
+    line-height: 14px;
   }
 `;
 
@@ -165,6 +188,12 @@ export const ChevronIcon = styled.svg<{ $expanded: boolean }>`
     padding: 0;
     box-sizing: border-box;
   }
+
+  ${media.mobile} {
+    width: 32px;
+    min-width: 32px;
+    height: 54px;
+  }
 `;
 
 export const Content = styled.div`
@@ -186,6 +215,12 @@ export const Content = styled.div`
 
   ${media.tablet} {
     padding: 16px 16px 16px 64px;
+  }
+
+  ${media.mobile} {
+    padding: 16px 24px;
+    background: #efefef;
+    border-bottom: 1px solid #efefef;
   }
 `;
 
@@ -215,5 +250,11 @@ export const ContentText = styled.div`
     font-size: 14px;
     line-height: 150%;
     color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : theme.colors.gray600)};
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+    color: #232527;
   }
 `;

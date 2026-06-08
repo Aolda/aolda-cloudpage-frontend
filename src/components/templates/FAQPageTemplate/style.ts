@@ -25,7 +25,8 @@ export const ContentWrapper = styled.div`
   }
 
   ${media.mobile} {
-    margin-bottom: 48px;
-    padding: 24px 16px;
+    max-width: 375px;
+    margin-bottom: 30px;
+    padding: 20px 16px;
   }
 `;

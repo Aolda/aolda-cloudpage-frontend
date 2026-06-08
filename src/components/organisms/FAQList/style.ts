@@ -16,7 +16,7 @@ export const FAQListContainer = styled.div`
   }
 
   ${media.mobile} {
-    gap: 16px;
+    gap: 20px;
     max-width: 100%;
     align-items: stretch;
   }
@@ -32,7 +32,7 @@ export const FAQItems = styled.div`
   }
 
   ${media.mobile} {
-    max-width: 100%;
+    max-width: 343px;
   }
 `;
 
@@ -45,5 +45,9 @@ export const PaginationWrapper = styled.div`
 
   ${media.tablet} {
     margin-top: 36px;
+  }
+
+  ${media.mobile} {
+    margin-top: 12px;
   }
 `;

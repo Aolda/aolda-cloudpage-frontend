@@ -26,9 +26,25 @@ export const HeroSection = styled.section`
   }
 
   ${media.mobile} {
-    height: 240px;
-    padding: 16px 16px 24px;
+    max-width: 375px;
+    height: 200px;
+    padding: 20px 16px 30px;
     align-items: flex-end;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 314.5px;
+      height: 213px;
+      right: -88.5px;
+      bottom: 7px;
+      background-image: url('/FAQ/FAQ_introheader.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 0;
+      pointer-events: none;
+    }
   }
 `;
 
@@ -54,8 +70,10 @@ export const HeroContent = styled.div`
   }
 
   ${media.mobile} {
-    max-width: 100%;
-    align-items: flex-start;
+    max-width: 343px;
+    height: 92px;
+    align-items: flex-end;
+    z-index: 1;
   }
 `;
 
@@ -76,7 +94,7 @@ export const LeftSection = styled.div`
   }
 
   ${media.mobile} {
-    width: 100%;
+    width: 343px;
     gap: 8px;
   }
 `;
@@ -129,10 +147,16 @@ export const BreadcrumbWrapper = styled.div`
   }
 
   ${media.mobile} {
-    nav a,
-    nav span {
-      font-size: 12px;
-      line-height: 14px;
+    height: 16px;
+
+    nav {
+      gap: 4px;
+
+      a,
+      span {
+        font-size: 10px;
+        line-height: 15px;
+      }
     }
   }
 `;
@@ -216,18 +240,25 @@ export const SearchWrapper = styled.div`
   }
 
   ${media.mobile} {
-    width: 100%;
-    height: 40px;
+    width: 343px;
+    height: 32px;
     padding: 8px 12px;
+    border-radius: 6px;
+    gap: 12px;
+
+    form {
+      height: 100%;
+    }
 
     input {
-      font-size: 14px;
-      line-height: 17px;
+      height: 15px;
+      font-size: 10px;
+      line-height: 150%;
     }
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 12px;
+      height: 12px;
     }
   }
 `;
@@ -255,10 +286,6 @@ export const IconWrapper = styled.div`
   }
 
   ${media.mobile} {
-    width: 200px;
-    height: 136px;
-    right: -40px;
-    bottom: -20px;
-    opacity: 0.9;
+    display: none;
   }
 `;

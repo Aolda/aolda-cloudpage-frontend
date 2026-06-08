@@ -17,6 +17,8 @@ export const FilterContainer = styled.div`
   }
 
   ${media.mobile} {
-    height: 40px;
+    max-width: 343px;
+    height: 64px;
+    align-items: flex-start;
   }
 `;
