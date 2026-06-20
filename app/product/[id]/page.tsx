@@ -1,13 +1,12 @@
 import ProductDetailPageTemplate from '@/components/templates/ProductDetailPageTemplate';
-import { getProductById } from '@/lib/data/products';
+import { getProductDetailData } from '@/lib/api/product';
 
 interface ProductDetailPageProps {
   params: { id: string };
 }
 
-export default function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const { id } = params;
-  const productData = getProductById(id);
+export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
+  const productData = await getProductDetailData(params.id);
 
   return (
     <ProductDetailPageTemplate

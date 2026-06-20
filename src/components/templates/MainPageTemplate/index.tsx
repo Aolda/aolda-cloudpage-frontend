@@ -8,7 +8,14 @@ import PartnersSection from '../../organisms/PartnersSection';
 import InconveniencesSection from '../../organisms/InconveniencesSection';
 import PromisesSection from '../../organisms/PromisesSection';
 import MeetSection from '../../organisms/MeetSection';
+import type { StatItem } from '../../organisms/NumbersSection';
+import type { PartnerItem } from '../../organisms/PartnersSection';
 import * as S from './style';
+
+export interface MainPageTemplateProps {
+  stats?: StatItem[];
+  partners?: PartnerItem[];
+}
 
 /**
  * 메인 페이지 템플릿 컴포넌트
@@ -19,7 +26,7 @@ import * as S from './style';
  * 
  * @returns {JSX.Element} 메인 페이지 템플릿 요소
  */
-const MainPageTemplate = () => {
+const MainPageTemplate = ({ stats, partners }: MainPageTemplateProps) => {
   return (
     <BaseTemplate>
       <S.BackgroundDecorations />
@@ -32,13 +39,13 @@ const MainPageTemplate = () => {
           <IntroSection />
         </S.SectionWrapper>
         <S.SectionWrapper>
-          <NumbersSection />
+          <NumbersSection stats={stats} />
         </S.SectionWrapper>
         <S.SectionWrapper>
           <ServiceInfoSection />
         </S.SectionWrapper>
         <S.SectionWrapper>
-          <PartnersSection />
+          <PartnersSection partners={partners} />
         </S.SectionWrapper>
         <S.SectionWrapper>
           <InconveniencesSection />

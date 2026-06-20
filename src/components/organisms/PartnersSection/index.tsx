@@ -2,18 +2,39 @@ import IntroSectionTitle from '../../molecules/IntroSectionTitle';
 import ImageCard from '../../molecules/ImageCard';
 import * as S from './style';
 
-const partners = [
-  { name: '아주대학교 총학생회', description: '총학생회 공식홈페이지 운영', period: '2024-1 ~ 2025-1' },
-  { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
-  { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
-  { name: 'APIA', description: 'ajou.app 서비스 운영' },
-  { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
-  { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
+export type PartnerItem = {
+  name: string;
+  description: string;
+  period?: string;
+  image: string;
+};
+
+const defaultPartners: PartnerItem[] = [
+  {
+    name: '아주대학교 총학생회',
+    description: '총학생회 공식홈페이지 운영',
+    period: '2024-1 ~ 2025-1',
+    image: '/intro/intro_used.png',
+  },
+  {
+    name: '파란학기제',
+    description: '파란학기 프로젝트 서비스 배포지원',
+    image: '/intro/intro_used.png',
+  },
+  {
+    name: 'APIA',
+    description: 'ajou.app 서비스 운영',
+    image: '/intro/intro_used.png',
+  },
 ];
 
-const PartnersSection = () => {
-  const firstRowPartners = partners.slice(0, 3); // 처음 3개
-  const secondRowPartners = partners.slice(3, 6); // 마지막 3개
+type PartnersSectionProps = {
+  partners?: PartnerItem[];
+};
+
+const PartnersSection = ({ partners = defaultPartners }: PartnersSectionProps) => {
+  const firstRowPartners = partners.slice(0, 3);
+  const secondRowPartners = partners.slice(3, 6);
 
   return (
     <S.Section>
@@ -34,7 +55,7 @@ const PartnersSection = () => {
           {firstRowPartners.map((p, index) => (
             <ImageCard
               key={`first-row-${index}`}
-              image="/intro/intro_used.png"
+              image={p.image}
               alt={p.name}
               title={p.name}
               description={p.description}
@@ -44,7 +65,7 @@ const PartnersSection = () => {
           {firstRowPartners.map((p, index) => (
             <ImageCard
               key={`first-row-duplicate-${index}`}
-              image="/intro/intro_used.png"
+              image={p.image}
               alt={p.name}
               title={p.name}
               description={p.description}
@@ -57,7 +78,7 @@ const PartnersSection = () => {
           {secondRowPartners.map((p, index) => (
             <ImageCard
               key={`second-row-${index}`}
-              image="/intro/intro_used.png"
+              image={p.image}
               alt={p.name}
               title={p.name}
               description={p.description}
@@ -67,7 +88,7 @@ const PartnersSection = () => {
           {secondRowPartners.map((p, index) => (
             <ImageCard
               key={`second-row-duplicate-${index}`}
-              image="/intro/intro_used.png"
+              image={p.image}
               alt={p.name}
               title={p.name}
               description={p.description}

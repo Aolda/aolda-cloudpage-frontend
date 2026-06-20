@@ -8,6 +8,14 @@ import ProductList from '../../organisms/ProductList';
 import Search from '../../molecules/Search';
 import * as S from './style';
 
+export interface ProductServiceItem {
+  icon: string;
+  title: string;
+  description: string;
+  href: string;
+  category?: string;
+}
+
 export interface ProductPageTemplateProps {
   /** 검색어 */
   searchTerm?: string;
@@ -15,14 +23,10 @@ export interface ProductPageTemplateProps {
   onSearchChange?: (value: string) => void;
   /** 검색 실행 핸들러 */
   onSearch?: (value: string) => void;
+  /** 사이드바 카테고리 */
+  categories?: Array<{ id: string; label: string }>;
   /** 서비스 목록 */
-  services?: Array<{
-    icon: string;
-    title: string;
-    description: string;
-    href: string;
-    category?: string;
-  }>;
+  services?: ProductServiceItem[];
 }
 
 /**
@@ -37,11 +41,12 @@ const ProductPageTemplate = ({
   searchTerm = '',
   onSearchChange,
   onSearch,
+  categories: categoriesProp = [],
   services = [],
 }: ProductPageTemplateProps) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-  const categories = [
+  const defaultCategories = [
     { id: 'favorites', label: '즐겨찾기' },
     { id: 'server', label: '서버' },
     { id: 'instance', label: '인스턴스' },
@@ -49,7 +54,10 @@ const ProductPageTemplate = ({
     { id: 'networking', label: '네트워킹' },
   ];
 
-  const defaultServices = [
+  const categories =
+    categoriesProp.length > 0 ? categoriesProp : defaultCategories;
+
+  const defaultServices: ProductServiceItem[] = [
     {
       icon: "/product/product_serviceCard.png",
       title: "AMDB",
@@ -194,21 +202,22 @@ const ProductPageTemplate = ({
               />
             </S.SearchSection>
             {categories.map((category) => {
-              // 선택된 카테고리만 표시
               if (selectedCategories.length > 0 && !selectedCategories.includes(category.id)) {
                 return null;
               }
-              
-              // 해당 카테고리의 서비스만 필터링
+
               const allServices = services.length > 0 ? services : defaultServices;
               const filteredServices = allServices.filter(
-                (service) => service.category === category.id
+                (service) => service.category === category.id,
               );
-              
-              // 즐겨찾기는 카테고리가 없는 서비스도 포함
-              const categoryServices = category.id === 'favorites' 
-                ? allServices.filter((service) => !service.category || service.category === 'favorites')
-                : filteredServices;
+
+              const categoryServices =
+                category.id === 'favorites'
+                  ? allServices.filter(
+                      (service) =>
+                        !service.category || service.category === 'favorites',
+                    )
+                  : filteredServices;
               
               // 서비스가 없으면 섹션을 표시하지 않음
               if (categoryServices.length === 0) {
