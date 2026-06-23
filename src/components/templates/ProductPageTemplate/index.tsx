@@ -15,6 +15,8 @@ export interface ProductPageTemplateProps {
   onSearchChange?: (value: string) => void;
   /** 검색 실행 핸들러 */
   onSearch?: (value: string) => void;
+  /** 사이드바 카테고리 */
+  categories?: Array<{ id: string; label: string }>;
   /** 서비스 목록 */
   services?: Array<{
     icon: string;
@@ -37,17 +39,21 @@ const ProductPageTemplate = ({
   searchTerm = '',
   onSearchChange,
   onSearch,
+  categories: categoriesProp = [],
   services = [],
 }: ProductPageTemplateProps) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-  const categories = [
+  const defaultCategories = [
     { id: 'favorites', label: '즐겨찾기' },
     { id: 'server', label: '서버' },
     { id: 'instance', label: '인스턴스' },
     { id: 'storage', label: '스토리지' },
     { id: 'networking', label: '네트워킹' },
   ];
+
+  const categories =
+    categoriesProp.length > 0 ? categoriesProp : defaultCategories;
 
   const defaultServices = [
     {

@@ -2,7 +2,14 @@ import IntroSectionTitle, { AccentBlue } from '../../molecules/IntroSectionTitle
 import ImageCard from '../../molecules/ImageCard';
 import * as S from './style';
 
-const partners = [
+export type PartnerItem = {
+  name: string;
+  description: string;
+  period?: string;
+  image?: string;
+};
+
+const defaultPartners: PartnerItem[] = [
   { name: '아주대학교 총학생회', description: '총학생회 공식홈페이지 운영', period: '2024-1 ~ 2025-1' },
   { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
   { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
@@ -11,27 +18,29 @@ const partners = [
   { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
 ];
 
+type PartnersSectionProps = {
+  partners?: PartnerItem[];
+};
+
 const PartnerCard = ({
   name,
   description,
   period,
+  image,
   compact = false,
-}: {
-  name: string;
-  description?: string;
-  period?: string;
-  compact?: boolean;
-}) => (
+}: PartnerItem & { compact?: boolean }) => (
   <ImageCard
+    image={image}
+    alt={name}
     title={name}
     description={description}
     period={period}
     compact={compact}
-    solidThumbnail={!compact}
+    solidThumbnail={!compact && !image}
   />
 );
 
-const PartnersSection = () => {
+const PartnersSection = ({ partners = defaultPartners }: PartnersSectionProps) => {
   const firstRowPartners = partners.slice(0, 3);
   const secondRowPartners = partners.slice(3, 6);
 
