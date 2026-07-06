@@ -1,4 +1,4 @@
-import IntroSectionTitle from '../../molecules/IntroSectionTitle';
+import IntroSectionTitle, { AccentRed } from '../../molecules/IntroSectionTitle';
 import ItemCard from '../../molecules/ItemCard';
 import * as S from './style';
 
@@ -16,7 +16,7 @@ const PromisesSection = () => (
           자유롭게 꿈을 펼치기 위해
           <br />
           모두 함계하는는{' '}
-          <span style={{ color: 'rgb(233, 23, 23)' }}>약속 3가지</span>
+          <AccentRed>약속 3가지</AccentRed>
         </>
       }
       description={
@@ -28,7 +28,6 @@ const PromisesSection = () => (
       }
       align="center"
       showTopBar={true}
-      titleColor="rgb(3, 3, 3)"
     />
     <S.PromiseGrid>
       {promises.map((item) => (

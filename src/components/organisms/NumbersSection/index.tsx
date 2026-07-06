@@ -16,11 +16,10 @@ const defaultStats: StatItem[] = [
 
 const NumbersSection = ({ stats = defaultStats }: NumbersSectionProps) => (
   <S.Section>
-    <IntroSectionTitle 
-      title="숫자로 보는 아올다" 
-      align="center" 
+    <IntroSectionTitle
+      title="숫자로 보는 아올다"
+      align="center"
       showTopBar={true}
-      titleColor="rgb(3, 3, 3)"
     />
     <S.Grid>
       {stats.map((s) => (

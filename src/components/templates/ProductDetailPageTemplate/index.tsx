@@ -85,13 +85,15 @@ const ProductDetailPageTemplate = ({
           applicationLink={applicationLink}
           projectLink={projectLink}
         />
-        <ProductOverviewSection content={overview} />
-        {problems.length > 0 && <ProblemsSection problems={problems} />}
-        {solutions.length > 0 && <SolutionsSection solutions={solutions} />}
-        {developers.length > 0 && <DevelopersSection developers={developers} />}
-        {similarServices.length > 0 && (
-          <SimilarServicesSection services={similarServices} />
-        )}
+        <S.ContentWrapper>
+          <ProductOverviewSection content={overview} />
+          {problems.length > 0 && <ProblemsSection problems={problems} />}
+          {solutions.length > 0 && <SolutionsSection solutions={solutions} />}
+          {developers.length > 0 && <DevelopersSection developers={developers} />}
+          {similarServices.length > 0 && (
+            <SimilarServicesSection services={similarServices} />
+          )}
+        </S.ContentWrapper>
       </S.MainContent>
     </BaseTemplate>
   );

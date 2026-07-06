@@ -1,5 +1,6 @@
-﻿import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import type { CardTone } from './index';
+import { media } from '@/styles/theme';
 
 export const ItemCard = styled.div<{ $tone: CardTone }>`
   box-sizing: border-box;
@@ -7,40 +8,84 @@ export const ItemCard = styled.div<{ $tone: CardTone }>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2.25rem;
-  gap: 2.25rem;
-  width: 24rem;
-  min-height: 25rem;
-  background: ${({ theme }) =>
-    theme.mode === 'dark' ? theme.colors.surface : theme.colors.surface};
-  border: ${({ theme }) =>
-    theme.mode === 'dark' ? `0.125rem solid ${theme.colors.border}` : `1px solid ${theme.colors.border}`};
-  border-radius: 1rem;
+  padding: 32px 36px;
+  gap: 36px;
+  width: 100%;
+  height: 400px;
+  background: ${({ theme }) => theme.colors.surface};
+  border: 2px solid ${({ theme }) => theme.colors.border};
+  border-radius: 16px;
   flex: none;
-  order: 0;
   flex-grow: 1;
+
+  ${media.tablet} {
+    width: auto;
+    max-width: none;
+    height: 240px;
+    min-height: 240px;
+    padding: 24px 20px;
+    gap: 20px;
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    border-radius: 12px;
+    flex: 1;
+  }
+
+  ${media.mobile} {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    height: 75px;
+    min-height: 75px;
+    padding: 12px;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    background: ${({ theme }) => theme.colors.surface};
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    flex-grow: 0;
+  }
 `;
 
 export const Icon = styled.span`
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 120px;
+  height: 120px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  ${media.tablet} {
+    width: 60px;
+    height: 60px;
+  }
+
+  ${media.mobile} {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 export const IconImage = styled.img<{ $scale?: number }>`
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
   object-position: center;
   display: block;
   transform: scale(${({ $scale = 1.2 }) => $scale});
   transform-origin: center center;
+
+  ${media.tablet} {
+    width: 60px;
+    height: 60px;
+    transform: scale(1);
+  }
+
+  ${media.mobile} {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -49,36 +94,76 @@ export const TextContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0;
-  gap: 0.75rem;
-  width: 100%;
+  gap: 12px;
+  width: 312px;
+  height: 104px;
   flex: none;
-  order: 1;
   align-self: stretch;
-  flex-grow: 0;
+
+  ${media.tablet} {
+    width: 176px;
+    height: auto;
+    gap: 8px;
+  }
+
+  ${media.mobile} {
+    width: auto;
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    gap: 4px;
+    height: auto;
+    min-height: 0;
+  }
 `;
 
 export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
+  width: 100%;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 2rem;
-  line-height: 1.5;
+  font-size: 32px;
+  line-height: 100%;
   text-align: center;
   color: ${({ $tone, theme }) =>
     $tone === 'red' ? theme.colors.statusNegative : theme.colors.primary500};
-  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ${media.tablet} {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  ${media.mobile} {
+    font-size: 12px;
+    line-height: 14px;
+    justify-content: flex-start;
+    text-align: left;
+  }
 `;
 
 export const ItemDescription = styled.p`
+  width: 100%;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
-  color: ${({ theme }) => theme.colors.textMuted};
-  align-self: stretch;
+  color: ${({ theme }) => theme.colors.gray600};
+  word-wrap: break-word;
   word-break: keep-all;
-  overflow-wrap: break-word;
+
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+    text-align: left;
+  }
 `;

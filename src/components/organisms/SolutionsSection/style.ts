@@ -1,51 +1,66 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const SolutionsSection = styled.section`
-  padding: 2.5rem 0;
-  max-width: 75rem;
+  padding: 4rem 0;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-`;
+  box-sizing: border-box;
 
-export const SolutionIcon = styled.span`
-  display: inline-block;
-  vertical-align: middle;
-  width: 3.125rem;
-  height: 3.125rem;
-  margin-left: -0.625rem;
-  margin-right: 0.3125rem;
-  flex-shrink: 0;
-  margin-bottom: 0.625rem;
-  img {
+  ${media.tablet} {
+    padding: 0;
+    max-width: 680px;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    gap: 16px;
+  }
+
+  ${media.mobile} {
+    max-width: 343px;
+    gap: 12px;
   }
 `;
 
 export const SolutionsGrid = styled.div`
-
-  margin-top: 0.625rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0rem;
-  gap: 1rem;
-  width: 75rem;
+  padding: 0;
+  gap: 16px;
+  width: 100%;
+
+  ${media.tablet} {
+    margin-top: 0;
+    gap: 20px;
+    width: 100%;
+  }
+
+  ${media.mobile} {
+    margin-top: 0;
+    gap: 8px;
+  }
 `;
 
 export const SolutionsRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0rem;
-  gap: 1.5rem;
-  width: 75rem;
-  flex: none;
-  align-self: stretch;
-  flex-grow: 0;
-`;
+  padding: 0;
+  gap: 24px;
+  width: 100%;
 
+  ${media.tablet} {
+    gap: 20px;
+    width: 100%;
+  }
+
+  ${media.mobile} {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+`;

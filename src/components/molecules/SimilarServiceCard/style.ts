@@ -1,40 +1,78 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const ServiceCardLink = styled.a`
   text-decoration: none;
   color: inherit;
   display: block;
   cursor: pointer;
+
+  ${media.mobile} {
+    width: 100%;
+    height: 156.49px;
+    min-width: 0;
+  }
 `;
 
 export const ServiceCard = styled.div`
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   overflow: hidden;
-  background: ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : theme.colors.surface};
+  background: #1a1a1a;
   display: flex;
   flex-direction: column;
-  height: 18.75rem;
+  height: 300px;
   transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
-  box-shadow: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  ${media.tablet} {
+    height: 316px;
+    border-radius: 10px;
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    box-shadow: none;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    height: 156.49px;
+    border-radius: 10px;
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    box-shadow: none;
+    box-sizing: border-box;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
   }
 `;
 
 export const HeaderSection = styled.div<{ $bannerImage?: string }>`
-  padding: 1.5rem 1.25rem;
+  padding: 2.4rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   height: 45%;
-  min-height: 7.5rem;
+  min-height: 120px;
+
   background: ${({ $bannerImage }) => ($bannerImage ? `url(${$bannerImage})` : '#0f0f0f')};
+
+  ${media.mobile} {
+    flex: none;
+    height: 72px;
+    min-height: 72px;
+    padding: 0.8rem;
+  }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,18 +101,21 @@ export const MainLogo = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 1.875rem;
+  padding: 3rem;
   opacity: 1;
   z-index: 1;
-  /* 필터 제거 - favicon의 원본 색상 유지 */
+
+  ${media.mobile} {
+    padding: 0.8rem;
+  }
 `;
 
 export const MenuIcon = styled.svg`
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 1.25rem;
-  height: 1.25rem;
+  top: 1.6rem;
+  right: 1.6rem;
+  width: 20px;
+  height: 20px;
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   transition: color 0.2s;
@@ -83,31 +124,53 @@ export const MenuIcon = styled.svg`
   ${ServiceCard}:hover & {
     color: rgba(255, 255, 255, 0.9);
   }
+
+  ${media.mobile} {
+    display: none;
+  }
 `;
 
 export const ContentSection = styled.div`
-  padding: 1.5rem 1.25rem;
-  background: ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
+  padding: 2.4rem 2rem;
+  background: #1a1a1a;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.6rem;
   flex: 1;
   height: 55%;
+
+  ${media.mobile} {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    padding: 8px;
+    gap: 4px;
+    overflow: hidden;
+  }
 `;
 
 export const ServiceTitle = styled.h4`
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
+  color: #ffffff;
   line-height: 1.5;
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
 `;
 
 export const ServiceDescription = styled.p`
   margin: 0;
-  font-size: 0.875rem;
-  color: ${({ theme }) => (theme.mode === 'dark' ? 'rgba(255, 255, 255, 0.85)' : theme.colors.textMuted)};
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
   flex: 1;
   display: -webkit-box;
@@ -115,21 +178,33 @@ export const ServiceDescription = styled.p`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  ${media.mobile} {
+    font-size: 9px;
+    line-height: 150%;
+    -webkit-line-clamp: 2;
+    flex: 1;
+    min-height: 0;
+  }
 `;
 
 export const ProviderSection = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
   margin-top: auto;
-  padding-top: 0.5rem;
+  padding-top: 0.8rem;
+
+  ${media.mobile} {
+    display: none;
+  }
 `;
 
 export const SmallLogo = styled.img`
-  width: 2rem;
-  height: 2rem;
-  min-width: 2rem;
-  min-height: 2rem;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
   object-fit: contain;
   /* 필터 제거 - favicon의 원본 색상 유지 */
   opacity: 0.9;
@@ -138,6 +213,6 @@ export const SmallLogo = styled.img`
 `;
 
 export const ServiceProvider = styled.span`
-  font-size: 0.75rem;
-  color: ${({ theme }) => (theme.mode === 'dark' ? 'rgba(255, 255, 255, 0.5)' : theme.colors.gray600)};
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.5);
 `;

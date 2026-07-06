@@ -1,9 +1,16 @@
-﻿import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const ServiceLink = styled.a`
   display: block;
   text-decoration: none;
   color: inherit;
+  min-width: 0;
+
+  ${media.belowDesktop} {
+    min-width: 0;
+    height: 100%;
+  }
 `;
 
 export const ServiceCardWrapper = styled.div`
@@ -11,118 +18,210 @@ export const ServiceCardWrapper = styled.div`
 `;
 
 export const ServiceCard = styled.div`
-  background: ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
-  border-radius: 0.5rem;
-  padding: 1.5rem;
+  background: ${({ theme }) => theme.colors.surface};
+  border-radius: 8px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  border: 1px solid ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8px;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
-  height: 15rem;
-  min-width: 14.4375rem;
-  width: 14.4375rem;
+  height: 240px;
+  min-width: 231px;
+  width: 231px;
   box-sizing: border-box;
+
   &:hover {
-    transform: translateY(-0.125rem);
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
-  
+
+  ${media.belowDesktop} {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    box-shadow: none;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  ${media.tablet} {
+    height: 200px;
+    padding: 20px;
+    gap: 24px;
+  }
+
+  ${media.mobile} {
+    height: 120px;
+    padding: 12px;
+    gap: 12px;
+    background: ${({ theme }) => theme.colors.surface};
+  }
 `;
 
-/* Frame 1261158722 - 아이콘 + 제목 블록 */
+export const CardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+
+  ${media.mobile} {
+    gap: 8px;
+  }
+`;
+
 export const IconTitleBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 0.25rem;
-  width: 100%;
+  gap: 4px;
+  width: 58px;
+  max-width: 58px;
+  height: auto;
   flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
+
+  ${media.belowDesktop} {
+    width: auto;
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  ${media.mobile} {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
 `;
 
-/* tabler:database-heart - 32x32 */
 export const Icon = styled.img`
-  width: 2rem;
-  height: 2rem;
+  width: 32px;
+  height: 32px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   object-fit: contain;
+
+  ${media.mobile} {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const Content = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
 `;
 
 export const AMDBIconContainer = styled.div`
-  width: 2rem;
-  height: 2rem;
+  width: 32px;
+  height: 32px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${media.mobile} {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const DatabaseIcon = styled.svg`
-  width: 2rem;
-  height: 2rem;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
+
+  ${media.mobile} {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const HeartIcon = styled.svg`
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
-  margin-left: -0.125rem;
+  margin-left: -0.2rem;
   position: relative;
   z-index: 1;
 `;
 
-/* Text - Title-H3 */
 export const Title = styled.h3`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 20px;
+  line-height: 24px;
   text-align: left;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
-  align-self: stretch;
-  word-break: keep-all;
-  overflow-wrap: break-word;
+  color: ${({ theme }) => theme.colors.text};
+  display: flex;
+  align-items: center;
+
+  ${media.belowDesktop} {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  ${media.mobile} {
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
 export const Description = styled.p`
-  margin: 0;
+  font-size: 12px;
+  color: ${({ theme }) => theme.colors.gray600};
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 1.4;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
+  line-height: 150%;
+  margin: 0;
+  width: 100%;
   word-break: keep-all;
-  overflow-wrap: break-word;
+
+  ${media.belowDesktop} {
+    align-self: stretch;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 `;
 
 export const ArrowIcon = styled.svg`
   position: absolute;
-  bottom: 0.9375rem;
-  right: 0.9375rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
-`;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  color: ${({ theme }) => theme.colors.textMuted};
+  flex: none;
 
+  ${media.belowDesktop} {
+    position: static;
+    width: 16px;
+    height: 16px;
+    color: ${({ theme }) => theme.colors.gray600};
+    align-self: flex-end;
+    margin: 0;
+  }
+`;

@@ -147,5 +147,6 @@ const IntroSectionTitle = ({
   )
 );
 
+export { AccentBlue, AccentRed } from './style';
 export default IntroSectionTitle;
 

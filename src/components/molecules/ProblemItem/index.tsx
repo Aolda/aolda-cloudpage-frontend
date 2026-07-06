@@ -1,41 +1,44 @@
 import * as S from './style';
 
 export interface ProblemItemProps {
-  /** 문제점 제목 */
+  /** 문제점 그룹 제목 (예: 1. 학생 프로젝트의 특징들) */
   title: string;
-  /** 문제점 설명 목록 */
+  /** 문제점 설명 목록 — "소제목: 설명" 형식 */
   descriptions: string[];
 }
 
-/**
- * 문제점 아이템 컴포넌트
- * 
- * 문제점 섹션에서 사용되는 개별 문제점 아이템입니다.
- * 
- * @param {ProblemItemProps} props - 문제점 아이템 props
- * @param {string} props.title - 문제점 제목
- * @param {string[]} props.descriptions - 문제점 설명 목록
- * 
- * @example
- * <ProblemItem
- *   title="학생 프로젝트의 특징들"
- *   descriptions={[
- *     "DAU 저조: 대부분의 학생 프로젝트는 일일 활성 사용자(DAU)가 낮음.",
- *     "자원 낭비 심각: 실제 사용 시간은 짧지만 서버가 24시간 가동되어 심각한 클라우드 자원 낭비 발생함."
- *   ]}
- * />
- * 
- * @returns {JSX.Element} 문제점 아이템 요소
- */
+const splitDescription = (desc: string) => {
+  const colonIndex = desc.indexOf(':');
+  if (colonIndex === -1) {
+    return { subTitle: '', body: desc };
+  }
+  return {
+    subTitle: desc.slice(0, colonIndex).trim(),
+    body: desc.slice(colonIndex + 1).trim(),
+  };
+};
+
 const ProblemItem = ({ title, descriptions }: ProblemItemProps) => {
   return (
     <S.ProblemItem>
       <S.ProblemContent>
-        <S.ProblemTitle>{title}</S.ProblemTitle>
+        <S.ProblemGroupTitle>{title}</S.ProblemGroupTitle>
+        <S.MobileProblemBody>{descriptions.join(' ')}</S.MobileProblemBody>
         <S.ProblemList>
-          {descriptions.map((desc, index) => (
-            <S.ProblemListItem key={index}>{desc}</S.ProblemListItem>
-          ))}
+          {descriptions.map((desc, index) => {
+            const { subTitle, body } = splitDescription(desc);
+            return (
+              <S.ProblemListItem key={index}>
+                {subTitle ? (
+                  <>
+                    <S.Label>{subTitle}:</S.Label> {body}
+                  </>
+                ) : (
+                  desc
+                )}
+              </S.ProblemListItem>
+            );
+          })}
         </S.ProblemList>
       </S.ProblemContent>
     </S.ProblemItem>
@@ -43,4 +46,3 @@ const ProblemItem = ({ title, descriptions }: ProblemItemProps) => {
 };
 
 export default ProblemItem;
-

@@ -1,46 +1,77 @@
-﻿import styled from 'styled-components';
+import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const SimilarServicesSection = styled.section`
-  padding: 2.5rem 0;
-  max-width: 75rem;
+  padding: 4rem 0;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 13.125rem;
-`;
+  margin-bottom: 210px;
+  box-sizing: border-box;
 
-export const ServiceIcon = styled.span`
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.5rem;
-  width: 2.1875rem;
-  height: 2.1875rem;
-  flex-shrink: 0;
-  margin-bottom: 0.625rem;
-  margin-right: 0.9375rem;
-  img {
+  ${media.tablet} {
+    padding: 0;
+    max-width: 680px;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    margin-bottom: 60px;
+    gap: 12px;
+  }
+
+  ${media.mobile} {
+    max-width: 343px;
+    margin-bottom: 40px;
+    gap: 12px;
   }
 `;
 
 export const Description = styled.p`
-  
-  margin: 0.625rem 0 0;
-  font-size: 1.25rem;
-  color: ${({ theme }) => theme.colors.textMuted};
-  line-height: 1.7;
+  margin: 1rem 0 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  color: ${({ theme }) => theme.colors.gray600};
+  line-height: 150%;
   width: 100%;
+
+  ${media.tablet} {
+    margin: 0;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  ${media.mobile} {
+    font-size: 12px;
+    line-height: 150%;
+  }
 `;
 
 export const ServicesGrid = styled.div`
-  margin-top: 1.875rem;
+  margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   width: 100%;
-`;
 
+  ${media.tablet} {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+
+  ${media.mobile} {
+    margin-top: 0;
+    width: 100%;
+    max-width: 343px;
+    min-height: 324.99px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 156.49px);
+    column-gap: 16px;
+    row-gap: 12px;
+    align-self: stretch;
+  }
+`;

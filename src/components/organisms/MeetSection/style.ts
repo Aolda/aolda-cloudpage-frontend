@@ -1,50 +1,80 @@
-﻿import styled from 'styled-components';
+﻿import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const Section = styled.section`
-  max-width: 75rem;
+  max-width: 1200px;
   width: 100%;
-  min-height: 29.625rem;
-  padding-top: 10rem;
-  padding-bottom: 4.5rem;
-  gap: 0.75rem;
+  min-height: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  gap: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
   box-sizing: border-box;
+
+  ${media.tablet} {
+    max-width: 680px;
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 24px;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 20px;
+    align-items: stretch;
+  }
 `;
 
 export const Divider = styled.span`
-  width: 1.5rem;
-  height: 0.125rem;
-  background: ${({ theme }) =>
-    theme.mode === 'dark' ? theme.colors.text : theme.colors.border};
-  border-radius: 0.125rem;
+  width: 24px;
+  height: 2px;
+  background: ${({ theme }) => theme.colors.border};
+  border-radius: 2px;
 `;
 
-/* Frame 149 */
 export const Grid = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 0;
-  gap: 1.5rem;
-  width: 26.5rem;
-  height: 6.625rem;
+  gap: 24px;
+  width: 424px;
+  height: 106px;
   flex: none;
   order: 1;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: 344px;
+    height: 82px;
+    gap: 24px;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    gap: 12px;
+    align-self: stretch;
+  }
 `;
 
-/* Frame 147 / Frame 148 */
 export const Col = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0;
-  gap: 0.75rem;
-  width: 12.5rem;
-  height: 6.625rem;
+  gap: 12px;
+  width: 200px;
+  height: 106px;
   flex: none;
   flex-grow: 0;
 
@@ -55,66 +85,139 @@ export const Col = styled.div`
     order: 1;
   }
 
-  /* Button - Frame 149 첫 번째: Primary/600 */
   &:first-of-type a,
   &:first-of-type button {
-    width: 12.5rem;
-    height: 3rem;
-    padding: 0.75rem 1rem;
-    gap: 0.5rem;
-    background: #1572b8;
+    width: 200px;
+    height: 48px;
+    padding: 12px 16px;
+    gap: 8px;
+    background: ${({ theme }) => theme.colors.primary600};
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 8px;
     color: #ffffff;
   }
 
-  /* Button - Frame 148: White + border (팀 아올다 합류) */
   &:last-of-type a,
   &:last-of-type button {
-    width: 12.5rem;
-    height: 3rem;
-    padding: 0.75rem 1rem;
-    gap: 0.5rem;
-    background: #ffffff;
-    border: 1px solid #bfbfbf;
-    border-radius: 0.5rem;
-    color: #000000;
-
-    span {
-      color: #000000;
-    }
+    width: 200px;
+    height: 48px;
+    padding: 12px 16px;
+    gap: 8px;
+    background: ${({ theme }) => theme.colors.surface};
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    border-radius: 8px;
+    color: ${({ theme }) => theme.colors.text};
   }
 
-  /* Button 내부 아이콘 24x24 */
   a img,
   button img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
     flex: none;
     order: 0;
     flex-grow: 0;
   }
+
+  ${media.tablet} {
+    width: 160px;
+    height: 82px;
+    gap: 8px;
+
+    &:first-of-type a,
+    &:first-of-type button,
+    &:last-of-type a,
+    &:last-of-type button {
+      width: 160px;
+      height: 38px;
+      padding: 11px 16px;
+    }
+
+    a img,
+    button img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  ${media.mobile} {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 55px;
+    align-items: flex-start;
+
+    &:first-of-type a,
+    &:first-of-type button,
+    &:last-of-type a,
+    &:last-of-type button {
+      && {
+        width: 100%;
+        height: 32px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 10px;
+        line-height: 12px;
+        gap: 8px;
+      }
+    }
+
+    &:first-of-type a,
+    &:first-of-type button {
+      && {
+        background: ${({ theme }) => theme.colors.primary600};
+        border: none;
+        color: #ffffff;
+      }
+    }
+
+    &:last-of-type a,
+    &:last-of-type button {
+      && {
+        background: ${({ theme }) => theme.colors.surface};
+        border: 1px solid ${({ theme }) => theme.colors.border};
+        color: ${({ theme }) => theme.colors.text};
+      }
+    }
+
+    a img,
+    button img {
+      width: 16px;
+      height: 16px;
+    }
+  }
 `;
 
-/* Content-C4 */
 export const Caption = styled.p`
-  width: 120%;
-  max-width: 10.125rem;
-  height: 3rem;
+  width: 100%;
+  max-width: 163px;
+  height: 46px;
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 150%;
-  letter-spacing: -1%;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
-  color: ${({ theme }) => theme.colors.textMuted};
+  color: ${({ theme }) => theme.colors.gray600};
   flex: none;
   order: 0;
   flex-grow: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
 
+  ${media.tablet} {
+    max-width: 122px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  ${media.mobile} {
+    max-width: none;
+    height: auto;
+    font-size: 10px;
+    line-height: 150%;
+    text-align: left;
+    justify-content: flex-start;
+  }
+`;

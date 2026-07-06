@@ -22,11 +22,13 @@ import * as S from './style';
 const MainPageTemplate = () => {
   return (
     <BaseTemplate>
-      <S.BackgroundDecorations />
-      <S.Ellipse9 />
-      <S.Ellipse10 />
-      <S.Ellipse11 />
-      <S.Ellipse12 />
+      <S.DecorationLayer aria-hidden>
+        <S.BackgroundDecorations />
+        <S.Ellipse9 />
+        <S.Ellipse10 />
+        <S.Ellipse11 />
+        <S.Ellipse12 />
+      </S.DecorationLayer>
       <S.MainContent>
         <S.SectionWrapper>
           <IntroSection />

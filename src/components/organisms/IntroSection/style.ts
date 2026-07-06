@@ -1,17 +1,32 @@
-﻿import styled from 'styled-components';
+import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const Section = styled.section`
   display: grid;
-  grid-template-columns: 1fr 0.45fr;
-  gap: 1rem;
-  padding: 0 0 1.875rem;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 384px);
+  gap: 1.6rem;
+  padding: 0;
   align-items: stretch;
-  max-width: 75rem;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 
-  @media (max-width: 64rem) {
-    grid-template-columns: 1fr;
+  ${media.tablet} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    max-width: 680px;
+  }
+
+  ${media.mobile} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
 `;
 
@@ -20,17 +35,17 @@ export const Visual = styled.div`
   overflow: hidden;
   min-height: 100%;
   display: flex;
-  
+
   > div {
     position: relative;
-    border-radius: 0.625rem;
+    border-radius: 10px;
     width: 100%;
     height: 100%;
-    min-height: 25rem;
+    min-height: 400px;
     padding: 0;
     overflow: hidden;
     display: flex;
-    
+
     img {
       position: absolute;
       top: 0;
@@ -38,18 +53,53 @@ export const Visual = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 0.625rem;
+      border-radius: 10px;
       transform: scale(1.05);
     }
-    
+
     > h3 {
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 700;
-      font-style: normal;
-      font-size: 1.5rem;
-      line-height: 1.4;
+      font-size: 24px;
+      line-height: 29px;
       letter-spacing: 0;
       color: #ffffff;
+    }
+  }
+
+  ${media.tablet} {
+    width: 100%;
+
+    > div {
+      min-height: 320px;
+      border-radius: 12px;
+
+      img {
+        border-radius: 12px;
+      }
+    }
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    min-height: auto;
+    flex: none;
+
+    > div {
+      width: 100% !important;
+      max-width: 100%;
+      min-height: 161.41px;
+      height: 161.41px;
+      border-radius: 8px;
+
+      img {
+        border-radius: 8px;
+      }
+
+      > h3 {
+        font-size: 16px;
+        line-height: 19px;
+      }
     }
   }
 `;
@@ -57,6 +107,17 @@ export const Visual = styled.div`
 export const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
-`;
+  gap: 1rem;
 
+  ${media.tablet} {
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+  }
+
+  ${media.mobile} {
+    flex-direction: row;
+    gap: 12px;
+    width: 100%;
+  }
+`;

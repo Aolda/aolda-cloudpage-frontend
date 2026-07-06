@@ -17,6 +17,8 @@ export interface ButtonProps {
   variant?: ButtonVariant;
   /** 이미지 경로 */
   image?: string;
+  /** 다크 모드에서 라벨·텍스트를 흰색으로 고정 (모든 breakpoint) */
+  lightTextInDarkMode?: boolean;
 }
 
 /**
@@ -52,11 +54,18 @@ const Button = ({
   size = 'md',
   variant = 'primary',
   image,
+  lightTextInDarkMode = false,
 }: ButtonProps) => {
   const content = (
     <>
       {image && <S.Image src={image} alt={label} $variant={variant} />}
-      <S.Label $variant={variant} $size={size}>{label}</S.Label>
+      <S.Label
+        $variant={variant}
+        $size={size}
+        $lightTextInDarkMode={lightTextInDarkMode}
+      >
+        {label}
+      </S.Label>
     </>
   );
 
@@ -68,6 +77,7 @@ const Button = ({
         href={href}
         $size={size}
         $variant={variant}
+        $lightTextInDarkMode={lightTextInDarkMode}
         aria-label={label}
       >
         {content}
@@ -82,6 +92,7 @@ const Button = ({
       onClick={onClick}
       $size={size}
       $variant={variant}
+      $lightTextInDarkMode={lightTextInDarkMode}
       aria-label={label}
     >
       {content}

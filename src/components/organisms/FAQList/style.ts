@@ -1,19 +1,39 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const FAQListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.75rem;
+  gap: 2.4rem;
   width: 100%;
-  max-width: 75rem;
+  max-width: 1200px;
   margin: 0 auto;
+
+  ${media.tablet} {
+    gap: 24px;
+    max-width: 680px;
+  }
+
+  ${media.mobile} {
+    gap: 20px;
+    max-width: 100%;
+    align-items: stretch;
+  }
 `;
 
 export const FAQItems = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  ${media.tablet} {
+    max-width: 680px;
+  }
+
+  ${media.mobile} {
+    max-width: 343px;
+  }
 `;
 
 export const PaginationWrapper = styled.div`
@@ -21,6 +41,13 @@ export const PaginationWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 0;
-`;
+  margin-top: 36px;
 
+  ${media.tablet} {
+    margin-top: 36px;
+  }
+
+  ${media.mobile} {
+    margin-top: 12px;
+  }
+`;

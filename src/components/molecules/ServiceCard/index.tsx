@@ -41,11 +41,13 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
   const content = (
     <S.ServiceCard>
-      <S.IconTitleBlock>
-        {icon && <S.Icon src={icon} alt={title} />}
-        <S.Title>{title}</S.Title>
-      </S.IconTitleBlock>
-      {description && <S.Description>{description}</S.Description>}
+      <S.CardBody>
+        <S.IconTitleBlock>
+          {icon && <S.Icon src={icon} alt={title} />}
+          <S.Title>{title}</S.Title>
+        </S.IconTitleBlock>
+        {description && <S.Description>{description}</S.Description>}
+      </S.CardBody>
       {href && (
         <S.ArrowIcon viewBox="0 0 24 24" fill="none">
           <path

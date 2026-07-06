@@ -1,4 +1,5 @@
-﻿import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const SolutionCard = styled.div`
   box-sizing: border-box;
@@ -6,42 +7,118 @@ export const SolutionCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.25rem 0rem;
-  gap: 0.75rem;
-  width: 24rem;
-  height: 7.9375rem;
-  background: ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Background, #2A2A2A)' : 'transparent'};
-  border: 1px solid ${({ theme }) =>
-    theme.mode === 'dark' ? 'var(--Mode-Border, #636363)' : theme.colors.border};
-  border-radius: 0.75rem;
+  padding: 20px 0;
+  gap: 12px;
+  width: 384px;
+  height: 127px;
+  background: ${({ theme }) => theme.colors.surface};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 12px;
   flex: none;
+
+  ${media.tablet} {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: 97px;
+    padding: 16px 12px;
+    gap: 8px;
+    border: 1px solid ${({ theme }) => theme.colors.border};
+  }
+
+  ${media.mobile} {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    min-height: 24px;
+    padding: 0;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+  }
 `;
 
 export const SolutionTitle = styled.h3`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: ${({ theme }) => theme.colors.primary500};
+  font-size: 20px;
+  line-height: 24px;
+  color: #1a8ee5;
   text-align: center;
-  word-break: keep-all;
+
+  ${media.tablet} {
+    flex-shrink: 0;
+    width: 100%;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1a8ee5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  ${media.mobile} {
+    flex: none;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    min-width: 72px;
+    max-width: 72px;
+    height: 24px;
+    padding: 6px 4px;
+    background: #efefef;
+    border-radius: 4px;
+    font-size: 10px;
+    line-height: 12px;
+    color: ${({ theme }) => theme.colors.gray600};
+    text-align: center;
+    white-space: normal;
+    word-break: keep-all;
+    overflow: hidden;
+  }
 `;
 
 export const SolutionDescription = styled.p`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.textMuted)};
-  word-break: keep-all;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-`;
+  color: ${({ theme }) => theme.colors.gray600};
 
+  ${media.tablet} {
+    width: 100%;
+    min-height: 38px;
+    height: 38px;
+    font-size: 12px;
+    line-height: 19px;
+    word-break: keep-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  ${media.mobile} {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: auto;
+    min-height: 15px;
+    font-size: 10px;
+    line-height: 150%;
+    color: ${({ theme }) => theme.colors.text};
+    text-align: left;
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    word-break: keep-all;
+  }
+`;
