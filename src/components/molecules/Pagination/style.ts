@@ -6,7 +6,7 @@ export const PaginationContainer = styled.nav`
   flex-direction: row;
   align-items: center;
   padding: 0;
-  gap: 8px;
+  gap: 36px;
   width: auto;
   height: 32px;
   flex: none;
@@ -30,7 +30,7 @@ export const PrevButton = styled.button`
   padding: 0;
   gap: 4px;
   width: 50px;
-  height: 23px;
+  height: 19px;
   flex: none;
   background: transparent;
   border: none;
@@ -63,7 +63,7 @@ export const NextButton = styled.button`
   padding: 0;
   gap: 4px;
   width: 50px;
-  height: 23px;
+  height: 19px;
   flex: none;
   background: transparent;
   border: none;
@@ -208,7 +208,7 @@ export const ButtonText = styled.span`
   padding: 0;
   gap: 10px;
   width: 30px;
-  height: 23px;
+  height: 19px;
   border-radius: 8px;
   flex: none;
 
@@ -217,7 +217,7 @@ export const ButtonText = styled.span`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: ${({ theme }) => theme.colors.gray600};
+  color: #777777;
 
   ${media.tablet} {
     width: 23px;

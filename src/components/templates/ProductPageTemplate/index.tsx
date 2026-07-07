@@ -15,6 +15,8 @@ export interface ProductPageTemplateProps {
   onSearchChange?: (value: string) => void;
   /** 검색 실행 핸들러 */
   onSearch?: (value: string) => void;
+  /** 사이드바 카테고리 */
+  categories?: Array<{ id: string; label: string }>;
   /** 서비스 목록 */
   services?: Array<{
     icon: string;
@@ -37,17 +39,21 @@ const ProductPageTemplate = ({
   searchTerm = '',
   onSearchChange,
   onSearch,
+  categories: categoriesProp = [],
   services = [],
 }: ProductPageTemplateProps) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-  const categories = [
+  const defaultCategories = [
     { id: 'favorites', label: '즐겨찾기' },
     { id: 'server', label: '서버' },
     { id: 'instance', label: '인스턴스' },
     { id: 'storage', label: '스토리지' },
     { id: 'networking', label: '네트워킹' },
   ];
+
+  const categories =
+    categoriesProp.length > 0 ? categoriesProp : defaultCategories;
 
   const defaultServices = [
     {
@@ -170,10 +176,18 @@ const ProductPageTemplate = ({
       <S.TemplateContainer>
         <ProductHeroSection
           title="아올다 Service"
-          description="아올다에서 제품은 기획서에 따라 진행된 각 프로젝트의 최종 성과물을 의미합니다. 이는 사용자에게 제공되는 외부 서비스뿐만 아니라, 클라우드 환경 내에서 사용되는 모든 서비스 단위를 포괄합니다."
+          description={
+            <>
+              <p>아올다에서 제품은 기획서에 따라 진행된 각 프로젝트의 최종 성과물을 의미합니다.</p>
+              <p>
+                이는 사용자에게 제공되는 외부 서비스뿐만 아니라, 클라우드 환경 내에서 사용되는 모든
+                서비스 단위를 포괄합니다.
+              </p>
+            </>
+          }
           breadcrumbItems={[
             { label: '홈', href: '/' },
-            { label: '제품소개' },
+            { label: '제품 소개' },
           ]}
         >
           <Search

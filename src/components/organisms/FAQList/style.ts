@@ -5,7 +5,7 @@ export const FAQListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
+  gap: 60px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -19,6 +19,18 @@ export const FAQListContainer = styled.div`
     gap: 20px;
     max-width: 100%;
     align-items: stretch;
+  }
+`;
+
+export const FAQContentSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  width: 100%;
+
+  ${media.mobile} {
+    gap: 12px;
   }
 `;
 
@@ -41,13 +53,4 @@ export const PaginationWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 36px;
-
-  ${media.tablet} {
-    margin-top: 36px;
-  }
-
-  ${media.mobile} {
-    margin-top: 12px;
-  }
 `;

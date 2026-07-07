@@ -16,7 +16,7 @@ export const ImageCard = styled.div<{
   align-items: ${({ $isBackground }) => ($isBackground ? 'flex-start' : 'center')};
   padding: ${({ $isBackground }) => ($isBackground ? '48px' : '2rem')};
   gap: ${({ $isBackground }) => ($isBackground ? '10px' : '2rem')};
-  width: ${({ $isBackground }) => ($isBackground ? '100%' : '360px')};
+  width: ${({ $isBackground }) => ($isBackground ? '100%' : '400px')};
   max-width: ${({ $isBackground }) => ($isBackground ? '792px' : 'none')};
   min-height: ${({ $isBackground }) => ($isBackground ? '452px' : 'auto')};
   height: ${({ $isBackground }) => ($isBackground ? '452px' : '120px')};
@@ -175,7 +175,7 @@ export const TextContainer = styled.div<{ $compact?: boolean }>`
 
 export const ImageTitle = styled.h3<{ $isBackground?: boolean; $compact?: boolean }>`
   margin: 0;
-  font-size: ${({ $isBackground }) => ($isBackground ? '4rem' : '1.8rem')};
+  font-size: ${({ $isBackground }) => ($isBackground ? '24px' : '24px')};
   font-weight: 700;
   color: ${({ $isBackground, theme }) =>
     $isBackground ? '#ffffff' : theme.mode === 'dark' ? theme.colors.text : theme.colors.text};
@@ -224,7 +224,7 @@ export const ImageTitle = styled.h3<{ $isBackground?: boolean; $compact?: boolea
 
 export const ImageDescription = styled.p<{ $compact?: boolean }>`
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 16px;
   color: ${({ theme }) => theme.colors.gray600};
   line-height: 150%;
 
@@ -245,7 +245,7 @@ export const ImageDescription = styled.p<{ $compact?: boolean }>`
 
 export const ImagePeriod = styled.p<{ $compact?: boolean }>`
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 16px;
   color: ${({ theme }) => theme.colors.gray600};
   line-height: 150%;
 

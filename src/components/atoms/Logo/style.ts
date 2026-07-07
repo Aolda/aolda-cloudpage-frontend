@@ -54,13 +54,13 @@ export const PartnerInitial = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 24px;
   color: ${({ theme }) => theme.colors.primary};
   font-weight: 700;
 `;
 
 export const PartnerName = styled.span`
-  font-size: 0.875rem;
+  font-size: 14px;
   color: ${({ theme }) => theme.colors.text};
   font-weight: 600;
   text-align: center;

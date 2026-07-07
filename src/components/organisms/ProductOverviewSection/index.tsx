@@ -27,7 +27,6 @@ const ProductOverviewSection = ({ content }: ProductOverviewSectionProps) => {
         title="제품 개요"
         alt="제품 개요"
         align="left"
-        iconSize={24}
       />
       {content && <S.OverviewContent>{content}</S.OverviewContent>}
     </S.OverviewSection>

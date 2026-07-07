@@ -15,7 +15,7 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
   margin: 0 0 1rem 0;
@@ -26,7 +26,7 @@ export const Meta = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.875rem;
+  font-size: 14px;
   color: ${({ theme }) => theme.colors.textMuted};
   margin-bottom: 1rem;
 `;
@@ -57,7 +57,7 @@ export const AttachmentItem = styled.a`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 14px;
   color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
   transition: color 0.2s;
@@ -80,12 +80,12 @@ export const Content = styled.div`
   padding: 1.875rem 0;
   min-height: 12.5rem;
   line-height: 1.8;
-  font-size: 0.9375rem;
+  font-size: 15px;
   color: ${({ theme }) => theme.colors.text};
   word-break: break-word;
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: 600;
     margin: 1.25rem 0 0.625rem 0;
     color: ${({ theme }) => theme.colors.text};
@@ -93,7 +93,7 @@ export const Content = styled.div`
   }
 
   h2 {
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 600;
     margin: 1.125rem 0 0.5rem 0;
     color: ${({ theme }) => theme.colors.text};
@@ -101,7 +101,7 @@ export const Content = styled.div`
   }
 
   h3 {
-    font-size: 1.125rem;
+    font-size: 18px;
     font-weight: 600;
     margin: 1rem 0 0.375rem 0;
     color: ${({ theme }) => theme.colors.text};
@@ -210,7 +210,7 @@ export const ListButtonWrapper = styled.div`
     background: #1A8EE5;
     border: none;
     border-radius: 0.5rem;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.1875rem;
     color: #FFFFFF;
     

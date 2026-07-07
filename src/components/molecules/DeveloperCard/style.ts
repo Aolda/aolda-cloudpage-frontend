@@ -30,10 +30,8 @@ export const DeveloperCard = styled.div`
   gap: 36px;
   width: 220.8px;
   height: 268px;
-  background: ${({ theme }) =>
-    theme.mode === 'dark' ? theme.colors.surface : theme.colors.surface};
-  border: 1px solid ${({ theme }) =>
-    theme.mode === 'dark' ? theme.colors.widgetBorder : theme.colors.border};
+  background: #fefefe;
+  border: 1px solid #efefef;
   border-radius: 20px;
   flex: none;
 
@@ -151,14 +149,12 @@ export const CrewName = styled.h3`
   font-size: 20px;
   line-height: 24px;
   text-align: center;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
+  color: #232527;
   flex: none;
 
   ${media.tablet} {
     font-size: 16px;
     line-height: 19px;
-    width: auto;
-    height: auto;
   }
 
   ${media.mobile} {
@@ -172,9 +168,9 @@ export const CrewNameSuffix = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 150%;
   text-align: center;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
+  color: #777777;
   flex: none;
 
   ${media.tablet} {
@@ -198,14 +194,12 @@ export const CrewInfo = styled.p`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.gray600)};
+  color: #777777;
   flex: none;
 
   ${media.tablet} {
     font-size: 12px;
     line-height: 14px;
-    width: auto;
-    height: auto;
   }
 
   ${media.mobile} {

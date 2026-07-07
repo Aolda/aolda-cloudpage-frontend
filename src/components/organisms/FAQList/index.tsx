@@ -69,28 +69,30 @@ const FAQList = ({
         onCategoryChange={onCategoryChange}
       />
 
-      <S.FAQItems>
-        {faqs.map((faq, index) => (
-          <Accordion
-            key={index}
-            title={faq.title}
-            content={faq.content}
-            defaultExpanded={faq.defaultExpanded}
-            icon={faq.icon}
-            qBadge
-          />
-        ))}
-      </S.FAQItems>
+      <S.FAQContentSection>
+        <S.FAQItems>
+          {faqs.map((faq, index) => (
+            <Accordion
+              key={index}
+              title={faq.title}
+              content={faq.content}
+              defaultExpanded={faq.defaultExpanded}
+              icon={faq.icon}
+              qBadge
+            />
+          ))}
+        </S.FAQItems>
 
-      {totalPages > 1 && (
-        <S.PaginationWrapper>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={onPageChange}
-          />
-        </S.PaginationWrapper>
-      )}
+        {totalPages > 1 && (
+          <S.PaginationWrapper>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={onPageChange}
+            />
+          </S.PaginationWrapper>
+        )}
+      </S.FAQContentSection>
     </S.FAQListContainer>
   );
 };

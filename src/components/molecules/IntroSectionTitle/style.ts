@@ -34,7 +34,7 @@ export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
   border-radius: 1.5px;
   border: none;
   flex: none;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   align-self: ${({ $align }) => ($align === 'center' ? 'center' : 'flex-start')};
 
   ${media.tablet} {
@@ -80,7 +80,7 @@ export const Title = styled.h2<{ $color?: string }>`
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
   font-size: 32px;
-  line-height: 140%;
+  line-height: 38px;
   color: ${({ $color, theme }) => {
     const normalized = ($color ?? '').replace(/\s/g, '').toLowerCase();
     const isDarkOverride =
@@ -126,7 +126,7 @@ export const AccentRed = styled.span`
 
 export const Description = styled.p<{ $color?: string }>`
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 20px;
   line-height: 150%;
   color: ${({ $color, theme }) => $color ?? theme.colors.textMuted};
   max-width: 600px;

@@ -18,7 +18,7 @@ export const MainMenu = styled.nav`
 `;
 
 export const MenuItem = styled.a`
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 400;
   color: #9E9E9E;
   text-decoration: none;

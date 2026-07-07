@@ -22,14 +22,13 @@ export const MenuCardLink = styled(Link)`
 export const MenuCard = styled.div`
   background: ${({ theme }) => theme.colors.surface};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 10px;
-  padding: 2.4rem;
+  border-radius: 12px;
+  padding: 26px 29px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 150px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s;
   position: relative;
   width: 100%;
   max-width: 384px;
@@ -38,7 +37,6 @@ export const MenuCard = styled.div`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   }
 
   ${media.tablet} {
@@ -66,7 +64,7 @@ export const MenuCard = styled.div`
 
 export const Title = styled.h2`
   margin: 0;
-  font-size: 2.4rem;
+  font-size: 24px;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.text};
   line-height: 1.3;

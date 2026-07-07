@@ -2,37 +2,33 @@ import styled from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const Sidebar = styled.aside`
-  min-width: 200px;
-  max-width: 200px;
+  width: 180px;
   flex-shrink: 0;
-  padding: 2rem;
-  background: ${({ theme }) => theme.colors.surface};
+  padding: 0;
+  background: transparent;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
   ${media.belowDesktop} {
-    min-width: 0;
-    max-width: none;
     width: 100%;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+    max-width: none;
     gap: 12px;
   }
 `;
 
 export const SidebarTitle = styled.h2`
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.text};
-  margin: 0 0 2rem 0;
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #232527;
+  margin: 0;
 
   ${media.belowDesktop} {
     font-size: 16px;
     line-height: 19px;
-    font-weight: 700;
-    color: ${({ theme }) => theme.colors.text};
-    margin: 0;
   }
 
   ${media.mobile} {

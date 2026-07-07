@@ -216,7 +216,7 @@ export const MainContent = styled.main`
   position: relative;
   width: 100%;
   flex: none;
-  padding-top: calc(2.5rem + 4.5rem + 72px); /* Header top (40px) + Header height (72px) + 72px gap = 184px */
+  padding-top: 112px;
   padding-bottom: 0;
   z-index: 1;
   box-sizing: border-box;
@@ -253,7 +253,7 @@ export const SectionWrapper = styled.div`
 
   /* Frame 144 - IntroSection */
   &:nth-of-type(1) {
-    padding: 0px 0px 0px;
+    padding: 72px 0 0;
     gap: 24px;
     height: auto;
     min-height: 524px;
@@ -274,7 +274,7 @@ export const SectionWrapper = styled.div`
 
   /* Frame 12 - NumbersSection */
   &:nth-of-type(2) {
-    padding: 80px 0px 0px;
+    padding: 160px 0 0;
     gap: 36px;
     height: auto;
     min-height: 383px;
@@ -296,7 +296,7 @@ export const SectionWrapper = styled.div`
 
   /* Frame 19 - ServiceInfoSection */
   &:nth-of-type(3) {
-    padding: 100px 0px 0px;
+    padding: 160px 0 0;
     gap: 24px;
     height: auto;
     min-height: 852px;
@@ -317,11 +317,11 @@ export const SectionWrapper = styled.div`
 
   /* Frame 29 - PartnersSection */
   &:nth-of-type(4) {
-    padding: 100px 0px 0px;
+    padding: 160px 0 0;
     gap: 48px;
     height: auto;
     min-height: 670px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
 
     ${media.tablet} {
       padding: 60px 0 0;
@@ -340,7 +340,7 @@ export const SectionWrapper = styled.div`
 
   /* Frame 45 - InconveniencesSection */
   &:nth-of-type(5) {
-    padding: 100px 0 0;
+    padding: 160px 0 0;
     gap: 48px;
     height: auto;
     min-height: auto;
@@ -359,7 +359,7 @@ export const SectionWrapper = styled.div`
 
   /* Frame 145 - PromisesSection */
   &:nth-of-type(6) {
-    padding: 100px 0 0;
+    padding: 160px 0 0;
     gap: 48px;
     height: auto;
     min-height: auto;
@@ -378,7 +378,7 @@ export const SectionWrapper = styled.div`
 
   /* Frame 146 - MeetSection */
   &:nth-of-type(7) {
-    padding: 100px 0 72px;
+    padding: 160px 0 72px;
     gap: 36px;
     height: auto;
     min-height: auto;

@@ -124,7 +124,7 @@ export const Description = styled.div`
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 20px;
-  line-height: 100%;
+  line-height: 150%;
   color: ${({ theme }) => theme.colors.gray600};
   margin: 0;
   white-space: pre-line;
@@ -199,5 +199,5 @@ export const TextStack = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  font-size: 1.5rem;
+  font-size: 24px;
 `;

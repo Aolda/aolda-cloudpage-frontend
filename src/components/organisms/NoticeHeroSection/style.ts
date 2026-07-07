@@ -86,7 +86,7 @@ export const BreadcrumbWrapper = styled.div`
       font-family: 'Noto Sans KR';
       font-style: normal;
       font-weight: 400;
-      font-size: 1rem;
+      font-size: 16px;
       line-height: 1.1875rem;
     }
     
@@ -106,7 +106,7 @@ export const Title = styled.h1`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 32px;
   line-height: 2.375rem;
   color: #232527;
   margin: 0;
@@ -151,7 +151,7 @@ export const SearchWrapper = styled.div`
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.1875rem;
     color: #777777;
     width: 10.875rem;

@@ -7,6 +7,7 @@ export const TemplateContainer = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 1;
+  background: #fefefe;
 `;
 
 export const ContentWrapper = styled.div`
@@ -17,33 +18,25 @@ export const ContentWrapper = styled.div`
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  padding: 40px 120px;
+  padding: 60px 120px 0;
   box-sizing: border-box;
-  background: ${({ theme }) => theme.colors.surface};
-  margin-bottom: 150px;
+  background: #fefefe;
 
   ${media.belowDesktop} {
     flex-direction: column;
-    margin-bottom: 60px;
-  }
-
-  ${media.tablet} {
-    max-width: 744px;
-    padding: 36px 32px;
+    padding: 36px 32px 0;
     gap: 36px;
   }
 
   ${media.mobile} {
-    max-width: 100%;
-    padding: 24px 16px;
+    padding: 24px 16px 0;
     gap: 24px;
-    margin-bottom: 40px;
   }
 `;
 
 export const SidebarWrapper = styled.div`
   flex-shrink: 0;
-  width: 200px;
+  width: 180px;
 
   ${media.belowDesktop} {
     width: 100%;
@@ -59,9 +52,10 @@ export const SidebarWrapper = styled.div`
 export const MainContent = styled.div`
   flex: 1;
   min-width: 0;
+  max-width: 996px;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 36px;
   box-sizing: border-box;
 
   ${media.belowDesktop} {
@@ -73,10 +67,10 @@ export const MainContent = styled.div`
 
   ${media.mobile} {
     max-width: 343px;
+    gap: 24px;
   }
 `;
 
-/** 데스크톱 본문 검색 (태블릿·모바일에서는 히어로 검색 사용) */
 export const SearchSection = styled.div`
   width: 100%;
 

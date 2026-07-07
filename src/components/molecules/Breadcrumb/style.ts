@@ -4,7 +4,7 @@ export const Breadcrumb = styled.nav`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: 16px;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const ProductListContainer = styled.div`
@@ -6,7 +6,7 @@ export const ProductListContainer = styled.div`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 20px;
   box-sizing: border-box;
 
   ${media.belowDesktop} {
@@ -25,34 +25,24 @@ export const SearchSection = styled.div`
 
 export const SectionHeader = styled.div`
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
-
-  ${media.belowDesktop} {
-    gap: 12px;
-  }
-
-  ${media.mobile} {
-    gap: 8px;
-  }
+  align-items: flex-start;
+  gap: 12px;
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.text};
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 700;
+  color: #232527;
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 12px;
 
   ${media.belowDesktop} {
-    font-family: 'Noto Sans KR', sans-serif;
     font-size: 20px;
     line-height: 24px;
-    font-weight: 700;
-    color: ${({ theme }) => theme.colors.text};
-    gap: 12px;
   }
 
   ${media.mobile} {
@@ -63,14 +53,16 @@ export const SectionTitle = styled.h2`
 `;
 
 export const SectionIcon = styled.span`
-  display: inline-block;
-  width: 24.85px;
-  height: 21.57px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
   flex-shrink: 0;
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 29px;
+    height: 29px;
     object-fit: contain;
   }
 
@@ -96,20 +88,18 @@ export const SectionIcon = styled.span`
 `;
 
 export const ServiceGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 231px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
   gap: 24px;
-  justify-content: flex-start;
-
-  @media (min-width: 1025px) and (max-width: 1200px) {
-    grid-template-columns: repeat(3, 231px);
-  }
+  width: 100%;
 
   ${media.belowDesktop} {
+    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
-    width: 100%;
-    justify-content: stretch;
   }
 
   ${media.mobile} {

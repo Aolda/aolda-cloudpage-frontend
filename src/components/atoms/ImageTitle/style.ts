@@ -17,7 +17,7 @@ export const IconImage = styled.img`
 
 export const TitleText = styled.h3`
   margin: 0;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 600;
   color: #333333;
   line-height: 1.4;

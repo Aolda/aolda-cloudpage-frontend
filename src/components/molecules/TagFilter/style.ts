@@ -3,8 +3,8 @@ import { media } from '@/styles/theme';
 
 export const MenuIcon = styled.span`
   display: inline-flex;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -103,9 +103,9 @@ export const Button = styled.button<{ $isActive: boolean; $faqStyle?: boolean }>
             color: ${$isActive ? '#FEFEFE' : '#FAFAFA'};
           `
         : css`
-            background: ${$isActive ? '#1572b8' : theme.colors.surface};
-            border: ${$isActive ? 'none' : `1px solid ${theme.colors.border}`};
-            color: ${$isActive ? '#ffffff' : theme.colors.gray600};
+            background: ${$isActive ? '#1A8EE5' : '#fefefe'};
+            border: ${$isActive ? 'none' : '1px solid #efefef'};
+            color: ${$isActive ? '#fefefe' : '#777777'};
           `}
 
       ${media.tablet} {
