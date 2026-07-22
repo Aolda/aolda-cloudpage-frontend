@@ -42,14 +42,6 @@ export const HeroBackground = styled.div`
     transform: translate(-50%, -50%) rotate(90deg) scale(var(--hero-scale));
   }
 
-  ${media.tablet} {
-    img {
-      width: 100%;
-      height: 100%;
-      object-position: var(--hero-object-position);
-      transform: none;
-    }
-  }
 `;
 
 export const HeroOverlay = styled.div`
