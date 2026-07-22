@@ -63,6 +63,12 @@ export const StatValue = styled.span`
   }
 `;
 
+export const Unit = styled.span`
+  ${media.mobile} {
+    display: none;
+  }
+`;
+
 export const StatLabel = styled.span`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.gray600};
