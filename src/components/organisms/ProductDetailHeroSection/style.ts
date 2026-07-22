@@ -35,11 +35,6 @@ export const HeroSection = styled.section`
     padding: 0 32px 48px;
     align-items: stretch;
 
-    &::before {
-      background-size: cover;
-      background-position: center;
-      transform: none;
-    }
   }
 
   ${media.mobile} {
