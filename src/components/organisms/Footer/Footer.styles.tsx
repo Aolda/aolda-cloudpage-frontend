@@ -13,20 +13,20 @@ export const StyledFooter = styled.footer`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  min-height: 23.1rem;
-  padding: 6rem 12rem;
+  min-height: 231px;
+  padding: 60px 120px;
   gap: 1rem;
   background: #061c2c;
 
   ${media.tablet} {
-    min-height: 20.7rem;
-    padding: 4.8rem 3.2rem;
+    min-height: 207px;
+    padding: 48px 32px;
     gap: 1rem;
   }
 
   ${media.mobile} {
-    min-height: 14.2rem;
-    padding: 2.4rem 1.6rem;
+    min-height: 142px;
+    padding: 24px 16px;
     gap: 1rem;
   }
 `;
