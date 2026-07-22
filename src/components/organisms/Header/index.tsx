@@ -11,7 +11,6 @@ import {
   MobileMenuPanel,
   MobileMenuLink,
 } from './Header.styles';
-import ThemeToggleButton from '@/components/molecules/ThemeToggleButton';
 
 const NAV_ITEMS = [
   { label: '제품 소개', href: '/product' },
@@ -56,7 +55,8 @@ const Header = () => {
     <StyledHeader $menuOpen={isMenuOpen}>
       <section className="iconSection">
         <Link href="/" onClick={() => setIsMenuOpen(false)}>
-          <Image src="/main_logo.png" alt="icon" width={35} height={36} />
+          <Image src="/main_logo.png" alt="AOLDA 로고" width={35} height={36} />
+          <span className="brandName">AOLDA</span>
         </Link>
       </section>
       <nav className="linkSeciton" aria-label="주요 메뉴">
@@ -71,7 +71,6 @@ const Header = () => {
         })}
       </nav>
       <section className="actionSection">
-        <ThemeToggleButton />
         <button
           type="button"
           className={`menuToggle${isMenuOpen ? ' isOpen' : ''}`}
