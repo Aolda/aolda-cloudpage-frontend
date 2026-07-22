@@ -15,7 +15,7 @@ const PromisesSection = () => (
         <>
           자유롭게 꿈을 펼치기 위해
           <br />
-          모두 함계하는는{' '}
+          모두 함께하는{' '}
           <AccentRed>약속 3가지</AccentRed>
         </>
       }
@@ -44,4 +44,3 @@ const PromisesSection = () => (
 );
 
 export default PromisesSection;
-
