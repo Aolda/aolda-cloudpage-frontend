@@ -48,6 +48,7 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
     }
 
     img {
@@ -55,6 +56,26 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
       width: 3.5rem !important;
       height: 3.6rem !important;
       object-fit: contain;
+    }
+
+    .brandName {
+      display: none;
+      color: ${({ theme }) => theme.colors.primary500};
+      font-family: 'Leon Sans', 'Pretendard Variable', 'Noto Sans KR', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    ${media.belowDesktop} {
+      img {
+        width: 28px !important;
+        height: 28px !important;
+      }
+
+      .brandName {
+        display: block;
+      }
     }
   }
 
