@@ -36,11 +36,10 @@ const StatCard = ({ title, value, unit = '' }: StatCardProps) => {
       <S.StatLabel>{title}</S.StatLabel>
       <S.StatValue>
         {formattedValue}
-        {unit && ` ${unit}`}
+        {unit && <S.Unit>{` ${unit}`}</S.Unit>}
       </S.StatValue>
     </S.StatCard>
   );
 };
 
 export default StatCard;
-
