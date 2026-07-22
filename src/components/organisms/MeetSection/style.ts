@@ -64,6 +64,22 @@ export const Divider = styled.span`
   border-radius: 2px;
 `;
 
+export const DefaultTitle = styled.div`
+  display: contents;
+
+  ${media.belowDesktop} {
+    display: none;
+  }
+`;
+
+export const MobileTitle = styled.div`
+  display: none;
+
+  ${media.belowDesktop} {
+    display: contents;
+  }
+`;
+
 export const Grid = styled.div`
   display: flex;
   flex-direction: row;
