@@ -14,26 +14,10 @@ export interface ServiceCardProps {
 
 /**
  * 서비스 카드 컴포넌트
- * 
+ *
  * 제품/서비스를 표시하는 카드입니다. 아이콘, 제목, 설명을 포함합니다.
- * 
- * @param {ServiceCardProps} props - 서비스 카드 props
- * @param {string} [props.icon] - 서비스 아이콘 이미지 경로
- * @param {string} props.title - 서비스 제목
- * @param {string} [props.description] - 서비스 설명
- * @param {string} [props.href] - 링크 경로
- * 
- * @example
- * <ServiceCard
- *   icon="/icon.png"
- *   title="AMDB"
- *   description="10년 이상의 운영 노하우와 서비스를 제공합니다"
- *   href="/service/amdb"
- * />
- * 
- * @returns {JSX.Element} 서비스 카드 요소
  */
-const ServiceCard = ({  
+const ServiceCard = ({
   icon,
   title,
   description,
@@ -49,9 +33,9 @@ const ServiceCard = ({
         {description && <S.Description>{description}</S.Description>}
       </S.CardBody>
       {href && (
-        <S.ArrowIcon viewBox="0 0 24 24" fill="none">
+        <S.ArrowIcon viewBox="0 0 16 16" fill="none" aria-hidden>
           <path
-            d="M9 18L15 12L9 6"
+            d="M5.75 3.5L10.25 8L5.75 12.5"
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
@@ -62,16 +46,17 @@ const ServiceCard = ({
     </S.ServiceCard>
   );
 
-  if (href) {
-    return (
-      <S.ServiceLink as={Link} href={href}>
-        {content}
-      </S.ServiceLink>
-    );
-  }
-
-  return <S.ServiceCardWrapper>{content}</S.ServiceCardWrapper>;
+  return (
+    <S.ServiceCardWrapper>
+      {href ? (
+        <S.ServiceLink as={Link} href={href}>
+          {content}
+        </S.ServiceLink>
+      ) : (
+        content
+      )}
+    </S.ServiceCardWrapper>
+  );
 };
 
 export default ServiceCard;
-

@@ -88,6 +88,8 @@ export const Button = styled.button<{
 
   ${media.mobile} {
     max-width: 100%;
+    font-size: 10px;
+    line-height: 12px;
   }
 `;
 
@@ -137,8 +139,20 @@ export const Label = styled.span<{
   ${media.mobile} {
     font-size: 10px;
     line-height: 12px;
-    height: auto;
+    height: 12px;
     margin-top: 0;
+    ${({ $variant, theme, $lightTextInDarkMode = false }) =>
+      $lightTextInDarkMode && theme.mode === 'dark'
+        ? css`
+            color: #ffffff;
+          `
+        : $variant === 'secondary'
+          ? css`
+              color: #232527;
+            `
+          : css`
+              color: #ffffff;
+            `}
   }
 `;
 
@@ -146,7 +160,17 @@ export const Image = styled.img<{ $variant: ButtonVariant }>`
   width: 24px;
   height: 24px;
   object-fit: contain;
-  filter: ${({ $variant }) => $variant === 'secondary' ? 'none' : 'brightness(0) invert(1)'};
+  filter: ${({ $variant }) => ($variant === 'secondary' ? 'none' : 'brightness(0) invert(1)')};
+
+  ${media.tablet} {
+    width: 16px;
+    height: 16px;
+  }
+
+  ${media.mobile} {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
   

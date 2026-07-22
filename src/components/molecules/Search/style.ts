@@ -2,21 +2,23 @@ import styled, { css } from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const SearchForm = styled.form<{ $embedded?: boolean }>`
-  margin-top: ${({ $embedded }) => ($embedded ? 0 : '18px')};
+  margin-top: 0;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: ${({ $embedded }) => ($embedded ? 'none' : '996px')};
   height: ${({ $embedded }) => ($embedded ? 'auto' : '48px')};
   box-sizing: border-box;
 
-  ${media.belowDesktop} {
-    margin-top: 0;
-    max-width: 100%;
+  ${media.tablet} {
+    max-width: 680px;
     height: ${({ $embedded }) => ($embedded ? 'auto' : '48px')};
   }
 
   ${media.mobile} {
+    max-width: 100%;
     height: ${({ $embedded }) => ($embedded ? 'auto' : '40px')};
   }
 `;
@@ -77,14 +79,15 @@ export const SearchInput = styled.input<{ $embedded?: boolean }>`
             color: #777777;
           }
 
-          ${media.belowDesktop} {
+          ${media.tablet} {
             font-size: 12px;
             line-height: 150%;
-            border: 1px solid ${theme.colors.border};
+            border: 1px solid #efefef;
             padding: 12px 48px 12px 16px;
+            background: #fefefe;
 
             &::placeholder {
-              color: ${theme.colors.gray600};
+              color: #777777;
             }
           }
 

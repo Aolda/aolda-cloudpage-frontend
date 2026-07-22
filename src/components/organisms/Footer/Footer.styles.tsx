@@ -13,21 +13,21 @@ export const StyledFooter = styled.footer`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  min-height: 23.1rem;
-  padding: 6rem 12rem;
-  gap: 1rem;
+  min-height: 231px;
+  padding: 60px 120px;
+  gap: 10px;
   background: #061c2c;
 
   ${media.tablet} {
-    min-height: 20.7rem;
-    padding: 4.8rem 3.2rem;
-    gap: 1rem;
+    min-height: 207px;
+    padding: 48px 32px;
+    gap: 10px;
   }
 
   ${media.mobile} {
-    min-height: 14.2rem;
-    padding: 2.4rem 1.6rem;
-    gap: 1rem;
+    min-height: 142px;
+    padding: 24px 16px;
+    gap: 10px;
   }
 `;
 
@@ -35,61 +35,85 @@ export const FooterContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 1.6rem;
+  gap: 16px;
   width: 100%;
-  max-width: 120rem;
+  max-width: 1200px;
 
   ${media.tablet} {
     max-width: none;
-    gap: 1.6rem;
+    width: 349.5px;
+    gap: 16px;
   }
 
   ${media.mobile} {
     max-width: none;
-    gap: 1.2rem;
+    width: 337.5px;
+    max-width: 100%;
+    gap: 12px;
   }
 `;
 
 export const LogoWrap = styled.div`
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   img {
     object-fit: contain;
   }
 
   ${media.mobile} {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 24px;
+    height: 24px;
+
+    img {
+      width: 20px !important;
+      height: 20px !important;
+    }
   }
 `;
 
 export const TextColumn = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 12px;
   flex: 1;
   min-width: 0;
+
+  ${media.tablet} {
+    width: 301.5px;
+    flex: none;
+  }
+
+  ${media.mobile} {
+    width: 301.5px;
+    max-width: calc(100% - 36px);
+    flex: 1;
+  }
 `;
 
 export const BrandBlock = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 4px;
 `;
 
 export const BrandName = styled.span`
   font-family: 'Leon Sans', 'Pretendard Variable', 'Noto Sans KR', sans-serif;
   font-weight: 700;
   font-size: ${fontSize.h2};
-  line-height: 3.3rem;
+  line-height: 33px;
   color: #fefefe;
   white-space: nowrap;
 
   ${media.mobile} {
-    font-size: ${fontSize.h2};
-    line-height: 1.3;
+    font-size: 24px;
+    line-height: 25px;
+    color: #fefefe;
   }
 `;
 
@@ -102,15 +126,15 @@ export const Tagline = styled.span`
   word-break: keep-all;
 
   ${media.mobile} {
-    font-size: ${fontSize.smaller};
-    line-height: 1.5;
+    font-size: 10px;
+    line-height: 150%;
   }
 `;
 
 export const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 8px;
   width: 100%;
 `;
 
@@ -122,8 +146,8 @@ export const Address = styled.span`
   color: #fefefe;
 
   ${media.mobile} {
-    font-size: ${fontSize.smaller};
-    line-height: 1.5;
+    font-size: 10px;
+    line-height: 150%;
   }
 `;
 
@@ -132,7 +156,7 @@ export const ManagementRow = styled.div`
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 8px;
 `;
 
 export const ManagementText = styled.span`
@@ -144,15 +168,15 @@ export const ManagementText = styled.span`
   white-space: nowrap;
 
   ${media.mobile} {
-    font-size: ${fontSize.smaller};
-    line-height: 1.5;
+    font-size: 10px;
+    line-height: 150%;
   }
 `;
 
 export const Divider = styled.span`
-  width: 0.4rem;
+  width: 4px;
   height: 0;
-  border: 0.1rem solid #fefefe;
+  border: 1px solid #fefefe;
   transform: rotate(90deg);
   flex: none;
 `;

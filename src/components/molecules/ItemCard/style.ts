@@ -25,8 +25,9 @@ export const ItemCard = styled.div<{ $tone: CardTone }>`
     min-height: 240px;
     padding: 24px 20px;
     gap: 20px;
-    border: 1px solid ${({ theme }) => theme.colors.border};
+    border: 1px solid #efefef;
     border-radius: 12px;
+    background: #fefefe;
     flex: 1;
   }
 
@@ -41,8 +42,8 @@ export const ItemCard = styled.div<{ $tone: CardTone }>`
     align-items: center;
     justify-content: flex-start;
     border-radius: 8px;
-    background: ${({ theme }) => theme.colors.surface};
-    border: 1px solid ${({ theme }) => theme.colors.border};
+    background: #fefefe;
+    border: 1px solid #efefef;
     flex-grow: 0;
   }
 `;
@@ -141,6 +142,7 @@ export const ItemTitle = styled.h3<{ $tone?: CardTone }>`
     line-height: 14px;
     justify-content: flex-start;
     text-align: left;
+    color: ${({ $tone }) => ($tone === 'red' ? '#E15651' : '#1A8EE5')};
   }
 `;
 

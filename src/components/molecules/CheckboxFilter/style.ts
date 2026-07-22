@@ -4,9 +4,13 @@ import { media } from '@/styles/theme';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
   gap: 16px;
+  width: auto;
+  max-width: 100%;
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -14,19 +18,35 @@ export const Container = styled.div`
   }
 
   ${media.mobile} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 8px;
   }
 `;
 
 export const Option = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  padding: 0;
+  gap: 8px;
+  height: 24px;
+  border-radius: 8px;
+  width: max-content;
+  max-width: 100%;
+  flex: none;
+  flex-shrink: 0;
 `;
 
 export const Label = styled.label`
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   gap: 8px;
+  width: max-content;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 16px;
   line-height: 19px;
@@ -34,8 +54,10 @@ export const Label = styled.label`
   color: #232527;
   cursor: pointer;
   user-select: none;
+  text-align: left;
+  white-space: nowrap;
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
     font-size: 12px;
     line-height: 150%;
   }

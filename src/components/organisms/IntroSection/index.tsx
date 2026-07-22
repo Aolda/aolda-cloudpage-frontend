@@ -11,7 +11,7 @@ const CardItems = [
         처음이신가요?
       </>
     ),
-    actionLabel: '사용 가이드 ',
+    actionLabel: '사용 가이드',
     href: '/useinfo',
   },
   {
@@ -22,7 +22,7 @@ const CardItems = [
         모아봤어요!
       </>
     ),
-    actionLabel: '테크 블로그 ',
+    actionLabel: '테크 블로그',
     href: '/blog',
   },
 ];

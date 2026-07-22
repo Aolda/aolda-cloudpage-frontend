@@ -18,27 +18,33 @@ export const ContentWrapper = styled.div`
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  padding: 60px 120px 0;
+  padding: 60px 120px 252px;
   box-sizing: border-box;
   background: #fefefe;
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
     flex-direction: column;
-    padding: 36px 32px 0;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 744px;
+    padding: 36px 32px 55px;
     gap: 36px;
   }
 
   ${media.mobile} {
-    padding: 24px 16px 0;
+    flex-direction: column;
+    padding: 24px 16px 252px;
     gap: 24px;
+    max-width: 100%;
   }
 `;
 
 export const SidebarWrapper = styled.div`
+  flex: none;
   flex-shrink: 0;
   width: 180px;
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
     width: 100%;
     max-width: 680px;
     align-self: stretch;
@@ -50,15 +56,18 @@ export const SidebarWrapper = styled.div`
 `;
 
 export const MainContent = styled.div`
-  flex: 1;
-  min-width: 0;
-  max-width: 996px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
   gap: 36px;
+  width: 996px;
+  max-width: 996px;
+  flex: none;
+  min-width: 0;
   box-sizing: border-box;
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
     width: 100%;
     max-width: 680px;
     gap: 36px;
@@ -73,8 +82,13 @@ export const MainContent = styled.div`
 
 export const SearchSection = styled.div`
   width: 100%;
+  max-width: 996px;
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
+    display: none;
+  }
+
+  ${media.mobile} {
     display: none;
   }
 `;

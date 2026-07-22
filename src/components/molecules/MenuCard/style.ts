@@ -45,9 +45,11 @@ export const MenuCard = styled.div`
     height: 101px;
     min-height: 101px;
     padding: 16px 20px;
+    border: 1px solid #efefef;
     border-radius: 12px;
     gap: 0;
     box-shadow: none;
+    background: #fefefe;
   }
 
   ${media.mobile} {
@@ -56,9 +58,12 @@ export const MenuCard = styled.div`
     height: 64px;
     min-height: 64px;
     padding: 8px 12px;
+    border: 1px solid #efefef;
     border-radius: 8px;
     gap: 4px;
     box-shadow: none;
+    background: #fefefe;
+    justify-content: flex-start;
   }
 `;
 
@@ -73,11 +78,16 @@ export const Title = styled.h2`
   ${media.tablet} {
     font-size: 16px;
     line-height: 19px;
+    height: 46px;
+    display: flex;
+    align-items: flex-start;
   }
 
   ${media.mobile} {
     font-size: 10px;
     line-height: 12px;
+    height: 28px;
+    color: #181818;
   }
 `;
 
@@ -97,18 +107,31 @@ export const ActionLabel = styled.span`
   align-self: stretch;
   flex-grow: 0;
 
+  /* Frame 1 — Tablet 744 */
   ${media.tablet} {
     width: 100%;
     max-width: 290px;
-    margin: 0;
     height: 23px;
+    margin: 0 auto;
+    margin-top: auto;
+    padding: 0;
     gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: stretch;
+    flex: none;
+    flex-grow: 0;
   }
 
   ${media.mobile} {
+    width: 100%;
     max-width: 141.5px;
     height: 16px;
     gap: 4px;
+    margin: 0;
+    margin-top: auto;
+    justify-content: flex-end;
+    align-self: stretch;
   }
 `;
 
@@ -128,32 +151,52 @@ export const ActionLabelText = styled.span`
   white-space: nowrap;
 
   ${media.tablet} {
+    width: 78px;
+    height: 23px;
+    padding-top: 3.5px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: 700;
     font-size: 16px;
     line-height: 19px;
-    height: auto;
+    color: #777777;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    box-sizing: border-box;
   }
 
   ${media.mobile} {
+    width: auto;
+    height: 15px;
+    padding-top: 0;
     font-size: 10px;
     line-height: 150%;
     font-weight: 400;
+    color: #777777;
   }
 `;
 
 export const ArrowIcon = styled.span`
+  /* famicons:chevron-forward-outline */
+  position: relative;
   width: 24px;
   height: 24px;
   flex: none;
   order: 1;
   flex-grow: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-shrink: 0;
   box-sizing: border-box;
 
   ${media.tablet} {
     width: 20px;
     height: 20px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
   }
 
   ${media.mobile} {
@@ -163,18 +206,24 @@ export const ArrowIcon = styled.span`
 `;
 
 export const ArrowVector = styled.svg`
-  width: 24px;
-  height: 24px;
-  color: ${({ theme }) => theme.colors.gray600};
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   display: block;
+  overflow: visible;
 
-  ${media.tablet} {
-    width: 20px;
-    height: 20px;
+  path {
+    fill: none;
+    stroke: #777777;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   ${media.mobile} {
-    width: 16px;
-    height: 16px;
+    path {
+      stroke-width: 1.5;
+    }
   }
 `;

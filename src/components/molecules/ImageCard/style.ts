@@ -55,6 +55,20 @@ export const ImageCard = styled.div<{
     padding: ${({ $isBackground }) => ($isBackground ? '32px' : '12px')};
     gap: ${({ $isBackground }) => ($isBackground ? '10px' : '12px')};
     border-radius: ${({ $isBackground }) => ($isBackground ? '12px' : '8px')};
+    border: ${({ $isBackground, theme, $solidThumbnail }) =>
+      $isBackground
+        ? 'none'
+        : $solidThumbnail
+          ? '1px solid #efefef'
+          : theme.mode === 'dark'
+            ? `1px solid ${theme.colors.widgetBorder}`
+            : '1px solid #efefef'};
+    background: ${({ $isBackground, theme }) =>
+      $isBackground
+        ? 'transparent'
+        : theme.mode === 'dark'
+          ? theme.colors.surface
+          : '#fefefe'};
   }
 
   ${media.mobile} {
@@ -64,6 +78,20 @@ export const ImageCard = styled.div<{
     height: ${({ $isBackground }) => ($isBackground ? '161.41px' : '64px')};
     padding: ${({ $isBackground }) => ($isBackground ? '16px' : '8px 12px')};
     flex-grow: ${({ $isBackground }) => ($isBackground ? '0' : '1')};
+    border-radius: ${({ $isBackground }) => ($isBackground ? '8px' : '8px')};
+    opacity: ${({ $isBackground }) => ($isBackground ? 0.8 : 1)};
+    border: ${({ $isBackground, $solidThumbnail, theme }) =>
+      $isBackground
+        ? 'none'
+        : $solidThumbnail || true
+          ? '1px solid #efefef'
+          : `1px solid ${theme.colors.border}`};
+    background: ${({ $isBackground, theme }) =>
+      $isBackground
+        ? 'transparent'
+        : theme.mode === 'dark'
+          ? theme.colors.surface
+          : '#fefefe'};
   }
 
   ${({ $compact }) =>
@@ -79,10 +107,12 @@ export const ImageCard = styled.div<{
         padding: 12px;
         gap: 8px;
         border-radius: 8px;
+        border: 1px solid #efefef;
+        background: #fefefe;
+        opacity: 1;
       }
     `}
 `;
-
 export const Overlay = styled.div<{ $isBackground?: boolean }>`
   ${({ $isBackground }) =>
     $isBackground &&
@@ -92,6 +122,10 @@ export const Overlay = styled.div<{ $isBackground?: boolean }>`
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
       z-index: 1;
       border-radius: 12px;
+
+      ${media.mobile} {
+        border-radius: 8px;
+      }
     `}
 `;
 
@@ -154,12 +188,14 @@ export const TextContainer = styled.div<{ $compact?: boolean }>`
   flex-direction: column;
   gap: 4px;
   flex: 1;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 80px;
 
   ${media.tablet} {
     gap: 4px;
     min-height: 80px;
+    height: 80px;
+    justify-content: flex-start;
   }
 
   ${({ $compact }) =>
@@ -167,8 +203,9 @@ export const TextContainer = styled.div<{ $compact?: boolean }>`
     css`
       ${media.mobile} {
         min-height: 0;
+        height: auto;
         gap: 4px;
-        justify-content: center;
+        justify-content: flex-start;
       }
     `}
 `;
@@ -186,7 +223,7 @@ export const ImageTitle = styled.h3<{ $isBackground?: boolean; $compact?: boolea
     css`
       position: relative;
       z-index: 2;
-      line-height: 100%;
+      line-height: 29px;
       padding: 48px;
       display: flex;
       align-items: flex-start;
@@ -199,6 +236,8 @@ export const ImageTitle = styled.h3<{ $isBackground?: boolean; $compact?: boolea
     font-size: ${({ $isBackground }) => ($isBackground ? '24px' : '16px')};
     line-height: ${({ $isBackground }) => ($isBackground ? '29px' : '19px')};
     padding: ${({ $isBackground }) => ($isBackground ? '32px' : '0')};
+    color: ${({ $isBackground, theme }) =>
+      $isBackground ? '#ffffff' : theme.mode === 'dark' ? theme.colors.text : '#181818'};
   }
 
   ${media.mobile} {
@@ -214,10 +253,12 @@ export const ImageTitle = styled.h3<{ $isBackground?: boolean; $compact?: boolea
     $compact &&
     css`
       ${media.mobile} {
+        order: 0;
         font-size: 12px;
         line-height: 14px;
-        color: ${({ theme }) => theme.colors.text};
+        color: #232527;
         text-align: left;
+        padding: 0;
       }
     `}
 `;
@@ -237,14 +278,17 @@ export const ImageDescription = styled.p<{ $compact?: boolean }>`
     $compact &&
     css`
       ${media.mobile} {
+        order: 2;
         font-size: 10px;
         line-height: 150%;
+        color: #777777;
       }
     `}
 `;
 
 export const ImagePeriod = styled.p<{ $compact?: boolean }>`
   margin: 0;
+  margin-top: auto;
   font-size: 16px;
   color: ${({ theme }) => theme.colors.gray600};
   line-height: 150%;
@@ -258,8 +302,11 @@ export const ImagePeriod = styled.p<{ $compact?: boolean }>`
     $compact &&
     css`
       ${media.mobile} {
+        order: 1;
+        margin-top: 0;
         font-size: 10px;
         line-height: 150%;
+        color: #777777;
       }
     `}
 `;

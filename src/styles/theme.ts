@@ -20,7 +20,7 @@ const lightColors = {
   gray500: '#A0A0A0',
   gray600: '#777777',
   statAccent: '#0E76C4',
-  statusNegative: '#E92317',
+  statusNegative: '#E15651',
   border: '#E2E2E2',
   borderStrong: '#C9D4EE',
   widgetBorder: '#E2E2E2',

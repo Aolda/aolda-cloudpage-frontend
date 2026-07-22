@@ -33,7 +33,7 @@ const ServiceInfoSection = () => (
           개발자를 꿈꾸는 대학생에게 클라우드는 프로젝트를 위해 꼭 필요한 서비스입니다.
           <S.DesktopBreak />
           하지만 비용이 만만치 않고, 무료용량은 너무 작습니다.
-          <S.DesktopBreak />
+          <br />
           관련 비용을 학교에서 지원해주지만, 써야 할 보고서는 늘어나고 챙겨야 할 증빙자료도 많아집니다.
           <S.TabletBreak />
           <S.DesktopBreak />
@@ -48,10 +48,6 @@ const ServiceInfoSection = () => (
           src="/intro/intro_serviceinfo_2.png"
           alt="클라우드 일러스트"
           fill
-          style={{
-            objectFit: 'cover',
-            objectPosition: '80% 25%',
-          }}
         />
       </S.RightPanel>
       <S.MobileDescription>
@@ -59,8 +55,10 @@ const ServiceInfoSection = () => (
           개발자를 꿈꾸는 대학생에게 클라우드는 프로젝트를 위해 꼭 필요한 서비스입니다.
         </p>
         <p>
-          하지만 비용이 만만치 않고, 무료용량은 너무 작습니다. 관련 비용을 학교에서
-          지원해주지만, 써야 할 보고서는 늘어나고 챙겨야 할 증빙자료도 많아집니다.
+          하지만 비용이 만만치 않고, 무료용량은 너무 작습니다.
+          <br />
+          관련 비용을 학교에서 지원해주지만, 써야 할 보고서는 늘어나고 챙겨야 할
+          증빙자료도 많아집니다.
         </p>
         <p>
           아올다 클라우드는 이런 문제를 해결하기 위해 2022년부터 시작된 아주대학교

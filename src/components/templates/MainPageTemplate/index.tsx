@@ -30,7 +30,6 @@ const MainPageTemplate = ({ stats, partners }: MainPageTemplateProps) => {
   return (
     <BaseTemplate>
       <S.DecorationLayer aria-hidden>
-        <S.BackgroundDecorations />
         <S.Ellipse9 />
         <S.Ellipse10 />
         <S.Ellipse11 />

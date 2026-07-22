@@ -27,15 +27,15 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
     transform: none;
     position: relative;
     margin: 0;
-    padding: 2rem 3.2rem;
+    padding: 20px 32px;
     border: none;
     border-radius: 0;
-    height: 6.8rem;
+    height: 68px;
     z-index: ${({ $menuOpen }) => ($menuOpen ? 110 : 10)};
   }
 
   ${media.mobile} {
-    padding: 2rem 2.4rem;
+    padding: 20px 24px;
   }
 
   .iconSection {
@@ -43,11 +43,14 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
     align-items: center;
     justify-content: flex-start;
     flex-shrink: 0;
+    gap: 8px;
 
     a {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
+      text-decoration: none;
     }
 
     img {
@@ -55,6 +58,13 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
       width: 35px !important;
       height: 36px !important;
       object-fit: contain;
+    }
+
+    ${media.belowDesktop} {
+      img {
+        width: 28px !important;
+        height: 28px !important;
+      }
     }
   }
 
@@ -96,44 +106,87 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
   }
 
   .menuToggle {
+    /* material-symbols:menu-rounded */
     display: none;
-    width: 2.4rem;
-    height: 2.4rem;
+    position: relative;
+    margin: 0;
+    width: 24px;
+    height: 24px;
     background: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
     flex-shrink: 0;
-
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 0.2rem;
-      background: ${({ theme }) => theme.colors.gray600};
-      border-radius: 0.1rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, margin 0.2s ease;
-    }
-
-    &::before {
-      margin-bottom: 0.5rem;
-      box-shadow: 0 0.6rem 0 ${({ theme }) => theme.colors.gray600};
-    }
+    box-sizing: border-box;
 
     ${media.belowDesktop} {
       display: block;
+      margin: 0 auto;
     }
 
-    &.isOpen::before {
-      margin-bottom: 0;
-      box-shadow: none;
-      transform: translateY(0.35rem) rotate(45deg);
+    .menuToggleVector {
+      /* Vector */
+      position: absolute;
+      left: 12.5%;
+      right: 12.5%;
+      top: 25%;
+      bottom: 25%;
+      box-sizing: border-box;
+      pointer-events: none;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #777777;
+        border-radius: 999px;
+        transition: transform 0.2s ease, top 0.2s ease, bottom 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      &::before {
+        top: 0;
+        box-shadow: 0 5px 0 #777777;
+      }
+
+      &::after {
+        bottom: 0;
+      }
     }
 
-    &.isOpen::after {
-      transform: translateY(-0.35rem) rotate(-45deg);
+    &.isOpen .menuToggleVector {
+      &::before {
+        top: 50%;
+        box-shadow: none;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &::after {
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+      }
     }
+  }
+`;
+
+export const BrandLabel = styled.span`
+  display: none;
+  font-family: 'Paperlogy', 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: ${({ theme }) => theme.colors.primary500};
+  white-space: nowrap;
+
+  ${media.belowDesktop} {
+    display: block;
   }
 `;
 
@@ -144,7 +197,7 @@ export const MobileMenuOverlay = styled.div<{ $open: boolean }>`
     display: block;
     position: fixed;
     inset: 0;
-    top: 6.8rem;
+    top: 68px;
     background: rgba(0, 0, 0, 0.4);
     z-index: 100;
     opacity: ${({ $open }) => ($open ? 1 : 0)};
@@ -162,7 +215,7 @@ export const MobileMenuPanel = styled.nav<{ $open: boolean }>`
     flex-direction: column;
     align-items: stretch;
     position: fixed;
-    top: 6.8rem;
+    top: 68px;
     left: 0;
     right: 0;
     background: ${({ theme }) => theme.colors.surface};

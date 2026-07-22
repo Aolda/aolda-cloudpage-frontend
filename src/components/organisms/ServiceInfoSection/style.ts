@@ -6,6 +6,10 @@ export const DesktopBreak = styled.br`
   ${media.tablet} {
     display: none;
   }
+
+  ${media.mobile} {
+    display: none;
+  }
 `;
 
 /** 태블릿 전용 줄바꿈 — 본문 중간 1곳만 */
@@ -56,24 +60,25 @@ export const ContentRow = styled.div`
   align-items: center;
   padding: 0;
   gap: 24px;
-  width: 100%;
-  max-width: 1200px;
-  height: auto;
-  min-height: 488px;
+  width: 1200px;
+  max-width: 100%;
+  height: 524px;
+  flex: none;
   align-self: stretch;
   box-sizing: border-box;
 
   ${media.tablet} {
-    gap: 20px;
-    min-height: auto;
+    width: 100%;
     max-width: 680px;
+    height: auto;
+    gap: 20px;
   }
 
   ${media.mobile} {
     gap: 12px;
     width: 100%;
     max-width: 100%;
-    min-height: auto;
+    height: auto;
     align-items: flex-start;
   }
 `;
@@ -84,17 +89,15 @@ export const LeftPanel = styled.div`
   align-items: flex-start;
   padding: 0;
   gap: 36px;
-  flex: 1;
-  width: auto;
-  min-width: 0;
-  height: auto;
-  min-height: 488px;
+  width: 797px;
+  height: 524px;
+  flex: none;
 
   ${media.tablet} {
     width: 470px;
     height: auto;
-    min-height: auto;
     flex: 1;
+    min-width: 0;
     gap: 20px;
   }
 
@@ -105,57 +108,74 @@ export const LeftPanel = styled.div`
 
 export const ImageWrapper = styled.div`
   position: relative;
-  width: 100%;
-  max-width: 797px;
+  width: 797px;
   height: 308px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
   border-radius: 12px;
   overflow: hidden;
+  flex: none;
   align-self: stretch;
 
   ${media.tablet} {
+    width: 100%;
     height: 181.63px;
-    max-width: none;
   }
 `;
 
 export const Description = styled.div`
-  width: 100%;
+  width: 797px;
+  height: 180px;
   font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 150%;
-  color: ${({ theme }) => theme.colors.gray600};
+  color: #777777;
   margin: 0;
+  flex: none;
   white-space: pre-line;
   word-break: keep-all;
+  box-sizing: border-box;
 
   ${media.tablet} {
     width: 100%;
+    height: auto;
     font-size: 16px;
     line-height: 150%;
-    height: auto;
   }
 `;
 
 export const RightPanel = styled.div`
   position: relative;
   width: 379px;
-  height: 488px;
+  height: 524px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   border-radius: 12px;
   overflow: hidden;
   flex: none;
+  flex-grow: 1;
+  align-self: stretch;
+
+  img {
+    object-fit: cover;
+    object-position: 80% 25%;
+  }
 
   ${media.tablet} {
     width: 190px;
     height: 345.63px;
+    flex-grow: 0;
     flex-shrink: 0;
+
+    img {
+      object-position: 75% 25%;
+    }
   }
 
   ${media.mobile} {
     width: 80px;
     height: 120px;
+    flex-grow: 0;
     flex-shrink: 0;
     border-radius: 4px;
   }
@@ -174,11 +194,12 @@ export const MobileDescription = styled.div`
     font-weight: 400;
     font-size: 10px;
     line-height: 150%;
-    color: ${({ theme }) => theme.colors.gray600};
+    color: #777777;
     word-break: keep-all;
 
     p {
       margin: 0;
+      color: #777777;
     }
   }
 `;

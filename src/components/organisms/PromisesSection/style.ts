@@ -26,7 +26,6 @@ export const Section = styled.section`
     width: 100%;
     max-width: 100%;
     min-height: auto;
-    padding-top: 0;
     gap: 12px;
     align-items: stretch;
   }
@@ -44,7 +43,8 @@ export const PromiseGrid = styled.div`
   }
 
   ${media.mobile} {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
   }
 `;

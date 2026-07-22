@@ -5,7 +5,7 @@ export const PageWrapper = styled.div`
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: ${({ theme }) => theme.colors.surface};
+  background: #fefefe;
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
@@ -108,14 +108,14 @@ export const Ellipse9 = styled.div`
   ${media.tablet} {
     width: 401.09px;
     height: 401.09px;
-    transform: translateX(calc(-50% + 97px));
+    transform: translateX(calc(-50% + 25px));
     top: -219px;
   }
 
   ${media.mobile} {
     width: 222.53px;
     height: 222.53px;
-    transform: translateX(calc(-50% + 54px));
+    transform: translateX(calc(-50% + 49px));
     top: -59px;
   }
 `;
@@ -137,14 +137,14 @@ export const Ellipse10 = styled.div`
   ${media.tablet} {
     width: 636.63px;
     height: 636.63px;
-    transform: translateX(calc(-50% + 187px)) rotate(55.23deg);
+    transform: translateX(calc(-50% + 321px)) rotate(55.23deg);
     top: -108px;
   }
 
   ${media.mobile} {
     width: 353.21px;
     height: 353.21px;
-    transform: translateX(calc(-50% + 112px)) rotate(55.23deg);
+    transform: translateX(calc(-50% + 213px)) rotate(55.23deg);
     top: 3px;
   }
 `;
@@ -165,14 +165,14 @@ export const Ellipse11 = styled.div`
   ${media.tablet} {
     width: 139.15px;
     height: 139.15px;
-    transform: translateX(calc(-50% + 243px));
+    transform: translateX(calc(-50% + 185px));
     top: 29px;
   }
 
   ${media.mobile} {
     width: 77.2px;
     height: 77.2px;
-    transform: translateX(calc(-50% + 143px));
+    transform: translateX(calc(-50% + 137px));
     top: 79px;
   }
 `;
@@ -195,14 +195,14 @@ export const Ellipse12 = styled.div`
   ${media.tablet} {
     width: 547.52px;
     height: 547.52px;
-    transform: translateX(calc(-50% - 229px)) rotate(90deg);
+    transform: translateX(calc(-50% - 327px)) rotate(90deg);
     top: 518px;
   }
 
   ${media.mobile} {
     width: 303.77px;
     height: 303.77px;
-    transform: translateX(calc(-50% - 111px)) rotate(90deg);
+    transform: translateX(calc(-50% - 147px)) rotate(90deg);
     top: 350px;
   }
 `;
@@ -390,7 +390,7 @@ export const SectionWrapper = styled.div`
     }
 
     ${media.mobile} {
-      padding: 40px 0 48px;
+      padding: 40px 0 50.59px;
       gap: 20px;
       align-items: stretch;
     }

@@ -72,10 +72,18 @@ export const Visual = styled.div`
 
     > div {
       min-height: 320px;
+      height: 320px;
       border-radius: 12px;
+      align-items: flex-start;
 
       img {
         border-radius: 12px;
+      }
+
+      > h3 {
+        font-size: 24px;
+        line-height: 29px;
+        padding: 32px;
       }
     }
   }
@@ -91,6 +99,8 @@ export const Visual = styled.div`
       min-height: 161.41px;
       height: 161.41px;
       border-radius: 8px;
+      opacity: 0.8;
+      align-items: flex-start;
 
       img {
         border-radius: 8px;
@@ -99,6 +109,9 @@ export const Visual = styled.div`
       > h3 {
         font-size: 16px;
         line-height: 19px;
+        padding: 16px;
+        max-width: 140px;
+        height: auto;
       }
     }
   }

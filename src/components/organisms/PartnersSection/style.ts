@@ -29,6 +29,11 @@ export const Section = styled.section`
     gap: 12px;
     align-items: stretch;
     overflow: visible;
+
+    /* 모바일 Figma: 파트너 섹션 설명 미표시 */
+    & > div:first-of-type p {
+      display: none;
+    }
   }
 `;
 
