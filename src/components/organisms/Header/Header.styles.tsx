@@ -5,7 +5,7 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: min(1360px, calc(100vw - 32px));
+  width: min(1360px, calc(100vw - 80px));
   max-width: 1360px;
   height: 72px;
   position: absolute;
