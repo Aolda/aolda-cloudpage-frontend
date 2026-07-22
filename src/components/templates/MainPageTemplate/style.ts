@@ -212,7 +212,8 @@ export const MainContent = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 120px;
+  padding-left: max(40px, calc((100vw - 1200px) / 2));
+  padding-right: max(40px, calc((100vw - 1200px) / 2));
   position: relative;
   width: 100%;
   flex: none;
@@ -396,5 +397,4 @@ export const SectionWrapper = styled.div`
     }
   }
 `;
-
 

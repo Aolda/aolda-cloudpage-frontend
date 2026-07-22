@@ -5,7 +5,7 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: min(136rem, calc(100vw - 3.2rem));
+  width: min(136rem, calc(100vw - 80px));
   max-width: 136rem;
   height: 7.2rem;
   position: absolute;
@@ -27,15 +27,15 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
     transform: none;
     position: relative;
     margin: 0;
-    padding: 2rem 3.2rem;
+    padding: 16px 32px;
     border: none;
     border-radius: 0;
-    height: 6.8rem;
+    height: 68px;
     z-index: ${({ $menuOpen }) => ($menuOpen ? 110 : 10)};
   }
 
   ${media.mobile} {
-    padding: 2rem 2.4rem;
+    padding: 16px 24px;
   }
 
   .iconSection {
@@ -144,7 +144,7 @@ export const MobileMenuOverlay = styled.div<{ $open: boolean }>`
     display: block;
     position: fixed;
     inset: 0;
-    top: 6.8rem;
+    top: 68px;
     background: rgba(0, 0, 0, 0.4);
     z-index: 100;
     opacity: ${({ $open }) => ($open ? 1 : 0)};
@@ -162,7 +162,7 @@ export const MobileMenuPanel = styled.nav<{ $open: boolean }>`
     flex-direction: column;
     align-items: stretch;
     position: fixed;
-    top: 6.8rem;
+    top: 68px;
     left: 0;
     right: 0;
     background: ${({ theme }) => theme.colors.surface};
