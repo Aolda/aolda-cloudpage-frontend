@@ -36,9 +36,15 @@ export const HeroSection = styled.section`
     align-items: stretch;
 
     &::before {
+      top: 50%;
+      left: 50%;
+      right: auto;
+      bottom: auto;
+      width: 332px;
+      height: 100vw;
       background-size: cover;
       background-position: center;
-      transform: none;
+      transform: translate(-50%, -50%) rotate(90deg);
     }
   }
 
