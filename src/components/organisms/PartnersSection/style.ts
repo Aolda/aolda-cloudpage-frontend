@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const Section = styled.section`
@@ -37,6 +37,15 @@ export const Section = styled.section`
   }
 `;
 
+const slideMarquee = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+`;
+
 /** 데스크톱 캐러셀 */
 export const CarouselWrap = styled.div`
   width: 100%;
@@ -53,9 +62,9 @@ export const CarouselWrap = styled.div`
 export const Row = styled.div`
   display: flex;
   gap: 64px;
-  width: 100%;
+  width: fit-content;
   position: relative;
-  justify-content: flex-start;
+  animation: ${slideMarquee} 20s linear infinite;
 
   > * {
     flex: 0 0 400px;
@@ -64,7 +73,11 @@ export const Row = styled.div`
   }
 
   &:nth-child(2) {
-    justify-content: flex-end;
+    margin-left: 120px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 `;
 

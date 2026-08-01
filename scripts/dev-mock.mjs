@@ -1,25 +1,36 @@
-import { copyFileSync, existsSync } from 'node:fs';
+/**
+ * @deprecated Prefer `yarn dev:mock` from package.json (cross-env).
+ * Kept for compatibility; does not overwrite .env.local.
+ */
 import { spawn } from 'node:child_process';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const envMock = resolve(root, '.env.mock');
-const envLocal = resolve(root, '.env.local');
 
-if (existsSync(envMock)) {
-  copyFileSync(envMock, envLocal);
-}
+console.info('[dev:mock] frontend mock API mode (does not modify .env.local)');
 
-process.env.USE_MOCK_API = 'true';
-process.env.NEXT_PUBLIC_USE_MOCK_API = 'true';
-
-const child = spawn('npx', ['next', 'dev'], {
-  cwd: root,
-  stdio: 'inherit',
-  shell: true,
-  env: process.env,
-});
+const child = spawn(
+  'npx',
+  [
+    'cross-env',
+    'WATCHPACK_POLLING=true',
+    'USE_MOCK_API=true',
+    'NEXT_PUBLIC_USE_MOCK_API=true',
+    'next',
+    'dev',
+  ],
+  {
+    cwd: root,
+    stdio: 'inherit',
+    shell: true,
+    env: {
+      ...process.env,
+      USE_MOCK_API: 'true',
+      NEXT_PUBLIC_USE_MOCK_API: 'true',
+    },
+  },
+);
 
 child.on('exit', (code) => {
   process.exit(code ?? 0);

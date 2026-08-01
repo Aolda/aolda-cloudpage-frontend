@@ -66,10 +66,16 @@ const PartnersSection = ({ partners = defaultPartners }: PartnersSectionProps) =
           {firstRowPartners.map((p, index) => (
             <PartnerCard key={`carousel-row1-${index}`} {...p} />
           ))}
+          {firstRowPartners.map((p, index) => (
+            <PartnerCard key={`carousel-row1-dup-${index}`} {...p} />
+          ))}
         </S.Row>
         <S.Row>
           {secondRowPartners.map((p, index) => (
             <PartnerCard key={`carousel-row2-${index}`} {...p} />
+          ))}
+          {secondRowPartners.map((p, index) => (
+            <PartnerCard key={`carousel-row2-dup-${index}`} {...p} />
           ))}
         </S.Row>
       </S.CarouselWrap>
