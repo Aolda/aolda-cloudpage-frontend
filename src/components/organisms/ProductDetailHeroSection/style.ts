@@ -7,7 +7,7 @@ export const HeroShell = styled.div`
   height: 400px;
   overflow: hidden;
   background: #061c2c;
-  /* 414×612 세로 원본 → 90° 회전 후 1440×400 히어로에 맞춤 */
+  /* 414×612 ?�로 ?�본 ??90° ?�전 ??1440×400 ?�어로에 맞춤 */
   --hero-visual-size: 400px;
   --hero-object-position: 54% 33%;
   --hero-scale: 1.48;
@@ -77,6 +77,7 @@ export const HeroSection = styled.section`
 
   ${media.tablet} {
     padding: 0 32px 48px;
+    align-items: stretch;
   }
 
   ${media.mobile} {

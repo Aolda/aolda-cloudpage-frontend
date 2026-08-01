@@ -27,7 +27,7 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
     transform: none;
     position: relative;
     margin: 0;
-    padding: 20px 32px;
+    padding: 16px 32px;
     border: none;
     border-radius: 0;
     height: 68px;
@@ -35,7 +35,7 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
   }
 
   ${media.mobile} {
-    padding: 20px 24px;
+    padding: 16px 24px;
   }
 
   .iconSection {

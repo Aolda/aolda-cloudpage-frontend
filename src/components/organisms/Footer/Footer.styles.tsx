@@ -15,19 +15,19 @@ export const StyledFooter = styled.footer`
   width: 100%;
   min-height: 231px;
   padding: 60px 120px;
-  gap: 10px;
+  gap: 1rem;
   background: #061c2c;
 
   ${media.tablet} {
     min-height: 207px;
     padding: 48px 32px;
-    gap: 10px;
+    gap: 1rem;
   }
 
   ${media.mobile} {
     min-height: 142px;
     padding: 24px 16px;
-    gap: 10px;
+    gap: 1rem;
   }
 `;
 

@@ -33,11 +33,11 @@ const lightColors = {
 } as const;
 
 const darkColors = {
-  background: '#2A2A2A',
-  backgroundAlt: '#2A2A2A',
-  surface: '#2A2A2A',
-  surfaceAlt: '#2A2A2A',
-  surfaceMuted: '#2A2A2A',
+  background: '#383838',
+  backgroundAlt: '#383838',
+  surface: '#383838',
+  surfaceAlt: '#383838',
+  surfaceMuted: '#383838',
   primary: '#4D8DFF',
   primaryAccent: '#79AEFF',
   primary300: '#76BBEF',
@@ -155,5 +155,4 @@ declare module 'styled-components' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface DefaultTheme extends AppTheme {}
 }
-
 

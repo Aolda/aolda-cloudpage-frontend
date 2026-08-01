@@ -28,7 +28,6 @@ const InconveniencesSection = () => (
       }
       align="center"
       showTopBar={true}
-      descriptionColor="#777777"
     />
     <S.PromiseGrid>
       {inconveniences.map((item) => (

@@ -45,4 +45,3 @@ const PromisesSection = () => (
 );
 
 export default PromisesSection;
-

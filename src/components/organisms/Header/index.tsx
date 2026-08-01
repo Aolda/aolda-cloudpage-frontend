@@ -57,7 +57,7 @@ const Header = () => {
     <StyledHeader $menuOpen={isMenuOpen}>
       <section className="iconSection">
         <Link href="/" onClick={() => setIsMenuOpen(false)}>
-          <Image src="/main_logo.png" alt="Aolda" width={35} height={36} />
+          <Image src="/main_logo.png" alt="AOLDA 로고" width={35} height={36} />
           <BrandLabel>AOLDA</BrandLabel>
         </Link>
       </section>
