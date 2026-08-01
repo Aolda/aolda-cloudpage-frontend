@@ -11,10 +11,11 @@ const ProblemItem = ({ title, descriptions }: ProblemItemProps) => {
       <S.ProblemGroupTitle>{title}</S.ProblemGroupTitle>
       <S.ProblemBody>
         {descriptions.map((desc, index) => (
-          <span key={index}>
-            {desc}
-            {index < descriptions.length - 1 ? ' ' : ''}
-          </span>
+          <S.ProblemListItem key={index}>
+            {desc.split('\n').map((line, lineIndex) => (
+              <S.ProblemLine key={lineIndex}>{line}</S.ProblemLine>
+            ))}
+          </S.ProblemListItem>
         ))}
       </S.ProblemBody>
     </S.ProblemItem>

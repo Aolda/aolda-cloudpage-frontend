@@ -68,7 +68,7 @@ describe('mapNoticeDetailToViewModel', () => {
       neighbors: { prev: 0, next: 2 },
     };
 
-    expect(mapNoticeDetailToViewModel(response)).toMatchObject({
+    expect(mapNoticeDetailToViewModel(response, { next: '정기 점검 안내' })).toMatchObject({
       number: 1,
       title: '클라우드 사용 가이드 업데이트',
       author: '관리자',
@@ -76,6 +76,32 @@ describe('mapNoticeDetailToViewModel', () => {
       views: 128,
       content: '# 업데이트 안내',
       nextHref: '/notice/2',
+      nextTitle: '정기 점검 안내',
+      prevHref: undefined,
+      prevTitle: undefined,
+    });
+  });
+
+  it('falls back to notice id label when neighbor title is missing', () => {
+    const response: NoticeDetailResponse = {
+      data: {
+        noticeId: 2,
+        noticeType: 'NOTICE_TYPE/SERVICE',
+        noticeTitle: '정기 점검 안내',
+        createdAt: '2025-02-01 18:00:00',
+        createdBy: { userId: 1, userName: '관리자' },
+        readCount: 10,
+        attatchments: [],
+        content: '본문',
+      },
+      neighbors: { prev: 1, next: 3 },
+    };
+
+    expect(mapNoticeDetailToViewModel(response)).toMatchObject({
+      prevHref: '/notice/1',
+      prevTitle: '공지 #1',
+      nextHref: '/notice/3',
+      nextTitle: '공지 #3',
     });
   });
 });

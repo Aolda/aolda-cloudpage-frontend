@@ -18,7 +18,7 @@ export const ContentWrapper = styled.div`
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  padding: 60px 120px 252px;
+  padding: 60px 120px 0;
   box-sizing: border-box;
   background: #fefefe;
 
@@ -27,15 +27,16 @@ export const ContentWrapper = styled.div`
     align-items: flex-start;
     width: 100%;
     max-width: 744px;
-    padding: 36px 32px 55px;
+    padding: 36px 32px;
     gap: 36px;
   }
 
   ${media.mobile} {
     flex-direction: column;
-    padding: 24px 16px 252px;
-    gap: 24px;
+    width: 375px;
     max-width: 100%;
+    padding: 24px 16px;
+    gap: 24px;
   }
 `;
 
@@ -51,7 +52,8 @@ export const SidebarWrapper = styled.div`
   }
 
   ${media.mobile} {
-    max-width: 343px;
+    width: 343px;
+    max-width: 100%;
   }
 `;
 
@@ -75,8 +77,9 @@ export const MainContent = styled.div`
   }
 
   ${media.mobile} {
-    max-width: 343px;
-    gap: 24px;
+    width: 343px;
+    max-width: 100%;
+    gap: 36px;
   }
 `;
 
@@ -84,6 +87,7 @@ export const SearchSection = styled.div`
   width: 100%;
   max-width: 996px;
 
+  /* 태블릿·모바일: 검색은 Hero 내부 — ContentWrapper에서 숨김(중복 방지) */
   ${media.tablet} {
     display: none;
   }

@@ -55,9 +55,11 @@ const InPageNavigation = ({
           </S.ArrowIcon>
           <S.NavLabel>이전글</S.NavLabel>
         </S.NavLeft>
-        {prevTitle && prevHref ? (
+        {prevHref ? (
           <S.NavTitleWrapper>
-            <S.NavTitleLink as={Link} href={prevHref}>{prevTitle}</S.NavTitleLink>
+            <S.NavTitleLink as={Link} href={prevHref}>
+              {prevTitle ?? '이전 글'}
+            </S.NavTitleLink>
           </S.NavTitleWrapper>
         ) : (
           <S.NavTitleWrapper>
@@ -78,9 +80,11 @@ const InPageNavigation = ({
           </S.ArrowIcon>
           <S.NavLabel>다음글</S.NavLabel>
         </S.NavLeft>
-        {nextTitle && nextHref ? (
+        {nextHref ? (
           <S.NavTitleWrapper>
-            <S.NavTitleLink as={Link} href={nextHref}>{nextTitle}</S.NavTitleLink>
+            <S.NavTitleLink as={Link} href={nextHref}>
+              {nextTitle ?? '다음 글'}
+            </S.NavTitleLink>
           </S.NavTitleWrapper>
         ) : (
           <S.NavTitleWrapper>

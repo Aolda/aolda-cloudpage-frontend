@@ -54,13 +54,29 @@ export const mapProductDetailToRecord = (
   }));
 
   const similarServices: SimilarService[] = response.relateServices.map(
-    (service) => ({
-      title: service.pageTitle,
-      description: service.pageTitle,
-      href: service.serviceLink,
-      bannerImage: service.thumbnailImg.url,
-      logo: service.thumbnailImg.url,
-    }),
+    (service) => {
+      let logo: string | undefined;
+      try {
+        const domain = new URL(service.serviceLink).hostname.replace(
+          /^www\./,
+          '',
+        );
+        logo = domain
+          ? `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+          : undefined;
+      } catch {
+        logo = undefined;
+      }
+
+      return {
+        title: service.pageTitle,
+        // API에 요약 필드가 없어 title과 동일 — enrich가 리치 폴백으로 보정
+        description: service.pageTitle,
+        href: service.serviceLink,
+        bannerImage: service.thumbnailImg.url,
+        logo,
+      };
+    },
   );
 
   return {

@@ -47,6 +47,11 @@ export const TitleButton = styled.button`
           }
         `}
 
+  ${media.tablet} {
+    height: 72px;
+    min-height: 72px;
+  }
+
   ${media.mobile} {
     height: 54px;
     min-height: 54px;
@@ -74,6 +79,12 @@ export const TitleIcon = styled.div`
   background: transparent;
   border-radius: 0;
 
+  ${media.tablet} {
+    width: 64px;
+    height: 72px;
+    padding: 20px 16px;
+  }
+
   ${media.mobile} {
     width: 40px;
     height: 54px;
@@ -83,18 +94,34 @@ export const TitleIcon = styled.div`
 
 export const QBadge = styled.span`
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
   width: 32px;
   height: 32px;
+  padding: 0;
+  aspect-ratio: 1 / 1;
   border-radius: 200px;
-  background: ${({ theme }) =>
-    theme.mode === 'dark' ? theme.colors.widgetBorder : '#444444'};
-  font-family: 'Gmarket Sans', 'Noto Sans KR', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
-  color: #fefefe;
+  background: transparent;
+  overflow: hidden;
+
+  ${media.tablet} {
+    width: 32px;
+    height: 32px;
+  }
+
+  ${media.mobile} {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const QBadgeImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 `;
 
 export const IconImage = styled.img`
@@ -107,6 +134,12 @@ export const IconImage = styled.img`
   box-sizing: border-box;
   object-fit: contain;
   display: block;
+
+  ${media.tablet} {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+  }
 
   ${media.mobile} {
     width: 24px;
@@ -128,10 +161,19 @@ export const TitleText = styled.span`
   display: flex;
   align-items: center;
 
+  ${media.tablet} {
+    padding: 20px 16px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+  }
+
   ${media.mobile} {
     padding: 20px 8px;
     font-size: 12px;
     line-height: 14px;
+    font-weight: 700;
+    color: #232527;
   }
 `;
 
@@ -144,13 +186,30 @@ export const ChevronIcon = styled.svg<{ $expanded: boolean }>`
   transition: transform 0.2s;
   transform: ${({ $expanded }) => ($expanded ? 'rotate(180deg)' : 'rotate(0deg)')};
 
+  ${media.tablet} {
+    box-sizing: content-box;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 20px 16px;
+    color: #777777;
+  }
+
   ${media.mobile} {
-    margin: 0 8px;
+    box-sizing: border-box;
+    width: 32px;
+    height: 54px;
+    margin: 0;
+    padding: 19px 8px;
+    color: #777777;
   }
 `;
 
 export const Content = styled.div`
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   width: 100%;
   padding: 16px 0;
   background: #efefef;
@@ -163,6 +222,13 @@ export const Content = styled.div`
       border-bottom: 1px solid ${theme.colors.widgetBorder};
     `}
 
+  /* Frame 137 — tablet FAQ content panel */
+  ${media.tablet} {
+    padding: 0;
+    background: #efefef;
+    border-bottom: 1px solid #efefef;
+  }
+
   ${media.mobile} {
     padding: 0;
     background: #efefef;
@@ -171,8 +237,10 @@ export const Content = styled.div`
 `;
 
 export const ContentText = styled.div`
+  flex-grow: 1;
   padding: 20px 32px;
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   color: ${({ theme }) => (theme.mode === 'dark' ? '#fafafa' : '#232527')};
@@ -197,13 +265,22 @@ export const ContentText = styled.div`
     margin: 4px 0;
   }
 
+  /* Frame 123 / Content-C6 — tablet */
   ${media.tablet} {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
     padding: 20px 32px;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 12px;
     line-height: 150%;
+    color: #232527;
   }
 
   ${media.mobile} {
+    display: block;
     padding: 16px 24px;
     font-size: 10px;
     line-height: 150%;

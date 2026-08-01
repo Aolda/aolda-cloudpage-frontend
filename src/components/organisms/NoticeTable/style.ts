@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const NoticeTable = styled.div`
   display: flex;
@@ -10,6 +11,16 @@ export const NoticeTable = styled.div`
   order: 2;
   align-self: stretch;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 664px;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 319px;
+  }
 `;
 
 export const TableBody = styled.div`
@@ -25,5 +36,15 @@ export const Separator = styled.div`
   flex: none;
   align-self: stretch;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 664px;
+    background: #efefef;
+  }
+
+  ${media.mobile} {
+    display: none;
+  }
 `;
 

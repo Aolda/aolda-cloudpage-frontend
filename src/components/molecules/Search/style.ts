@@ -18,7 +18,8 @@ export const SearchForm = styled.form<{ $embedded?: boolean }>`
   }
 
   ${media.mobile} {
-    max-width: 100%;
+    width: 100%;
+    max-width: 343px;
     height: ${({ $embedded }) => ($embedded ? 'auto' : '40px')};
   }
 `;
@@ -58,6 +59,35 @@ export const SearchInput = styled.input<{ $embedded?: boolean }>`
 
           &:focus {
             outline: none;
+          }
+
+          ${media.tablet} {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 14px;
+            min-height: 14px;
+
+            &::placeholder {
+              font-weight: 700;
+              font-size: 12px;
+              line-height: 14px;
+              color: ${theme.mode === 'dark' ? '#FAFAFA' : theme.colors.gray600};
+            }
+          }
+
+          ${media.mobile} {
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 12px;
+            min-height: 12px;
+            padding: 0;
+
+            &::placeholder {
+              font-weight: 700;
+              font-size: 10px;
+              line-height: 12px;
+              color: ${theme.mode === 'dark' ? '#FAFAFA' : '#777777'};
+            }
           }
         `
       : css`
@@ -117,5 +147,15 @@ export const SearchIcon = styled.svg<{ $embedded?: boolean }>`
     height: 24px;
     color: ${({ theme, $embedded }) =>
       $embedded ? theme.colors.primary300 : theme.colors.gray600};
+  }
+
+  ${media.mobile} {
+    ${({ $embedded }) =>
+      $embedded &&
+      css`
+        width: 12px;
+        height: 12px;
+        color: #777777;
+      `}
   }
 `;

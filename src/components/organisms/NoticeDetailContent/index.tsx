@@ -68,47 +68,48 @@ const NoticeDetailContent = ({
     <S.DetailContainer>
       <S.Header>
         <S.Title>{data.title}</S.Title>
-        <S.Meta>
-          <S.MetaItem>
-            <span>작성자</span>
-            <span>{data.author}</span>
-          </S.MetaItem>
-          <S.MetaSeparator>|</S.MetaSeparator>
-          <S.MetaItem>
-            <span>작성일</span>
-            <span>{data.date}</span>
-          </S.MetaItem>
-          <S.MetaSeparator>|</S.MetaSeparator>
-          <S.MetaItem>
-            <span>조회수</span>
-            <span>{data.views}</span>
-          </S.MetaItem>
-        </S.Meta>
-        {data.attachments && data.attachments.length > 0 && (
-          <S.AttachmentList>
-            {data.attachments.map((file, index) => (
-              <S.AttachmentItem key={index} href={file.url}>
-                <S.AttachmentIcon viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M14 2V8H20"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </S.AttachmentIcon>
-                {file.name}
-              </S.AttachmentItem>
-            ))}
-          </S.AttachmentList>
-        )}
+        <S.MetaRow>
+          {/*
+            Desktop/tablet: MetaStack is display:contents → MetaGroup | Attachment side-by-side.
+            Mobile Frame 1261158798: 300px column, margin 0 auto, align-items flex-end.
+          */}
+          <S.MetaStack>
+            <S.MetaGroup>
+              <S.MetaItem>
+                <span>작성자</span>
+                <span>{data.author}</span>
+              </S.MetaItem>
+              <S.MetaDivider aria-hidden />
+              <S.MetaItem>
+                <span>작성일</span>
+                <span>{data.date}</span>
+              </S.MetaItem>
+              <S.MetaDivider aria-hidden />
+              <S.MetaItem>
+                <span>조회수</span>
+                <span>{data.views}</span>
+              </S.MetaItem>
+            </S.MetaGroup>
+            {data.attachments && data.attachments.length > 0 && (
+              <S.AttachmentList>
+                {data.attachments.map((file, index) => (
+                  <S.AttachmentItem key={index} href={file.url}>
+                    <S.AttachmentIcon viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <path
+                        d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </S.AttachmentIcon>
+                    {file.name}
+                  </S.AttachmentItem>
+                ))}
+              </S.AttachmentList>
+            )}
+          </S.MetaStack>
+        </S.MetaRow>
       </S.Header>
 
       <S.Content>
@@ -145,4 +146,3 @@ const NoticeDetailContent = ({
 };
 
 export default NoticeDetailContent;
-

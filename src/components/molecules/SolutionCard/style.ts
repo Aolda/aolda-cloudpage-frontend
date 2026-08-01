@@ -7,20 +7,31 @@ export const SolutionCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
-  gap: 12px;
-  flex: 1 1 0;
-  max-width: 384px;
-  min-width: 0;
-  height: 129px;
   background: #fefefe;
   border: 1px solid #efefef;
   border-radius: 12px;
+  min-width: 0;
 
+  /* desktop: 384×129 — grow in 3-card row; max-width caps 2-card row */
+  ${media.desktop} {
+    flex: 1 1 0;
+    width: 384px;
+    max-width: 384px;
+    height: 129px;
+    padding: 20px 0;
+    gap: 12px;
+  }
+
+  /* tablet: row1 213.33×95 / row2 330×95 — flex-grow fills row */
   ${media.tablet} {
-    height: 97px;
-    padding: 16px 12px;
+    flex: 1 1 0;
+    max-width: none;
+    height: 95px;
+    padding: 16px 0;
     gap: 8px;
+    background: #fefefe;
+    border: 1px solid #efefef;
+    border-radius: 12px;
   }
 
   ${media.mobile} {
@@ -42,10 +53,13 @@ export const SolutionTitle = styled.h3`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
   color: #1a8ee5;
   text-align: center;
+
+  ${media.desktop} {
+    font-size: 20px;
+    line-height: 24px;
+  }
 
   ${media.tablet} {
     font-size: 16px;
@@ -73,10 +87,13 @@ export const SolutionDescription = styled.p`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
   text-align: center;
   color: #777777;
+
+  ${media.desktop} {
+    font-size: 16px;
+    line-height: 150%;
+  }
 
   ${media.tablet} {
     font-size: 12px;

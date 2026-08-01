@@ -72,6 +72,7 @@ export const HeroSection = styled.section`
 
   ${media.mobile} {
     padding: 0 16px 16px;
+    gap: 10px;
   }
 `;
 
@@ -93,6 +94,7 @@ export const HeroInner = styled.div`
   }
 
   ${media.mobile} {
+    width: 100%;
     max-width: 343px;
     gap: 12px;
   }
@@ -106,16 +108,21 @@ export const HeroContent = styled.div`
   gap: 12px;
   width: 1200px;
   max-width: 100%;
+  height: 149px;
   flex: none;
   box-sizing: border-box;
 
   ${media.tablet} {
+    height: auto;
     gap: 8px;
     width: 100%;
     max-width: 680px;
   }
 
   ${media.mobile} {
+    height: auto;
+    width: 100%;
+    max-width: 343px;
     gap: 4px;
   }
 `;
@@ -134,19 +141,23 @@ export const HeroSearch = styled.div`
   ${media.mobile} {
     display: block;
     width: 100%;
+    max-width: 343px;
+    flex: none;
   }
 `;
 
 export const BreadcrumbWrapper = styled.div`
+  display: block;
   width: auto;
+  flex: none;
 
   nav {
     gap: 8px;
-    color: #fefefe;
+    color: #ffffff;
 
     a,
     span {
-      color: #fefefe;
+      color: #ffffff;
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 400;
       font-size: 16px;
@@ -168,10 +179,19 @@ export const BreadcrumbWrapper = styled.div`
 
   ${media.mobile} {
     nav {
+      gap: 4px;
+
       a,
       span {
         font-size: 10px;
         line-height: 12px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      /* BreadcrumbItem 내부 라벨–쉐브론 간격 */
+      > span {
+        gap: 4px;
       }
     }
   }
@@ -179,26 +199,35 @@ export const BreadcrumbWrapper = styled.div`
 
 export const Title = styled.h1`
   width: 100%;
+  height: 46px;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
   color: #fefefe;
   margin: 0;
+  display: flex;
+  align-items: center;
 
   ${media.tablet} {
+    height: auto;
     font-size: 24px;
     line-height: 29px;
   }
 
   ${media.mobile} {
+    height: auto;
+    width: 100%;
+    max-width: 343px;
     font-size: 20px;
     line-height: 24px;
+    color: #ffffff;
   }
 `;
 
 export const Description = styled.div`
   width: 100%;
+  height: 60px;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -210,13 +239,18 @@ export const Description = styled.div`
   }
 
   ${media.tablet} {
+    height: auto;
     max-width: 680px;
     font-size: 16px;
     line-height: 150%;
   }
 
   ${media.mobile} {
+    height: auto;
+    width: 100%;
+    max-width: 343px;
     font-size: 10px;
     line-height: 150%;
+    color: #ffffff;
   }
 `;

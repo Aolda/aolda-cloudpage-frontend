@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const FilterContainer = styled.div`
   display: flex;
@@ -11,5 +12,21 @@ export const FilterContainer = styled.div`
   order: 1;
   flex-grow: 0;
   margin-bottom: -1.875rem;
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 664px;
+    height: auto;
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 319px;
+    height: auto;
+    gap: 12px;
+    margin-bottom: 0;
+  }
 `;
 

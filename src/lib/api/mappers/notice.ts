@@ -39,10 +39,18 @@ export const mapNoticeListToItems = (
     href: `/notice/${item.noticeId}`,
   }));
 
+export interface NoticeNeighborTitles {
+  prev?: string;
+  next?: string;
+}
+
 export const mapNoticeDetailToViewModel = (
   response: NoticeDetailResponse,
+  neighborTitles: NoticeNeighborTitles = {},
 ): NoticeDetailData => {
   const { data, neighbors } = response;
+  const hasPrev = neighbors.prev > 0;
+  const hasNext = neighbors.next > 0;
 
   return {
     number: data.noticeId,
@@ -55,7 +63,13 @@ export const mapNoticeDetailToViewModel = (
       url: attachment.file.url,
     })),
     content: data.content,
-    prevHref: neighbors.prev > 0 ? `/notice/${neighbors.prev}` : undefined,
-    nextHref: neighbors.next > 0 ? `/notice/${neighbors.next}` : undefined,
+    prevHref: hasPrev ? `/notice/${neighbors.prev}` : undefined,
+    prevTitle: hasPrev
+      ? (neighborTitles.prev ?? `공지 #${neighbors.prev}`)
+      : undefined,
+    nextHref: hasNext ? `/notice/${neighbors.next}` : undefined,
+    nextTitle: hasNext
+      ? (neighborTitles.next ?? `공지 #${neighbors.next}`)
+      : undefined,
   };
 };

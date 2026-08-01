@@ -1,4 +1,5 @@
 ﻿import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
 export const NoticeListContainer = styled.div`
   display: flex;
@@ -11,6 +12,19 @@ export const NoticeListContainer = styled.div`
   order: 1;
   align-self: stretch;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 664px;
+    gap: 36px;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 319px;
+    gap: 24px;
+    align-items: center;
+  }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -25,6 +39,20 @@ export const HeaderWrapper = styled.div`
   order: 0;
   align-self: stretch;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 664px;
+    height: auto;
+    gap: 20px;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 319px;
+    height: auto;
+    gap: 12px;
+  }
 `;
 
 export const Header = styled.div`
@@ -40,6 +68,20 @@ export const Header = styled.div`
   order: 0;
   align-self: stretch;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 664px;
+    height: auto;
+    gap: 20px;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 319px;
+    height: auto;
+    gap: 12px;
+  }
 `;
 
 export const Count = styled.span`
@@ -53,6 +95,18 @@ export const Count = styled.span`
   flex: none;
   order: 0;
   flex-grow: 0;
+
+  ${media.tablet} {
+    height: auto;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  ${media.mobile} {
+    height: auto;
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
 export const WriteButton = styled.button`
@@ -78,6 +132,20 @@ export const WriteButton = styled.button`
   
   &:focus {
     outline: none;
+  }
+
+  ${media.tablet} {
+    width: auto;
+    height: auto;
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+  ${media.mobile} {
+    width: auto;
+    height: auto;
+    padding: 12px 16px;
+    gap: 8px;
   }
 `;
 
@@ -122,6 +190,20 @@ export const WriteText = styled.span`
   flex: none;
   order: 0;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: auto;
+    height: auto;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  ${media.mobile} {
+    width: auto;
+    height: auto;
+    font-size: 10px;
+    line-height: 12px;
+  }
 `;
 
 export const Separator = styled.div`
@@ -132,6 +214,18 @@ export const Separator = styled.div`
   order: 1;
   align-self: stretch;
   flex-grow: 0;
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 664px;
+    background: #efefef;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 319px;
+    background: #efefef;
+  }
 `;
 
 export const PaginationWrapper = styled.div`
@@ -141,5 +235,13 @@ export const PaginationWrapper = styled.div`
   width: 100%;
   margin-top: 2.25rem;
   order: 3;
+
+  ${media.tablet} {
+    margin-top: 0;
+  }
+
+  ${media.mobile} {
+    margin-top: 0;
+  }
 `;
 

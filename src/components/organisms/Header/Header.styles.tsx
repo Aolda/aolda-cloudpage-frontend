@@ -31,11 +31,16 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
     border: none;
     border-radius: 0;
     height: 68px;
+    background-color: #fefefe;
     z-index: ${({ $menuOpen }) => ($menuOpen ? 110 : 10)};
   }
 
+  ${media.tablet} {
+    padding: 20px 32px;
+  }
+
   ${media.mobile} {
-    padding: 16px 24px;
+    padding: 20px 24px;
   }
 
   .iconSection {

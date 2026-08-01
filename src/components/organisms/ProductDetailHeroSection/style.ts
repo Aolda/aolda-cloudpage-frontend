@@ -7,48 +7,37 @@ export const HeroShell = styled.div`
   height: 400px;
   overflow: hidden;
   background: #061c2c;
-  /* 414×612 세로 원본 → 90° 회전 후 1440×400 히어로에 맞춤 */
-  --hero-visual-size: 400px;
-  --hero-object-position: 54% 33%;
-  --hero-scale: 1.48;
 
   ${media.tablet} {
     height: 300px;
-    --hero-object-position: 58% center;
   }
 
   ${media.mobile} {
     height: 200px;
-    --hero-object-position: 62% center;
   }
 `;
 
+/* 히어로 영역 전체를 cover로 채움 (레터박싱 없음) */
 export const HeroBackground = styled.div`
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
-  overflow: hidden;
   pointer-events: none;
-
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: var(--hero-visual-size);
-    height: 100vw;
-    max-width: none;
-    object-fit: cover;
-    object-position: var(--hero-object-position);
-    transform: translate(-50%, -50%) rotate(90deg) scale(var(--hero-scale));
-  }
-
+  background-color: #061c2c;
+  background-image: url('/product/product_detail/product_detail_herosection.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  image-rendering: auto;
+  transform: none;
 `;
-
 export const HeroOverlay = styled.div`
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   pointer-events: none;
 `;
 
@@ -67,9 +56,14 @@ export const HeroSection = styled.section`
   gap: 10px;
   box-sizing: border-box;
 
+  /* Frame 1261158713 — Tablet 744×300 */
   ${media.tablet} {
+    width: 100%;
+    max-width: 744px;
+    height: 300px;
     padding: 0 32px 48px;
-    align-items: stretch;
+    gap: 10px;
+    align-items: flex-start;
   }
 
   ${media.mobile} {
@@ -87,14 +81,18 @@ export const HeroContent = styled.div`
   width: 100%;
   box-sizing: border-box;
 
+  /* Frame 245 — Tablet 680×126 */
   ${media.tablet} {
-    max-width: 680px;
-    margin: 0 auto;
+    width: 680px;
+    max-width: 100%;
+    height: 126px;
+    margin: 0;
     gap: 8px;
   }
 
   ${media.mobile} {
     max-width: 343px;
+    height: auto;
     margin: 0;
     gap: 4px;
   }
@@ -109,7 +107,7 @@ export const BreadcrumbWrapper = styled.div`
 
     a,
     span {
-      color: #fefefe;
+      color: inherit;
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 400;
       font-size: 16px;
@@ -117,27 +115,35 @@ export const BreadcrumbWrapper = styled.div`
       text-decoration: none;
     }
 
-    span > span {
-      color: #fefefe;
-
-      &::before {
-        border-color: #fefefe;
-        border-width: 2px;
-      }
+    svg {
+      width: 16px;
+      height: 16px;
+      color: inherit;
     }
   }
 
   ${media.tablet} {
     nav {
-      font-size: 12px;
-      line-height: 14px;
+      gap: 8px;
+      color: #ffffff;
+
+      a,
+      span {
+        color: inherit;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 14px;
+      }
     }
   }
 
   ${media.mobile} {
     nav {
-      font-size: 10px;
-      line-height: 12px;
+      a,
+      span {
+        font-size: 10px;
+        line-height: 12px;
+      }
     }
   }
 `;
@@ -182,6 +188,7 @@ export const ServiceName = styled.h1`
   ${media.tablet} {
     font-size: 24px;
     line-height: 29px;
+    color: #ffffff;
   }
 
   ${media.mobile} {
@@ -198,13 +205,23 @@ export const ServiceDescription = styled.p`
   font-size: 16px;
   line-height: 150%;
   color: #fefefe;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   ${media.tablet} {
+    width: 680px;
+    max-width: 100%;
+    height: 18px;
     font-size: 12px;
     line-height: 150%;
+    color: #ffffff;
   }
 
   ${media.mobile} {
+    height: auto;
+    white-space: normal;
+    text-overflow: unset;
     font-size: 10px;
     line-height: 150%;
   }

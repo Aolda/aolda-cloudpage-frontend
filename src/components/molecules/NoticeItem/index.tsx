@@ -46,10 +46,12 @@ const NoticeItem = ({
 }: NoticeItemProps) => {
   const content = (
     <S.NoticeRow>
-      <S.Number>{number}</S.Number>
-      <S.Category>{category}</S.Category>
       <S.Title>{title}</S.Title>
-      <S.Date>{date}</S.Date>
+      <S.MetaRow>
+        <S.Number>{number}</S.Number>
+        <S.Category>{category}</S.Category>
+        <S.Date>{date}</S.Date>
+      </S.MetaRow>
     </S.NoticeRow>
   );
 
@@ -65,4 +67,3 @@ const NoticeItem = ({
 };
 
 export default NoticeItem;
-

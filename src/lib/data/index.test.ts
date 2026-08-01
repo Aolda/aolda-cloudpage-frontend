@@ -21,9 +21,13 @@ describe('getProductById', () => {
     expect(p.problems.length).toBeGreaterThan(0);
   });
 
-  it('returns placeholder for unknown slug', () => {
+  it('returns placeholder for unknown slug with rich similar services', () => {
     const p = getProductById('unknown-service');
     expect(p.name).toBe('UNKNOWN-SERVICE');
     expect(p.problems).toEqual([]);
+    expect(p.similarServices).toHaveLength(4);
+    expect(p.similarServices.every((s) => s.bannerImage && s.provider)).toBe(
+      true,
+    );
   });
 });
