@@ -130,7 +130,6 @@ export const Description = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  letter-spacing: -0.02em;
   color: #777777;
   margin: 0;
   flex: none;
