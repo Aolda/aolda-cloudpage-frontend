@@ -12,7 +12,6 @@ import {
   MobileMenuPanel,
   MobileMenuLink,
 } from './Header.styles';
-import ThemeToggleButton from '@/components/molecules/ThemeToggleButton';
 
 const NAV_ITEMS = [
   { label: '제품 소개', href: '/product' },
@@ -73,7 +72,6 @@ const Header = () => {
         })}
       </nav>
       <section className="actionSection">
-        <ThemeToggleButton />
         <button
           type="button"
           className={`menuToggle${isMenuOpen ? ' isOpen' : ''}`}
