@@ -53,10 +53,26 @@ const ImageCard = ({
           />
         )}
       </S.ImageContainer>
-      <S.TextContainer $compact={compact}>
-        {title && <S.ImageTitle $isBackground={isBackground} $compact={compact}>{title}</S.ImageTitle>}
-        {description && <S.ImageDescription $compact={compact}>{description}</S.ImageDescription>}
-        {period && <S.ImagePeriod $compact={compact}>{period}</S.ImagePeriod>}
+      <S.TextContainer $compact={compact} $solidThumbnail={solidThumbnail}>
+        <S.TextGroup $compact={compact}>
+          {title && (
+            <S.ImageTitle $isBackground={isBackground} $compact={compact} $solidThumbnail={solidThumbnail}>
+              {title}
+            </S.ImageTitle>
+          )}
+          {description && (
+            <S.ImageDescription $compact={compact} $solidThumbnail={solidThumbnail}>
+              {description}
+            </S.ImageDescription>
+          )}
+        </S.TextGroup>
+        {period && (
+          <S.PeriodRow $compact={compact}>
+            <S.ImagePeriod $compact={compact} $solidThumbnail={solidThumbnail}>
+              {period}
+            </S.ImagePeriod>
+          </S.PeriodRow>
+        )}
       </S.TextContainer>
     </S.ImageCard>
   );

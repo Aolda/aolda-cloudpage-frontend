@@ -32,19 +32,29 @@ export const Section = styled.section`
 `;
 
 export const PromiseGrid = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.6rem;
+  /* Frame 44 - row container */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 24px;
+  width: 1200px;
+  max-width: 100%;
+  height: 400px;
 
   ${media.tablet} {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 680px;
+    max-width: 100%;
+    height: auto;
     gap: 16px;
   }
 
   ${media.mobile} {
-    display: flex;
     flex-direction: column;
+    width: 100%;
+    height: auto;
     gap: 8px;
+    align-items: stretch;
   }
 `;

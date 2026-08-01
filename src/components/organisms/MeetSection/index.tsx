@@ -6,7 +6,12 @@ const MeetSection = () => (
   <S.Section>
     <S.DefaultTitle>
       <IntroSectionTitle
-        title="아올다, 이제 한번 만나볼까요?"
+        title={
+          <>
+            <S.TitleLine>아올다, 이제 한번</S.TitleLine>
+            <S.TitleLine>만나볼까요?</S.TitleLine>
+          </>
+        }
         align="center"
         showTopBar={true}
       />

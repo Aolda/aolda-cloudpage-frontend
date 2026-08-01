@@ -4,7 +4,12 @@ import * as S from './style';
 
 const inconveniences: Array<{ title: string; description: string; icon: string }> = [
   { title: '유료과금 없음', description: '서비스 내 결제가 필요한 부가서비스가 없어요',  icon: '/intro/intro_inconv1.png' },
-  { title: '인스턴스 개수제한 없음', description: '기본 10개, 추가 인스턴스가 필요한 경우 요청에 따라 원하는 만큼 가용량을 설정해드려요', icon: '/intro/intro_inconv2.png' },
+  {
+    title: '인스턴스 개수제한 없음',
+    /* Plain string: desktop ~312px → 2줄, tablet ~176px → 3줄 (강제 br/DescLine 없음) */
+    description: '기본 10개, 추가 인스턴스가 필요한 경우 요청에 따라 원하는 만큼 가용량을 설정해드려요',
+    icon: '/intro/intro_inconv2.png',
+  },
   { title: '멤버 관리', description: '팀 멤버를 쉽게 관리할 수 있습니다', icon: '/intro/intro_inconv3.png' },
 ];
 

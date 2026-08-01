@@ -31,18 +31,24 @@ export const Section = styled.section`
 
 export const PromiseGrid = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 24px;
+  box-sizing: border-box;
 
   ${media.tablet} {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 680px;
+    max-width: 100%;
+    height: auto;
     gap: 16px;
   }
 
   ${media.mobile} {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 8px;
+    align-items: stretch;
   }
 `;

@@ -69,10 +69,15 @@ export const Visual = styled.div`
 
   ${media.tablet} {
     width: 100%;
+    max-width: 680px;
 
     > div {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 680px;
       min-height: 320px;
       height: 320px;
+      padding: 32px;
       border-radius: 12px;
       align-items: flex-start;
 
@@ -80,10 +85,19 @@ export const Visual = styled.div`
         border-radius: 12px;
       }
 
+      /* Frame 143 title — 210×70; card owns 32px padding */
       > h3 {
+        box-sizing: border-box;
+        width: 210px;
+        max-width: 210px;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 700;
         font-size: 24px;
         line-height: 29px;
-        padding: 32px;
+        color: #ffffff;
       }
     }
   }
@@ -93,25 +107,49 @@ export const Visual = styled.div`
     min-height: auto;
     flex: none;
 
+    /* Frame 143 — mobile hero card */
     > div {
-      width: 100% !important;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 100%;
       max-width: 100%;
       min-height: 161.41px;
       height: 161.41px;
+      padding: 16px;
+      gap: 10px;
       border-radius: 8px;
       opacity: 0.8;
-      align-items: flex-start;
 
       img {
         border-radius: 8px;
+        transform: none;
       }
 
       > h3 {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: max-content;
+        min-width: 140px;
+        max-width: none;
+        height: 46px;
+        padding: 0;
+        margin: 0;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 700;
         font-size: 16px;
         line-height: 19px;
-        padding: 16px;
-        max-width: 140px;
-        height: auto;
+        color: #ffffff;
+        white-space: normal;
+        overflow: visible;
+
+        > span {
+          display: block;
+          white-space: nowrap;
+        }
       }
     }
   }

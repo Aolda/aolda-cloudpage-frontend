@@ -123,17 +123,19 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Description = styled.div`
-  width: 797px;
-  height: 180px;
+  width: 470px;
+  height: 144px;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 150%;
+  letter-spacing: -0.02em;
   color: #777777;
   margin: 0;
   flex: none;
-  white-space: pre-line;
+  align-self: stretch;
+  flex-grow: 0;
   word-break: keep-all;
   box-sizing: border-box;
 
@@ -173,8 +175,10 @@ export const RightPanel = styled.div`
   }
 
   ${media.mobile} {
+    /* Frame 145 — 80×120 radius 4 */
     width: 80px;
     height: 120px;
+    flex: none;
     flex-grow: 0;
     flex-shrink: 0;
     border-radius: 4px;
@@ -188,7 +192,7 @@ export const MobileDescription = styled.div`
     display: flex;
     flex-direction: column;
     gap: 4px;
-    flex: 1;
+    flex: 1 1 0;
     min-width: 0;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;

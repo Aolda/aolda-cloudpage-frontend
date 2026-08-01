@@ -19,7 +19,7 @@ export const StatCard = styled.div`
 
   ${media.tablet} {
     flex: 1;
-    width: auto;
+    width: 100%;
     min-width: 0;
     height: 87px;
     padding: 16px 32px;
@@ -52,6 +52,8 @@ export const StatValue = styled.span`
   ${media.tablet} {
     font-size: 20px;
     line-height: 24px;
+    font-weight: 700;
+    color: #1a8ee5;
   }
 
   ${media.mobile} {
@@ -63,11 +65,7 @@ export const StatValue = styled.span`
   }
 `;
 
-export const Unit = styled.span`
-  ${media.mobile} {
-    display: none;
-  }
-`;
+export const Unit = styled.span``;
 
 export const StatLabel = styled.span`
   font-size: 16px;
@@ -76,6 +74,7 @@ export const StatLabel = styled.span`
   ${media.tablet} {
     font-size: 12px;
     line-height: 150%;
+    color: #777777;
   }
 
   ${media.mobile} {
