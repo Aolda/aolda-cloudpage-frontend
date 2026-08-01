@@ -7,7 +7,7 @@ const MeetSection = () => (
     <S.DefaultTitle>
       <IntroSectionTitle
         title="아올다, 이제 한번 만나볼까요?"
-        align="left"
+        align="center"
         showTopBar={true}
       />
     </S.DefaultTitle>
