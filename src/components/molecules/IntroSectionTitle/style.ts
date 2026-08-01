@@ -27,20 +27,20 @@ export const Container = styled.div<{ $align: 'left' | 'center' }>`
   }
 `;
 
-export const TopBar = styled.div<{ $align: 'left' | 'center' }>`
+export const TopBar = styled.div<{ $align: 'left' | 'center'; $gap?: number }>`
   width: 48px;
   height: 3px;
   background: ${({ theme }) => (theme.mode === 'dark' ? '#FAFAFA' : theme.colors.gray600)};
   border-radius: 1.5px;
   border: none;
   flex: none;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   align-self: ${({ $align }) => ($align === 'center' ? 'center' : 'flex-start')};
 
   ${media.tablet} {
     width: 24px;
     height: 2px;
-    margin-bottom: 12px;
+    margin-bottom: ${({ $gap = 12 }) => $gap}px;
     align-self: center;
   }
 
@@ -75,12 +75,12 @@ export const Overlay = styled.div`
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2));
 `;
 
-export const Title = styled.h2<{ $color?: string }>`
+export const Title = styled.h2<{ $color?: string; $hasDescription?: boolean }>`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
   font-size: 32px;
-  line-height: 140%;
+  line-height: 38px;
   color: ${({ $color, theme }) => {
     const normalized = ($color ?? '').replace(/\s/g, '').toLowerCase();
     const isDarkOverride =
@@ -104,15 +104,45 @@ export const Title = styled.h2<{ $color?: string }>`
   ${media.tablet} {
     font-size: 24px;
     line-height: 29px;
-    margin-bottom: 12px;
+    margin-bottom: ${({ $hasDescription }) => ($hasDescription ? '16px' : '0')};
     text-align: center;
+    color: ${({ $color, theme }) => {
+      const normalized = ($color ?? '').replace(/\s/g, '').toLowerCase();
+      const isDarkOverride =
+        normalized === 'rgb(0,0,0)' ||
+        normalized === 'rgb(3,3,3)' ||
+        normalized === '#000000' ||
+        normalized === '#030303' ||
+        normalized === '#232527';
+
+      if (theme.mode === 'dark' && (!$color || isDarkOverride)) {
+        return '#FAFAFA';
+      }
+
+      return $color ?? '#232527';
+    }};
   }
 
   ${media.mobile} {
     font-size: 16px;
     line-height: 19px;
-    margin-bottom: 8px;
+    margin-bottom: ${({ $hasDescription }) => ($hasDescription ? '4px' : '0')};
     text-align: left;
+    color: ${({ $color, theme }) => {
+      const normalized = ($color ?? '').replace(/\s/g, '').toLowerCase();
+      const isDarkOverride =
+        normalized === 'rgb(0,0,0)' ||
+        normalized === 'rgb(3,3,3)' ||
+        normalized === '#000000' ||
+        normalized === '#030303' ||
+        normalized === '#232527';
+
+      if (theme.mode === 'dark' && (!$color || isDarkOverride)) {
+        return '#FAFAFA';
+      }
+
+      return $color ?? '#232527';
+    }};
   }
 `;
 
@@ -126,7 +156,7 @@ export const AccentRed = styled.span`
 
 export const Description = styled.p<{ $color?: string }>`
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 20px;
   line-height: 150%;
   color: ${({ $color, theme }) => $color ?? theme.colors.textMuted};
   max-width: 600px;
@@ -136,6 +166,7 @@ export const Description = styled.p<{ $color?: string }>`
     line-height: 150%;
     text-align: center;
     max-width: 486px;
+    color: #777777;
   }
 
   ${media.mobile} {
@@ -143,5 +174,10 @@ export const Description = styled.p<{ $color?: string }>`
     line-height: 150%;
     text-align: left;
     max-width: 100%;
+    color: #777777;
+
+    br {
+      display: none;
+    }
   }
 `;

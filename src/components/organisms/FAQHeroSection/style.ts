@@ -12,7 +12,7 @@ export const HeroSection = styled.section`
   height: 400px;
   margin: 0 auto;
   padding: 0 120px 60px;
-  gap: 24px;
+  gap: 365px;
   isolation: isolate;
   background: ${({ theme }) => theme.colors.primary300};
   overflow: hidden;
@@ -118,11 +118,11 @@ export const BreadcrumbWrapper = styled.div`
   flex: none;
 
   nav {
-    color: #ffffff;
+    color: #fefefe;
 
     a,
     span {
-      color: #ffffff;
+      color: #fefefe;
       font-family: 'Noto Sans KR', sans-serif;
       font-weight: 400;
       font-size: 16px;
@@ -131,10 +131,10 @@ export const BreadcrumbWrapper = styled.div`
     }
 
     span > span {
-      color: #ffffff;
+      color: #fefefe;
 
       &::before {
-        border-color: #ffffff;
+        border-color: #fefefe;
         border-width: 2px;
       }
     }
@@ -166,7 +166,7 @@ export const Title = styled.h1`
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
-  color: #ffffff;
+  color: #fefefe;
   margin: 0;
   flex: none;
 
@@ -192,8 +192,8 @@ export const SearchWrapper = styled.div`
   width: 475px;
   max-width: 100%;
   height: 48px;
-  background: ${({ theme }) => theme.colors.surface};
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: #fefefe;
+  border: 1px solid #efefef;
   border-radius: 8px;
   flex: none;
   align-self: stretch;
@@ -267,8 +267,8 @@ export const IconWrapper = styled.div`
   position: absolute;
   width: 629px;
   height: 426px;
-  right: -20px;
-  bottom: -80px;
+  right: 120px;
+  bottom: 0;
   flex: none;
   z-index: 1;
   pointer-events: none;

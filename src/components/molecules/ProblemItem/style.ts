@@ -3,47 +3,21 @@ import { media } from '@/styles/theme';
 
 export const ProblemItem = styled.div`
   display: flex;
-  width: 100%;
-  max-width: 680px;
-  box-sizing: border-box;
-  padding: 2rem 0;
-  align-self: stretch;
-
-  ${media.tablet} {
-    padding: 0;
-    max-width: 680px;
-  }
-
-  ${media.mobile} {
-    max-width: 343px;
-    padding: 0;
-  }
-`;
-
-export const ProblemContent = styled.div`
-  flex: 1;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
   width: 100%;
-  align-self: stretch;
-
-  ${media.mobile} {
-    gap: 8px;
-  }
+  box-sizing: border-box;
 `;
 
 export const ProblemGroupTitle = styled.h3`
   margin: 0;
   width: 100%;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 19px;
-  color: ${({ theme }) => theme.colors.text};
-  flex: none;
-  align-self: stretch;
+  line-height: 24px;
+  color: #232527;
 
   ${media.tablet} {
     font-size: 16px;
@@ -56,65 +30,21 @@ export const ProblemGroupTitle = styled.h3`
   }
 `;
 
-/** 모바일 — 그룹별 단락 (Content-C7) */
-export const MobileProblemBody = styled.p`
-  display: none;
+export const ProblemBody = styled.p`
   margin: 0;
   width: 100%;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 20px;
   line-height: 150%;
-  color: ${({ theme }) => theme.colors.gray600};
+  color: #777777;
   word-break: keep-all;
 
-  ${media.mobile} {
-    display: block;
+  ${media.tablet} {
+    font-size: 16px;
   }
-`;
-
-export const ProblemList = styled.ul`
-  margin: 0;
-  padding: 0 0 0 20px;
-  list-style: disc;
-  list-style-position: outside;
-  width: 100%;
-  max-width: 680px;
-  align-self: stretch;
-  flex: none;
-  box-sizing: border-box;
 
   ${media.mobile} {
-    display: none;
+    font-size: 10px;
   }
-`;
-
-/** Content-C4 — "소제목: 설명" */
-export const ProblemListItem = styled.li`
-  margin: 0 0 8px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  width: 100%;
-  max-width: 680px;
-  min-height: 24px;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  color: ${({ theme }) => theme.colors.gray600};
-  word-break: keep-all;
-  align-self: stretch;
-
-  &::marker {
-    color: ${({ theme }) => theme.colors.gray600};
-  }
-`;
-
-export const Label = styled.strong`
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.text};
 `;

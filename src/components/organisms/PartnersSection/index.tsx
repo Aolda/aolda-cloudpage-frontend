@@ -2,7 +2,14 @@ import IntroSectionTitle, { AccentBlue } from '../../molecules/IntroSectionTitle
 import ImageCard from '../../molecules/ImageCard';
 import * as S from './style';
 
-const partners = [
+export type PartnerItem = {
+  name: string;
+  description?: string;
+  period?: string;
+  image?: string;
+};
+
+const defaultPartners: PartnerItem[] = [
   { name: '아주대학교 총학생회', description: '총학생회 공식홈페이지 운영', period: '2024-1 ~ 2025-1' },
   { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
   { name: '파란학기제', description: '파란학기 프로젝트 서비스 배포지원' },
@@ -31,7 +38,11 @@ const PartnerCard = ({
   />
 );
 
-const PartnersSection = () => {
+type PartnersSectionProps = {
+  partners?: PartnerItem[];
+};
+
+const PartnersSection = ({ partners = defaultPartners }: PartnersSectionProps) => {
   const firstRowPartners = partners.slice(0, 3);
   const secondRowPartners = partners.slice(3, 6);
 
@@ -55,16 +66,10 @@ const PartnersSection = () => {
           {firstRowPartners.map((p, index) => (
             <PartnerCard key={`carousel-row1-${index}`} {...p} />
           ))}
-          {firstRowPartners.map((p, index) => (
-            <PartnerCard key={`carousel-row1-dup-${index}`} {...p} />
-          ))}
         </S.Row>
         <S.Row>
           {secondRowPartners.map((p, index) => (
             <PartnerCard key={`carousel-row2-${index}`} {...p} />
-          ))}
-          {secondRowPartners.map((p, index) => (
-            <PartnerCard key={`carousel-row2-dup-${index}`} {...p} />
           ))}
         </S.Row>
       </S.CarouselWrap>

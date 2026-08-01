@@ -12,11 +12,7 @@ export const Container = styled.div<{ $align?: 'left' | 'center' }>`
 export const IconTitleRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-
-  ${media.tablet} {
-    gap: 12px;
-  }
+  gap: 12px;
 
   ${media.mobile} {
     gap: 8px;
@@ -53,8 +49,8 @@ export const TitleText = styled.h2`
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
   font-size: 24px;
-  line-height: 140%;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#FFFFFF' : theme.colors.text)};
+  line-height: 29px;
+  color: #232527;
   white-space: pre-line;
 
   ${media.tablet} {

@@ -1,21 +1,13 @@
-'use client';
+import ProductPageClient from '@/components/pages/ProductPageClient';
+import { getProductPageData } from '@/lib/api/product';
 
-import { useState } from 'react';
-import ProductPageTemplate from '@/components/templates/ProductPageTemplate';
-
-export default function ProductPage() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleSearch = (value: string) => {
-    console.log('검색:', value);
-  };
+export default async function ProductPage() {
+  const { categories, services } = await getProductPageData();
 
   return (
-    <ProductPageTemplate
-      searchTerm={searchTerm}
-      onSearchChange={setSearchTerm}
-      onSearch={handleSearch}
+    <ProductPageClient
+      categories={categories}
+      services={services}
     />
   );
 }
-

@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const Section = styled.section`
@@ -29,15 +29,11 @@ export const Section = styled.section`
     gap: 12px;
     align-items: stretch;
     overflow: visible;
-  }
-`;
 
-const slideRight = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
+    /* 모바일 Figma: 파트너 섹션 설명 미표시 */
+    & > div:first-of-type p {
+      display: none;
+    }
   }
 `;
 
@@ -56,19 +52,19 @@ export const CarouselWrap = styled.div`
 
 export const Row = styled.div`
   display: flex;
-  gap: 24px;
-  width: fit-content;
+  gap: 64px;
+  width: 100%;
   position: relative;
-  animation: ${slideRight} 15s linear infinite;
+  justify-content: flex-start;
 
   > * {
-    flex: 0 0 360px;
-    width: 360px;
+    flex: 0 0 400px;
+    width: 400px;
     box-sizing: border-box;
   }
 
   &:nth-child(2) {
-    margin-left: 120px;
+    justify-content: flex-end;
   }
 `;
 

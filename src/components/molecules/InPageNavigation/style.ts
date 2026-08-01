@@ -102,7 +102,7 @@ export const NavLabel = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.5;
   display: flex;
   align-items: center;
@@ -129,7 +129,7 @@ export const NavTitle = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.5;
   display: flex;
   align-items: center;
@@ -144,7 +144,7 @@ export const NavTitleLink = styled.a`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.5;
   display: flex;
   align-items: center;

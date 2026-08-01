@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import {
   StyledHeader,
   NavLink,
+  BrandLabel,
   MobileMenuOverlay,
   MobileMenuPanel,
   MobileMenuLink,
@@ -56,7 +57,8 @@ const Header = () => {
     <StyledHeader $menuOpen={isMenuOpen}>
       <section className="iconSection">
         <Link href="/" onClick={() => setIsMenuOpen(false)}>
-          <Image src="/main_logo.png" alt="icon" width={35} height={36} />
+          <Image src="/main_logo.png" alt="Aolda" width={35} height={36} />
+          <BrandLabel>AOLDA</BrandLabel>
         </Link>
       </section>
       <nav className="linkSeciton" aria-label="주요 메뉴">
@@ -79,7 +81,9 @@ const Header = () => {
           aria-expanded={isMenuOpen}
           aria-controls="mobile-main-menu"
           onClick={toggleMenu}
-        />
+        >
+          <span className="menuToggleVector" aria-hidden />
+        </button>
       </section>
       <MobileMenuOverlay
         $open={isMenuOpen}

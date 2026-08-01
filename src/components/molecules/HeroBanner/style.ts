@@ -91,7 +91,7 @@ export const ContentContainer = styled.div<{ $position: TextPosition }>`
 
 export const Title = styled.h2<{ $color: string }>`
   margin: 0;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   color: ${({ $color }) => $color};
   line-height: 1.4;
@@ -102,7 +102,7 @@ export const Title = styled.h2<{ $color: string }>`
 
 export const Description = styled.p<{ $color: string }>`
   margin: 0.75rem 0 0 0;
-  font-size: 1.125rem;
+  font-size: 18px;
   color: ${({ $color }) => $color};
   line-height: 1.6;
   white-space: pre-line;

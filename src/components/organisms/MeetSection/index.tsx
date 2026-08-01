@@ -5,9 +5,15 @@ import * as S from './style';
 const MeetSection = () => (
   <S.Section>
     <IntroSectionTitle
-      title="아올다의 새로운 크루가 되어주세요"
-      align="left"
-      showTopBar={true}
+      title={
+        <>
+          아올다의 새로운 크루가
+          <br />
+          되어주세요
+        </>
+      }
+      align="center"
+      showTopBar={false}
     />
 
     <S.Grid>

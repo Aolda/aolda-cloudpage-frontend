@@ -4,9 +4,13 @@ import { media } from '@/styles/theme';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 0;
+  gap: 16px;
+  width: auto;
+  max-width: 100%;
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -14,31 +18,48 @@ export const Container = styled.div`
   }
 
   ${media.mobile} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 8px;
   }
 `;
 
 export const Option = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  padding: 0;
+  gap: 8px;
+  height: 24px;
+  border-radius: 8px;
+  width: max-content;
+  max-width: 100%;
+  flex: none;
+  flex-shrink: 0;
 `;
 
 export const Label = styled.label`
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.text};
+  gap: 8px;
+  width: max-content;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #232527;
   cursor: pointer;
   user-select: none;
+  text-align: left;
+  white-space: nowrap;
 
-  ${media.belowDesktop} {
-    gap: 8px;
-    font-family: 'Noto Sans KR', sans-serif;
+  ${media.tablet} {
     font-size: 12px;
     line-height: 150%;
-    font-weight: 400;
-    color: ${({ theme }) => theme.colors.text};
   }
 
   ${media.mobile} {
@@ -58,11 +79,11 @@ export const Input = styled.input`
 
 export const Checkmark = styled.span<{ $checked: boolean }>`
   position: relative;
-  width: 2rem;
-  height: 2rem;
-  border: 2px solid ${({ theme, $checked }) => ($checked ? theme.colors.primary : theme.colors.border)};
+  width: 24px;
+  height: 24px;
   border-radius: 4px;
-  background: ${({ theme, $checked }) => ($checked ? theme.colors.primary : 'transparent')};
+  border: 2px solid ${({ $checked }) => ($checked ? '#1a8ee5' : '#777777')};
+  background: ${({ $checked }) => ($checked ? '#1a8ee5' : 'transparent')};
   transition: all 0.2s;
   flex-shrink: 0;
 
@@ -70,22 +91,13 @@ export const Checkmark = styled.span<{ $checked: boolean }>`
     content: '';
     position: absolute;
     display: ${({ $checked }) => ($checked ? 'block' : 'none')};
-    left: 0.5rem;
-    top: 0.2rem;
-    width: 0.4rem;
-    height: 0.8rem;
-    border: solid #ffffff;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #fefefe;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
-  }
-
-  ${media.belowDesktop} {
-    width: 24px;
-    height: 24px;
-    border: 2px solid #777777;
-    border-radius: 4px;
-    background: ${({ $checked }) => ($checked ? '#1a8ee5' : 'transparent')};
-    border-color: ${({ $checked }) => ($checked ? '#1a8ee5' : '#777777')};
   }
 
   ${media.mobile} {

@@ -34,7 +34,7 @@ export const Number = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.1875rem;
   text-align: center;
   color: #777777;
@@ -59,7 +59,7 @@ export const Category = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.1875rem;
   text-align: center;
   color: #1A8EE5;
@@ -82,7 +82,7 @@ export const Title = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.1875rem;
   color: #232527;
   flex: none;
@@ -105,7 +105,7 @@ export const Date = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 12px;
   line-height: 0.875rem;
   text-align: center;
   color: #777777;

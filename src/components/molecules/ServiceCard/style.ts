@@ -1,68 +1,66 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const ServiceLink = styled.a`
   display: block;
+  box-sizing: border-box;
   text-decoration: none;
   color: inherit;
-  min-width: 0;
-
-  ${media.belowDesktop} {
-    min-width: 0;
-    height: 100%;
-  }
+  width: 100%;
+  height: 100%;
 `;
 
 export const ServiceCardWrapper = styled.div`
   display: block;
+  box-sizing: border-box;
+  width: 231px;
+  min-width: 231px;
+  max-width: 231px;
+  height: 240px;
+  flex: none;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  ${media.tablet} {
+    width: 213.33px;
+    min-width: 213.33px;
+    max-width: 213.33px;
+    height: 200px;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 100%;
+  }
 `;
 
 export const ServiceCard = styled.div`
-  background: ${({ theme }) => theme.colors.surface};
-  border-radius: 8px;
-  padding: 24px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 8px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 24px;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  background: #fefefe;
+  border: 1px solid #efefef;
+  border-radius: 8px;
   position: relative;
-  height: 240px;
-  min-width: 231px;
-  width: 231px;
-  box-sizing: border-box;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-
-  ${media.belowDesktop} {
-    width: 100%;
-    min-width: 0;
-    max-width: none;
-    border: 1px solid ${({ theme }) => theme.colors.border};
-    box-shadow: none;
-
-    &:hover {
-      transform: none;
-      box-shadow: none;
-    }
-  }
 
   ${media.tablet} {
-    height: 200px;
     padding: 20px;
     gap: 24px;
+    background: #fefefe;
   }
 
   ${media.mobile} {
     height: 120px;
     padding: 12px;
     gap: 12px;
-    background: ${({ theme }) => theme.colors.surface};
   }
 `;
 
@@ -70,13 +68,25 @@ export const CardBody = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
-  flex: 1;
-  min-width: 0;
+  padding: 0;
+  gap: 8px;
+  margin: 0 auto;
+  width: 183px;
+  max-width: 183px;
+  flex: none;
   align-self: stretch;
+  min-width: 0;
+  box-sizing: border-box;
+
+  ${media.tablet} {
+    width: 173.33px;
+    max-width: 173.33px;
+  }
 
   ${media.mobile} {
-    gap: 8px;
+    width: 100%;
+    max-width: none;
+    gap: 4px;
   }
 `;
 
@@ -86,17 +96,9 @@ export const IconTitleBlock = styled.div`
   align-items: flex-start;
   padding: 0;
   gap: 4px;
-  width: 58px;
-  max-width: 58px;
-  height: auto;
+  width: auto;
+  max-width: 100%;
   flex: none;
-  margin-bottom: 8px;
-
-  ${media.belowDesktop} {
-    width: auto;
-    max-width: none;
-    margin-bottom: 0;
-  }
 
   ${media.mobile} {
     flex-direction: row;
@@ -156,23 +158,23 @@ export const HeartIcon = styled.svg`
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  margin-left: -0.2rem;
-  position: relative;
-  z-index: 1;
 `;
 
 export const Title = styled.h3`
   margin: 0;
+  padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   text-align: left;
-  color: ${({ theme }) => theme.colors.text};
+  color: #232527;
   display: flex;
   align-items: center;
+  flex: none;
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
     font-size: 16px;
     line-height: 19px;
   }
@@ -184,20 +186,27 @@ export const Title = styled.h3`
 `;
 
 export const Description = styled.p`
-  font-size: 12px;
-  color: ${({ theme }) => theme.colors.gray600};
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 400;
-  line-height: 150%;
   margin: 0;
-  width: 100%;
+  padding: 0;
+  width: 183px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #777777;
   word-break: keep-all;
+  flex: none;
+  align-self: stretch;
 
-  ${media.belowDesktop} {
-    align-self: stretch;
+  ${media.tablet} {
+    width: 173.33px;
+    font-size: 12px;
+    line-height: 150%;
   }
 
   ${media.mobile} {
+    width: 100%;
     font-size: 10px;
     line-height: 150%;
     display: -webkit-box;
@@ -208,20 +217,18 @@ export const Description = styled.p`
 `;
 
 export const ArrowIcon = styled.svg`
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 2rem;
-  height: 2rem;
-  color: ${({ theme }) => theme.colors.textMuted};
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  color: #777777;
   flex: none;
+  align-self: flex-end;
+  margin: 0;
+  margin-left: auto;
 
-  ${media.belowDesktop} {
-    position: static;
-    width: 16px;
-    height: 16px;
-    color: ${({ theme }) => theme.colors.gray600};
+  ${media.desktop} {
     align-self: flex-end;
     margin: 0;
+    margin-left: auto;
   }
 `;

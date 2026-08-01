@@ -47,7 +47,7 @@ export const Count = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 1.5rem;
   color: #232527;
   flex: none;
@@ -115,7 +115,7 @@ export const WriteText = styled.span`
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.1875rem;
   text-align: center;
   color: #1572B8;

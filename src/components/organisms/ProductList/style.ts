@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const ProductListContainer = styled.div`
@@ -6,16 +6,18 @@ export const ProductListContainer = styled.div`
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 20px;
   box-sizing: border-box;
+  width: 100%;
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
     gap: 20px;
-    width: 100%;
+    max-width: 680px;
   }
 
   ${media.mobile} {
     gap: 12px;
+    max-width: none;
   }
 `;
 
@@ -25,56 +27,63 @@ export const SearchSection = styled.div`
 
 export const SectionHeader = styled.div`
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 12px;
+  height: 29px;
 
-  ${media.belowDesktop} {
-    gap: 12px;
+  ${media.tablet} {
+    height: 24px;
   }
 
   ${media.mobile} {
-    gap: 8px;
+    height: auto;
   }
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.text};
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 700;
+  color: #232527;
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 12px;
+  height: 29px;
 
-  ${media.belowDesktop} {
-    font-family: 'Noto Sans KR', sans-serif;
+  ${media.tablet} {
     font-size: 20px;
     line-height: 24px;
-    font-weight: 700;
-    color: ${({ theme }) => theme.colors.text};
-    gap: 12px;
+    height: 24px;
   }
 
   ${media.mobile} {
     font-size: 12px;
     line-height: 14px;
     gap: 8px;
+    height: auto;
   }
 `;
 
 export const SectionIcon = styled.span`
-  display: inline-block;
-  width: 24.85px;
-  height: 21.57px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
   flex-shrink: 0;
+  align-self: stretch;
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 29px;
+    height: 29px;
     object-fit: contain;
   }
 
-  ${media.belowDesktop} {
+  ${media.tablet} {
     width: 24px;
     height: 24px;
 
@@ -98,22 +107,27 @@ export const SectionIcon = styled.span`
 export const ServiceGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 231px);
+  justify-content: start;
+  justify-items: start;
+  align-items: start;
+  align-content: start;
+  padding: 0;
   gap: 24px;
-  justify-content: flex-start;
+  width: 996px;
+  max-width: 100%;
 
-  @media (min-width: 1025px) and (max-width: 1200px) {
-    grid-template-columns: repeat(3, 231px);
-  }
-
-  ${media.belowDesktop} {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  ${media.tablet} {
+    grid-template-columns: repeat(3, 213.33px);
     gap: 20px;
-    width: 100%;
-    justify-content: stretch;
+    width: 680px;
+    max-width: 100%;
   }
 
   ${media.mobile} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: stretch;
     gap: 8px;
+    width: 100%;
+    max-width: none;
   }
 `;

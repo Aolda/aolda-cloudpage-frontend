@@ -27,7 +27,6 @@ const ProblemsSection = ({ problems }: ProblemsSectionProps) => {
         title="문제점"
         alt="문제점"
         align="left"
-        iconSize={24}
       />
       <S.ProblemsList>
         {problems.map((problem, index) => (

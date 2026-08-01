@@ -1,4 +1,4 @@
-﻿import styled, { css } from 'styled-components';
+﻿import styled from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const Section = styled.section`
@@ -22,14 +22,38 @@ export const Section = styled.section`
     gap: 24px;
   }
 
+  /* Frame 1261158764 */
   ${media.mobile} {
     width: 100%;
-    max-width: 100%;
+    max-width: 343px;
     min-height: auto;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
     gap: 20px;
-    align-items: stretch;
+    align-items: flex-start;
+    align-self: stretch;
+
+    /* Frame 1261158761 — 제목 영역 */
+    > div:first-child {
+      width: 100%;
+      max-width: 343px;
+      padding: 0 60px 0 0;
+      box-sizing: border-box;
+      align-items: flex-start;
+      text-align: left;
+
+      h2 {
+        width: 100%;
+        max-width: 283px;
+        height: auto;
+        min-height: 46px;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 700;
+        color: #232527;
+        text-align: left;
+        margin-bottom: 0;
+      }
+    }
   }
 `;
 
@@ -58,12 +82,14 @@ export const Grid = styled.div`
     gap: 24px;
   }
 
+  /* Frame 1261158759 */
   ${media.mobile} {
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    max-width: 343px;
+    height: 55px;
     gap: 12px;
     align-self: stretch;
+    align-items: flex-start;
   }
 `;
 
@@ -85,37 +111,39 @@ export const Col = styled.div`
     order: 1;
   }
 
-  &:first-of-type a,
-  &:first-of-type button {
-    width: 200px;
-    height: 48px;
-    padding: 12px 16px;
-    gap: 8px;
-    background: ${({ theme }) => theme.colors.primary600};
-    border: none;
-    border-radius: 8px;
-    color: #ffffff;
-  }
+  ${media.desktop} {
+    &:first-of-type a,
+    &:first-of-type button {
+      width: 200px;
+      height: 48px;
+      padding: 12px 16px;
+      gap: 8px;
+      background: ${({ theme }) => theme.colors.primary600};
+      border: none;
+      border-radius: 8px;
+      color: #ffffff;
+    }
 
-  &:last-of-type a,
-  &:last-of-type button {
-    width: 200px;
-    height: 48px;
-    padding: 12px 16px;
-    gap: 8px;
-    background: ${({ theme }) => theme.colors.surface};
-    border: 1px solid ${({ theme }) => theme.colors.border};
-    border-radius: 8px;
-    color: ${({ theme }) => theme.colors.text};
-  }
+    &:last-of-type a,
+    &:last-of-type button {
+      width: 200px;
+      height: 48px;
+      padding: 12px 16px;
+      gap: 8px;
+      background: ${({ theme }) => theme.colors.surface};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      border-radius: 8px;
+      color: ${({ theme }) => theme.colors.text};
+    }
 
-  a img,
-  button img {
-    width: 24px;
-    height: 24px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    a img,
+    button img {
+      width: 24px;
+      height: 24px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
   }
 
   ${media.tablet} {
@@ -123,13 +151,34 @@ export const Col = styled.div`
     height: 82px;
     gap: 8px;
 
+    &:first-of-type {
+      p {
+        max-width: 111px;
+      }
+    }
+
     &:first-of-type a,
-    &:first-of-type button,
+    &:first-of-type button {
+      width: 160px;
+      height: 38px;
+      padding: 11px 16px;
+      gap: 8px;
+      background: ${({ theme }) => theme.colors.primary600};
+      border: none;
+      border-radius: 8px;
+      color: #ffffff;
+    }
+
     &:last-of-type a,
     &:last-of-type button {
       width: 160px;
       height: 38px;
       padding: 11px 16px;
+      gap: 8px;
+      background: ${({ theme }) => theme.colors.surface};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      border-radius: 8px;
+      color: ${({ theme }) => theme.colors.text};
     }
 
     a img,
@@ -139,50 +188,117 @@ export const Col = styled.div`
     }
   }
 
+  /* Frame 1261158757 / 1261158758 */
   ${media.mobile} {
-    flex: 1;
-    width: auto;
+    flex: 1 1 0;
+    width: 160px;
     min-width: 0;
+    max-width: 160px;
     height: 55px;
+    gap: 8px;
     align-items: flex-start;
-
-    &:first-of-type a,
-    &:first-of-type button,
-    &:last-of-type a,
-    &:last-of-type button {
-      && {
-        width: 100%;
-        height: 32px;
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 10px;
-        line-height: 12px;
-        gap: 8px;
-      }
-    }
+    padding: 0;
+    flex-grow: 1;
 
     &:first-of-type a,
     &:first-of-type button {
-      && {
-        background: ${({ theme }) => theme.colors.primary600};
-        border: none;
-        color: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 12px;
+      gap: 8px;
+      width: 160px;
+      height: 32px !important;
+      min-height: 32px;
+      max-height: 32px;
+      background: #1572b8;
+      border: none;
+      border-radius: 8px;
+      flex: none;
+      order: 1;
+      align-self: stretch;
+      flex-grow: 0;
+      transform: none;
+
+      &:hover {
+        transform: none;
+        opacity: 1;
       }
     }
 
+    /* Figma secondary Button — height 32px */
     &:last-of-type a,
     &:last-of-type button {
-      && {
-        background: ${({ theme }) => theme.colors.surface};
-        border: 1px solid ${({ theme }) => theme.colors.border};
-        color: ${({ theme }) => theme.colors.text};
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 12px;
+      gap: 8px;
+      width: 160px;
+      height: 32px !important;
+      min-height: 32px;
+      max-height: 32px;
+      background: #fefefe;
+      border: 1px solid #efefef;
+      border-radius: 8px;
+      flex: none;
+      order: 1;
+      align-self: stretch;
+      flex-grow: 0;
+      color: #232527;
+      transform: none;
+
+      &:hover {
+        transform: none;
+        opacity: 1;
       }
     }
 
     a img,
     button img {
+      position: relative;
       width: 16px;
       height: 16px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      object-fit: contain;
+    }
+
+    a span,
+    button span {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: center;
+      height: 12px;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+
+    &:first-of-type a span,
+    &:first-of-type button span {
+      color: #ffffff;
+      width: auto;
+    }
+
+    &:last-of-type a span,
+    &:last-of-type button span {
+      width: 60px;
+      height: 12px;
+      color: #232527;
     }
   }
 `;
@@ -214,10 +330,14 @@ export const Caption = styled.p`
 
   ${media.mobile} {
     max-width: none;
-    height: auto;
+    width: auto;
+    height: 15px;
     font-size: 10px;
     line-height: 150%;
     text-align: left;
     justify-content: flex-start;
+    align-items: center;
+    color: #777777;
+    white-space: nowrap;
   }
 `;

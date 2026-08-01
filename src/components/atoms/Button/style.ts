@@ -21,9 +21,9 @@ const sizeStyles = {
     gap: '0.5rem',
   },
   lg: {
-    padding: '0.75rem 2.25rem',
-    fontSize: '1rem',
-    gap: '0.5rem',
+    padding: '12px 16px',
+    fontSize: '16px',
+    gap: '8px',
   },
 };
 
@@ -51,18 +51,15 @@ export const Button = styled.button<{
   /* 기본 스타일 */
   background: ${({ $variant }) => 
     $variant === 'secondary' 
-      ? 'transparent' 
-      : 'rgb(32, 137, 207)'};
+      ? '#ffffff' 
+      : '#1572B8'};
   color: ${({ $variant, theme, $lightTextInDarkMode = false }) =>
     resolveTextColor($variant, $lightTextInDarkMode, theme)};
   border: ${({ $variant, theme }) => 
     $variant === 'secondary' 
-      ? `1px solid ${theme.colors.borderStrong}` 
-      : '1px solid rgb(32, 137, 207)'};
-  border-radius: ${({ $variant }) => 
-    $variant === 'secondary' 
-      ? '30px' 
-      : '15px'};
+      ? '1px solid #BFBFBF' 
+      : '1px solid #1572B8'};
+  border-radius: 8px;
   box-sizing: border-box;
 
   &:hover {
@@ -91,6 +88,8 @@ export const Button = styled.button<{
 
   ${media.mobile} {
     max-width: 100%;
+    font-size: 10px;
+    line-height: 12px;
   }
 `;
 
@@ -101,14 +100,14 @@ export const Label = styled.span<{
   $lightTextInDarkMode?: boolean;
 }>`
   width: auto;
-  height: 23px;
-  margin-top: 3px;
+  height: 19px;
+  margin-top: 0;
   /* Title-H4 */
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.1875rem;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
   /* White/White or Black */
   color: ${({ $variant, theme, $lightTextInDarkMode = false }) =>
@@ -140,16 +139,38 @@ export const Label = styled.span<{
   ${media.mobile} {
     font-size: 10px;
     line-height: 12px;
-    height: auto;
+    height: 12px;
     margin-top: 0;
+    ${({ $variant, theme, $lightTextInDarkMode = false }) =>
+      $lightTextInDarkMode && theme.mode === 'dark'
+        ? css`
+            color: #ffffff;
+          `
+        : $variant === 'secondary'
+          ? css`
+              color: #232527;
+            `
+          : css`
+              color: #ffffff;
+            `}
   }
 `;
 
 export const Image = styled.img<{ $variant: ButtonVariant }>`
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
-  filter: ${({ $variant }) => $variant === 'secondary' ? 'none' : 'brightness(0) invert(1)'};
+  filter: ${({ $variant }) => ($variant === 'secondary' ? 'none' : 'brightness(0) invert(1)')};
+
+  ${media.tablet} {
+    width: 16px;
+    height: 16px;
+  }
+
+  ${media.mobile} {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
   

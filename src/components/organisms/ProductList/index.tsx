@@ -47,13 +47,13 @@ const ProductList = ({
       {sectionTitle && (
         <S.SectionHeader>
           <S.SectionTitle>
-            <S.SectionIcon>
+            <S.SectionIcon aria-hidden>
               <Image
                 src="/product/main_title_icon.png"
                 alt=""
-                width={35}
-                height={35}
-                sizes="(max-width: 743px) 14px, 24px"
+                width={29}
+                height={29}
+                sizes="(max-width: 743px) 14px, 29px"
               />
             </S.SectionIcon>
             {sectionTitle}

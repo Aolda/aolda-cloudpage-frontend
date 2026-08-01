@@ -10,8 +10,8 @@ export const StatCard = styled.div`
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.colors.surface};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 10px;
+  border: 2px solid ${({ theme }) => theme.colors.border};
+  border-radius: 12px;
   text-align: center;
   height: 133px;
   width: 100%;
@@ -24,7 +24,9 @@ export const StatCard = styled.div`
     height: 87px;
     padding: 16px 32px;
     gap: 8px;
+    border: 1px solid #efefef;
     border-radius: 8px;
+    background: #fefefe;
   }
 
   ${media.mobile} {
@@ -36,11 +38,14 @@ export const StatCard = styled.div`
     gap: 8px;
     align-items: flex-start;
     text-align: left;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    background: #fefefe;
   }
 `;
 
 export const StatValue = styled.span`
-  font-size: 2.8rem;
+  font-size: 32px;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.primary500};
 
@@ -54,11 +59,12 @@ export const StatValue = styled.span`
     line-height: 14px;
     align-self: stretch;
     text-align: right;
+    color: #1a8ee5;
   }
 `;
 
 export const StatLabel = styled.span`
-  font-size: 1.5rem;
+  font-size: 16px;
   color: ${({ theme }) => theme.colors.gray600};
 
   ${media.tablet} {
@@ -69,6 +75,6 @@ export const StatLabel = styled.span`
   ${media.mobile} {
     font-size: 10px;
     line-height: 150%;
-    color: ${({ theme }) => theme.colors.text};
+    color: #232527;
   }
 `;

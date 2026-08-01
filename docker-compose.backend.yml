@@ -1,0 +1,16 @@
+services:
+  aolda-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aolda-ahp-backend
+    ports:
+      - "8001:8001"
+    environment:
+      NODE_ENV: development
+      USE_MOCK_DATA: "true"
+      CORS_ALLOW_ORIGINS: "http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001"
+      CORS_ALLOW_METHODS: "GET,POST,PATCH,PUT,DELETE,OPTIONS"
+      CORS_ALLOW_HEADERS: "Content-Type,Authorization"
+      CORS_ALLOW_CREDENTIALS: "true"
+    restart: unless-stopped

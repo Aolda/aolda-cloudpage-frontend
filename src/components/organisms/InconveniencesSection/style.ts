@@ -41,7 +41,8 @@ export const PromiseGrid = styled.div`
   }
 
   ${media.mobile} {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
   }
 `;

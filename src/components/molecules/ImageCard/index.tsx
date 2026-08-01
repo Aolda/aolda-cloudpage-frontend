@@ -55,8 +55,8 @@ const ImageCard = ({
       </S.ImageContainer>
       <S.TextContainer $compact={compact}>
         {title && <S.ImageTitle $isBackground={isBackground} $compact={compact}>{title}</S.ImageTitle>}
-        {period && <S.ImagePeriod $compact={compact}>{period}</S.ImagePeriod>}
         {description && <S.ImageDescription $compact={compact}>{description}</S.ImageDescription>}
+        {period && <S.ImagePeriod $compact={compact}>{period}</S.ImagePeriod>}
       </S.TextContainer>
     </S.ImageCard>
   );

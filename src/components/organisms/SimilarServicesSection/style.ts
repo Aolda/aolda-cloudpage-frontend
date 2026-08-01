@@ -2,76 +2,67 @@ import styled from 'styled-components';
 import { media } from '@/styles/theme';
 
 export const SimilarServicesSection = styled.section`
-  padding: 4rem 0;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 210px;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 60px;
   box-sizing: border-box;
 
   ${media.tablet} {
-    padding: 0;
-    max-width: 680px;
-    width: 100%;
-    margin-bottom: 60px;
-    gap: 12px;
+    padding-bottom: 40px;
+    gap: 16px;
   }
 
   ${media.mobile} {
-    max-width: 343px;
-    margin-bottom: 40px;
+    padding-bottom: 32px;
     gap: 12px;
   }
 `;
 
+export const HeaderBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+`;
+
 export const Description = styled.p`
-  margin: 1rem 0 0;
+  margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   font-size: 20px;
-  color: ${({ theme }) => theme.colors.gray600};
   line-height: 150%;
+  color: #777777;
   width: 100%;
 
   ${media.tablet} {
-    margin: 0;
     font-size: 16px;
-    line-height: 150%;
   }
 
   ${media.mobile} {
     font-size: 12px;
-    line-height: 150%;
   }
 `;
 
 export const ServicesGrid = styled.div`
-  margin-top: 3rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
   width: 100%;
 
   ${media.tablet} {
-    margin-top: 16px;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-    width: 100%;
   }
 
   ${media.mobile} {
-    margin-top: 0;
-    width: 100%;
-    max-width: 343px;
-    min-height: 324.99px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 156.49px);
-    column-gap: 16px;
-    row-gap: 12px;
-    align-self: stretch;
+    gap: 16px;
   }
 `;
