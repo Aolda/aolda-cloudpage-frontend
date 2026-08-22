@@ -40,7 +40,9 @@ const Accordion = ({
         <S.TitleContent>
           <S.TitleIcon>
             {qBadge ? (
-              <S.QBadge aria-hidden>Q</S.QBadge>
+              <S.QBadge aria-hidden>
+                <S.QBadgeImage src="/FAQ/FAQ_accordion_icon.png" alt="" />
+              </S.QBadge>
             ) : icon ? (
               <S.IconImage src={icon} alt="" />
             ) : null}

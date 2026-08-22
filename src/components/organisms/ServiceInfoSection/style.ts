@@ -21,6 +21,21 @@ export const TabletBreak = styled.br`
   }
 `;
 
+/** 데스크톱에서 문장 단위로 한 줄씩 유지 (태블릿·모바일은 인라인 흐름) */
+export const DesktopLine = styled.span`
+  ${media.desktop} {
+    display: block;
+    white-space: nowrap;
+  }
+`;
+
+/** 데스크톱에서 이전 문장과 1줄 간격 (line-height 30px) */
+export const DesktopLineSpaced = styled(DesktopLine)`
+  ${media.desktop} {
+    margin-top: 30px;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -72,6 +87,7 @@ export const ContentRow = styled.div`
     max-width: 680px;
     height: auto;
     gap: 20px;
+    align-items: center;
   }
 
   ${media.mobile} {
@@ -89,9 +105,12 @@ export const LeftPanel = styled.div`
   align-items: flex-start;
   padding: 0;
   gap: 36px;
-  width: 797px;
-  height: 524px;
   flex: none;
+
+  ${media.desktop} {
+    width: 797px;
+    height: 524px;
+  }
 
   ${media.tablet} {
     width: 470px;
@@ -108,13 +127,16 @@ export const LeftPanel = styled.div`
 
 export const ImageWrapper = styled.div`
   position: relative;
-  width: 797px;
-  height: 308px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
   border-radius: 12px;
   overflow: hidden;
   flex: none;
   align-self: stretch;
+
+  ${media.desktop} {
+    width: 797px;
+    height: 308px;
+  }
 
   ${media.tablet} {
     width: 100%;
@@ -123,42 +145,53 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Description = styled.div`
-  width: 797px;
-  height: 180px;
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
   line-height: 150%;
   color: #777777;
   margin: 0;
   flex: none;
-  white-space: pre-line;
+  flex-grow: 0;
   word-break: keep-all;
   box-sizing: border-box;
 
+  ${media.desktop} {
+    width: 797px;
+    max-width: 100%;
+    min-height: 180px;
+    height: auto;
+    font-size: 20px;
+  }
+
   ${media.tablet} {
     width: 100%;
+    max-width: 470px;
     height: auto;
     font-size: 16px;
     line-height: 150%;
+    color: #777777;
+    align-self: stretch;
   }
 `;
 
 export const RightPanel = styled.div`
   position: relative;
-  width: 379px;
-  height: 524px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   border-radius: 12px;
   overflow: hidden;
   flex: none;
-  flex-grow: 1;
   align-self: stretch;
 
   img {
     object-fit: cover;
     object-position: 80% 25%;
+  }
+
+  ${media.desktop} {
+    width: 379px;
+    height: 524px;
+    flex-grow: 1;
   }
 
   ${media.tablet} {
@@ -173,8 +206,10 @@ export const RightPanel = styled.div`
   }
 
   ${media.mobile} {
+    /* Frame 145 — 80×120 radius 4 */
     width: 80px;
     height: 120px;
+    flex: none;
     flex-grow: 0;
     flex-shrink: 0;
     border-radius: 4px;
@@ -188,7 +223,7 @@ export const MobileDescription = styled.div`
     display: flex;
     flex-direction: column;
     gap: 4px;
-    flex: 1;
+    flex: 1 1 0;
     min-width: 0;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;

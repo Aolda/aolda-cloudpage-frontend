@@ -9,7 +9,7 @@ export interface ProductHeroSectionProps {
   description: ReactNode;
   /** Breadcrumb 항목 목록 */
   breadcrumbItems?: Array<{ label: string; href?: string }>;
-  /** 히어로 하단 영역 (태블릿: 검색바) */
+  /** 히어로 하단 영역 (태블릿·모바일: 검색바 / 데스크톱은 ContentWrapper) */
   children?: ReactNode;
 }
 

@@ -5,7 +5,7 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: min(1360px, calc(100vw - 32px));
+  width: min(1360px, calc(100vw - 80px));
   max-width: 1360px;
   height: 72px;
   position: absolute;
@@ -27,11 +27,16 @@ export const StyledHeader = styled.header<{ $menuOpen?: boolean }>`
     transform: none;
     position: relative;
     margin: 0;
-    padding: 20px 32px;
+    padding: 16px 32px;
     border: none;
     border-radius: 0;
     height: 68px;
+    background-color: #fefefe;
     z-index: ${({ $menuOpen }) => ($menuOpen ? 110 : 10)};
+  }
+
+  ${media.tablet} {
+    padding: 20px 32px;
   }
 
   ${media.mobile} {

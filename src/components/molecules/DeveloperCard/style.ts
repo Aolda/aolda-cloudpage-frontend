@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+﻿import styled from 'styled-components';
 import Link from 'next/link';
 import { media } from '@/styles/theme';
 
@@ -7,10 +7,16 @@ export const DeveloperCardLink = styled(Link)`
   color: inherit;
   display: block;
 
+  ${media.desktop} {
+    flex: none;
+    width: 220.8px;
+    max-width: 220.8px;
+  }
+
   ${media.tablet} {
-    flex: 1;
+    flex: 1 1 0;
     min-width: 0;
-    max-width: calc(25% - 15px);
+    max-width: calc((100% - 60px) / 4);
   }
 
   ${media.mobile} {
@@ -26,24 +32,30 @@ export const DeveloperCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px 36px;
-  gap: 36px;
-  width: 220.8px;
-  height: 268px;
   background: #fefefe;
   border: 1px solid #efefef;
-  border-radius: 20px;
-  flex: none;
 
+  /* desktop: 220.8×268, padding 24×36, gap 36, radius 20 */
+  ${media.desktop} {
+    flex: none;
+    width: 220.8px;
+    height: 268px;
+    padding: 24px 36px;
+    gap: 36px;
+    border-radius: 20px;
+  }
+
+  /* CrewProfile_Card — 155×189, padding 24×36, gap 20 */
   ${media.tablet} {
-    flex: 1 1 calc(25% - 15px);
-    min-width: 140px;
-    max-width: calc(25% - 15px);
-    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: calc((100% - 60px) / 4);
+    width: 155px;
     height: 189px;
-    padding: 24px 16px;
+    padding: 24px 36px;
     gap: 20px;
-    border: 1px solid ${({ theme }) => theme.colors.border};
+    background: #fefefe;
+    border: 1px solid #efefef;
     border-radius: 12px;
   }
 
@@ -60,16 +72,23 @@ export const DeveloperCard = styled.div`
 `;
 
 export const CharacterContainer = styled.div`
-  width: 120px;
-  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: none;
 
+  ${media.desktop} {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
   ${media.tablet} {
     width: 80px;
     height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
   }
 
   ${media.mobile} {
@@ -78,20 +97,29 @@ export const CharacterContainer = styled.div`
 `;
 
 export const CharacterImage = styled.img`
-  width: 120px;
-  height: 120px;
   object-fit: contain;
   display: block;
+
+  ${media.desktop} {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 
   ${media.tablet} {
     width: 80px;
     height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 `;
 
 export const DefaultCharacter = styled.svg`
-  width: 120px;
-  height: 120px;
+  ${media.desktop} {
+    width: 120px;
+    height: 120px;
+  }
 
   ${media.tablet} {
     width: 80px;
@@ -104,9 +132,12 @@ export const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0;
-  gap: 12px;
   width: 100%;
   flex: none;
+
+  ${media.desktop} {
+    gap: 12px;
+  }
 
   ${media.tablet} {
     gap: 8px;
@@ -126,8 +157,11 @@ export const NameContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0;
-  gap: 12px;
   flex: none;
+
+  ${media.desktop} {
+    gap: 12px;
+  }
 
   ${media.tablet} {
     gap: 8px;
@@ -146,11 +180,14 @@ export const CrewName = styled.h3`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
   text-align: center;
   color: #232527;
   flex: none;
+
+  ${media.desktop} {
+    font-size: 20px;
+    line-height: 24px;
+  }
 
   ${media.tablet} {
     font-size: 16px;
@@ -167,11 +204,14 @@ export const CrewName = styled.h3`
 export const CrewNameSuffix = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
   text-align: center;
   color: #777777;
   flex: none;
+
+  ${media.desktop} {
+    font-size: 16px;
+    line-height: 150%;
+  }
 
   ${media.tablet} {
     font-size: 12px;
@@ -191,11 +231,14 @@ export const CrewInfo = styled.p`
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
   text-align: center;
   color: #777777;
   flex: none;
+
+  ${media.desktop} {
+    font-size: 16px;
+    line-height: 19px;
+  }
 
   ${media.tablet} {
     font-size: 12px;

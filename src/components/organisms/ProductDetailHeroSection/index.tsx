@@ -31,9 +31,7 @@ const ProductDetailHeroSection = ({
 }: ProductDetailHeroSectionProps) => {
   return (
     <S.HeroShell>
-      <S.HeroBackground aria-hidden>
-        <img src="/product/product_detail/product_detail_herosection.jpg" alt="" />
-      </S.HeroBackground>
+      <S.HeroBackground aria-hidden />
       <S.HeroOverlay aria-hidden />
       <S.HeroSection>
         <S.HeroContent>

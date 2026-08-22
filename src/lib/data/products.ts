@@ -16,6 +16,73 @@ export interface ProductDetailRecord {
   similarServices: SimilarService[];
 }
 
+/**
+ * 모든 제품 상세의 유사 서비스에 쓰는 리치 프리뷰 카드 기본셋.
+ * (헤더 배너 이미지 + 다크 푸터: title / description / provider / favicon)
+ */
+export const DEFAULT_SIMILAR_SERVICES: SimilarService[] = [
+  {
+    logo: 'https://www.google.com/s2/favicons?domain=github.com&sz=128',
+    bannerImage: 'https://opengraph.githubassets.com/1/openstack/trove',
+    title: 'GitHub - openstack/trove',
+    description:
+      'OpenStack Database As A Service (Trove). Mirror of code maintained at openstack.org. openstack/trove',
+    href: 'https://github.com/openstack/trove',
+    provider: 'openstack/trove',
+  },
+  {
+    logo: 'https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=128',
+    bannerImage:
+      'https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png',
+    title: '데이터베이스 관리 시스템 | 관계형 RDB | Amazon Web Services',
+    description:
+      'Amazon Relational Database Service(RDS)는 Amazon Aurora, PostgreSQL, SQL Server 및 MySQL 등에서 선택한 관계형 데이터베이스...',
+    href: 'https://aws.amazon.com/ko/rds/',
+    provider: 'Amazon Web Services, Inc.',
+  },
+  {
+    logo: 'https://www.google.com/s2/favicons?domain=ncloud.com&sz=128',
+    bannerImage:
+      'https://www.ncloud.com/img/main/og/ncloud_og.png',
+    title: 'NAVER CLOUD PLATFORM',
+    description:
+      'cloud computing services for corporations, IaaS, PaaS, SaaS, with global region and security Technology Certification',
+    href: 'https://www.ncloud.com/',
+    provider: 'NAVER CLOUD PLATFORM',
+  },
+  {
+    logo: 'https://www.google.com/s2/favicons?domain=huggingface.co&sz=128',
+    bannerImage:
+      'https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png',
+    title: 'Spaces - Hugging Face',
+    description: 'Discover amazing ML apps made by the community',
+    href: 'https://huggingface.co/spaces',
+    provider: 'huggingface Spaces - Hugging Face',
+  },
+];
+
+/** API/mock placeholder 카드를 리치 프리뷰로 교체해야 하는지 */
+export function needsSimilarServicesFallback(
+  services: SimilarService[],
+): boolean {
+  if (services.length < 4) return true;
+
+  return services.some((service) => {
+    const banner = service.bannerImage ?? '';
+    const isPlaceholderBanner =
+      !banner ||
+      banner.includes('product_serviceCard') ||
+      banner.startsWith('/product/');
+
+    return (
+      isPlaceholderBanner ||
+      !service.provider ||
+      !service.description ||
+      service.description === service.title
+    );
+  });
+}
+
 export function getProductById(id: string): ProductDetailRecord {
   if (id === 'amdb' || id.startsWith('amdb')) {
     return {
@@ -38,7 +105,7 @@ export function getProductById(id: string): ProductDetailRecord {
           title: '2. 현재 경제적 부담 및 운영의 문제',
           descriptions: [
             '경제적 부담: 개인 사용 시 사용량과 무관한 월 1~2만 원의 고정 비용 발생함.',
-            '비효율적 할당: 마을다 방식(검수 후 24시간 VM 할당) 역시 낮은 사용률로 자원 낭비 지속됨.',
+            '비효율적 할당: 아올다 방식(검수 후 24시간 VM 할당) 역시 낮은 사용률로 자원 낭비 지속됨.',
           ],
         },
         {
@@ -60,7 +127,7 @@ export function getProductById(id: string): ProductDetailRecord {
         },
         {
           title: '확장성',
-          description: '하나의 VM으로 수십 개의 학생 프로젝트 지원 가능',
+          description: 'DAU가 낮은 여러 프로젝트가 자원을 효율적으로 공유',
         },
         {
           title: '경제성',
@@ -85,42 +152,8 @@ export function getProductById(id: string): ProductDetailRecord {
           info: '소프트웨어 21',
         },
         { name: '한동현 크루', info: '소프트웨어 21' },
-        { name: '한동현 크루', info: '소프트웨어 21' },
       ],
-      similarServices: [
-        {
-          logo: '/openstack-logo.png',
-          title: 'GitHub - openstack/trove',
-          description:
-            'OpenStack Database As A Service (Trove). Mirror of code maintained at openstack.org. openstack/trove',
-          href: 'https://github.com/openstack/trove',
-          provider: 'openstack/trove',
-        },
-        {
-          logo: '/aws-logo.png',
-          title: '데이터베이스 관리 시스템 | 관계형 RDB | Amazon Web Services',
-          description:
-            'Amazon Relational Database Service(RDS)는 Amazon Aurora, PostgreSQL, SQL Server 및 MySQL 등에서 선택한 관계형 데이터베이스...',
-          href: 'https://aws.amazon.com/ko/rds/',
-          provider: 'Amazon Web Services, Inc.',
-        },
-        {
-          logo: '/naver-cloud-logo.png',
-          bannerImage: 'https://example.com/naver-cloud-banner.png',
-          title: 'NAVER CLOUD PLATFORM',
-          description:
-            'cloud computing services for corporations, IaaS, PaaS, SaaS, with global region and security Technology Certification',
-          href: 'https://www.ncloud.com/',
-          provider: 'NAVER CLOUD PLATFORM',
-        },
-        {
-          logo: '/huggingface-logo.png',
-          title: 'Spaces - Hugging Face',
-          description: 'Discover amazing ML apps made by the community',
-          href: 'https://huggingface.co/spaces',
-          provider: 'huggingface Spaces - Hugging Face',
-        },
-      ],
+      similarServices: DEFAULT_SIMILAR_SERVICES,
     };
   }
 
@@ -134,6 +167,6 @@ export function getProductById(id: string): ProductDetailRecord {
     problems: [],
     solutions: [],
     developers: [],
-    similarServices: [],
+    similarServices: DEFAULT_SIMILAR_SERVICES,
   };
 }

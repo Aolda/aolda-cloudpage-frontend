@@ -79,6 +79,7 @@ export const Title = styled.h2`
     font-size: 16px;
     line-height: 19px;
     height: 46px;
+    color: #181818;
     display: flex;
     align-items: flex-start;
   }
@@ -151,9 +152,10 @@ export const ActionLabelText = styled.span`
   white-space: nowrap;
 
   ${media.tablet} {
-    width: 78px;
+    width: auto;
+    max-width: none;
     height: 23px;
-    padding-top: 3.5px;
+    padding-top: 0;
     font-family: 'Noto Sans KR', sans-serif;
     font-style: normal;
     font-weight: 700;

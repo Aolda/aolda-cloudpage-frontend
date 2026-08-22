@@ -18,11 +18,15 @@ export const HeroSection = styled.section`
   overflow: hidden;
   box-sizing: border-box;
 
+  /* Frame 169 — tablet 744×400 (below NavBar) */
   ${media.tablet} {
-    max-width: 100%;
+    width: 100%;
+    max-width: 744px;
     height: 400px;
+    margin: 0 auto;
     padding: 0 32px 48px;
     gap: 0;
+    align-items: flex-end;
   }
 
   ${media.mobile} {
@@ -64,9 +68,10 @@ export const HeroContent = styled.div`
   min-width: 0;
 
   ${media.tablet} {
-    max-width: 680px;
+    max-width: 100%;
     gap: 0;
     align-items: flex-end;
+    z-index: 1;
   }
 
   ${media.mobile} {
@@ -88,9 +93,13 @@ export const LeftSection = styled.div`
   flex: none;
   z-index: 2;
 
+  /* Frame 167 — left content 475×129 (one-line title) */
   ${media.tablet} {
     width: 475px;
+    height: 129px;
+    gap: 12px;
     flex-shrink: 0;
+    z-index: 1;
   }
 
   ${media.mobile} {
@@ -99,6 +108,7 @@ export const LeftSection = styled.div`
   }
 `;
 
+/* Frame 168 — title block (breadcrumb + title) */
 export const TitleSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -107,6 +117,10 @@ export const TitleSection = styled.div`
   gap: 12px;
   width: auto;
   flex: none;
+
+  ${media.tablet} {
+    gap: 12px;
+  }
 
   ${media.mobile} {
     gap: 8px;
@@ -143,6 +157,20 @@ export const BreadcrumbWrapper = styled.div`
   ${media.tablet} {
     nav {
       gap: 8px;
+
+      a,
+      span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #fefefe;
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+        color: #fefefe;
+      }
     }
   }
 
@@ -169,8 +197,14 @@ export const Title = styled.h1`
   color: #fefefe;
   margin: 0;
   flex: none;
+  width: auto;
+  min-width: max-content;
+  white-space: nowrap;
 
   ${media.tablet} {
+    width: auto;
+    min-width: max-content;
+    white-space: nowrap;
     font-size: 32px;
     line-height: 38px;
   }
@@ -178,6 +212,7 @@ export const Title = styled.h1`
   ${media.mobile} {
     font-size: 20px;
     line-height: 24px;
+    white-space: nowrap;
   }
 `;
 
@@ -239,6 +274,36 @@ export const SearchWrapper = styled.div`
     flex-shrink: 0;
   }
 
+  /* SEARCH — 475×48, radius 8; override embedded Search tablet typography */
+  ${media.tablet} {
+    width: 475px;
+    height: 48px;
+    padding: 12px 16px;
+    gap: 12px;
+    border-radius: 8px;
+
+    input {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      height: 19px;
+      color: #777777;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #777777;
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: #76bbef;
+    }
+  }
+
   ${media.mobile} {
     width: 343px;
     height: 32px;
@@ -278,11 +343,13 @@ export const IconWrapper = styled.div`
     object-position: right bottom;
   }
 
+  /* image 334 — 629×426, right -91, bottom 0 */
   ${media.tablet} {
-    width: 420px;
-    height: 284px;
-    right: -60px;
-    bottom: -40px;
+    width: 629px;
+    height: 426px;
+    right: -91px;
+    bottom: 0;
+    z-index: 0;
   }
 
   ${media.mobile} {

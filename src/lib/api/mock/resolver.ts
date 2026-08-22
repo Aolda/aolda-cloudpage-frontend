@@ -2,11 +2,11 @@ import { ApiError } from '../errors';
 import {
   MOCK_BRIEF,
   MOCK_FAQ_LIST,
-  MOCK_NOTICE_DETAIL,
   MOCK_NOTICE_LIST,
-  MOCK_PRODUCT_DETAIL,
   MOCK_PRODUCT_LIST,
   MOCK_USE_PROJECT,
+  getMockNoticeDetail,
+  getMockProductDetail,
 } from './data';
 
 const normalizePath = (path: string): string =>
@@ -33,12 +33,14 @@ export const getMockApiResponse = <T>(path: string): T => {
       break;
   }
 
-  if (/^\/cloud\/notice\/\d+$/.test(normalized)) {
-    return MOCK_NOTICE_DETAIL as T;
+  const noticeDetailMatch = normalized.match(/^\/cloud\/notice\/(\d+)$/);
+  if (noticeDetailMatch) {
+    return getMockNoticeDetail(Number(noticeDetailMatch[1])) as T;
   }
 
-  if (/^\/cloud\/product\/\d+$/.test(normalized)) {
-    return MOCK_PRODUCT_DETAIL as T;
+  const productDetailMatch = normalized.match(/^\/cloud\/product\/(\d+)$/);
+  if (productDetailMatch) {
+    return getMockProductDetail(Number(productDetailMatch[1])) as T;
   }
 
   throw new ApiError(`Mock API route not found: ${normalized}`, 404, 'ERR_INVALID_REQUEST');

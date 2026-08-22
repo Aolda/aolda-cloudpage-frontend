@@ -15,6 +15,7 @@ export const Container = styled.div`
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 16px;
+    width: 100%;
   }
 
   ${media.mobile} {
@@ -22,13 +23,15 @@ export const Container = styled.div`
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 8px;
+    width: 343px;
+    max-width: 100%;
   }
 `;
 
 export const Option = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 0;
   gap: 8px;
@@ -38,6 +41,10 @@ export const Option = styled.div`
   max-width: 100%;
   flex: none;
   flex-shrink: 0;
+
+  ${media.mobile} {
+    height: 16px;
+  }
 `;
 
 export const Label = styled.label`

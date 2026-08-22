@@ -2,6 +2,7 @@ import IntroSectionTitle, { AccentBlue } from '../../molecules/IntroSectionTitle
 import ImageCard from '../../molecules/ImageCard';
 import * as S from './style';
 
+
 export type PartnerItem = {
   name: string;
   description?: string;
@@ -34,7 +35,7 @@ const PartnerCard = ({
     description={description}
     period={period}
     compact={compact}
-    solidThumbnail={!compact}
+    solidThumbnail
   />
 );
 
@@ -48,28 +49,47 @@ const PartnersSection = ({ partners = defaultPartners }: PartnersSectionProps) =
 
   return (
     <S.Section>
-      <IntroSectionTitle
-        title={
-          <>
-            이미 <AccentBlue>많은 곳에서 사용</AccentBlue>되고 있는
-            {'\n'}
-            <AccentBlue>아올다 클라우드</AccentBlue>
-          </>
-        }
-        description="아올다 클라우드는 아주대학교 대/내외적으로 사용되는 다양한 서비스를 안정적으로 운영하기 위해 이곳저곳에서 사용되고 있어요"
-        align="center"
-        showTopBar={true}
-      />
+      <S.HeaderBlock>
+        <IntroSectionTitle
+          title={
+            <>
+              <S.TitleLine>
+                이미 <AccentBlue>많은 곳에서 사용</AccentBlue>되고 있는
+              </S.TitleLine>
+              <S.TitleLine>
+                <AccentBlue>아올다 클라우드</AccentBlue>
+              </S.TitleLine>
+            </>
+          }
+          description={
+            <>
+              아올다 클라우드는 아주대학교 대/내외적으로 사용되는
+              <br />
+              다양한 서비스를 안정적으로 운영하기 위해 이곳저곳에서 사용되고
+              있어요.
+            </>
+          }
+          align="left"
+          showTopBar={true}
+          descriptionColor="#777777"
+        />
+      </S.HeaderBlock>
 
       <S.CarouselWrap>
         <S.Row>
           {firstRowPartners.map((p, index) => (
             <PartnerCard key={`carousel-row1-${index}`} {...p} />
           ))}
+          {firstRowPartners.map((p, index) => (
+            <PartnerCard key={`carousel-row1-dup-${index}`} {...p} />
+          ))}
         </S.Row>
         <S.Row>
           {secondRowPartners.map((p, index) => (
             <PartnerCard key={`carousel-row2-${index}`} {...p} />
+          ))}
+          {secondRowPartners.map((p, index) => (
+            <PartnerCard key={`carousel-row2-dup-${index}`} {...p} />
           ))}
         </S.Row>
       </S.CarouselWrap>

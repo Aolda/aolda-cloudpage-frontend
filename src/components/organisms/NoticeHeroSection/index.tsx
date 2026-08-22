@@ -50,20 +50,21 @@ const NoticeHeroSection = ({
     { label: '공지사항' },
   ],
 }: NoticeHeroSectionProps) => {
-  // title이 문자열인 경우 "공지사항" 부분만 파란색으로 처리하고 줄바꿈 처리
+  // title이 문자열인 경우 "공지사항" 강조 + "공지사항을 확인해 보세요." 한 줄 유지
   const renderTitle = () => {
     if (typeof title === 'string') {
       const parts = title.split('공지사항');
       if (parts.length > 1) {
-        // 줄바꿈 처리
         const firstLine = parts[0].trim();
         const secondLine = parts[1].trim();
         return (
           <>
             {firstLine}
             <br />
-            <S.HighlightedText>공지사항</S.HighlightedText>
-            {secondLine}
+            <S.TitlePhrase>
+              <S.HighlightedText>공지사항</S.HighlightedText>
+              {secondLine}
+            </S.TitlePhrase>
           </>
         );
       }
@@ -76,12 +77,12 @@ const NoticeHeroSection = ({
               if (line.includes('공지사항')) {
                 const lineParts = line.split('공지사항');
                 return (
-                  <span key={index}>
+                  <S.TitlePhrase key={index}>
                     {lineParts[0]}
                     <S.HighlightedText>공지사항</S.HighlightedText>
                     {lineParts[1]}
                     {index < lines.length - 1 && <br />}
-                  </span>
+                  </S.TitlePhrase>
                 );
               }
               return (
@@ -115,6 +116,7 @@ const NoticeHeroSection = ({
               value={searchTerm}
               onChange={onSearchChange}
               onSearch={onSearch}
+              embedded
             />
           </S.SearchWrapper>
         </S.LeftSection>
@@ -123,8 +125,8 @@ const NoticeHeroSection = ({
             <Image
               src="/notice/notice_introicon.png"
               alt="공지사항 아이콘"
-              width={281}
-              height={187}
+              width={360}
+              height={240}
               style={{
                 width: '100%',
                 height: '100%',

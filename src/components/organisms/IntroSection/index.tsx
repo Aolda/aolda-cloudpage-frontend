@@ -35,9 +35,8 @@ const IntroSection = () => (
         alt="아주인의 꿈을 펼칠 파란하늘 속 작은구름"
         title={
           <>
-            아주인의 꿈을 펼칠
-            <br />
-            파란하늘 속 작은구름
+            <span>아주인의 꿈을 펼칠</span>
+            <span>파란하늘 속 작은구름</span>
           </>
         }
         isBackground={true}

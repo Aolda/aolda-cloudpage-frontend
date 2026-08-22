@@ -10,8 +10,8 @@ export type ValueIconVariant = IconVariant;
 export interface ItemCardProps {
   /** 카드 제목 */
   title: string;
-  /** 카드 설명 */
-  description: string;
+  /** 카드 설명 (문자열 또는 `<br />` 등 줄바꿈 포함 ReactNode) */
+  description: ReactNode;
   /** 아이콘 (IconVariant, 이미지 경로, 또는 React 요소) */
   icon?: string | ReactNode | IconVariant;
   /** 카드 톤 (blue 또는 red) */
@@ -26,7 +26,7 @@ export interface ItemCardProps {
  * 
  * @param {ItemCardProps} props - 카드 props
  * @param {string} props.title - 카드 제목
- * @param {string} props.description - 카드 설명
+ * @param {ReactNode} props.description - 카드 설명 (줄바꿈 포함 가능)
  * @param {string | ReactNode | IconVariant} [props.icon] - 아이콘
  * 
  * @example
@@ -75,9 +75,9 @@ const ItemCard = ({ title, description, icon, tone: propTone }: ItemCardProps) =
           )}
         </S.Icon>
       )}
-      <S.TextContainer>
+      <S.TextContainer $tone={tone}>
         <S.ItemTitle $tone={tone}>{title}</S.ItemTitle>
-        <S.ItemDescription>{description}</S.ItemDescription>
+        <S.ItemDescription $tone={tone}>{description}</S.ItemDescription>
       </S.TextContainer>
     </S.ItemCard>
   );

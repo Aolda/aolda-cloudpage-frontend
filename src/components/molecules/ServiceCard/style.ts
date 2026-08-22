@@ -29,10 +29,10 @@ export const ServiceCardWrapper = styled.div`
   }
 
   ${media.mobile} {
-    width: 100%;
-    min-width: 0;
-    max-width: none;
-    height: 100%;
+    width: 167.5px;
+    min-width: 167.5px;
+    max-width: 167.5px;
+    height: 120px;
   }
 `;
 
@@ -53,14 +53,20 @@ export const ServiceCard = styled.div`
 
   ${media.tablet} {
     padding: 20px;
-    gap: 24px;
+    gap: 20px;
     background: #fefefe;
+    border: 1px solid #efefef;
+    border-radius: 8px;
   }
 
   ${media.mobile} {
+    width: 167.5px;
     height: 120px;
     padding: 12px;
     gap: 12px;
+    background: #fefefe;
+    border: 1px solid #efefef;
+    border-radius: 8px;
   }
 `;
 

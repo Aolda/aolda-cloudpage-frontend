@@ -5,12 +5,16 @@ export const SolutionsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
   width: 100%;
   box-sizing: border-box;
 
+  ${media.desktop} {
+    gap: 20px;
+  }
+
   ${media.tablet} {
     gap: 16px;
+    max-width: 680px;
   }
 
   ${media.mobile} {
@@ -23,11 +27,16 @@ export const SolutionsGrid = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 16px;
   width: 100%;
 
+  ${media.desktop} {
+    gap: 16px;
+  }
+
+  /* Frame 1261158726 — vertical gap between solution rows */
   ${media.tablet} {
-    gap: 20px;
+    gap: 12px;
+    max-width: 680px;
   }
 
   ${media.mobile} {
@@ -40,11 +49,17 @@ export const SolutionsRow = styled.div`
   flex-direction: row;
   align-items: flex-start;
   padding: 0;
-  gap: 24px;
   width: 100%;
 
+  ${media.desktop} {
+    gap: 24px;
+    justify-content: flex-start;
+  }
+
+  /* Frame 1261158734/8735 — horizontal card gap 20 */
   ${media.tablet} {
     gap: 20px;
+    max-width: 680px;
   }
 
   ${media.mobile} {

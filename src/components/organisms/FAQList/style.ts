@@ -13,6 +13,7 @@ export const FAQListContainer = styled.div`
   ${media.tablet} {
     gap: 24px;
     max-width: 680px;
+    width: 100%;
   }
 
   ${media.mobile} {
@@ -29,8 +30,15 @@ export const FAQContentSection = styled.div`
   gap: 36px;
   width: 100%;
 
+  ${media.tablet} {
+    gap: 36px;
+    max-width: 680px;
+  }
+
   ${media.mobile} {
-    gap: 12px;
+    gap: 20px;
+    width: 100%;
+    max-width: 343px;
   }
 `;
 
@@ -53,4 +61,15 @@ export const PaginationWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  ${media.tablet} {
+    width: 100%;
+    max-width: 680px;
+    justify-content: center;
+  }
+
+  ${media.mobile} {
+    width: 100%;
+    max-width: 343px;
+  }
 `;

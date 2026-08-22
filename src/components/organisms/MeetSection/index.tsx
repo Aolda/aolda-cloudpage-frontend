@@ -4,17 +4,25 @@ import * as S from './style';
 
 const MeetSection = () => (
   <S.Section>
-    <IntroSectionTitle
-      title={
-        <>
-          아올다의 새로운 크루가
-          <br />
-          되어주세요
-        </>
-      }
-      align="center"
-      showTopBar={false}
-    />
+    <S.DefaultTitle>
+      <IntroSectionTitle
+        title={
+          <>
+            <S.TitleLine>아올다, 이제 한번</S.TitleLine>
+            <S.TitleLine>만나볼까요?</S.TitleLine>
+          </>
+        }
+        align="center"
+        showTopBar={true}
+      />
+    </S.DefaultTitle>
+    <S.MobileTitle>
+      <IntroSectionTitle
+        title="아올다의 새로운 크루가 되어주세요"
+        align="left"
+        showTopBar={true}
+      />
+    </S.MobileTitle>
 
     <S.Grid>
       <S.Col>

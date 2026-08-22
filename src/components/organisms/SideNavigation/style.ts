@@ -9,7 +9,7 @@ export const Sidebar = styled.aside`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 24px;
 
@@ -20,8 +20,8 @@ export const Sidebar = styled.aside`
   }
 
   ${media.mobile} {
-    width: 100%;
-    max-width: none;
+    width: 343px;
+    max-width: 100%;
     gap: 12px;
   }
 `;
@@ -29,7 +29,7 @@ export const Sidebar = styled.aside`
 export const SidebarTitle = styled.h2`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 0;
   gap: 10px;
@@ -39,13 +39,11 @@ export const SidebarTitle = styled.h2`
   line-height: 24px;
   font-weight: 700;
   color: #232527;
-  text-align: center;
+  text-align: left;
 
   ${media.tablet} {
     font-size: 16px;
     line-height: 19px;
-    justify-content: flex-start;
-    text-align: left;
   }
 
   ${media.mobile} {

@@ -212,7 +212,9 @@ export const MainContent = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 120px;
+  /* 100% (not 100vw) so scrollbar width does not shrink the 1200px content column */
+  padding-left: max(40px, calc((100% - 1200px) / 2));
+  padding-right: max(40px, calc((100% - 1200px) / 2));
   position: relative;
   width: 100%;
   flex: none;
@@ -224,6 +226,8 @@ export const MainContent = styled.main`
   ${media.tablet} {
     padding: 0 32px 60px;
     padding-top: 0;
+    align-items: center;
+    max-width: none;
   }
 
   ${media.mobile} {
@@ -396,5 +400,4 @@ export const SectionWrapper = styled.div`
     }
   }
 `;
-
 

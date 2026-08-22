@@ -17,12 +17,17 @@ export const ProductListContainer = styled.div`
 
   ${media.mobile} {
     gap: 12px;
-    max-width: none;
+    width: 343px;
+    max-width: 100%;
   }
 `;
 
 export const SearchSection = styled.div`
   width: 100%;
+
+  ${media.tablet} {
+    display: none;
+  }
 `;
 
 export const SectionHeader = styled.div`
@@ -38,6 +43,7 @@ export const SectionHeader = styled.div`
   }
 
   ${media.mobile} {
+    gap: 8px;
     height: auto;
   }
 `;
@@ -105,29 +111,31 @@ export const SectionIcon = styled.span`
 `;
 
 export const ServiceGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 231px);
-  justify-content: start;
-  justify-items: start;
-  align-items: start;
-  align-content: start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
   padding: 0;
   gap: 24px;
   width: 996px;
   max-width: 100%;
+  box-sizing: border-box;
 
   ${media.tablet} {
-    grid-template-columns: repeat(3, 213.33px);
     gap: 20px;
     width: 680px;
     max-width: 100%;
   }
 
   ${media.mobile} {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
     gap: 8px;
-    width: 100%;
-    max-width: none;
+    width: 343px;
+    max-width: 100%;
   }
 `;

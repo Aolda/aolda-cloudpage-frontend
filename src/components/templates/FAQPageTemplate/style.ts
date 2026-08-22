@@ -10,6 +10,11 @@ export const TemplateContainer = styled.div`
   background: #fefefe;
 `;
 
+/**
+ * Frame 136 — desktop padding 72 120.
+ * Tablet: 744 wide, padding 32 → inner 680, gap 24; hero is in flow (400px) so no margin-top.
+ * Mobile: padding 20 16 → inner 343, gap 20, centered column.
+ */
 export const ContentWrapper = styled.div`
   max-width: 1440px;
   width: 100%;
@@ -19,12 +24,22 @@ export const ContentWrapper = styled.div`
   background: #fefefe;
 
   ${media.tablet} {
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 744px;
+    width: 100%;
     padding: 32px;
+    gap: 24px;
   }
 
   ${media.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 375px;
+    width: 100%;
     padding: 20px 16px;
+    gap: 20px;
   }
 `;

@@ -1,0 +1,290 @@
+[
+  {
+    "file": "home-desktop.png",
+    "path": "/",
+    "viewport": "desktop",
+    "width": 1440,
+    "height": 4943,
+    "box": {
+      "iw": 1440,
+      "ih": 4943,
+      "sh": 4943,
+      "title": ""
+    },
+    "bytes": 1642212,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "home-tablet.png",
+    "path": "/",
+    "viewport": "tablet",
+    "width": 744,
+    "height": 3250,
+    "box": {
+      "iw": 744,
+      "ih": 3250,
+      "sh": 3250,
+      "title": ""
+    },
+    "bytes": 758731,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "home-mobile.png",
+    "path": "/",
+    "viewport": "mobile",
+    "width": 375,
+    "height": 2044,
+    "box": {
+      "iw": 375,
+      "ih": 2044,
+      "sh": 2044,
+      "title": ""
+    },
+    "bytes": 283110,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "notice-desktop.png",
+    "path": "/notice",
+    "viewport": "desktop",
+    "width": 1440,
+    "height": 1805,
+    "box": {
+      "iw": 1440,
+      "ih": 1805,
+      "sh": 1805,
+      "title": ""
+    },
+    "bytes": 556935,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "notice-tablet.png",
+    "path": "/notice",
+    "viewport": "tablet",
+    "width": 744,
+    "height": 1708,
+    "box": {
+      "iw": 744,
+      "ih": 1708,
+      "sh": 1708,
+      "title": ""
+    },
+    "bytes": 321930,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "notice-mobile.png",
+    "path": "/notice",
+    "viewport": "mobile",
+    "width": 375,
+    "height": 1323,
+    "box": {
+      "iw": 375,
+      "ih": 1323,
+      "sh": 1323,
+      "title": ""
+    },
+    "bytes": 143039,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "faq-desktop.png",
+    "path": "/faq",
+    "viewport": "desktop",
+    "width": 1440,
+    "height": 1681,
+    "box": {
+      "iw": 1440,
+      "ih": 1681,
+      "sh": 1681,
+      "title": ""
+    },
+    "bytes": 216790,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "faq-tablet.png",
+    "path": "/faq",
+    "viewport": "tablet",
+    "width": 744,
+    "height": 1599,
+    "box": {
+      "iw": 744,
+      "ih": 1599,
+      "sh": 1599,
+      "title": ""
+    },
+    "bytes": 184956,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "faq-mobile.png",
+    "path": "/faq",
+    "viewport": "mobile",
+    "width": 375,
+    "height": 1096,
+    "box": {
+      "iw": 375,
+      "ih": 1096,
+      "sh": 1096,
+      "title": ""
+    },
+    "bytes": 84023,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "product-desktop.png",
+    "path": "/product",
+    "viewport": "desktop",
+    "width": 1440,
+    "height": 2628,
+    "box": {
+      "iw": 1440,
+      "ih": 2628,
+      "sh": 2628,
+      "title": ""
+    },
+    "bytes": 733580,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "product-tablet.png",
+    "path": "/product",
+    "viewport": "tablet",
+    "width": 744,
+    "height": 2582,
+    "box": {
+      "iw": 744,
+      "ih": 2582,
+      "sh": 2582,
+      "title": ""
+    },
+    "bytes": 454268,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "product-mobile.png",
+    "path": "/product",
+    "viewport": "mobile",
+    "width": 375,
+    "height": 2166,
+    "box": {
+      "iw": 375,
+      "ih": 2166,
+      "sh": 2166,
+      "title": ""
+    },
+    "bytes": 184956,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "product-amdb-desktop.png",
+    "path": "/product/amdb",
+    "viewport": "desktop",
+    "width": 1440,
+    "height": 2328,
+    "box": {
+      "iw": 1440,
+      "ih": 2328,
+      "sh": 2328,
+      "title": ""
+    },
+    "bytes": 616480,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "product-amdb-tablet.png",
+    "path": "/product/amdb",
+    "viewport": "tablet",
+    "width": 744,
+    "height": 2291,
+    "box": {
+      "iw": 744,
+      "ih": 2291,
+      "sh": 2291,
+      "title": ""
+    },
+    "bytes": 391818,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "product-amdb-mobile.png",
+    "path": "/product/amdb",
+    "viewport": "mobile",
+    "width": 375,
+    "height": 1591,
+    "box": {
+      "iw": 375,
+      "ih": 1591,
+      "sh": 1591,
+      "title": ""
+    },
+    "bytes": 184091,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "notice-1-desktop.png",
+    "path": "/notice/1",
+    "viewport": "desktop",
+    "width": 1440,
+    "height": 1507,
+    "box": {
+      "iw": 1440,
+      "ih": 1507,
+      "sh": 1507,
+      "title": ""
+    },
+    "bytes": 524797,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "notice-1-tablet.png",
+    "path": "/notice/1",
+    "viewport": "tablet",
+    "width": 744,
+    "height": 1241,
+    "box": {
+      "iw": 744,
+      "ih": 1241,
+      "sh": 1241,
+      "title": ""
+    },
+    "bytes": 299043,
+    "hasAolda": true,
+    "hasFooter": true
+  },
+  {
+    "file": "notice-1-mobile.png",
+    "path": "/notice/1",
+    "viewport": "mobile",
+    "width": 375,
+    "height": 1015,
+    "box": {
+      "iw": 375,
+      "ih": 1015,
+      "sh": 1015,
+      "title": ""
+    },
+    "bytes": 122062,
+    "hasAolda": true,
+    "hasFooter": true
+  }
+]

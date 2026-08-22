@@ -5,6 +5,7 @@ export const PaginationContainer = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 0;
   gap: 36px;
   width: auto;
@@ -18,8 +19,6 @@ export const PaginationContainer = styled.nav`
 
   ${media.mobile} {
     gap: 12px;
-    width: 304px;
-    justify-content: center;
   }
 `;
 
@@ -102,10 +101,6 @@ export const PageList = styled.div`
   ${media.tablet} {
     gap: 8px;
   }
-
-  ${media.mobile} {
-    width: 202px;
-  }
 `;
 
 export const PageButton = styled.button<{ $isActive: boolean }>`
@@ -153,6 +148,8 @@ export const PageButton = styled.button<{ $isActive: boolean }>`
     font-size: 10px;
     line-height: 12px;
     font-weight: 700;
+    border-bottom: ${({ $isActive }) => ($isActive ? '2px solid #1A8EE5' : 'none')};
+    color: ${({ $isActive }) => ($isActive ? '#1A8EE5' : '#777777')};
   }
 `;
 

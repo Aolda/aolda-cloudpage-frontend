@@ -5,12 +5,16 @@ export const ProblemsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
   width: 100%;
   box-sizing: border-box;
 
+  ${media.desktop} {
+    gap: 20px;
+  }
+
   ${media.tablet} {
     gap: 16px;
+    max-width: 680px;
   }
 
   ${media.mobile} {
@@ -21,8 +25,11 @@ export const ProblemsSection = styled.section`
 export const ProblemsList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
   width: 100%;
+
+  ${media.desktop} {
+    gap: 16px;
+  }
 
   ${media.tablet} {
     gap: 12px;

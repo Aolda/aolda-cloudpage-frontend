@@ -13,12 +13,14 @@ export const FilterContainer = styled.div`
 
   ${media.tablet} {
     max-width: 680px;
+    width: 100%;
     height: 48px;
   }
 
   ${media.mobile} {
     max-width: 343px;
-    height: 64px;
+    height: auto;
+    min-height: 32px;
     align-items: flex-start;
   }
 `;

@@ -39,10 +39,10 @@ const PromisesSection = () => (
           description={item.description}
           tone="red"
         />
+
       ))}
     </S.PromiseGrid>
   </S.Section>
 );
 
 export default PromisesSection;
-

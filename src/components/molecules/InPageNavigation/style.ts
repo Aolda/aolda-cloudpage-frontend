@@ -1,40 +1,39 @@
 ﻿import styled from 'styled-components';
+import { media } from '@/styles/theme';
 
+/** Frame 150 — prev/next navigation */
 export const NavigationContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 0rem;
-  width: 75rem;
-  height: 6.875rem;
-  flex: none;
-  order: 2;
-  align-self: stretch;
-  flex-grow: 0;
+  align-items: stretch;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 export const NavItem = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 1rem 0rem;
-  gap: 2.25rem;
-  width: 75rem;
-  height: 3.4375rem;
-  border-top: 1px solid #E2E2E2;
-  border-bottom: 1px solid #E2E2E2;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-  
-  &:first-child {
-    border-bottom: none;
+  align-items: center;
+  padding: 16px 0;
+  gap: 36px;
+  width: 100%;
+  height: 56px;
+  box-sizing: border-box;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+
+  & + & {
+    border-top: none;
   }
-  
-  &:last-child {
-    order: 1;
+
+  ${media.tablet} {
+    height: 50px;
+  }
+
+  ${media.mobile} {
+    height: 48px;
   }
 `;
 
@@ -42,7 +41,7 @@ export const NavLink = styled.a`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   height: 100%;
   text-decoration: none;
@@ -53,76 +52,68 @@ export const NavEmpty = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   height: 100%;
   color: #777777;
 `;
 
+/** Label group — padding 0 20, gap 12, chevron 16 */
 export const NavLeft = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0rem 1.25rem;
-  gap: 0.75rem;
-  margin: 0 auto;
-  width: 7.0625rem;
-  height: 1.4375rem;
+  padding: 0 20px;
+  gap: 12px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
+  flex-shrink: 0;
 `;
 
 export const ArrowIcon = styled.svg<{ $direction: 'up' | 'down' }>`
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
-  position: relative;
-  
+  flex-shrink: 0;
+
   path {
     stroke: #777777;
-    stroke-width: 0.09375rem;
-  }
-  
-  &::after {
-    content: '';
-    position: absolute;
-    height: 0.208125rem;
-    left: 29.17%;
-    right: 29.17%;
-    top: calc(50% - 0.208125rem / 2);
-    border: 0.09375rem solid #777777;
+    stroke-width: 1.5;
   }
 `;
 
+/** Content-C4 desktop 16 / Content-C6 tablet 12 / Content-C7 mobile 10 — #777 */
 export const NavLabel = styled.span`
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 150%;
   display: flex;
   align-items: center;
   text-align: center;
   color: #777777;
   flex: none;
-  order: 1;
-  flex-grow: 0;
-`;
 
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+  }
+`;
+/** Title area — flex-grow 1, padding 0 20 */
 export const NavTitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 1.25rem;
-  gap: 0.625rem;
-  margin: 0 auto;
-  flex: 1;
+  padding: 0 20px;
+  gap: 10px;
+  flex: 1 1 auto;
   min-width: 0;
-  order: 1;
 `;
 
 export const NavTitle = styled.span`
@@ -130,14 +121,24 @@ export const NavTitle = styled.span`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 150%;
   display: flex;
   align-items: center;
-  text-align: center;
   color: #777777;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+  }
 `;
 
 export const NavTitleLink = styled.a`
@@ -145,19 +146,28 @@ export const NavTitleLink = styled.a`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 150%;
   display: flex;
   align-items: center;
-  text-align: center;
   color: #777777;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
   text-decoration: none;
   cursor: pointer;
-  
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   &:hover {
     opacity: 0.8;
   }
-`;
 
+  ${media.tablet} {
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  ${media.mobile} {
+    font-size: 10px;
+    line-height: 150%;
+  }
+`;

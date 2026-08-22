@@ -37,7 +37,7 @@ export const FALLBACK_PARTNERS: PartnerItem[] = [
 export const FALLBACK_FAQ_CATEGORIES: TagFilterItem[] = [
   { id: 'all', label: '전체' },
   { id: 'CAT_GENERAL', label: '일반' },
-  { id: 'CAT_BILLING', label: '요금 및 결제' },
+  { id: 'CAT_BILLING', label: '요금' },
 ];
 
 export const FALLBACK_FAQS: AccordionProps[] = [
@@ -91,7 +91,38 @@ export const FALLBACK_PRODUCT_SERVICES = [
 ];
 
 export function getFallbackNoticeDetail(id: string): NoticeDetailData | undefined {
-  return getNoticeById(id);
+  const fromStatic = getNoticeById(id);
+  if (fromStatic) {
+    return fromStatic;
+  }
+
+  // 목록 fallback과 id가 맞을 때 인접 공지로 이전/다음 구성
+  const index = FALLBACK_NOTICES.findIndex(
+    (item) => String(item.number) === id,
+  );
+  if (index < 0) {
+    return undefined;
+  }
+
+  const current = FALLBACK_NOTICES[index];
+  const prev = index > 0 ? FALLBACK_NOTICES[index - 1] : undefined;
+  const next =
+    index < FALLBACK_NOTICES.length - 1
+      ? FALLBACK_NOTICES[index + 1]
+      : undefined;
+
+  return {
+    number: current.number,
+    title: current.title,
+    author: '관리자',
+    date: current.date,
+    views: 0,
+    content: current.title,
+    prevTitle: prev?.title,
+    prevHref: prev ? `/notice/${prev.number}` : undefined,
+    nextTitle: next?.title,
+    nextHref: next ? `/notice/${next.number}` : undefined,
+  };
 }
 
 export function getFallbackProductDetail(id: string): ProductDetailRecord {
